@@ -1,0 +1,9 @@
+.git
+.svn
+.htaccess
+wp-content/uploads
+wp-content/cache
+wp-content/themes/*/cache/*
+wp-content/gallery/*
+wp-config-sample.php
+local-config.php
