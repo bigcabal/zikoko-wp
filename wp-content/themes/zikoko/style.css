@@ -1,0 +1,159 @@
+/*
+ Theme Name:     Zikoko Theme
+ Theme URI:      http://zikoko.com
+ Description:    Zikoko Theme
+ Author:         Big Cabal Media
+ Author URI:     http://bigcabal.com
+ Template:       simplemag
+ Version:        1.0.0
+*/
+
+@import url('http://fonts.googleapis.com/css?family=Montserrat:700,400');
+
+h1, h2, h3, h4, h5, h6, .main-menu a, .secondary-menu a, .widget_pages, .widget_categories, .widget_nav_menu, .tagline, .sub-title, .entry-meta, .entry-note, .read-more, #submit, .single .entry-content > p:first-of-type:first-letter, input#s, .single-author-box .vcard, .comment-author, .comment-meta, .comment-reply-link, #respond label, .copyright, #wp-calendar tbody, .latest-reviews i, .score-box .total {
+	font-family:'Montserrat',sans-serif!important;
+	font-weight: 700;
+}
+
+body, p {
+	font-family:"Lato", sans-serif;
+	font-weight: 400;
+	font-size: 1.1em;
+}
+
+.entry-content h3 {
+	color:black;
+}
+.entry-header {
+	text-align: left;
+	text-transform: capitalize;
+}
+.entries .entry-title {
+	letter-spacing: -0.1px!important;
+}
+.entry-title a, .entry-title a:hover, .entry-title a:visited{
+	/*color:#1289D0;*/
+	color:#000;
+}
+h2.entry-title {
+	line-height: 1.2!important;
+	font-size: 1.8em;
+	font-family:'Montserrat',sans-serif!important;
+	font-weight: 400!important;
+}
+.list-layout .hentry {
+	border:none!important;
+}
+.entry-summary {
+	font-size: 0.9em;
+}
+.entry-content img {
+	width:100%;
+}
+.single .entry-content h1 {
+	font-size:2.4em;
+	line-height:1.2;
+}
+
+.sidebar .widget {
+	border:none!important;
+}
+.sidebar .widget h3{
+	/*display:none;*/
+	line-height: 1;
+}
+.entry-header .entry-meta {
+	font-size: 0.7em;
+	color:#0672AF;
+}
+.entry-header .entry-meta a {
+	color:#0672AF;
+}
+.list-layout .entry-image {
+	width:310px;
+}
+.list-layout .hentry {
+	padding-bottom: 0px;
+}
+.widget_recent_entries li::before {
+	display:none;
+}
+
+.widget_recent_entries li{
+	padding-left: 0px;
+	border:none!important;	
+}
+.widget-post-title {
+	text-transform: capitalize;
+	letter-spacing: 0px;
+	font-size:0.9em;
+	line-height: 1.2;
+	color:#666;
+}
+.list-layout {
+	padding-right: 20px;
+}
+.fb {background: #3B5998; width:40%;}
+.tw {background: #4099FF; width:20%;}
+.gp {background: #d34836; width:10%;}
+.wa {background: #4dc247; width:11%; display:none!important;}
+.pn {background: #cc2127; width:10%;}
+.em {background: #9f9f9f; width:10%;}
+.zs_share{width:100%;background:#eaeaea;display:block;}
+.zs_btn {display:inline-block;color:white;padding:8px 0;margin:0 1px 0 0;}
+.zs_btn a{color:white;}
+.linked{display:inline-block;position:relative;width:100%;height:100%;top:0;left:0;z-index:1;background-image:url(http://bigcabal.com/assets/empty.gif);}
+
+@media only screen and (max-width: 750px){
+	.grids, .grid-1,.grid-2,.grid-3,.grid-4,.grid-5,.grid-6,.grid-7,.grid-8,.grid-9,.grid-10,.grid-11,.grid-12{width:100%;margin-left:0;margin-right:0;}
+	html{font-size:1em;}
+	body{-webkit-text-size-adjust:none;}
+	.single .entry-content h1 {font-size:1.8em;line-height:1.2;}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 750px) {
+.wrapper{width:90%;}
+.single .entry-content h1 {font-size:1.8em;line-height:1.2;}
+.fb {background: #3B5998; width:40%;}
+.tw {background: #4099FF; width:28%;}
+.gp {background: #d34836; width:10%;display:none!important;}
+.wa {background: #4dc247; width:28%; display:inline-block!important;}
+.pn {background: #cc2127; width:10%;display:none!important;}
+.em {background: #9f9f9f; width:10%;display:none!important;}
+}
+
+@media only screen and (max-width: 479px) {
+.wrapper{width:92%;}
+.single .entry-content h1 {font-size:1.8em;line-height:1.2;}
+.fb {background: #3B5998; width:40%;}
+.tw {background: #4099FF; width:28%;}
+.gp {background: #d34836; width:10%;display:none!important;}
+.wa {background: #4dc247; width:28%; display:inline-block!important;}
+.pn {background: #cc2127; width:10%;display:none!important;}
+.em {background: #9f9f9f; width:10%;display:none!important;}
+}
+
+@media only screen and (max-width: 240px) {
+.wrapper{width:92%:;}
+.single .entry-content h1 {font-size:1.8em;line-height:1.2;}
+.fb {background: #3B5998; width:40%;}
+.tw {background: #4099FF; width:28%;}
+.gp {background: #d34836; width:10%;display:none!important;}
+.wa {background: #4dc247; width:28%; display:inline-block!important;}
+.pn {background: #cc2127; width:10%;display:none!important;}
+.em {background: #9f9f9f; width:10%;display:none!important;}
+}
+
+.entries article .entry-image img:hover,
+.entry-list article .entry-image img:hover {
+    opacity:1;
+}
+
+.csstransitions .entries article .entry-image img:hover,
+.csstransitions .entry-list article .entry-image img:hover {
+    -webkit-transform:none;
+    -moz-transform:none;
+    -o-transform:none;
+    -ms-transform:none;
+    transform:none;
+}
