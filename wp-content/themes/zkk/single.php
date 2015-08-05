@@ -101,7 +101,7 @@ $author = get_the_author();
 
                     <?php comments_template(); // Comments Template ?>
 
-                    <?php get_template_part('inc/conversion', 'prompt'); ?>
+                    <?php //get_template_part('inc/conversion', 'prompt'); ?>
 
                     <?php if ( ! get_field( 'post_sidebar' ) || get_field( 'post_sidebar' ) == "post_sidebar_on" ) { // Enable/Disable post sidebar ?>
                     </div><!-- .grid-8 -->
