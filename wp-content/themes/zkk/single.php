@@ -82,7 +82,11 @@ $author = get_the_author();
                         </header>
                         
                         
-                        <div class="entry-full-content padd-all"><?php the_content(); ?></div>
+                        <div class="entry-full-content padd-all">
+                            <?php the_content(); ?>
+                        </div>
+
+
 
                         <?php
                         $args = array(
@@ -97,6 +101,15 @@ $author = get_the_author();
                         wp_link_pages( $args );
                         ?>
                     </div><!-- .entry-content -->
+
+                    <!-- Social Follow Buttons -->
+                    <div class="wrapper">
+                         <div class="sidebar-social-icons homepage-social-follow">
+                        <?php if( $ti_option['top_social_profiles'] == 1 ) {
+                            get_template_part ( 'inc/social', 'profiles' );
+                        } ?>
+                        </div>
+                    </div>
 
 
                     <?php comments_template(); // Comments Template ?>
