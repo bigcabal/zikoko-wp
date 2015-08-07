@@ -4644,11 +4644,15 @@ body.single article.post .entry-full-content h3 {
 body.single article.post .entry-full-content a, body.single article.post .entry-full-content a:visited {
   text-decoration: underline;
   color: #3655C6; }
-body.single article.post .entry-full-content em {
-  font-style: italic; }
+body.single article.post .entry-full-content em, body.single article.post .entry-full-content i {
+  font-style: italic !important; }
+body.single article.post .entry-full-content p i {
+  font-style: italic !important; }
 
 #comments {
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: block; }
 
 .social-share-buttons a.icomoon-facebook {
   background-color: #3B5998; }
@@ -4809,98 +4813,7 @@ body.single article.post .entry-full-content em {
   margin-left: 13px;
   content: 'Follow us on Instagram'; }
 
-.conversion-prompt-container {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1999; }
-
-.conversion-prompt {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  padding: 0;
-  border: 0;
-  background-color: #fff; }
-  .conversion-prompt .conversion-prompt-left {
-    display: inline-block;
-    height: 100%;
-    width: 40%;
-    background-color: #5A1490;
-    color: #fff;
-    position: relative;
-    z-index: 600; }
-    .conversion-prompt .conversion-prompt-left h1 {
-      position: absolute;
-      top: 50%;
-      left: 40px;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-      font-size: 30px;
-      width: 300px; }
-  .conversion-prompt .triangle {
-    position: absolute;
-    top: 0;
-    left: 40%;
-    border-top: 200px solid transparent;
-    border-bottom: 200px solid transparent;
-    border-left: 200px solid #5A1490;
-    z-index: 500; }
-  .conversion-prompt .conversion-prompt-right {
-    display: inline-block;
-    height: 100%;
-    width: 60%;
-    position: relative;
-    padding: 0 20px; }
-    .conversion-prompt .conversion-prompt-right .fb-like {
-      position: absolute;
-      top: 50%;
-      right: 60px;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%); }
-  .conversion-prompt .conversion-prompt-cancel {
-    height: 40px;
-    width: 40px;
-    background-color: #5A1490;
-    border-radius: 50%;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    text-align: center;
-    color: #fff;
-    font-weight: 700;
-    padding-top: 7px; }
-  @media screen and (min-width: 750px) {
-    .conversion-prompt {
-      height: 400px;
-      width: 600px; } }
-  @media screen and (max-width: 750px) {
-    .conversion-prompt {
-      height: 200px;
-      width: 300px; }
-      .conversion-prompt .conversion-prompt-left h1 {
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        font-size: 15px;
-        width: 150px; }
-      .conversion-prompt .triangle {
-        border-top: 100px solid transparent;
-        border-bottom: 100px solid transparent;
-        border-left: 100px solid #5A1490; }
-      .conversion-prompt .conversion-prompt-right {
-        padding: 0 10px; }
-        .conversion-prompt .conversion-prompt-right .fb-like {
-          right: 20px; } }
-
+/* Modal */
 @media screen and (min-width: 650px) {
   .social-share-aside li.facebook:hover .fb-like, .social-share-aside li.facebook:focus .fb-like {
     display: block; } }
@@ -4930,42 +4843,45 @@ ul.social {
   .related-posts {
     margin-top: 30px; } }
 
-.related-posts-mega a {
-  color: #3655C6;
-  line-height: 1.1;
-  font-size: 1.2em; }
-.related-posts-mega .item {
-  margin-bottom: 20px;
-  height: 250px; }
-  .related-posts-mega .item h4 {
-    font-family: 'Montserrat', serif;
-    text-transform: none;
-    color: #000;
-    font-size: 14px;
-    letter-spacing: normal; }
-  @media screen and (min-width: 960px) {
-    .related-posts-mega .item {
-      width: 30%; } }
-  @media screen and (max-width: 960px) {
-    .related-posts-mega .item {
-      width: 45%; }
-      .related-posts-mega .item .entry-image {
-        height: 150px; } }
-  @media screen and (max-width: 750px) {
-    .related-posts-mega .item:not(:nth-child(even)) {
-      margin-right: 9%; } }
-  @media screen and (max-width: 600px) {
-    .related-posts-mega .item {
-      height: 230px;
-      overflow: hidden; }
-      .related-posts-mega .item h4 {
-        font-size: 12px; }
-      .related-posts-mega .item figure.entry-image {
+.related-posts-mega {
+  padding-top: 50px; }
+  .related-posts-mega a {
+    color: #3655C6;
+    line-height: 1.1;
+    font-size: 1.2em; }
+  .related-posts-mega .item {
+    margin-bottom: 20px;
+    height: 250px; }
+    .related-posts-mega .item h4 {
+      font-family: 'Montserrat', serif;
+      text-transform: none;
+      color: #000;
+      font-size: 14px;
+      letter-spacing: normal; }
+    @media screen and (min-width: 960px) {
+      .related-posts-mega .item {
+        width: 30%; } }
+    @media screen and (max-width: 960px) {
+      .related-posts-mega .item {
+        width: 45%; }
+        .related-posts-mega .item .entry-image {
+          height: 150px; } }
+    @media screen and (max-width: 750px) {
+      .related-posts-mega .item:not(:nth-child(even)) {
+        margin-right: 9%; } }
+    @media screen and (max-width: 600px) {
+      .related-posts-mega .item {
+        width: 100%;
+        display: block;
         height: auto;
-        max-height: 100px; } }
-.related-posts-mega .item:nth-child(3):after {
-  content: '';
-  display: block; }
+        overflow: hidden; }
+        .related-posts-mega .item h4 {
+          font-size: 12px; }
+        .related-posts-mega .item figure.entry-image {
+          height: auto; } }
+  .related-posts-mega .item:nth-child(3):after {
+    content: '';
+    display: block; }
 
 .post-excerpt {
   border: 1px solid red;

@@ -124,8 +124,8 @@ $author = get_the_author();
                 </div><!-- .grids -->
 
 
-                 <div class="grids">
-                    <div class="grid-12 column-1">
+                 <!-- <div class="grids" style="border: 1px solid blue; display: block"> -->
+                    <div class="grid-12 column-1" >
                         <?php
                         // Show/Hide related posts
                         if ( $ti_option['single_related'] == 1 ) {
@@ -133,7 +133,7 @@ $author = get_the_author();
                         }
                         ?>
                     </div>
-                </div>
+                <!-- </div> -->
                 <?php }  ?>
 
             </div><!-- .wrapper -->
