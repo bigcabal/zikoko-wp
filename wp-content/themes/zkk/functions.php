@@ -143,8 +143,30 @@ function ti_meta_data(){
 		echo '<span class="entry-category">'; the_category(', '); echo '</span>';
 	}
 	
-	// Date
-	$publish_date = '<time class="entry-date updated" datetime="' . get_the_time( 'c' ) . '" itemprop="datePublished">' . get_the_time( get_option( 'date_format' ) ) . '</time>';
+
+
+
+	// Relative Date
+
+
+	$current = strtotime(date("Y-m-d"));
+    $date    = get_post_time();
+
+    $datediff = $date - $current;
+    $differance = floor($datediff/(60*60*24));
+
+    if ($differance == 0) {
+       $displayDate = 'Today';
+    }
+    else if ($differance == -1) {
+       $displayDate = 'Yesterday';
+    }
+    else {
+       $displayDate = get_the_time( get_option( 'date_format' ) );
+    }
+
+
+	$publish_date = '<time class="entry-date updated" datetime="' . get_the_time( 'c' ) . '" itemprop="datePublished">' . $displayDate . '</time>';
 	
 	if ( is_home() || is_front_page() || is_page() ) {
 		if ( $ti_option['home_post_date'] == 1 ) {
@@ -378,32 +400,6 @@ function register_theme_sidebars() {
 		   )
 		);
 
-		// register_sidebar(
-		//    array(
-		// 	'name' => __( 'Posts', 'themetext' ),
-		// 	'id' => 'sidebar-posts',
-		// 	'description'   => __( 'Posts', 'themetext' ),		   
-		// 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		// 	'after_widget' => '</div>',
-		// 	'before_title' => '<h3>',
-		// 	'after_title' => '</h3>',
-		//    )
-		// );
-
-
-		// register_sidebar(
-		//    array(
-		// 	'name' => __( 'Pages', 'themetext' ),  
-		// 	'id' => 'sidebar-2',
-		// 	'description'   => __( 'Sidebar for static pages', 'themetext' ),
-		// 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		// 	'after_widget' => '</div>',
-		// 	'before_title' => '<h3>',
-		// 	'after_title' => '</h3>',
-		//    )
-		// );
-
-
 		register_sidebar(
 		   array(
 			'name' => __( 'Leaderboard Ad', 'themetext' ),  
@@ -427,38 +423,6 @@ function register_theme_sidebars() {
 		   )
 		);
 
-		// register_sidebar(
-		//    array(
-		// 	'name' => __( 'Footer Area One', 'themetext' ),  
-		// 	'id' => 'sidebar-3',
-		// 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		// 	'after_widget' => '</div>',
-		// 	'before_title' => '<h3>',
-		// 	'after_title' => '</h3>',
-		//    )
-		// );
-		
-		// register_sidebar(
-		//    array(
-		// 	'name' => __( 'Footer Area Two', 'themetext' ),
-		// 	'id' => 'sidebar-4',
-		// 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		// 	'after_widget' => '</div>',
-		// 	'before_title' => '<h3>',
-		// 	'after_title' => '</h3>',
-		//    )
-		// );
-		
-		// register_sidebar(
-		//    array(
-		// 	'name' => __( 'Footer Area Three', 'themetext' ),  
-		// 	'id' => 'sidebar-5',
-		// 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		// 	'after_widget' => '</div>',
-		// 	'before_title' => '<h3>',
-		// 	'after_title' => '</h3>',
-		//    )
-		// );
 
 	}
 
@@ -530,8 +494,6 @@ function google_load_file() {
 			}
 		}
 
-		
-	
 		wp_enqueue_script( 'tracking', get_stylesheet_directory_uri() . '/js/google.js', array(), '1.0.0', true );
 
 		wp_localize_script( 'tracking', 'author', array( 'name' => $author ) );

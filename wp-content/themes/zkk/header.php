@@ -37,6 +37,7 @@
   })();
 </script>
 
+<!-- Sidebar Advert -->
 <script type='text/javascript'>
   googletag.cmd.push(function() {
     googletag.defineSlot('/24669334/zkk_rectangle_1', [[300, 600], [300, 250]], 'div-gpt-ad-1436517701090-0').addService(googletag.pubads());
@@ -45,6 +46,7 @@
   });
 </script>
 
+<!-- Leaderboard Advert -->
 <script type='text/javascript'>
   googletag.cmd.push(function() {
     googletag.defineSlot('/24669334/zkk_leaderboard_1', [728, 90], 'div-gpt-ad-1436520880435-0').addService(googletag.pubads());

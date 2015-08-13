@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 	  		if ( wScroll > $('.entry-full-content').offset().top ) {
 
 	  			$('.social-share-aside').addClass('showing');
-	  			console.log("hello");
+	  			//onsole.log("hello");
 	  		} else {
 	  			$('.social-share-aside').removeClass('showing');
 	  		}

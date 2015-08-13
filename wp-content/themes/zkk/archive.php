@@ -3,7 +3,6 @@
  * The archive
  *
  * @package SimpleMag
- * @since 	SimpleMag 1.1
 **/
 get_header(); ?>
 

@@ -6,4 +6,9 @@ wp-content/cache
 wp-content/themes/*/cache/*
 wp-content/gallery/*
 wp-config-sample.php
-local-config.php
+local-config.
+
+wp-content/themes/zkk/development/
+wp-content/themes/zkk/gulpfile.js
+wp-content/themes/zkk/node_modules/
+wp-content/themes/zkk/package.json
