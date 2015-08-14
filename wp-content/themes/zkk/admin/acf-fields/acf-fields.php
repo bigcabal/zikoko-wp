@@ -1353,10 +1353,137 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+
+
+
+	register_field_group(array (
+		'id' => 'acf_post_sponsor',
+		'title' => 'Post Sponsor',
+		'fields' => array (
+			array (
+				'key' => 'field_531481b028dad_sponsor1',
+				'label' => 'Sponsor Post?',
+				'name' => 'sponsored_post',
+				'type' => 'radio',
+				'choices' => array (
+					'no' => 'No',
+					'yes' => 'Yes',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => 'no',
+				'layout' => 'vertical',
+			),
+			array (
+				'key' => 'field_531481b028dad_sponsor2',
+				'label' => 'Upload Logo',
+				'name' => 'sponsored_logo',
+				'type' => 'image',
+				'save_format' => 'url',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_531481b028dad_sponsor1',
+							'operator' => '==',
+							'value' => 'yes',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => '',
+				'layout' => 'vertical',
+			),
+			// array (
+			// 	'key' => 'field_531481b028dad_sponsor3',
+			// 	'label' => 'Sponsor Name',
+			// 	'name' => 'sponsored_name',
+			// 	'type' => 'text',
+			// 	'column_width' => '',
+			// 	'default_value' => '',
+			// 	'placeholder' => '',
+			// 	'prepend' => '',
+			// 	'append' => '',
+			// 	'formatting' => 'html',
+			// 	'maxlength' => '',
+			// 	'conditional_logic' => array (
+			// 		'status' => 1,
+			// 		'rules' => array (
+			// 			array (
+			// 				'field' => 'field_531481b028dad_sponsor1',
+			// 				'operator' => '==',
+			// 				'value' => 'yes',
+			// 			),
+			// 		),
+			// 		'allorany' => 'all',
+			// 	),
+			// 	'default_value' => '',
+			// 	'layout' => 'vertical',
+			// ),
+			// array (
+			// 	'key' => 'field_531481b028dad_sponsor4',
+			// 	'label' => 'Sponsor Link',
+			// 	'name' => 'sponsored_link',
+			// 	'type' => 'text',
+			// 	'column_width' => '',
+			// 	'default_value' => '',
+			// 	'placeholder' => '',
+			// 	'prepend' => '',
+			// 	'append' => '',
+			// 	'formatting' => 'html',
+			// 	'maxlength' => '',
+			// 	'conditional_logic' => array (
+			// 		'status' => 1,
+			// 		'rules' => array (
+			// 			array (
+			// 				'field' => 'field_531481b028dad_sponsor1',
+			// 				'operator' => '==',
+			// 				'value' => 'yes',
+			// 			),
+			// 		),
+			// 		'allorany' => 'all',
+			// 	),
+			// 	'other_choice' => 0,
+			// 	'save_other_choice' => 0,
+			// 	'default_value' => '',
+			// 	'layout' => 'vertical',
+			// )
+		),
+
+
+
+
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+
+
+
 	register_field_group(array (
 		'id' => 'acf_post-options',
 		'title' => 'Post Options',
 		'fields' => array (
+			
 			array (
 				'key' => 'field_531481b028dad',
 				'label' => 'Media Position',

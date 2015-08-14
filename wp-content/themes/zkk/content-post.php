@@ -54,7 +54,8 @@
         
     <?php if( $ti_option['site_wide_excerpt'] == 1 ) { // Enable/Disable the excerpt site wide ?>
     <div class="entry-summary padd-left padd-right padd-btm" itemprop="text">
-        <?php the_excerpt(); ?>
+        <?php the_excerpt(); ?><br>
+        <?php get_template_part('inc/post', 'sponsor'); ?>
     </div>
     <?php } ?>
 

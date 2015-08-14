@@ -15,10 +15,10 @@ jQuery(document).ready(function($) {
 
 			var wScroll = $(this).scrollTop();
 
-			if( (wScroll > $('#comments').offset().top - ($(window).height() / 1.2)) && !$('.conversion-prompt').hasClass('activated')  ) {
+			if( (wScroll > $('#comments').offset().top - ($(window).height() / 3)) && !$('.modal').hasClass('activated')  ) {
 				
 				$('.conversion-prompt-container').fadeIn(1000);
-				$('.conversion-prompt').addClass('activated');
+				$('.modal').addClass('activated');
 	  		}
 
 

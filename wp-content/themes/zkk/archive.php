@@ -33,7 +33,7 @@ get_header(); ?>
                     <?php echo get_post_format(); ?>
                     
                     <?php } elseif (is_author()) { ?>
-                    <?php _e ( 'Author Archive', 'themetext' ); ?>
+                    <?php the_author(); ?>
     
                     <?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
                     <?php } ?>

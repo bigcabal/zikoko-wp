@@ -4648,6 +4648,54 @@ body.single article.post .entry-full-content em, body.single article.post .entry
   font-style: italic !important; }
 body.single article.post .entry-full-content p i {
   font-style: italic !important; }
+body.single article.post .post-sponsor {
+  margin-bottom: 40px; }
+
+.post-sponsor {
+  height: 60px;
+  position: relative;
+  display: block;
+  margin-bottom: 35px;
+  font-family: 'Montserrat', serif;
+  letter-spacing: normal; }
+  @media screen and (max-width: 650px) {
+    .post-sponsor {
+      height: 50px; } }
+  .post-sponsor img {
+    height: 100%;
+    width: auto; }
+  .post-sponsor .sponsor-image {
+    height: 60px;
+    width: 60px;
+    padding-right: 10px;
+    float: left;
+    overflow: hidden; }
+    .post-sponsor .sponsor-image img {
+      width: 100%;
+      height: auto; }
+  .post-sponsor .sponsor-text {
+    margin-bottom: 10px;
+    display: inline-block;
+    font-weight: 600;
+    padding: 0; }
+  .post-sponsor .sponsored-by {
+    background-color: #f0f0f0;
+    color: #5A1490;
+    font-size: 12px;
+    line-height: 1;
+    position: relative;
+    top: 0;
+    display: inline-block;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    width: auto; }
+  .post-sponsor .sponsor-name {
+    display: block; }
+    @media screen {
+      .post-sponsor .sponsor-name {
+        font-size: 14px; } }
+    .post-sponsor .sponsor-name a {
+      color: #000; }
 
 #comments {
   overflow: hidden;
@@ -4813,7 +4861,121 @@ body.single article.post .entry-full-content p i {
   margin-left: 13px;
   content: 'Follow us on Instagram'; }
 
-/* Modal */
+/* New Modal */
+.modal {
+  background-color: #5A1490;
+  color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  min-height: 300px;
+  text-align: center;
+  padding: 40px; }
+  @media screen and (max-width: 650px) {
+    .modal {
+      max-width: 100%;
+      height: 100%;
+      padding: 20px; } }
+  @media screen and (min-width: 650px) {
+    .modal .modal-top {
+      margin-bottom: 45px; } }
+  @media screen and (max-width: 650px) {
+    .modal .modal-top {
+      margin-bottom: 25px; } }
+
+.modal-title {
+  font-family: 'Montserrat', serif; }
+  @media screen and (min-width: 650px) {
+    .modal-title {
+      font-size: 26px;
+      margin-bottom: 35px; } }
+  @media screen and (max-width: 650px) {
+    .modal-title {
+      font-size: 18px;
+      margin-bottom: 25px; } }
+
+.modal-title-secondary {
+  font-family: 'Montserrat', serif;
+  margin-bottom: 20px; }
+  @media screen and (min-width: 650px) {
+    .modal-title-secondary {
+      font-size: 20px; } }
+  @media screen and (max-width: 650px) {
+    .modal-title-secondary {
+      font-size: 16px; } }
+
+.modal-share {
+  max-width: 400px;
+  margin: 0 auto; }
+  .modal-share li {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 15px; }
+  .modal-share li a {
+    display: block;
+    width: 100%;
+    padding: 10px; }
+  .modal-share a.icomoon-facebook {
+    background-color: #3B5998; }
+  .modal-share a.icomoon-twitter {
+    background-color: #4099FF; }
+  .modal-share a.icomoon-google-plus {
+    background-color: #d34836; }
+  .modal-share a.icomoon-pinterest {
+    background-color: #cc2127; }
+  .modal-share a.icomoon-instagram {
+    background-color: #517fa4; }
+  .modal-share a.fawe-mail {
+    background-color: #9f9f9f; }
+  .modal-share a.fawe-whatsapp {
+    background-color: #60b82d; }
+  .modal-share .share-text {
+    padding-left: 10px;
+    font-family: 'Montserrat', serif;
+    display: inline-block; }
+
+.next-post {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto; }
+  .next-post a.widget-post-title {
+    text-align: left;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #5A1490;
+    padding: 20px;
+    bottom: 0;
+    width: 100%; }
+    @media screen and (min-width: 650px) {
+      .next-post a.widget-post-title {
+        font-size: 1.6rem; } }
+    @media screen and (max-width: 650px) {
+      .next-post a.widget-post-title {
+        font-size: 1.2rem; } }
+  .next-post figure {
+    width: 100%;
+    height: auto; }
+    .next-post figure img {
+      width: 100%;
+      height: auto; }
+
+/* OLD Modal */
+.conversion-prompt-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2999; }
+
 @media screen and (min-width: 650px) {
   .social-share-aside li.facebook:hover .fb-like, .social-share-aside li.facebook:focus .fb-like {
     display: block; } }

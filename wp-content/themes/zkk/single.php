@@ -40,6 +40,9 @@ $author = get_the_author();
                 <?php if ( ! get_field( 'post_sidebar' ) || get_field( 'post_sidebar' ) == "post_sidebar_on" ) { // Enable/Disable post sidebar ?>
 
 
+
+
+
                 <div class="grids">
                     <div class="grid-8 column-1 grid-expand">
                 <?php } ?>
@@ -70,9 +73,10 @@ $author = get_the_author();
                         <header class="wrapper entry-header page-header">
                             
                             <div class="single-title padd-top padd-left padd-right">
+                            
                                 <h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
 
-                                <?php ?>
+                                <?php get_template_part('inc/post', 'sponsor'); ?>
 
                                 <ul class="social-share-buttons social-share-inpost">
                                   <?php get_template_part('inc/social', 'share'); ?>
@@ -115,6 +119,7 @@ $author = get_the_author();
                     <?php comments_template(); // Comments Template ?>
 
                     <?php //get_template_part('inc/conversion', 'prompt'); ?>
+                    <?php get_template_part('inc/conversion', 'prompt2'); ?>
 
                     <?php if ( ! get_field( 'post_sidebar' ) || get_field( 'post_sidebar' ) == "post_sidebar_on" ) { // Enable/Disable post sidebar ?>
                     </div><!-- .grid-8 -->
