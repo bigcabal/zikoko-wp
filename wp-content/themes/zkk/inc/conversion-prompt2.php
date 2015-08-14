@@ -63,10 +63,10 @@ global $ti_option;
 
 
 				<?php 
-				if ( has_post_thumbnail() ) {
-					the_post_thumbnail( 'rectangle-size-small' );
-				} elseif( first_post_image() ) { // Set the first image from the editor
-					echo '<img src="' . first_post_image() . '" class="wp-post-image" />';
+				if ( get_the_post_thumbnail( $next_post->ID ) != '' ) {
+					echo get_the_post_thumbnail( $next_post->ID, 'rectangle-size-small' );
+				} elseif( first_post_image( $next_post->ID ) ) { // Set the first image from the editor
+					echo '<img src="' . first_post_image( $next_post->ID ) . '" class="wp-post-image" />';
 				} ?>
 
 
