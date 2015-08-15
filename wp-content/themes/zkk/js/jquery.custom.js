@@ -5,11 +5,19 @@ jQuery(document).ready(function($) {
 	"use strict";
 
 
+	/* Google analytics events tracking */	 
+	$('.post-share-btn').on('click', function() {
+      ga('send', 'event', 'button', 'click', 'share-buttons');
+    });
+
+
 
 
 	/* */
 
-	if ( $('body').hasClass('single-post') ) {
+	if ( $('article').hasClass('post') && !$('article').hasClass('category-quiz') ) {
+
+		console.log("stuff")
 
 		$(window).scroll(function(){
 

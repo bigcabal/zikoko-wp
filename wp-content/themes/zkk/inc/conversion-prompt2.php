@@ -27,7 +27,7 @@ global $ti_option;
 
 		<div class="modal-top">
 			
-			<div class="modal-title">Before You Go</div>
+			<div class="modal-title">Before you go</div>
 
 			
 			<ul class="modal-share">
@@ -39,6 +39,8 @@ global $ti_option;
 
 			<li class="twitter post-share-btn" id="share-tw-modal"> 
 				<a href="https://twitter.com/intent/tweet/?text=<?php echo $cleanTitle; ?>&url=<?php echo $permalink; ?>?utm_source=tw&utm_campaign=zkk_share&via=zikokomag" target="_blank" class="icomoon-twitter"><span class="share-text">Share on Twitter</span></a> 
+			</li><li class="whatsapp post-share-btn" id="share-wa"> 
+				<a href="whatsapp://send?text=<?php echo $cleanTitle; ?>-<?php echo $permalink;; ?>?utm_source=wa&utm_campaign=zkk_share" class="fawe-whatsapp"> <i class="fa fa-whatsapp"></i> <span class="share-text">Share on Whatsapp</span> </a> 
 			</li>
 
 			</ul>
@@ -50,7 +52,7 @@ global $ti_option;
 		</div>
 
 		<div class="modal-bottom">
-			<div class="modal-title-secondary">Read this next</div>
+			<div class="modal-title">Or you could read this</div>
 
 
 			<div class="next-post">

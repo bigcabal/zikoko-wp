@@ -157,11 +157,5 @@ $author = get_the_author();
     ?>
 
 
-
-    <script>
-        $('.post-share-btn').on('click', function() {
-          ga('send', 'event', 'button', 'click', 'share-buttons');
-        });
-    </script>
     
 <?php get_footer(); ?>

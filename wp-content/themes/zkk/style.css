@@ -4917,6 +4917,21 @@ body.single article.post .post-sponsor {
     color: #fff;
     font-size: 14px;
     margin-bottom: 15px; }
+  @media screen and (min-width: 750px) {
+    .modal-share li.twitter {
+      width: 100%;
+      display: block;
+      margin-right: 0; }
+    .modal-share li.whatsapp {
+      display: none; } }
+  @media screen and (max-width: 750px) {
+    .modal-share li.twitter, .modal-share li.whatsapp {
+      width: 48%;
+      display: inline-block; }
+    .modal-share li.twitter {
+      margin-right: 2%; }
+    .modal-share li.whatsapp {
+      margin-left: 2%; } }
   .modal-share li a {
     display: block;
     width: 100%;
