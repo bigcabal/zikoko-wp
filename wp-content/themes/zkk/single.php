@@ -155,5 +155,13 @@ $author = get_the_author();
         get_template_part( 'inc/slide', 'dock' );
     }
     ?>
+
+
+
+    <script>
+        $('.post-share-btn').on('click', function() {
+          ga('send', 'event', 'button', 'click', 'share-buttons');
+        });
+    </script>
     
 <?php get_footer(); ?>

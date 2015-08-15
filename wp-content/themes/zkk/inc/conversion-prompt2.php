@@ -33,11 +33,13 @@ global $ti_option;
 			<ul class="modal-share">
 				
 			
-			<li class="facebook"> 
+			<li class="facebook post-share-btn" id="share-fb-modal"> 
 				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $permalink; ?>?utm_source=fb&utm_campaign=zkk_share" class="icomoon-facebook"><span class="share-text">Share on Facebook</span></a>
 			</li>
 
-			<li class="twitter"> <a href="https://twitter.com/intent/tweet/?text=<?php echo $cleanTitle; ?>&url=<?php echo $permalink; ?>?utm_source=tw&utm_campaign=zkk_share&via=zikokomag" target="_blank" class="icomoon-twitter"><span class="share-text">Share on Twitter</span></a> </li>
+			<li class="twitter post-share-btn" id="share-tw-modal"> 
+				<a href="https://twitter.com/intent/tweet/?text=<?php echo $cleanTitle; ?>&url=<?php echo $permalink; ?>?utm_source=tw&utm_campaign=zkk_share&via=zikokomag" target="_blank" class="icomoon-twitter"><span class="share-text">Share on Twitter</span></a> 
+			</li>
 
 			</ul>
 
