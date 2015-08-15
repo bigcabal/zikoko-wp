@@ -5,7 +5,7 @@ Theme URI: http://themesindep.com/
 Author: ThemesIndep
 Author URI: http://themesindep.com/
 Description: Magazine theme for creative things
-Version: 3.1.1
+Version: 3.1.2
 Tags: black, white, one-column, two-columns, three-columns, right-sidebar, fluid-layout, custom-colors, custom-menu, featured-images, post-formats, theme-options, translation-ready, photoblogging
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -4928,6 +4928,8 @@ body.single article.post .post-sponsor {
     .modal-share li.twitter, .modal-share li.whatsapp {
       width: 48%;
       display: inline-block; }
+      .modal-share li.twitter .share-text, .modal-share li.whatsapp .share-text {
+        display: none; }
     .modal-share li.twitter {
       margin-right: 2%; }
     .modal-share li.whatsapp {
