@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
 
 			var wScroll = $(this).scrollTop();
 
-			if( (wScroll > $('#comments').offset().top - ($(window).height() / 3)) && !$('.modal').hasClass('activated')  ) {
+			if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated')  ) {
 				
 				$('.conversion-prompt-container').fadeIn(1000);
 				$('.modal').addClass('activated');
@@ -31,9 +31,7 @@ jQuery(document).ready(function($) {
 
 
 	  		if ( wScroll > $('.entry-full-content').offset().top ) {
-
 	  			$('.social-share-aside').addClass('showing');
-	  			//onsole.log("hello");
 	  		} else {
 	  			$('.social-share-aside').removeClass('showing');
 	  		}
