@@ -11,6 +11,16 @@ jQuery(document).ready(function($) {
     });
 
 
+	$('.entry-full-content p').has('img').addClass('watermark-img');
+
+    if ( $('.entry-full-content p').has('img') ) {
+
+    	console.log("haschild")
+
+    	$(this).addClass('watermark-img');
+    }
+
+
 
 
 	/* */
