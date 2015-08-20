@@ -11,16 +11,7 @@ global $ti_option;
 $author = get_the_author(); 
 ?>
 
-    <!-- <div class="head-related-post">
-    <div class="wrapper">
-         <?php
-            // Show/Hide related posts
-            //if ( $ti_option['single_related'] == 1 ) {
-                //get_template_part( 'inc/related', 'small' );
-            //}
-        ?>
-    </div>      
-    </div> -->
+
 
 
     <main id="content" class="clearfix animated" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
@@ -118,8 +109,8 @@ $author = get_the_author();
 
                     <?php comments_template(); // Comments Template ?>
 
-                    <?php //get_template_part('inc/conversion', 'prompt'); ?>
-                    <?php get_template_part('inc/conversion', 'prompt2'); ?>
+
+                    <?php // get_template_part('inc/conversion', 'prompt2'); ?>
 
                     <?php if ( ! get_field( 'post_sidebar' ) || get_field( 'post_sidebar' ) == "post_sidebar_on" ) { // Enable/Disable post sidebar ?>
                     </div><!-- .grid-8 -->

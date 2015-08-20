@@ -14,45 +14,40 @@ jQuery(document).ready(function($) {
 	$('.entry-full-content p').has('img').addClass('watermark-img');
 
     if ( $('.entry-full-content p').has('img') ) {
-
-    	console.log("haschild")
-
     	$(this).addClass('watermark-img');
     }
 
 
 
 
-	/* */
+	/* Conversion Promt */
 
-	if ( $('article').hasClass('post') && !$('article').hasClass('category-quiz') ) {
+	// if ( $('article').hasClass('post') && !$('article').hasClass('category-quiz') ) {
 
-		console.log("stuff")
+	// 	$(window).scroll(function(){
 
-		$(window).scroll(function(){
+	// 		var wScroll = $(this).scrollTop();
 
-			var wScroll = $(this).scrollTop();
-
-			if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated')  ) {
+	// 		if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated')  ) {
 				
-				$('.conversion-prompt-container').fadeIn(1000);
-				$('.modal').addClass('activated');
-	  		}
+	// 			$('.conversion-prompt-container').fadeIn(1000);
+	// 			$('.modal').addClass('activated');
+	//   		}
 
 
-	  		if ( wScroll > $('.entry-full-content').offset().top ) {
-	  			$('.social-share-aside').addClass('showing');
-	  		} else {
-	  			$('.social-share-aside').removeClass('showing');
-	  		}
-		});
+	//   		if ( wScroll > $('.entry-full-content').offset().top ) {
+	//   			$('.social-share-aside').addClass('showing');
+	//   		} else {
+	//   			$('.social-share-aside').removeClass('showing');
+	//   		}
+	// 	});
 
-		$('.conversion-prompt-cancel').on('click', function() {
-			$('.conversion-prompt-container').fadeOut(1000);
-			return false;
-		})
+	// 	$('.conversion-prompt-cancel').on('click', function() {
+	// 		$('.conversion-prompt-container').fadeOut(1000);
+	// 		return false;
+	// 	})
 
-	}
+	// }
 
 	
 

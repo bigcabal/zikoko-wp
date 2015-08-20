@@ -4674,52 +4674,6 @@ body.single article.post .entry-full-content .watermark-img:after {
 body.single article.post .post-sponsor {
   margin-bottom: 40px; }
 
-.post-sponsor {
-  height: 60px;
-  position: relative;
-  display: block;
-  margin-bottom: 35px;
-  font-family: 'Montserrat', serif;
-  letter-spacing: normal; }
-  @media screen and (max-width: 650px) {
-    .post-sponsor {
-      height: 50px; } }
-  .post-sponsor img {
-    height: 100%;
-    width: auto; }
-  .post-sponsor .sponsor-image {
-    height: 60px;
-    width: 60px;
-    padding-right: 10px;
-    float: left;
-    overflow: hidden; }
-    .post-sponsor .sponsor-image img {
-      width: 100%;
-      height: auto; }
-  .post-sponsor .sponsor-text {
-    margin-bottom: 10px;
-    display: inline-block;
-    font-weight: 600;
-    padding: 0; }
-  .post-sponsor .sponsored-by {
-    background-color: #f0f0f0;
-    color: #5A1490;
-    font-size: 12px;
-    line-height: 1;
-    position: relative;
-    top: 0;
-    display: inline-block;
-    padding: 2px 5px;
-    margin-bottom: 5px;
-    width: auto; }
-  .post-sponsor .sponsor-name {
-    display: block; }
-    @media screen {
-      .post-sponsor .sponsor-name {
-        font-size: 14px; } }
-    .post-sponsor .sponsor-name a {
-      color: #000; }
-
 #comments {
   overflow: hidden;
   margin-bottom: 20px;
@@ -5084,6 +5038,62 @@ ul.social {
   .related-posts-mega .item:nth-child(3):after {
     content: '';
     display: block; }
+
+.post-sponsor {
+  height: 60px;
+  position: relative;
+  display: block;
+  margin-bottom: 35px;
+  font-family: 'Montserrat', serif;
+  letter-spacing: normal; }
+  @media screen and (max-width: 650px) {
+    .post-sponsor {
+      height: 50px; } }
+  .post-sponsor img {
+    height: 100%;
+    width: auto; }
+  .post-sponsor .sponsor-text {
+    margin-bottom: 10px;
+    display: inline-block;
+    font-weight: 600;
+    padding: 0; }
+  .post-sponsor .sponsored-by {
+    background-color: #f0f0f0;
+    color: #5A1490;
+    font-size: 12px;
+    line-height: 1;
+    position: relative;
+    top: 0;
+    display: inline-block;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    width: auto; }
+  .post-sponsor .sponsor-name {
+    display: block; }
+    @media screen {
+      .post-sponsor .sponsor-name {
+        font-size: 14px; } }
+    .post-sponsor .sponsor-name a {
+      color: #000; }
+
+.sponsor-image {
+  height: 60px;
+  width: 60px;
+  padding-right: 10px;
+  float: left;
+  overflow: hidden; }
+  .sponsor-image img {
+    width: 100%;
+    height: auto; }
+
+h1.sponsor-title {
+  line-height: 60px;
+  padding: 0; }
+
+.website-link {
+  display: block;
+  font-family: 'Montserrat', serif;
+  letter-spacing: normal; }
 
 .post-excerpt {
   border: 1px solid red;
