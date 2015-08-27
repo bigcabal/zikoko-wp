@@ -1,3 +1,4 @@
+<!--
 <?php
 	$permalink = get_the_permalink();
 	$rawTitle = get_the_title();
@@ -5,14 +6,19 @@
 	$cleanTitle = str_replace(' ', '%20', $rawTitle); // whitespace
 	$cleanTitle = str_replace('#', '%23', $cleanTitle); // #
 ?>
+-->
 
 <li class="facebook post-share-btn" id="share-fb"> 
+<!--
 	<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $permalink; ?>?utm_source=fb%26utm_campaign=zkk_share" class="icomoon-facebook"></a> 
+-->
+	<a href="https://facebook.com/dialog/feed?app_id=593692017438309&link=<?php the_permalink(); ?>?utm_source=fb%26utm_campaign=zkk_share&name=<?php the_title(); ?>&redirect_uri=<?php the_permalink(); ?>" target="_blank" class="icomoon-facebook">
+
 	<div class="fb-like" data-href="<?php echo $permalink; ?>?utm_source=fb%26utm_campaign=zkk_share" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
 </li>
 
 <li class="twitter post-share-btn" id="share-tw"> 
-	<a href="https://twitter.com/intent/tweet/?text=<?php echo $cleanTitle; ?>&url=<?php echo $permalink; ?>?utm_source=tw%26utm_campaign=zkk_share&via=zikokomag" target="_blank" class="icomoon-twitter"></a> 
+	<a href="https://twitter.com/intent/tweet/?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>?utm_source=tw%26utm_campaign=zkk_share&via=zikokomag&related=zikokomag" target="_blank" class="icomoon-twitter"></a> 
 </li>
 
 <li class="gplus post-share-btn" id="share-gp"> 
@@ -28,7 +34,7 @@
 </li>
 
 <li class="whatsapp post-share-btn" id="share-wa"> 
-	<a href="whatsapp://send?text=<?php echo $cleanTitle; ?>-<?php echo $permalink;; ?>?utm_source=wa%26utm_campaign=zkk_share" class="fawe-whatsapp"> <i class="fa fa-whatsapp"></i> </a> 
+	<a href="whatsapp://send?text=<?php the_title(); ?> - <?php the_permalink(); ?>?utm_source=wa%26utm_campaign=zkk_share" class="fawe-whatsapp"> <i class="fa fa-whatsapp"></i> </a> 
 </li>
 
 
