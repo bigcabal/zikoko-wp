@@ -8,6 +8,7 @@
 	$cleanTitle = str_replace("#","%23", $rawTitle);
 	$cleanTitle = str_replace(" ","%20", $cleanTitle);
 	$cleanTitle = str_replace("'","%27", $cleanTitle);
+	$cleanTitle = str_replace("-","%20", $cleanTitle);
 
 	
 ?>
