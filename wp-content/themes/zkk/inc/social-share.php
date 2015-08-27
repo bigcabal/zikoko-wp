@@ -3,8 +3,13 @@
 	$rawTitle = get_the_title();
 	$rawPermalink = get_the_permalink();
 
-	$cleanTitle = urlencode($rawTitle);
 	$cleanPermalink = urlencode($rawPermalink);
+
+	$cleanTitle = str_replace("#","%23", $rawTitle);
+	$cleanTitle = str_replace(" ","%20", $cleanTitle);
+	$cleanTitle = str_replace("'","%27", $cleanTitle);
+
+	
 ?>
 
 <!-- Don't add the <ul> tag, it is added in the including template -->

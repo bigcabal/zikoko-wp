@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
 
 	/* Conversion Promt */
 
-	if ( $('article').hasClass('post') && !$('article').hasClass('category-quiz') ) {
+	if ( $('article').hasClass('post') ) {
 
 		$(window).scroll(function(){
 
@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
 
 
 
-	$('.sidebar-social-icons a').on('click', function() {
+	$('.sidebar-social-icons a, .post-share-btn a').on('click', function() {
 		var url = $(this).attr('href');
 		window.open(url, "","menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=800,height=600");
 	  	return false;
