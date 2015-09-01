@@ -1,10 +1,19 @@
 <?php
+	
 	$rawPermalink = get_the_permalink();
 	$cleanPermalink = urlencode($rawPermalink);
 
+
 	$rawTitle = get_the_title();
-	$cleanTitle = urlencode($rawTitle);
-	
+
+	$cleanTitle = str_replace("&#8211;","-", $rawTitle);
+	$cleanTitle = str_replace("&#8217;","'", $cleanTitle);
+	$cleanTitle = str_replace("&#038;","&", $cleanTitle);
+
+	$cleanTitle = urlencode($cleanTitle);
+
+	$cleanTitle = str_replace("+","%20", $cleanTitle);
+
 ?>
 
 
