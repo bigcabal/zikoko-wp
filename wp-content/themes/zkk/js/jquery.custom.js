@@ -53,13 +53,9 @@ jQuery(document).ready(function($) {
 
 
 
-	$('.sidebar-social-icons a, .post-share-btn a').on('click', function() {
-		var url = $(this).attr('href');
-		window.open(url, "","menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=800,height=600");
-	  	return false;
-	})
 
-	$('.social-share-aside a:not(.fawe-mail)').on('click', function() {
+
+	$('.social-share-buttons a:not(.fawe-mail)').on('click', function() {
 		var url = $(this).attr('href');
 		window.open(url, "","menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=550,height=235");
 	  	return false;
