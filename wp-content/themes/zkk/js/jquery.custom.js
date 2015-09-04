@@ -22,17 +22,17 @@ jQuery(document).ready(function($) {
 
 	/* Conversion Promt */
 
-	if ( $('article').hasClass('post') ) {
+	if ( $('article').hasClass('post') && !$('article').hasClass('category-quiz') ) {
 
 		$(window).scroll(function(){
 
 			var wScroll = $(this).scrollTop();
 
-			// if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated')  ) {
+			if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated')  ) {
 				
-			// 	$('.conversion-prompt-container').fadeIn(1000);
-			// 	$('.modal').addClass('activated');
-	  // 		}
+				$('.conversion-prompt-container').fadeIn(1000);
+				$('.modal').addClass('activated');
+	  		}
 
 
 	  		if ( wScroll > $('.entry-full-content').offset().top ) {
@@ -42,10 +42,10 @@ jQuery(document).ready(function($) {
 	  		}
 		});
 
-		// $('.conversion-prompt-cancel').on('click', function() {
-		// 	$('.conversion-prompt-container').fadeOut(1000);
-		// 	return false;
-		// })
+		$('.conversion-prompt-cancel').on('click', function() {
+			$('.conversion-prompt-container').fadeOut(1000);
+			return false;
+		})
 
 	}
 
