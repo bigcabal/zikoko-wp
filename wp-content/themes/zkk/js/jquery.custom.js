@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
 
 
 
-	$('.social-share-buttons a:not(.fawe-mail)').on('click', function() {
+	$('.social-share-buttons a:not(.fawe-mail), .modal-share a').on('click', function() {
 		var url = $(this).attr('href');
 		window.open(url, "","menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=550,height=235");
 	  	return false;

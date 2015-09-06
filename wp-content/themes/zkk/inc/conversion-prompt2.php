@@ -12,11 +12,24 @@ global $ti_option;
 ?>
 
 <?php
-	$permalink = get_the_permalink();
+	
+	$rawPermalink = get_the_permalink();
+	$cleanPermalink = urlencode($rawPermalink);
+
+
 	$rawTitle = get_the_title();
 
-	$cleanTitle = str_replace(' ', '%20', $rawTitle); // whitespace
-	$cleanTitle = str_replace('#', '%23', $cleanTitle); // #
+	$cleanTitle = str_replace("&#8211;","-", $rawTitle);
+	$cleanTitle = str_replace("&#8217;","'", $cleanTitle);
+	$cleanTitle = str_replace("&#038;","&", $cleanTitle);
+	$cleanTitle = str_replace("&#8230;","...", $cleanTitle);
+
+
+	
+	$cleanTitle = urlencode($cleanTitle);
+
+	$cleanTitle = str_replace("+","%20", $cleanTitle);
+
 ?>
 
 
@@ -31,16 +44,15 @@ global $ti_option;
 
 			
 			<ul class="modal-share">
-				
 			
-			<li class="facebook post-share-btn" id="share-fb-modal"> 
-				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $permalink; ?>?utm_source=fb&utm_campaign=zkk_share" class="icomoon-facebook"><span class="share-text">Share on Facebook</span></a>
+			<li class="facebook" id="share-fb-modal"> 
+				<a href="https://facebook.com/dialog/feed?app_id=593692017438309&link=<?php echo $cleanPermalink; ?>?utm_source=fb%26utm_campaign=zkk_share&name=<?php echo $cleanTitle; ?>&redirect_uri=<?php echo $cleanPermalink; ?>" class="icomoon-facebook post-share-btn"><span class="share-text">Share on Facebook</span></a>
 			</li>
 
-			<li class="twitter post-share-btn" id="share-tw-modal"> 
-				<a href="https://twitter.com/intent/tweet/?text=<?php echo $cleanTitle; ?>&url=<?php echo $permalink; ?>?utm_source=tw&utm_campaign=zkk_share&via=zikokomag" target="_blank" class="icomoon-twitter"><span class="share-text">Share on</span> Twitter</a> 
-			</li><li class="whatsapp post-share-btn" id="share-wa"> 
-				<a href="whatsapp://send?text=<?php echo $cleanTitle; ?>-<?php echo $permalink;; ?>?utm_source=wa&utm_campaign=zkk_share" class="fawe-whatsapp"><i class="fa fa-whatsapp"></i> <span class="share-text">Share on</span> Whatsapp</a> 
+			<li class="twitter" id="share-tw-modal"> 
+				<a href="https://twitter.com/intent/tweet/?text=<?php echo $cleanTitle; ?>&url=<?php echo $cleanPermalink; ?>?utm_source=tw%26utm_campaign=zkk_share&via=zikokomag&related=zikokomag" target="_blank" class="icomoon-twitter post-share-btn"><span class="share-text">Share on</span> Twitter</a> 
+			</li><li class="whatsapp" id="share-wa"> 
+				<a href="whatsapp://send?text=<?php echo $cleanTitle; ?> - <?php echo $cleanPermalink; ?>?utm_source=wa%26utm_campaign=zkk_share" class="fawe-whatsapp" class="fawe-whatsapp post-share-btn"><i class="fa fa-whatsapp"></i> <span class="share-text">Share on</span> Whatsapp</a> 
 			</li>
 
 			</ul>
