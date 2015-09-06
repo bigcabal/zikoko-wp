@@ -68,7 +68,7 @@ global $ti_option;
                     $this_sponsor_id = get_the_ID();
 
                     // Loop through all posts
-                    $the_query = new WP_Query( 'posts_per_page=50' );
+                    $the_query = new WP_Query( 'posts_per_page=-1' );
                     if ( $the_query->have_posts() ) :
                     while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                             
