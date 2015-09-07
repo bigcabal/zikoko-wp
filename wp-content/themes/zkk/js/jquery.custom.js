@@ -42,12 +42,20 @@ jQuery(document).ready(function($) {
 	  		}
 		});
 
-		$('.conversion-prompt-cancel').on('click', function() {
-			$('.conversion-prompt-container').fadeOut(1000);
-			return false;
-		})
+		
 
 	}
+
+
+	$('.conversion-prompt-cancel').on('click', function() {
+		$('.conversion-prompt-container').fadeOut(1000);
+		ga('send', 'event', 'button', 'click', 'modal close');
+		return false;
+	})
+
+	$('.next-post a').on('click', function() {
+		ga('send', 'event', 'button', 'click', 'modal next post');
+	})
 
 	
 
@@ -60,6 +68,8 @@ jQuery(document).ready(function($) {
 		window.open(url, "","menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=550,height=235");
 	  	return false;
 	})
+
+	
 
 	/* */
 
