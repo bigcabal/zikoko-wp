@@ -99,7 +99,7 @@ global $ti_option;
 			
 			<br>
 
-			<a href="/" class="conversion-prompt-cancel">Close</a>
+			<a href="/" class="conversion-prompt-cancel modal-title">Close</a>
 		</div>
 
 
