@@ -22,13 +22,13 @@ jQuery(document).ready(function($) {
 
 	/* Conversion Promt */
 
-	if ( $('article').hasClass('post') && !$('article').hasClass('category-quiz') ) {
+	if ( $('article').hasClass('post') ) {
 
 		$(window).scroll(function(){
 
 			var wScroll = $(this).scrollTop();
 
-			if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated')  ) {
+			if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated') && !$('article').hasClass('category-quiz')  ) {
 				
 				$('.conversion-prompt-container').fadeIn(1000);
 				$('.modal').addClass('activated');
