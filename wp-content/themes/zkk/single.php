@@ -12,7 +12,7 @@ $author = get_the_author();
 ?>
 
 
-
+    
 
     <main id="content" class="clearfix animated" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
     
@@ -25,6 +25,9 @@ $author = get_the_author();
             <div class="wrapper">
                 
                  <ul class="social-share-buttons social-share-aside">
+
+                    <div class="zikoko-branding"></div>
+                    
                   <?php get_template_part('inc/social', 'share'); ?>
                   </ul>
 

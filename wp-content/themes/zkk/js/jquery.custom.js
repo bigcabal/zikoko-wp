@@ -11,11 +11,11 @@ jQuery(document).ready(function($) {
     });
 
 
-	$('.entry-full-content p').has('img').addClass('watermark-img');
+	// $('.entry-full-content p').has('img').addClass('watermark-img');
 
-    if ( $('.entry-full-content p').has('img') ) {
-    	$(this).addClass('watermark-img');
-    }
+ //    if ( $('.entry-full-content p').has('img') ) {
+ //    	$(this).addClass('watermark-img');
+ //    }
 
 
 
