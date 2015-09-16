@@ -50,6 +50,10 @@ global $ti_option;
         </footer><!-- #footer -->
     </div><!-- .site-content -->
 </section><!-- #site -->
+<script src="<?php echo get_template_directory_uri(); ?>/js/whatsapp.js"></script>
+
+
+
 <?php wp_footer(); ?>
 </body>
 </html>
