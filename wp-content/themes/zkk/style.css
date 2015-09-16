@@ -4694,7 +4694,8 @@ body.single article.post .post-sponsor {
 .social-share-buttons a.fawe-whatsapp {
   background-color: #60b82d; }
 .social-share-buttons li.whatsapp {
-  background-color: #60b82d; }
+  background-color: #60b82d;
+  text-align: center; }
 .social-share-buttons li {
   text-align: center;
   color: #fff; }
@@ -4908,13 +4909,22 @@ body.single article.post .post-sponsor {
   @media screen and (max-width: 750px) {
     .modal-share li.twitter, .modal-share li.whatsapp {
       width: 48%;
-      display: inline-block; }
+      display: inline-block;
+      vertical-align: top; }
       .modal-share li.twitter .share-text, .modal-share li.whatsapp .share-text {
         display: none; }
     .modal-share li.twitter {
       margin-right: 2%; }
     .modal-share li.whatsapp {
-      margin-left: 2%; } }
+      margin-left: 2%;
+      background-color: #60b82d;
+      height: 40px;
+      text-align: left;
+      padding-left: 2%; }
+      .modal-share li.whatsapp .wa {
+        line-height: 40px;
+        vertical-align: top;
+        padding-left: 10px; } }
   .modal-share li a {
     display: block;
     width: 100%;
