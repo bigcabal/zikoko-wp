@@ -4785,6 +4785,8 @@ body.single article.post .post-sponsor {
           width: 100%; }
       .social-share-aside li.twitter, .social-share-aside li.whatsapp {
         width: 25%; }
+      .social-share-aside li.whatsapp {
+        background-color: #60b82d; }
       .social-share-aside li {
         display: inline-block;
         float: left;

@@ -42,6 +42,6 @@
 	<!-- <a href="whatsapp://send?text=<?php //echo $cleanTitle; ?> - <?php// echo $cleanPermalink; ?>?utm_source=wa%26utm_campaign=zkk_share" class="fawe-whatsapp"> <i class="fa fa-whatsapp"></i> </a> -->
 
 
-	<a href="whatsapp://send" data-text="<?php echo $rawTitle; ?> -" data-href="<?php echo $rawPermalink; ?>?utm_source=wa%26utm_campaign=zkk_share" class="fawe-whatsapp wa_btn wa_btn_s"> <i class="fa fa-whatsapp"></i> </a>
+	<a href="whatsapp://send" data-text="<?php echo $rawTitle; ?> -" data-href="<?php echo $rawPermalink; ?>?utm_source=wa&utm_campaign=zkk_share" class="fawe-whatsapp wa_btn wa_btn_s"> <i class="fa fa-whatsapp"></i> </a>
 
 </li>
