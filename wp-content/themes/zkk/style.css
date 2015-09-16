@@ -4693,6 +4693,8 @@ body.single article.post .post-sponsor {
   background-color: #9f9f9f; }
 .social-share-buttons a.fawe-whatsapp {
   background-color: #60b82d; }
+.social-share-buttons li.whatsapp {
+  background-color: #60b82d; }
 .social-share-buttons li {
   text-align: center;
   color: #fff; }

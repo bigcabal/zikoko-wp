@@ -52,7 +52,9 @@ global $ti_option;
 			<li class="twitter" id="share-tw-modal"> 
 				<a href="https://twitter.com/intent/tweet/?text=<?php echo $cleanTitle; ?>&url=<?php echo $cleanPermalink; ?>?utm_source=tw%26utm_campaign=zkk_share&via=zikokomag&related=zikokomag" target="_blank" class="icomoon-twitter post-share-btn"><span class="share-text">Share on</span> Twitter</a> 
 			</li><li class="whatsapp" id="share-wa"> 
-				<a href="whatsapp://send?text=<?php echo $cleanTitle; ?> - <?php echo $cleanPermalink; ?>?utm_source=wa%26utm_campaign=zkk_share" class="fawe-whatsapp" class="fawe-whatsapp post-share-btn"><i class="fa fa-whatsapp"></i> <span class="share-text">Share on</span> Whatsapp</a> 
+
+				<a href="whatsapp://send" data-text="<?php echo $rawTitle; ?> -" data-href="<?php echo $rawPermalink; ?>?utm_source=wa%26utm_campaign=zkk_share" class="fawe-whatsapp wa_btn wa_btn_s"> <i class="fa fa-whatsapp"></i> <span class="share-text">Share on</span> Whatsapp </a>
+
 			</li>
 
 			</ul>
