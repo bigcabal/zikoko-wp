@@ -15,8 +15,8 @@
  */
  
  
-if (file_exists(dirname(__FILE__) . '/staging/local-config.php')) {
-	require_once dirname(__FILE__) . '/staging/local-config.php';
+if (file_exists(dirname(__FILE__) . '/local-config.php')) {
+	require_once dirname(__FILE__) . '/local-config.php';
 } else {
 
 	define('DB_NAME', 'zikokostaging');
@@ -67,7 +67,7 @@ $table_prefix  = 'bc_';
 define('FS_METHOD','direct');
 define('FS_CHMOD_DIR',0770);
 define('FS_CHMOD_FILE',0660);
-define('WP_TEMP_DIR',dirname(__FILE__).'/staging/wp-content/uploads');
+define('WP_TEMP_DIR',dirname(__FILE__).'/wp-content/uploads');
 
 define('AUTOMATIC_UPDATER_DISABLED', true);
 
@@ -76,7 +76,7 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/staging/');
+	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . '/staging/wp-settings.php');
+require_once(ABSPATH . '/wp-settings.php');
