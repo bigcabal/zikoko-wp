@@ -7,7 +7,7 @@ wp-content/themes/*/cache/*
 wp-content/gallery/*
 wp-config.php
 wp-config-sample.php
-local-config.
+local-config.php
 
 wp-content/themes/zkk/development/
 wp-content/themes/zkk/gulpfile.js
