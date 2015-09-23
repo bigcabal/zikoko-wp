@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
 
 			var wScroll = $(this).scrollTop();
 
-			if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated') && !$('article').hasClass('category-quiz')  ) {
+			if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated') && !$('article').hasClass('category-quizzes')  ) {
 				
 				$('.conversion-prompt-container').fadeIn(1000);
 				$('.modal').addClass('activated');
