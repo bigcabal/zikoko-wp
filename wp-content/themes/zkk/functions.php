@@ -502,3 +502,31 @@ function google_load_file() {
 add_action( 'wp_enqueue_scripts', 'google_load_file' );
 
 
+
+
+/* Custom Shortcode */
+
+function quiz_checklist_handler($atts, $content, $tag) {
+
+	//collect values, combining passed in values and defaults
+	$values = shortcode_atts(array(
+		'quiz' => 'default'
+	),$atts);  
+	
+	$output = '';
+
+	if($values['quiz'] == 'how_nigerian_are_you'){
+		$output = get_template_part('inc/quiz-checklist', 'nigerian');
+	}
+	else{
+		$output = get_template_part('inc/quiz', 'checklist');
+	}
+	
+	return $output;
+
+
+}
+
+add_shortcode( 'quiz_checklist', 'quiz_checklist_handler' );
+
+
