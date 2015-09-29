@@ -102,7 +102,7 @@
 
 <label for="checklist-item-18" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="18" id="checklist-item-18">
-	<span>18. Buy aso ebi for at least half the weddings you attend</span>
+	<span>18. Bought aso ebi for at least half the weddings you attend</span>
 </label>
 
 <label for="checklist-item-19" class="quiz-checklist--item">
