@@ -5,7 +5,7 @@ Theme URI: http://zikoko.com/
 Author: Ire Aderinokun
 Author URI: http://themesindep.com/
 Description: Magazine theme for creative things
-Version: 3.1.7
+Version: 3.1.8
 Tags: black, white, one-column, two-columns, three-columns, right-sidebar, fluid-layout, custom-colors, custom-menu, featured-images, post-formats, theme-options, translation-ready, photoblogging
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -5220,10 +5220,6 @@ body.single article.post .entry-full-content .ig-embed--main {
   width: 100%;
   height: auto;
   padding: 0 10px 8px 10px; }
-body.single article.post .entry-full-content .ig-embed-caption {
-  padding: 10px 10px 5px 10px;
-  color: #000;
-  font-size: 14px; }
 body.single article.post .entry-full-content .ig-embed footer {
   position: relative;
   padding: 10px;

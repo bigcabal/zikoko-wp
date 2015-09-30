@@ -578,9 +578,7 @@ function instagram_embed_handler($atts) {
 	    	</header>
 
 	    	'.$media.'
-
-	    	<p class="ig-embed-caption">'.$data->caption->text.'</p>
-
+	    	
 	    	<footer>
 	    		<div class="ig-embed-meta">
 	    			<span> <i class="fa fa-heart"></i> '.$data->likes->count.'</span>
