@@ -8,11 +8,16 @@
 ?>
 
 
+<p>Happy Independence!!!</p>
+
+<p>I know it’s a celebration but we still have to ask the hard questions. Are you really as Nigerian as you think you are?</p>
+
+<Br>
+
 <form class="quiz-checklist" id="quiz-checklist--nigerian">
 
 
-<img src="http://zikoko.com/wp-content/uploads/2015/09/Check-All-That-Apply-To-You.jpg" alt=""><br>
-
+<img src="http://zikoko.com/wp-content/uploads/2015/09/how-nigerian-are-you.jpg" alt="How Nigerian Are You? Check All That Apply To You"><br>
 
 
 <label for="checklist-item-1" class="quiz-checklist--item">
@@ -214,12 +219,12 @@
 
 <label for="checklist-item-40" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="40" id="checklist-item-40">
-	<span>40. Been stopped by lastma</span>
+	<span>40. Been stopped by police</span>
 </label>
 
 <label for="checklist-item-41" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="41" id="checklist-item-41">
-	<span>41. Been in a vehicle that’s been stopped by lastma</span>
+	<span>41. Been in a vehicle that’s been stopped by police</span>
 </label>
 
 <label for="checklist-item-42" class="quiz-checklist--item">
@@ -264,7 +269,7 @@
 
 <label for="checklist-item-50" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="50" id="checklist-item-50">
-	<span>50. Know all the words to 2face’s African queen</span>
+	<span>50. Know all the words to 2Face’s African queen</span>
 </label>
 
 <label for="checklist-item-51" class="quiz-checklist--item">
