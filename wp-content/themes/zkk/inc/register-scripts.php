@@ -94,6 +94,8 @@ function ti_theme_scripts(){
 		
 	/* Custom jQuery scripts */
 	wp_enqueue_script( 'ti-custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', true );
+
+	wp_enqueue_script( 'quizHandler', get_template_directory_uri() . '/js/quizHandler.js', 'jquery', '1.0', true );
 	
 	/* Always load only the latest jQuery library version */
 	wp_enqueue_script( 'jquery' );

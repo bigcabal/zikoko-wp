@@ -1,11 +1,11 @@
 @import url('http://fonts.googleapis.com/css?family=Montserrat:700,400');
 /*
 Theme Name: ZKK 
-Theme URI: http://themesindep.com/
-Author: ThemesIndep
+Theme URI: http://zikoko.com/
+Author: Ire Aderinokun
 Author URI: http://themesindep.com/
 Description: Magazine theme for creative things
-Version: 3.1.5
+Version: 3.1.7
 Tags: black, white, one-column, two-columns, three-columns, right-sidebar, fluid-layout, custom-colors, custom-menu, featured-images, post-formats, theme-options, translation-ready, photoblogging
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -5113,6 +5113,62 @@ h1.sponsor-title {
   display: block;
   font-family: 'Montserrat', serif;
   letter-spacing: normal; }
+
+.quiz-checklist .quiz-checklist--item {
+  display: block;
+  border: 1px solid #D8D8D8;
+  background-color: #f2f2f2;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  cursor: pointer; }
+  .quiz-checklist .quiz-checklist--item span {
+    font-family: 'Montserrat', serif;
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 10px; }
+.quiz-checklist .quiz-checklist--item:hover {
+  background-color: #FEF195; }
+.quiz-checklist .quiz-checklist--item.quiz-checklist--item__checked {
+  background-color: #8ac5ff; }
+
+body.single article.post .entry-full-content .quiz-checklist a.quiz-checklist--submit {
+  display: block;
+  background-color: #5A1490;
+  color: #fff;
+  height: 50px;
+  margin-top: 20px;
+  font-family: 'Montserrat', serif;
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none; }
+
+.quiz-checklist--error-message {
+  margin-top: 20px;
+  color: red; }
+
+.quiz-checklist--results-container {
+  display: none;
+  margin: 30px 0;
+  border: 1px solid #D8D8D8;
+  background-color: #f2f2f2;
+  padding: 20px;
+  font-family: 'Montserrat', serif; }
+  .quiz-checklist--results-container .quiz-checklist--result-quiz-title {
+    font-size: 16px; }
+  .quiz-checklist--results-container .quiz-checklist--result-title {
+    font-size: 24px;
+    color: #000;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 20px; }
+  .quiz-checklist--results-container .quiz-checklist--result-description {
+    font-size: 18px; }
+
+.quiz-checklist--share-container {
+  margin-top: 20px;
+  border-top: 1px solid #D8D8D8;
+  padding-top: 15px; }
 
 .post-excerpt {
   border: 1px solid red;
