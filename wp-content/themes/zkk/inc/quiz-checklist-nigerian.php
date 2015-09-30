@@ -102,12 +102,12 @@
 
 <label for="checklist-item-17" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="17" id="checklist-item-17">
-	<span>17. Attended more than five weddings this year</span>
+	<span>17. Attended more than five Owambe this year</span>
 </label>
 
 <label for="checklist-item-18" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="18" id="checklist-item-18">
-	<span>18. Bought aso ebi for at least half the weddings you attend</span>
+	<span>18. Bought aso ebi for at least half the Owambe you attend</span>
 </label>
 
 <label for="checklist-item-19" class="quiz-checklist--item">
@@ -279,7 +279,7 @@
 
 <label for="checklist-item-52" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="52" id="checklist-item-52">
-	<span>52. Dated a Yoruba boy</span>
+	<span>52. Dated from at least 2 major tribes in Nigeria</span>
 </label>
 
 <label for="checklist-item-53" class="quiz-checklist--item">
@@ -289,12 +289,37 @@
 
 <label for="checklist-item-54" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="54" id="checklist-item-54">
-	<span>54. Taken a Zikoko quiz</span>
+	<span>54. Commented on Linda Ikeji</span>
 </label>
 
 <label for="checklist-item-55" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="55" id="checklist-item-55">
-	<span>55. Shared a Zikoko post on social media</span>
+	<span>55. Commented on Bella Naija</span>
+</label>
+
+<label for="checklist-item-56" class="quiz-checklist--item">
+	<input type="checkbox" name="checklist" value="56" id="checklist-item-56">
+	<span>56. Complained about the price of cabs</span>
+</label>
+
+<label for="checklist-item-57" class="quiz-checklist--item">
+	<input type="checkbox" name="checklist" value="57" id="checklist-item-57">
+	<span>57. Answered a question with a question</span>
+</label>
+
+<label for="checklist-item-58" class="quiz-checklist--item">
+	<input type="checkbox" name="checklist" value="58" id="checklist-item-58">
+	<span>58. Taken food away from Owambe</span>
+</label>
+
+<label for="checklist-item-59" class="quiz-checklist--item">
+	<input type="checkbox" name="checklist" value="59" id="checklist-item-59">
+	<span>59. Taken a Zikoko quiz</span>
+</label>
+
+<label for="checklist-item-60" class="quiz-checklist--item">
+	<input type="checkbox" name="checklist" value="60" id="checklist-item-60">
+	<span>60. Shared a Zikoko post on social media</span>
 </label>
 
 

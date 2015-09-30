@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 
 		var quizTitle = "How Nigerian Are You?";
 		var quizURL = window.location.href;
-		var totalListItems = 55;
+		var totalListItems = 60;
 		var numberOfChecked = $('input[name="checklist"]:checked').length;
 
 
@@ -44,21 +44,21 @@ jQuery(document).ready(function($) {
 		
 
 
-		if ( numberOfChecked < 19 ) {
+		if ( numberOfChecked < 20 ) {
 
 			resultTitle = "You’re 40% Nigerian!";
 			resultDescription = "In fact, are you sure you’re Nigerian? We would need to see your birth certificate, before we make our conclusions.";
 			resultImage = "http://4.bp.blogspot.com/-raqFC-ZnJYc/TaLuJZJupHI/AAAAAAAANbI/L63hjVH0V94/s320/nigerian-girl-with-flag.gif";
 			twitterText = "I'm 40%25 Nigerian! How Nigerian Are You?";
 
-		} else if ( numberOfChecked < 36 ) {
+		} else if ( numberOfChecked < 40 ) {
 
 			resultTitle = "You’re 60% Nigerian!";
 			resultDescription = "You’re a patriot and you love your country, but you’re not going to randomly sing 'Arise o compatriots'.";
 			resultImage = "https://media.today.ng/news/wp-content/uploads/2015/09/nigerian-flag.jpg";
 			twitterText = "I'm 60%25 Nigerian! How Nigerian Are You?";
 
-		} else if ( numberOfChecked < 51 ) {
+		} else if ( numberOfChecked < 56 ) {
 
 			resultTitle = "You’re 80% Nigerian!";
 			resultDescription = "You’re the Nigerian everyone wishes they were. You’re steady, passionate, and proud to be a Nigerian. You know the Nigerian dream is real because you’re living it every day.";
