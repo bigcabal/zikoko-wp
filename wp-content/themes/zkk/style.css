@@ -5212,12 +5212,16 @@ body.single article.post .entry-full-content .ig-embed-user--follow {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%); }
+  @media screen and (max-width: 600px) {
+    body.single article.post .entry-full-content .ig-embed-user--follow {
+      font-size: 12px;
+      padding: 3px 5px; } }
 body.single article.post .entry-full-content .ig-embed--main {
   width: 100%;
   height: auto;
   padding: 0 10px 8px 10px; }
 body.single article.post .entry-full-content .ig-embed-caption {
-  padding: 10px;
+  padding: 10px 10px 5px 10px;
   color: #000;
   font-size: 14px; }
 body.single article.post .entry-full-content .ig-embed footer {
