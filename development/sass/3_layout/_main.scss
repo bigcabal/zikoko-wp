@@ -1,0 +1,70 @@
+/* -----------------------------
+
+             Main
+             
+------------------------------- */
+
+
+body {
+	background-color: $bg-colour;
+}
+
+
+.main-body-area  {
+	padding: 20px 0;
+}
+
+.container {
+	position: relative;
+	margin: 0 auto;
+
+
+	width: 90%;
+	max-width: 1080px;
+
+	@include screen(small) {
+		width: 100%;
+	}
+}
+
+
+
+.site-main,
+.site-sidebar {
+	vertical-align: top;
+	display: inline-block;
+
+
+	@include screen(med-small) {
+		display: block;
+	}
+
+}
+
+.site-main {
+	width: 65%;
+	margin-right: 5%;
+
+	@include screen(med-small) {
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+
+.site-sidebar {
+	width: 30%;
+
+
+	@include screen(med-small) {
+		display: none;
+	}
+
+}
+
+
+
+
+
+
+

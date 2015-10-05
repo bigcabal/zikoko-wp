@@ -1,0 +1,263 @@
+/* -----------------------------
+
+     Social Share Buttons + Social Profile Buttons 
+             
+------------------------------- */
+
+.social-profile-buttons,
+.social-share-buttons {
+
+	// Colours
+
+	li.facebook {
+		background-color: #3B5998;
+	}
+	li.twitter {
+		background-color: #4099FF;
+	}
+	li.google-plus {
+		background-color: #d34836;
+	}
+	li.pinterest {
+		background-color: #cc2127;
+	}
+	li.instagram {
+		background-color: #517fa4;
+	}
+	li.email {
+		background-color: #9f9f9f;
+	}
+
+	li.wechat {
+		background-color: #7bb32e;
+	}
+
+	li.whatsapp {
+		background-color: #60b82d;
+		text-align: center;
+
+	}
+
+	li:hover {
+		background-color: $theme;
+	}
+
+	li a {
+		color: #fff;
+	}
+
+	li {
+		display: inline-block;
+		text-align: center;
+		font-size: 2rem;
+	}
+
+
+	li a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+
+
+
+/* Share buttons */
+
+
+.social-share-buttons {
+
+	// Hide and Show Certain Icons
+
+	li.facebook {
+		position: relative;
+
+		.fb-like {
+			position: absolute;
+			top: 0;
+			left: 50px;
+			height: 60px;
+			padding: 0 15px;
+			background-color: #fff;
+			display: none;
+		}
+	}
+
+	@media screen and (min-width: 650px) {
+		li.whatsapp {
+			display: none;
+		}
+	}
+	@media screen and (max-width: 650px) {
+		li.email {
+			display: none;
+		}
+	}
+
+}
+
+
+.social-share-buttons--inpost {
+
+	li {
+		height: 40px;
+		width: 20%;
+	}
+
+	a {
+		height: 40px;
+		line-height: 40px;
+	}
+
+}
+
+
+.social-share-buttons--floating {
+
+	position: fixed;
+	width: 50px;
+	left: 0;
+
+
+	@include screen-custom(min, 650) {
+
+		top: 213px;
+		height: 100px;
+
+		li {
+			display: block;
+			height: 60px;
+			width: 100%;
+		}
+		a {
+			height: 60px;
+			line-height: 60px;
+		}
+
+	}
+
+	@include screen-custom(max, 650) {
+
+		bottom: 0;
+		height: 40px;
+		width: 100%;
+
+		li {
+			display: inline-block;
+			// float: left;
+			height: 40px;
+			font-size: 15px;
+		}
+		li a {
+			height: 40px;
+			line-height: 40px;
+		}
+
+		li.google-plus,
+		li.pinterest {
+			display: none;
+		}
+
+		li.facebook {
+			width: 50%;
+			position: relative;
+
+
+			a {
+				padding-left: 50px;
+				position: relative;
+			}
+
+		
+			a:after {
+				content: 'Share on';
+				font-family: $font-stack;
+				font-size: 14px;
+				text-align: center;
+				padding-right: 30px;
+
+				position: absolute;
+				left: 0;
+				width: 100%;
+			}
+		}
+
+		li.twitter,
+		li.whatsapp {
+			width: 25%;
+		}
+
+		li.whatsapp {
+			display: inline-block;
+		}
+
+
+
+		
+
+	}
+
+
+
+}
+
+.social-share-buttons--floating:not(.showing) {
+	@include transition-hide;
+}
+
+.social-share-buttons--floating.showing {
+	@include transition-show;
+}
+
+
+
+
+/* Social Profile */
+
+.social-profile-buttons {
+
+	li {
+		height: 50px;
+		line-height: 50px;
+		width: 100%;
+		text-align: left;
+		padding: 0 20px;
+	}
+
+
+	i.fa {
+		width: 30px;
+		padding-right: 20px;
+	}
+
+	span {
+		font-size: 1.6rem;
+	}
+
+	
+
+}
+
+.social-profile-btns--mobileonly {
+	display: none;
+
+	@include screen(med-small) {
+		display: block;
+
+		li {
+			text-align: center;
+			padding: 0 10px;
+		}
+
+		span {
+		font-size: 1.8rem;
+	}
+
+	}
+
+}
+
+
+

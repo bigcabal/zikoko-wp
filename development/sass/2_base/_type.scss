@@ -1,0 +1,102 @@
+/* -----------------------------
+
+             Type
+             
+------------------------------- */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    font-family: $font-stack;
+    font-weight: 400;
+    color: $text-colour;
+}
+
+
+
+
+h1 {
+    font-family: $font-stack-secondary;
+    font-size: 4rem;
+
+    @include screen(med-small) {
+        font-size: 3.2rem;
+    }
+
+    @include screen(small) {
+        font-size: 3rem;
+    }
+}
+
+
+h2 {
+    
+    font-family: $font-stack-secondary;
+    font-size: 3.2rem;
+
+    @include screen(med-small) {
+        font-size: 3rem;
+    }
+
+    @include screen(small) {
+        font-size: 2.8rem;
+    }
+
+}
+
+h3 {
+    font-family: $font-stack-secondary;
+    padding-bottom: 1rem;
+
+    font-size: 2.6rem;
+
+    @include screen(med-small) {
+        font-size: 2.4rem;
+    }
+
+    @include screen(small) {
+        font-size: 2rem;
+    }
+}
+
+h4 {
+    font-family: $font-stack-secondary;
+    padding-bottom: 1rem;
+
+    font-size: 2rem;
+
+    @include screen(med-small) {
+        font-size: 2.8rem;
+    }
+
+
+}
+
+h5 {
+    
+}
+
+
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+.entry-excerpt--meta {
+    text-transform: uppercase;
+    color: $theme;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+}
+
+
+
+  

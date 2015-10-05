@@ -1,0 +1,45 @@
+/* -----------------------------
+
+     Search Form
+             
+------------------------------- */
+
+
+#searchform {
+	background-color: $theme;
+	display: block;
+
+	input[type="text"],
+	button[type="submit"] {
+
+		height: 50px;
+		line-height: 50px;
+		border: 0;
+		background-color: #000;
+		color: #fff;
+		vertical-align: top;
+		margin: 0;
+
+		font-size: 1.8rem;
+	    font-family: $font-stack;
+	    font-weight: 400;
+
+	}
+
+
+	input[type="text"] {
+		width: 85%;
+		outline: none;
+		padding: 0 15px;
+
+	}
+
+
+	button[type="submit"] {
+		width: 15%;
+		text-align: center;
+		line-height: 40px;
+
+
+	}
+}

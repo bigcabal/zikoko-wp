@@ -1,0 +1,116 @@
+/* -----------------------------
+
+             Header
+             
+------------------------------- */
+
+.site-header {
+	background-color: #fff;
+	display: block;
+
+	padding-top: 25px;
+	// padding-bottom: 25px;
+
+}
+
+
+.branding {
+	display: inline-block;
+	position: relative;
+
+	height: 90px; // same as advert
+	width: auto;
+	padding-top: 10px;
+
+	// border: 1px solid red;
+
+	img {
+		max-height: 70px;
+
+		// border: 1px solid green;
+	}
+
+
+	@include screen(med) {
+
+		padding-top: 30px;
+
+		img {
+			max-height: 30px;
+		}
+	}
+
+	@include screen(med-small) {
+
+		padding-top: 10px;
+		
+		display: block;
+		text-align: center;
+		height: auto;
+
+		margin-bottom: 20px;
+
+		border-color: red;
+
+		img {
+			
+			max-height: 100px;
+			height: auto;
+			width: 40%;
+			max-width: 250px;
+		}	
+	}
+
+	@include screen(small) {
+
+		img {
+			// max-height: 40px;
+		}
+	}
+
+
+}
+
+
+
+.advert-leaderboard {
+
+	position: absolute;
+	right: 0;
+	top: 0;
+	
+	display: inline-block;
+	border: 1px solid red;
+
+	max-width: 728px;
+
+
+	@include screen(med-small) {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		margin-left: auto;
+		margin-right: auto;
+
+		max-width: 100%;
+		text-align: center;
+
+		div {
+			margin: 0 auto;
+
+		}
+	}
+
+	@include screen(small) {
+		display: none;
+	}
+	
+}
+
+#div-gpt-ad-1436520880435-0 {
+	height: 90px;
+	width: 728px;
+	background-color: pink;	
+}
+
+

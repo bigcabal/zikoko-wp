@@ -1,0 +1,74 @@
+/*
+Theme Name: ZKK_New
+Theme URI: http://zikoko.com
+Author: Ire Aderinokun
+Author URI: www.ireaderinokun.com
+Description: This is the custom theme for the Zikoko website
+Version: 0.1.1
+License: GNU General Public License
+License URI: license.txt
+*/
+
+
+// Table of Contents ------------------------------- 
+	
+	// 1 - Library
+
+	@import
+		'1_lib/bourbon/bourbon',
+		'1_lib/reset'
+	;
+
+
+
+	// 2 - Base
+	
+	@import 
+		'2_base/vars',
+		'2_base/spacing',
+		'2_base/type',
+		'2_base/wp',
+		'2_base/zindex'
+	;
+
+	// 3 - Layout
+	
+	@import 
+		'3_layout/header',
+		'3_layout/nav',
+		'3_layout/main',
+		'3_layout/footer'
+	;
+
+
+	// 4 - Modules
+
+	@import 
+		'4_modules/general',
+		'4_modules/social-share-buttons',
+		'4_modules/newsletter-box',
+		'4_modules/searchform'
+	;
+
+	// 5 - Post
+
+	@import 
+		'5_post/header',
+		'5_post/footer',
+		'5_post/excerpt'
+	;
+
+	// 6 - Other
+
+	@import 
+		'6_other/homepage'
+	;
+
+
+
+
+
+
+// END Table of Contents ------------------------------- 
+
+
