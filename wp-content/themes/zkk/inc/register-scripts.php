@@ -14,7 +14,7 @@ function ti_theme_scripts(){
 	 */
 	
 	/* Main theme style */
-	wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/style.css', 'style');
+	// wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/style.css', 'style');
 
 
 	/**
