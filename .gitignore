@@ -14,3 +14,8 @@ wp-content/themes/zkk/development/
 wp-content/themes/zkk/gulpfile.js
 wp-content/themes/zkk/node_modules/
 wp-content/themes/zkk/package.json
+
+wp-content/themes/zkk_new/development/
+wp-content/themes/zkk_new/gulpfile.js
+wp-content/themes/zkk_new/node_modules/
+wp-content/themes/zkk_new/package.json
