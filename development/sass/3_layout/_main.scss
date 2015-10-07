@@ -11,7 +11,14 @@ body {
 
 
 .main-body-area  {
-	padding: 20px 0;
+	padding: 35px 0;
+
+	min-height: 500px;
+	min-height: 70vh;
+
+	@include screen(med-small) {
+		padding: 25px 0;
+	}
 }
 
 .container {
@@ -62,8 +69,21 @@ body {
 
 }
 
+.wechat-more {
+	display: none;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
 
 
+/* Sidebar ads*/
+
+#div-gpt-ad-1436517701090-0 {
+	margin: 0 auto;
+	text-align: center;
+}
 
 
 

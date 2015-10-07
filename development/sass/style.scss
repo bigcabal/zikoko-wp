@@ -1,5 +1,5 @@
 /*
-Theme Name: ZKK_New
+Theme Name: ZKK New
 Theme URI: http://zikoko.com
 Author: Ire Aderinokun
 Author URI: www.ireaderinokun.com
@@ -47,6 +47,7 @@ License URI: license.txt
 		'4_modules/general',
 		'4_modules/social-share-buttons',
 		'4_modules/newsletter-box',
+		'4_modules/instagram',
 		'4_modules/searchform'
 	;
 
@@ -55,13 +56,20 @@ License URI: license.txt
 	@import 
 		'5_post/header',
 		'5_post/footer',
-		'5_post/excerpt'
+		'5_post/excerpt',
+		'5_post/modal',
+		'5_post/entry-full-content',
+
+
+		'5_post/quiz-checklist',
+		'5_post/juxtapose'
 	;
 
 	// 6 - Other
 
 	@import 
-		'6_other/homepage'
+		'6_other/homepage',
+		'6_other/sponsor'
 	;
 
 

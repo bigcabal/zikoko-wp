@@ -6,11 +6,12 @@
  * @package ZikokoTheme
 **/
 ?>
-<article <?php post_class("site-box entry-excerpt entry-excerpt--1"); ?>>
+<article <?php post_class("site-box entry-excerpt entry-excerpt--1 targetInfiniteScroll"); ?>>
 
 	<div class="entry-excerpt--image">
 		<a href="<?php the_permalink() ?>">
 		<?php echo the_post_thumbnail(); ?>
+		<div class="image-cover"></div>
 		</a>
 	</div>
 
@@ -32,7 +33,9 @@
 		<div class="entry-excerpt--summary">
 			<?php the_excerpt(); ?><br>
 
-			Sponsor ish
+			<!-- Post Sponsor -->
+			<?php get_template_part('inc/post', 'sponsor'); ?>
+
 		</div>
 		
 	</div>

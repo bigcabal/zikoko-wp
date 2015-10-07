@@ -21,7 +21,11 @@
 
 
 --><li class="wechat">
-	<a href="#" target="_blank">
+	<a href="#">
 		<i class="fa fa-weixin"></i> <span>Follow Zikoko on WeChat</span>
 	</a>
-</li>
+</li><!--
+--><div class="wechat-more padd-all">
+	<p>Scan the QR Code Below</p>
+	<img src="<?php echo get_template_directory_uri(); ?>/inc/img/we-qrcode.jpg" alt="WeChat QR Code">
+</div>

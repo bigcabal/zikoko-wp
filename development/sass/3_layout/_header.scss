@@ -9,7 +9,22 @@
 	display: block;
 
 	padding-top: 25px;
-	// padding-bottom: 25px;
+	
+
+	@include screen(med-small) {
+		padding-top: 15px;
+		padding-bottom: 5px;
+	}
+
+	@include screen(small) {
+		padding-top: 5px;
+		padding-bottom: 5px;
+
+		border: 1px solid #fff;
+	}
+
+
+
 
 }
 
@@ -22,12 +37,9 @@
 	width: auto;
 	padding-top: 10px;
 
-	// border: 1px solid red;
 
 	img {
 		max-height: 70px;
-
-		// border: 1px solid green;
 	}
 
 
@@ -50,7 +62,7 @@
 
 		margin-bottom: 20px;
 
-		border-color: red;
+
 
 		img {
 			
@@ -64,8 +76,11 @@
 	@include screen(small) {
 
 		img {
-			// max-height: 40px;
+			max-height: 30px;
+			width: auto;
 		}
+
+		margin-bottom: 0;
 	}
 
 
@@ -80,7 +95,6 @@
 	top: 0;
 	
 	display: inline-block;
-	border: 1px solid red;
 
 	max-width: 728px;
 
@@ -110,7 +124,7 @@
 #div-gpt-ad-1436520880435-0 {
 	height: 90px;
 	width: 728px;
-	background-color: pink;	
+	
 }
 
 

@@ -9,3 +9,25 @@
 	z-index: 5;
 }
 
+.site-nav-container {
+	z-index: 15;
+}
+
+ul.sub-menu {
+	z-index: 15;
+}
+
+
+.featured-content,
+.featured-content img,
+.featured-content a {
+	z-index: 5;
+}
+
+.image-cover {
+	z-index: 2;
+}
+
+.entry-excerpt--2 .entry-excerpt--entry {
+	z-index: 5;
+}

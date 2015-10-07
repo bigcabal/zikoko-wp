@@ -21,21 +21,6 @@ body {
 
 h1 {
     font-family: $font-stack-secondary;
-    font-size: 4rem;
-
-    @include screen(med-small) {
-        font-size: 3.2rem;
-    }
-
-    @include screen(small) {
-        font-size: 3rem;
-    }
-}
-
-
-h2 {
-    
-    font-family: $font-stack-secondary;
     font-size: 3.2rem;
 
     @include screen(med-small) {
@@ -45,6 +30,21 @@ h2 {
     @include screen(small) {
         font-size: 2.8rem;
     }
+}
+
+
+h2 {
+    
+    font-family: $font-stack-secondary;
+    font-size: 2.8rem;
+
+    @include screen(med-small) {
+        font-size: 2.6rem;
+    }
+
+    @include screen(small) {
+        font-size: 2.4rem;
+    }
 
 }
 
@@ -52,7 +52,7 @@ h3 {
     font-family: $font-stack-secondary;
     padding-bottom: 1rem;
 
-    font-size: 2.6rem;
+    font-size: 2.4rem;
 
     @include screen(med-small) {
         font-size: 2.4rem;
@@ -96,6 +96,43 @@ a {
     font-size: 1.4rem;
     letter-spacing: 0.2rem;
 }
+
+
+
+
+.site-nav-container {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+
+
+    @include screen(med-small) {
+        color: $theme;
+    }
+}
+
+#primary-nav {
+    font-size: 1.8rem;
+
+    @include screen(med-small) {
+        font-size: 1.6rem;
+    }
+}
+
+
+#secondary-nav {
+    font-size: 1.4rem;
+
+    @include screen(med-small) {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+
+
+
 
 
 

@@ -28,14 +28,14 @@ var jsSources = ['development/scripts/*.js'];
 gulp.task('sass', function() {
     gulp.src(sassStyle)
         .pipe(sass({
-            outputStyle: 'compressed'
+            outputStyle: 'expanded'
         })
             .on('error', gutil.log))
         .pipe(gulp.dest(''));
 
     gulp.src(sassEditorStyle)
         .pipe(sass({
-            outputStyle: 'compressed'
+            outputStyle: 'expanded'
         })
             .on('error', gutil.log))
         .pipe(gulp.dest('inc'));
@@ -43,7 +43,7 @@ gulp.task('sass', function() {
 
 gulp.task('concat', function() {
     gulp.src(jsSources)
-        .pipe(concat('script.js'))
+        // .pipe(concat('script.js'))
         .pipe(uglify())
         .pipe(gulp.dest('js'));
 });

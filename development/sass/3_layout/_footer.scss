@@ -1,0 +1,31 @@
+/* -----------------------------
+
+           Footer
+             
+------------------------------- */
+
+
+.site-footer {
+	background-color: #000;
+	color: #fff;
+	height: 90px;
+	text-align: center;
+
+	.bc-logo {
+		display: inline-block;
+		height: 90px;
+		line-height: 90px;
+		width: auto;
+		vertical-align: baseline;
+		margin: 0;
+
+
+		img {
+			height: 60px;
+			width: auto;
+
+			margin-top: 15px;
+		}
+
+	}
+}

@@ -1,6 +1,6 @@
 /* -------------------------
 
-	  Hoepage
+	  Homepage
 
 ------------------------- */
 
@@ -10,15 +10,11 @@
 
 
 .featured-content {
-	background-color: #000;
+
+	background-color: rgb(50, 50, 50);
 	color: #fff;
 	height: auto;
 	padding-top: 30px;
-
-
-	background-color: rgb(30, 30, 30);
-
-
 
 }
 
@@ -50,6 +46,12 @@
 	.entry-excerpt--image {
 		height: 340px;
 		overflow: hidden;
+
+		img {
+			min-height: 100%;
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	.entry-excerpt--entry {
@@ -88,7 +90,9 @@
 
 	.entry-excerpt--entry {
 
-		 font-size: 1.2rem;
+		a { color: $bg-colour; }
+		
+		font-size: 1.3rem;
 		 
 	}
 
@@ -113,4 +117,46 @@
 		}
 	}
 }
+
+
+
+/* Paging Navigation */
+
+.paging-navigation {
+	text-align: center;
+
+	a {
+		color: $theme;
+	}
+
+
+	span.current {
+		font-weight: 600;
+	}
+
+	a.next {
+		margin-left: 15px;
+	}
+
+	a.prev {
+		margin-right: 15px;
+	}
+
+
+}
+
+.infiniteScrollLoader {
+	margin: 0 auto 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
 

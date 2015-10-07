@@ -7,17 +7,17 @@
 
 $theme: #5A1490;
 
-$text-colour: rgb(0, 0, 0);
+$text-colour: rgb(50, 50, 50);
 $bg-colour: #f0f0f0;
 
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic,900,900italic,200italic,200);
+// @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic,900,900italic,200italic,200);
 
-// @import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
 
-$font-stack: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+$font-stack: 'Lato', 'Helvetica Neue', Arial, sans-serif;
 
 
 $font-stack-secondary: 'Montserrat', sans-serif;

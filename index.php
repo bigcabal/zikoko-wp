@@ -13,12 +13,12 @@ get_header();
     	
     	<?php
 
-			/* Get Featured Posts */
+			/* Get Main Featured Post */
 			global $post;
 			$ti_featured_posts = new WP_Query(
 				array(
 					'post_type' => 'post',
-					'meta_key' => 'featured_post',
+					'meta_key' => 'featured_post_add',
 		     		'meta_value' => '1',
 					'posts_per_page' => 1
 				)
@@ -76,13 +76,17 @@ get_header();
 	<ul class="site-box social-profile-buttons social-profile-btns--mobileonly">
 		<?php get_template_part('inc/social-profile', 'btns'); ?>
 	</ul>
-
+	
+	<div class="recent-posts">
 	<?php 
 	if ( have_posts() ) : while ( have_posts()) : the_post();
 		get_template_part( 'excerpt', '1' );
 	endwhile;
 	endif;
 	?>
+	</div>
+
+	<?php zkk_pagination(); ?>
 
 </main><!--
 	Keep Zero Space Between

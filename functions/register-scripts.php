@@ -10,7 +10,8 @@ function zkk_scripts() {
 	 *  Register Styles
 	 */
 
-	wp_enqueue_style('main-style', get_stylesheet_uri() );
+	// Stylesheet called in header due to adding version
+	//wp_enqueue_style('main-style', get_stylesheet_uri() );
 
 	wp_enqueue_style('fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 
@@ -25,10 +26,16 @@ function zkk_scripts() {
 
 	wp_enqueue_script('jquery-min', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.11.2', true );
 
-	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/script.js', array('jquery-min'), '1.0', true );
+	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js', array('jquery-min'), '1.0', true );
+
+	wp_enqueue_script('quizHandler', get_template_directory_uri() . '/js/quizHandlerNigeria.js', array('jquery-min'), '1.0', true );
 
 
-	wp_enqueue_script('google-ads', get_template_directory_uri() . '/js/google-ads.js', array(), '1.0', false );
+
+	//if ( is_single() ) {
+
+		wp_enqueue_script('post-script', get_template_directory_uri() . '/js/post.js', array('jquery-min'), '1.0', true );
+	//}
 
 	        	
 }
