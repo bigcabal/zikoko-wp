@@ -23,15 +23,18 @@ get_header();
 	if ( have_posts() ) : while ( have_posts()) : the_post();
 		get_template_part( 'excerpt', '1' );
 	endwhile;
-	endif;
-	?>
-	</div>
-    
-    <p>Sorry, no posts were found.</p>
-
+	else: ?>
+	
+	<p>Sorry, no posts were found.</p>
 
 	<?php endif;
 	?>
+	</div>
+    
+    
+
+
+
 
 	<?php zkk_pagination(); ?>
 
