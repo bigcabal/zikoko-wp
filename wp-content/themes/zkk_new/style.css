@@ -202,13 +202,14 @@ a {
 .float-left {
   float: left; }
 
+.entry-full-content p, .entry-full-content div, .entry-full-content img {
+  max-width: 100%; }
 .entry-full-content p {
   line-height: 2;
   margin-bottom: 1rem; }
 .entry-full-content img {
   position: relative;
   display: block;
-  max-width: 100%;
   height: auto; }
 .entry-full-content img.alignleft {
   float: left;
@@ -868,9 +869,9 @@ body.single article.post .entry-full-content .ig-logo {
     height: 100%;
     width: 100%; }
   .entry-excerpt--1 .entry-excerpt--image img {
-    height: 100%;
-    min-width: 100%;
-    width: auto;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
     opacity: 1;
     transition: opacity 0.5s; }
   @media screen and (max-width: 960px) {
@@ -897,7 +898,7 @@ body.single article.post .entry-full-content .ig-logo {
 
 /* Entry Excerpt Format 2 */
 .entry-excerpt--2 .entry-excerpt--image {
-  height: 200px;
+  height: 150px;
   margin-bottom: 10px;
   overflow: hidden;
   background-color: #5A1490; }
@@ -1387,6 +1388,10 @@ body.single article.post .entry-full-content div.juxtapose img {
   .main-featured-post .entry-excerpt--image {
     height: 340px;
     overflow: hidden; }
+    .main-featured-post .entry-excerpt--image img {
+      min-height: 100%;
+      width: 100%;
+      height: auto; }
   .main-featured-post .entry-excerpt--entry {
     font-size: 26px;
     text-align: left;
