@@ -432,6 +432,9 @@ body {
   padding: 35px 0;
   min-height: 500px;
   min-height: 70vh; }
+  @media screen and (max-width: 960px) {
+    .main-body-area {
+      padding: 25px 0; } }
 
 .container {
   position: relative;
@@ -508,7 +511,7 @@ body {
   margin-bottom: 35px; }
   @media screen and (max-width: 960px) {
     .site-box {
-      margin-bottom: 20px; } }
+      margin-bottom: 25px; } }
 
 .page-header {
   margin-bottom: 35px; }
@@ -537,7 +540,13 @@ body {
   background-color: #7bb32e; }
 .social-profile-buttons li.whatsapp, .social-share-buttons li.whatsapp {
   background-color: #60b82d;
+  text-align: center;
+  margin: 0;
+  vertical-align: top;
   text-align: center; }
+  .social-profile-buttons li.whatsapp iframe, .social-share-buttons li.whatsapp iframe {
+    text-align: center;
+    margin-left: -20px; }
 .social-profile-buttons li:hover, .social-share-buttons li:hover {
   background-color: #5A1490; }
 .social-profile-buttons li a, .social-share-buttons li a {
@@ -1065,7 +1074,7 @@ body.single article.post .entry-full-content .ig-logo {
       .entry-full.content
              
 ------------------------------- */
-.entry-full-content p, .entry-full-content div, .entry-full-content img {
+.entry-full-content p, .entry-full-content div, .entry-full-content img, .entry-full-content iframe {
   max-width: 100%; }
 .entry-full-content p {
   line-height: 2;
