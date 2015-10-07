@@ -11,6 +11,7 @@
 	<div class="entry-excerpt--image">
 		<a href="<?php the_permalink() ?>">
 		<?php echo the_post_thumbnail(); ?>
+		<div class="image-cover"></div>
 		</a>
 	</div>
 

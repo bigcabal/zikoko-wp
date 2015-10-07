@@ -31,10 +31,10 @@ function zkk_scripts() {
 
 
 
-	if ( is_single() ) {
+	//if ( is_single() ) {
 
 		wp_enqueue_script('post-script', get_template_directory_uri() . '/js/post.js', array('jquery-min'), '1.0', true );
-	}
+	//}
 
 	        	
 }

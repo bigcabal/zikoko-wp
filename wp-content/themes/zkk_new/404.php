@@ -15,7 +15,7 @@ get_header();
     </h1>
     <br>
 
-    We're sorry. The page you are looking for was not found. <a href="/">Click here to return home</a>
+    <p>We're sorry. The page you are looking for was not found. <a href="/">Click here to return home</a></p>
 </header>
 
 

@@ -6,6 +6,7 @@
 **/
 ?>
 
+<div class="quiz-how-nigerian-are-you">
 
 <p>Happy Independence!!!</p>
 
@@ -339,3 +340,6 @@
 
 
 </form>
+
+
+</div>

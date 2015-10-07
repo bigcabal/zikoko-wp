@@ -13,7 +13,7 @@ get_header();
     	
     	<?php
 
-			/* Get Featured Posts */
+			/* Get Main Featured Post */
 			global $post;
 			$ti_featured_posts = new WP_Query(
 				array(

@@ -18,17 +18,22 @@ get_header();
 
 <main class="site-main">
 
+    <div class="recent-posts">
 	<?php 
 	if ( have_posts() ) : while ( have_posts()) : the_post();
 		get_template_part( 'excerpt', '1' );
 	endwhile;
-    else: ?>
+	endif;
+	?>
+	</div>
     
-    <p>Sorry, nothing found</p>
+    <p>Sorry, no posts were found.</p>
 
 
 	<?php endif;
 	?>
+
+	<?php zkk_pagination(); ?>
 
 </main><!--
 	Keep Zero Space Between
