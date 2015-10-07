@@ -236,7 +236,13 @@ ul.sub-menu {
   padding-top: 25px; }
   @media screen and (max-width: 960px) {
     .site-header {
-      padding-bottom: 25px; } }
+      padding-top: 15px;
+      padding-bottom: 5px; } }
+  @media screen and (max-width: 600px) {
+    .site-header {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border: 1px solid #fff; } }
 
 .branding {
   display: inline-block;
@@ -257,13 +263,18 @@ ul.sub-menu {
       display: block;
       text-align: center;
       height: auto;
-      margin-bottom: 20px;
-      border-color: red; }
+      margin-bottom: 20px; }
       .branding img {
         max-height: 100px;
         height: auto;
         width: 40%;
         max-width: 250px; } }
+  @media screen and (max-width: 600px) {
+    .branding {
+      margin-bottom: 0; }
+      .branding img {
+        max-height: 30px;
+        width: auto; } }
 
 .advert-leaderboard {
   position: absolute;

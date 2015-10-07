@@ -17,6 +17,8 @@
 
 <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/inc/img/favicon.ico">
 
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?v=' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen, projection" />
+
 <?php wp_head(); ?>
 
 <script type='text/javascript'>

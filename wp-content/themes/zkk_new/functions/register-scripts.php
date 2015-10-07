@@ -10,7 +10,8 @@ function zkk_scripts() {
 	 *  Register Styles
 	 */
 
-	wp_enqueue_style('main-style', get_stylesheet_uri() );
+	// Stylesheet called in header due to adding version
+	//wp_enqueue_style('main-style', get_stylesheet_uri() );
 
 	wp_enqueue_style('fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 
