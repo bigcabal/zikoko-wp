@@ -49,14 +49,14 @@
 
 			--><li class="twitter social-share-btn" id="share-tw-modal">
 				<a href="https://twitter.com/intent/tweet/?text=<?php echo $cleanTitle; ?>&url=<?php echo $cleanPermalink; ?>?utm_source=tw%26utm_campaign=zkk_share&via=zikokomag&related=zikokomag" target="_blank">
-					<i class="fa fa-twitter"></i> <span class="share-text">Share on</span> Twitter
+					<i class="fa fa-twitter"></i> <span class="share-text">Share on Twitter</span>
 				</a>
 			</li><!--
 
 
 			--><li class="whatsapp socia-share-btn" id="share-wa-modal">
 				<a href="whatsapp://send" data-text="<?php echo $rawTitle; ?> -" data-href="<?php echo $rawPermalink; ?>?utm_source=wa&utm_campaign=zkk_share" class="wa_btn wa_btn_l">
-				<i class="fa fa-whatsapp"></i> Whatsapp
+				<i class="fa fa-whatsapp"></i>
 				</a>
 			</li>
 
