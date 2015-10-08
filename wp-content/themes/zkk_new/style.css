@@ -1079,8 +1079,7 @@ body.single article.post .entry-full-content .ig-logo {
   max-width: 400px;
   margin: 0 auto;
   max-height: 300px;
-  overflow: hidden;
-  border: 1px solid red; }
+  overflow: hidden; }
   .next-post a.widget-post-title {
     text-align: left;
     position: absolute;
