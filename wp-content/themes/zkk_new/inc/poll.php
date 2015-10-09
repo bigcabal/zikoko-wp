@@ -28,7 +28,7 @@ $a = get_sub_field('poll_answer_text1');
 
 	<?php 
 
-	$check_answer_in_db = $wpdb->get_results ("SELECT id FROM wp_zkkpolls_answers WHERE answer = '".$a."'");
+	$check_answer_in_db = $wpdb->get_results ("SELECT id FROM bc_zkkpolls_answers WHERE answer = '".$a."'");
 
 	if (count ($check_answer_in_db) > 0) {
 
@@ -39,7 +39,7 @@ $a = get_sub_field('poll_answer_text1');
 		//echo "not yet in db";
 
 		$wpdb->replace(
-		'wp_zkkpolls_answers' ,
+		'bc_zkkpolls_answers' ,
 		array(
 			'post_id' => $postID,
 			'answer'=> $a
@@ -63,7 +63,7 @@ $a = get_sub_field('poll_answer_text1');
 			echo $wpdb->get_var( 
 				"
 				SELECT responses 
-				FROM wp_zkkpolls_answers
+				FROM bc_zkkpolls_answers
 				WHERE answer = '".$a."'
 				"
 			); 
