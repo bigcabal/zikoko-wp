@@ -87,7 +87,7 @@ if(function_exists("register_field_group"))
 
 
 
-
+	// Sponsor Page
 
 
 	register_field_group(array (
@@ -154,12 +154,136 @@ if(function_exists("register_field_group"))
 
 
 
+	
+
+
+	// Poll
+
+	register_field_group(array (
+		'id' => 'acf_register-poll',
+		'title' => 'Poll Options',
+		'fields' => array (
+
+
+			// Toggle post
+			array (
+				'key' => 'post_poll_toggle',
+				'label' => 'Add Poll',
+				'name' => 'post_poll_toggle',
+				'type' => 'true_false',
+				'message' => 'Add a Poll',
+				'default_value' => 0,
+			),
+
+
+
+			// Poll Question
+			array (
+				'key' => 'poll_question',
+				'label' => 'Question',
+				'name' => 'poll_question',
+				'type' => 'text',
+				'default_value' => '',
+
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'post_poll_toggle',
+							'operator' => '==',
+							'value' => 1,
+						),
+					),
+					'allorany' => 'all',
+				),
+			),
+
+
+
+			// Poll Anawers
+			array (
+				'key' => 'field_poll_answers',
+				'label' => 'Answers',
+				'name' => 'poll_answers1',
+				'type' => 'repeater',
+				'instructions' => 'Instructions here',
+				'layout' => 'horizontal',
+				'column_width' => '',
+				'sub_fields' => array (
+
+					array (
+						'key' => 'poll_answer_text',
+						'label' => 'Answer',
+						'name' => 'poll_answer_text1',
+						'type' => 'text',
+						'default_value' => '',
+						'parent' => 'field_poll_answers'
+					),
+					// array (
+					// 	'key' => 'poll_answer_image',
+					// 	'label' => 'Image',
+					// 	'name' => 'poll_answer_image11',
+					// 	'type' => 'image',
+					// 	'save_format' => 'url',
+					// 	'preview_size' => 'thumbnail',
+					// 	'library' => 'all',
+					// 	'parent' => 'field_poll_answers'
+					// ),
+
+				),
+				'row_min' => 1,
+				'row_limit' => '',
+				'layout' => 'row',
+				'button_label' => 'Add Answer',
+
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'post_poll_toggle',
+							'operator' => '==',
+							'value' => 1,
+						),
+					),
+					'allorany' => 'all',
+				),
+			),
+
+
+			
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+
+
+
+
 
 
 
 
 
 }
+
+
+
 
 
 /* Add-Ons */

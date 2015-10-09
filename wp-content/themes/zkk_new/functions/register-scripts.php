@@ -31,15 +31,28 @@ function zkk_scripts() {
 	wp_enqueue_script('quizHandler', get_template_directory_uri() . '/js/quizHandlerNigeria.js', array('jquery-min'), '1.0', true );
 
 
+	wp_enqueue_script('jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.js', array('jquery-min'), '1.0', false );
+
+
 
 	//if ( is_single() ) {
 
 		wp_enqueue_script('post-script', get_template_directory_uri() . '/js/post.js', array('jquery-min'), '1.0', true );
+
+		wp_enqueue_script('poll-script', get_template_directory_uri() . '/js/poll.js', array('jquery-min'), '1.0', true );
+
 	//}
 
 	        	
 }
 add_action( 'wp_enqueue_scripts', 'zkk_scripts' );
+
+
+function my_ajaxurl() {
+	$script = '<script type="text/javascript">var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '"</script>';
+	echo $script;
+}
+add_action('wp_head','my_ajaxurl');
 
 
 function zkk_add_editor_styles() {

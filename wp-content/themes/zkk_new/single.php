@@ -39,6 +39,14 @@ $author = get_the_author();
 
 	<div class="entry-full-content">
 		<?php the_content(); ?>
+
+		<?php 
+
+			if ( get_field('post_poll_toggle') === '1' ) {
+				get_template_part('inc/poll');
+			}
+		?>
+
 	</div>
 
 
