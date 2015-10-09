@@ -76,6 +76,7 @@ get_header();
 	<ul class="site-box social-profile-buttons social-profile-btns--mobileonly">
 		<?php get_template_part('inc/social-profile', 'btns'); ?>
 	</ul>
+
 	
 	<div class="recent-posts">
 	<?php 

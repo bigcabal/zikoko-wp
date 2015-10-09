@@ -62,9 +62,12 @@ body {
 .site-sidebar {
 	width: 30%;
 
-
 	@include screen(med-small) {
 		display: none;
+	}
+
+	.entry-excerpt--title {
+		font-size: 1.4rem;
 	}
 
 }
@@ -84,6 +87,23 @@ body {
 	margin: 0 auto;
 	text-align: center;
 }
+
+
+
+/* Infinite Scroll */
+
+.infiniteScrollLoader-container {
+	display: block;
+	text-align: center;
+
+	.infiniteScrollLoader {
+		height: 100px;
+		width: auto;
+	}
+}
+
+
+
 
 
 

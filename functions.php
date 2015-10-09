@@ -155,4 +155,10 @@ function first_post_image() {
 
 
 
+/* ZKK Poll */
+include_once( 'functions/zkk-poll.php' );
+
+
+
+
 ?>

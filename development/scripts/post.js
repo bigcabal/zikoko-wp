@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 	if ( $('body').hasClass('single-post') ) {
 
-		console.log("post");
+		//console.log("post");
 
 
 		socialShareButtonsHandler();
@@ -67,9 +67,12 @@ function socialShareButtonsHandler() {
 
 	// Open links in pop-up window
 
-    $('.social-share-btn:not(.whatsapp) a').on('click', function() {
+    $('.social-share-btn.facebook a, .social-share-btn.twitter a, .social-share-btn.google-plus a, .social-share-btn.pinterest a').on('click', function() {
 		var url = $(this).attr('href');
 		window.open(url, "","menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=550,height=235");
 	  	return false;
 	})
+
+
+
 }

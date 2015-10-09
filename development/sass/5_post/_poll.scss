@@ -1,0 +1,61 @@
+/* -----------------------------
+
+         Poll
+             
+------------------------------- */
+
+
+.zkk-poll {
+
+
+	li {
+		display: block;
+		border: 1px solid #D8D8D8;
+	    background-color: #f2f2f2;
+
+	    padding: 10px 15px;
+	    margin-bottom: 15px;
+
+	    position: relative;
+
+	    cursor: pointer;
+		
+		
+		.answerText {
+			display: inline-block;
+			max-width: 82%;
+		}
+	    .answerCount {
+			background-color: #D8D8D8;
+			color: #fff;
+			text-align: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 15%;
+			padding-top: 10px;
+	    }
+
+	    .answerCount.answerCount-showing {
+	    	background-color: $theme;
+	    	color: #fff;
+	    }
+
+
+	}
+
+	li:hover {
+		background-color: #FEF195;
+	}
+
+	li.poll-answer--picked {
+	    	background-color:#8ac5ff;
+	    	color: #fff;
+	    }
+}
+
+
+.answerCount--real {
+	display: none;
+}

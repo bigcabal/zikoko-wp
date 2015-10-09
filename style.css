@@ -121,6 +121,9 @@ body {
   font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   color: #323232; }
+  @media screen and (max-width: 960px) {
+    body {
+      font-size: 1.6rem; } }
 
 h1 {
   font-family: 'Montserrat', sans-serif;
@@ -161,9 +164,15 @@ h4 {
     h4 {
       font-size: 2.8rem; } }
 
+h5 {
+  font-family: 'Montserrat', sans-serif; }
+
 a {
   color: inherit;
   text-decoration: none; }
+
+small {
+  font-size: 1.6rem; }
 
 .entry-excerpt--meta {
   text-transform: uppercase;
@@ -360,8 +369,14 @@ ul.sub-menu {
 
 .primary-menu-container {
   line-height: 55px; }
+  @media screen and (max-width: 960px) {
+    .primary-menu-container {
+      text-align: center; } }
   .primary-menu-container li a {
     padding-right: 15px; }
+    @media screen and (max-width: 960px) {
+      .primary-menu-container li a {
+        padding-right: 0; } }
   .primary-menu-container li:hover {
     opacity: 0.5; }
 
@@ -369,7 +384,7 @@ ul.sub-menu {
   text-align: right; }
   @media screen and (max-width: 960px) {
     .secondary-menu-container {
-      text-align: left; } }
+      text-align: center; } }
   .secondary-menu-container li a {
     padding-left: 15px; }
     @media screen and (max-width: 960px) {
@@ -465,6 +480,8 @@ body {
   @media screen and (max-width: 960px) {
     .site-sidebar {
       display: none; } }
+  .site-sidebar .entry-excerpt--title {
+    font-size: 1.4rem; }
 
 .wechat-more {
   display: none; }
@@ -476,6 +493,14 @@ body {
 #div-gpt-ad-1436517701090-0 {
   margin: 0 auto;
   text-align: center; }
+
+/* Infinite Scroll */
+.infiniteScrollLoader-container {
+  display: block;
+  text-align: center; }
+  .infiniteScrollLoader-container .infiniteScrollLoader {
+    height: 100px;
+    width: auto; }
 
 /* -----------------------------
 
@@ -644,6 +669,11 @@ body {
   opacity: 1;
   transition: visibility 1s, opacity 1s; }
 
+/* Modal */
+.social-share-buttons--modal li.whatsapp iframe {
+  text-align: center;
+  margin-left: -20px; }
+
 /* Social Profile */
 .social-profile-buttons li {
   height: 50px;
@@ -800,11 +830,19 @@ body.single article.post .entry-full-content .ig-logo {
     padding: 0 15px;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    font-size: 1.5rem; }
+    font-size: 1.4rem; }
+    @media screen and (max-width: 960px) {
+      #searchform input[type="text"] {
+        width: 80%;
+        font-size: 1.2rem;
+        padding: 0 10px; } }
   #searchform button[type="submit"] {
     width: 15%;
     text-align: center;
     line-height: 40px; }
+    @media screen and (max-width: 960px) {
+      #searchform button[type="submit"] {
+        width: 20%; } }
 
 /* -----------------------------
 
@@ -1039,7 +1077,9 @@ body.single article.post .entry-full-content .ig-logo {
 .next-post {
   position: relative;
   max-width: 400px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-height: 300px;
+  overflow: hidden; }
   .next-post a.widget-post-title {
     text-align: left;
     position: absolute;
@@ -1055,11 +1095,17 @@ body.single article.post .entry-full-content .ig-logo {
     @media screen and (max-width: 650px) {
       .next-post a.widget-post-title {
         font-size: 1.2rem; } }
+  @media screen and (max-width: 960px) {
+    .next-post {
+      max-height: 250px; } }
+  @media screen and (max-width: 960px) {
+    .next-post {
+      max-height: 200px; } }
   .next-post figure {
     width: 100%;
+    height: 100%;
     height: auto;
-    overflow: hidden;
-    max-height: 300px; }
+    overflow: hidden; }
     .next-post figure img {
       width: 100%;
       height: auto; }
@@ -1188,6 +1234,44 @@ body.single article.post .entry-full-content .quiz-checklist a.quiz-checklist--s
   margin-top: 20px;
   border-top: 1px solid #D8D8D8;
   padding-top: 15px; }
+
+/* -----------------------------
+
+         Poll
+             
+------------------------------- */
+.zkk-poll li {
+  display: block;
+  border: 1px solid #D8D8D8;
+  background-color: #f2f2f2;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  position: relative;
+  cursor: pointer; }
+  .zkk-poll li .answerText {
+    display: inline-block;
+    max-width: 82%; }
+  .zkk-poll li .answerCount {
+    background-color: #D8D8D8;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 15%;
+    padding-top: 10px; }
+  .zkk-poll li .answerCount.answerCount-showing {
+    background-color: #5A1490;
+    color: #fff; }
+.zkk-poll li:hover {
+  background-color: #FEF195; }
+.zkk-poll li.poll-answer--picked {
+  background-color: #8ac5ff;
+  color: #fff; }
+
+.answerCount--real {
+  display: none; }
 
 body.single article.post .entry-full-content div.juxtapose img {
   position: absolute; }
@@ -1448,7 +1532,7 @@ body.single article.post .entry-full-content div.juxtapose img {
 ------------------------- */
 /* Featured Content */
 .featured-content {
-  background-color: #323232;
+  background-color: #1e1e1e;
   color: #fff;
   height: auto;
   padding-top: 30px; }

@@ -99,8 +99,16 @@
 .primary-menu-container {
 	line-height: 55px;
 
+	@include screen(med-small) {
+		text-align: center;
+	}
+
 	li a {
 		padding-right: 15px;
+
+		@include screen(med-small) {
+			padding-right: 0;
+		}
 	}
 
 
@@ -116,7 +124,7 @@
 	text-align: right;
 
 	@include screen(med-small) {
-		text-align: left;
+		text-align: center;
 	}
 
 	li a {

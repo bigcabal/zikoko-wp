@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-	console.log("working");
+	//console.log("working");
 
 
 	// Load conditionally
@@ -85,7 +85,7 @@ function infiniteScroll() {
         var last_elem   = $( opts.contentSelector ).find( opts.itemSelector ).last();
         // set loader and loading
         if( opts.loader )
-                $( opts.navSelector ).after( '<div class="yith-infs-loader">' + opts.loader + '</div>' );
+                $( opts.navSelector ).after( '<div class="infiniteScrollLoader-container">' + opts.loader + '</div>' );
         loading = true;
 
         // ajax call
