@@ -87,7 +87,7 @@
 
 				<?php 
 				if ( get_the_post_thumbnail( $next_post->ID ) != '' ) {
-					echo get_the_post_thumbnail();
+					echo get_the_post_thumbnail($next_post->ID);
 				} elseif( first_post_image( $next_post->ID ) ) { // Set the first image from the editor
 					echo '<img src="' . first_post_image( $next_post->ID ) . '" class="wp-post-image" />';
 				} ?>

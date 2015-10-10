@@ -13,8 +13,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-<meta name="description" content="<?php bloginfo( 'description' ); ?>">
-
 
 <!-- Favicons and Touch Icons 
 -->
