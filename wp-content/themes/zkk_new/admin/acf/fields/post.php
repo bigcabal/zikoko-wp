@@ -206,7 +206,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Answers',
 				'name' => 'poll_answers1',
 				'type' => 'repeater',
-				'instructions' => 'Instructions here',
+				'instructions' => 'Add the answers you want people to be able to give. You can add up to 10 answers.',
 				'layout' => 'horizontal',
 				'column_width' => '',
 				'sub_fields' => array (
@@ -232,7 +232,7 @@ if(function_exists("register_field_group"))
 
 				),
 				'row_min' => 1,
-				'row_limit' => '',
+				'row_limit' => 10,
 				'layout' => 'row',
 				'button_label' => 'Add Answer',
 
