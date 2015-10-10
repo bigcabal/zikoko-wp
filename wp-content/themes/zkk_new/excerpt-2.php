@@ -10,7 +10,12 @@
 
 	<div class="entry-excerpt--image">
 		<a href="<?php the_permalink() ?>">
-		<?php echo the_post_thumbnail(); ?>
+		<?php 
+		if ( get_the_post_thumbnail( $next_post->ID ) != '' ) {
+			echo get_the_post_thumbnail();
+		} elseif( first_post_image( $next_post->ID ) ) { // Set the first image from the editor
+			echo '<img src="' . first_post_image( $next_post->ID ) . '" class="wp-post-image" />';
+		} ?>
 		<div class="image-cover"></div>
 		</a>
 	</div>
