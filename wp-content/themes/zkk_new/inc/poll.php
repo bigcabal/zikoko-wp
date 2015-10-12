@@ -113,50 +113,59 @@ jQuery(document).ready(function($) {
 	$('.poll-answer').click(function(e) {
 
 
+		if ( !$('.poll-answers-list').hasClass('disabled-poll') ) {
+
+		
+
+		$('.poll-answers-list').addClass('disabled-poll');
+
 		var answerText = $(this).children('.answerText').html();
 		var target = $(this).children('.answerCount');
 
 
 		$.ajax({
-		       type: "POST",
-		       url: ajaxurl,
-		       data: {
-		       		action: "add_poll_result",
-					id: <?php echo $postID; ?>,
-					answer: answerText
-		       },  
-		       success: function(msg){
+	       type: "POST",
+	       url: ajaxurl,
+	       data: {
+	       		action: "add_poll_result",
+				id: <?php echo $postID; ?>,
+				answer: answerText
+	       },  
+	       success: function(msg){
 
 
-		       		msg = msg.substring(0, msg.length - 1);
+	       		msg = msg.substring(0, msg.length - 1);
 
 
-		       		// Show the poll answers
-					$('.answerCount').addClass("answerCount-showing");
-		       		target.parent().addClass("poll-answer--picked");
+	       		// Show the poll answers
+				$('.answerCount').addClass("answerCount-showing");
+	       		target.parent().addClass("poll-answer--picked");
 
-		       		$('.answerCount--placeholder').hide();
+	       		$('.answerCount--placeholder').hide();
 
-		       		$('.answerCount--real').show();
-		            target.children('.answerCount--real').html(msg);
-
-
-		            // Log answer as cookie
-		            $.cookie(cookieTitle, answerText, { expires: 120, path: '/' });
-		            console.log($.cookie(cookieTitle));
+	       		$('.answerCount--real').show();
+	            target.children('.answerCount--real').html(msg);
 
 
-		            // Show sharing
-		            showSharing(answerText);
-		            
+	            // Log answer as cookie
+	            $.cookie(cookieTitle, answerText, { expires: 120, path: '/' });
+	            console.log($.cookie(cookieTitle));
+
+
+	            // Show sharing
+	            showSharing(answerText);
+	            
 
 
 
-		       },
-		       error: function(error) {
-		       	console.log(error);
-		       }
-		   });
+	       },
+	       error: function(error) {
+	       	console.log(error);
+	       }
+	   });
+
+
+		}
 
 
 		
