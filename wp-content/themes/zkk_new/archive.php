@@ -38,7 +38,8 @@ get_header();
 </header>
 
 <main class="site-main">
-
+    
+    <div class="recent-posts">
 	<?php 
 	if ( have_posts() ) : while ( have_posts()) : the_post();
 		get_template_part( 'excerpt', '1' );
@@ -47,6 +48,9 @@ get_header();
         <p>Sorry, no posts were found.</p>
 	<?php endif;
 	?>
+    </div>
+
+    <?php zkk_pagination(); ?>
 
 </main><!--
 	Keep Zero Space Between
