@@ -270,6 +270,12 @@ small {
 .entry-full-content hr {
   opacity: 0.5; }
 
+.pcblock {
+  margin-bottom: 50px; }
+  .pcblock h3.pcblock__headline {
+    padding: 0;
+    margin-bottom: 20px; }
+
 body.single article.post .entry-full-content div.juxtapose img {
   position: absolute; }
 

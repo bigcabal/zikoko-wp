@@ -1203,6 +1203,12 @@ body.single article.post .entry-full-content .ig-logo {
 .entry-full-content hr {
   opacity: 0.5; }
 
+.pcblock {
+  margin-bottom: 50px; }
+  .pcblock h3.pcblock__headline {
+    padding: 0;
+    margin-bottom: 20px; }
+
 .quiz-checklist .quiz-checklist--item {
   display: block;
   border: 1px solid #D8D8D8;
