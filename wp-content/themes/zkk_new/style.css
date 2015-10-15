@@ -356,8 +356,7 @@ ul.sub-menu {
 
 .primary-menu-container, .secondary-menu-container {
   display: inline-block;
-  vertical-align: top;
-  width: 50%; }
+  vertical-align: top; }
   @media screen and (max-width: 960px) {
     .primary-menu-container, .secondary-menu-container {
       display: block;
@@ -374,7 +373,8 @@ ul.sub-menu {
       width: 100%; }
 
 .primary-menu-container {
-  line-height: 55px; }
+  line-height: 55px;
+  width: 70%; }
   @media screen and (max-width: 960px) {
     .primary-menu-container {
       text-align: center; } }
@@ -387,6 +387,7 @@ ul.sub-menu {
     opacity: 0.5; }
 
 .secondary-menu-container {
+  width: 30%;
   text-align: right; }
   @media screen and (max-width: 960px) {
     .secondary-menu-container {
