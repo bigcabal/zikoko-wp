@@ -96,6 +96,9 @@ include_once( 'functions/google-analytics.php' );
 /* Register Shortcodes */
 include_once( 'functions/shortcodes.php' );
 
+/* User Capabilities */
+include_once( 'functions/user-roles.php' );
+
 
 
 function zkk_pagination() {
