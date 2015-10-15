@@ -1010,6 +1010,7 @@ body.single article.post .entry-full-content .ig-logo {
              
 ------------------------------- */
 .conversion-prompt-container {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
