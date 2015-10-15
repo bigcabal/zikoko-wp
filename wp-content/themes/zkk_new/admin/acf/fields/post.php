@@ -7,7 +7,116 @@
 
 
 
+
+
+
 if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array (
+	'key' => 'group_561f6a8916b4a',
+	'title' => 'Sponsor Page',
+	'fields' => array (
+		array (
+			'key' => 'field_561f6ad123dff',
+			'label' => 'Logo (Small)',
+			'name' => 'logo_small',
+			'type' => 'image',
+			'instructions' => 'Upload a square logo. The image will be cropped to 60x60 pixels',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array (
+			'key' => 'field_561f6b2a23e00',
+			'label' => 'Website',
+			'name' => 'sponsor_website',
+			'type' => 'url',
+			'instructions' => 'Official website for the Sponsor',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => 'http://',
+		),
+		array (
+			'key' => 'field_561f6b4a23e01',
+			'label' => 'Facebook Username',
+			'name' => 'sponsor_social_facebook',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+		array (
+			'key' => 'field_561f6b7123e02',
+			'label' => 'Twitter Username',
+			'name' => 'twitter_username',
+			'type' => 'text',
+			'instructions' => 'Do not include the @',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'page-sponsor.php',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
 
 acf_add_local_field_group(array (
 	'key' => 'group_561e2e561152b',
@@ -618,7 +727,7 @@ For certain...',
 		),
 	),
 	'menu_order' => 1,
-	'position' => 'normal',
+	'position' => 'acf_after_title',
 	'style' => 'default',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
@@ -630,308 +739,110 @@ For certain...',
 	'description' => '',
 ));
 
+
+
+if ( current_user_can('publish_posts') ) :
+
+
+acf_add_local_field_group(array (
+	'key' => 'group_561f678b9ae6a',
+	'title' => 'Post Settings',
+	'fields' => array (
+		array (
+			'key' => 'field_561f67a340b12',
+			'label' => 'Feature Post',
+			'name' => 'featured_post_add',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Make this post featured',
+			'default_value' => 0,
+		),
+		array (
+			'key' => 'field_561f680f40b13',
+			'label' => 'Sponsored Post',
+			'name' => 'sponsored_post_q',
+			'type' => 'radio',
+			'instructions' => 'Is this a sponsored post?',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'no' => 'No',
+				'yes' => 'Yes',
+			),
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'no',
+			'layout' => 'horizontal',
+		),
+		array (
+			'key' => 'field_561f685940b14',
+			'label' => 'Choose Sponsor Page',
+			'name' => 'sponsored_post',
+			'type' => 'post_object',
+			'instructions' => 'Choose the post sponsor\'s Official Sponsor Page',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_561f680f40b13',
+						'operator' => '==',
+						'value' => 'yes',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array (
+				0 => 'page',
+			),
+			'taxonomy' => array (
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'return_format' => 'object',
+			'ui' => 1,
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 2,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => array (
+		0 => 'the_content',
+	),
+	'active' => 1,
+	'description' => '',
+));
+
+endif;
+
 endif;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//if(function_exists("register_field_group"))
-//{
-
-	// register_field_group(array (
-	// 	'id' => 'acf_register-post-options',
-	// 	'title' => 'Post Options',
-	// 	'fields' => array (
-
-	// 		// Feature Post
-	// 		array (
-	// 			'key' => 'field_53ad7fb9bd2bb',
-	// 			'label' => 'Feature Post',
-	// 			'name' => 'featured_post_add',
-	// 			'type' => 'true_false',
-	// 			'message' => 'Make this post featured',
-	// 			'default_value' => 0,
-	// 		),
-
-
-
-	// 		// Post sponsor
-	// 		array (
-	// 			'key' => 'field_531c5wer',
-	// 			'label' => 'Is this a sponsored post?',
-	// 			'name' => 'sponsored_post_q',
-	// 			'type' => 'radio',
-	// 			'choices' => array(
-	// 				'no'	=> 'No',
-	// 				'yes'	=> 'Yes'
-	// 			),
-	// 			'other_choice' => 0,
-	// 			'default_value' => 'no',
-	// 			'layout' => 'horizontal',
-	// 		),
-	// 		array (
-	// 			'key' => 'field_55d4a17b009ce',
-	// 			'label' => 'Sponsor Page',
-	// 			'name' => 'sponsored_post',
-	// 			'type' => 'post_object',
-	// 			'instructions' => 'Choose the post sponsor page',
-	// 			'post_type' => array (
-	// 				"page"
-	// 			),
-	// 			'return_format' => 'object',
-	// 			'layout' => 'horizontal',
-	// 			'conditional_logic' => array (
-	// 				'status' => 1,
-	// 				'rules' => array (
-	// 					array (
-	// 						'field' => 'field_531c5wer',
-	// 						'operator' => '==',
-	// 						'value' => 'yes',
-	// 					),
-	// 				),
-	// 				'allorany' => 'all',
-	// 			),
-	// 		),
-	// 	),
-	// 	'location' => array (
-	// 		array (
-	// 			array (
-	// 				'param' => 'post_type',
-	// 				'operator' => '==',
-	// 				'value' => 'post',
-	// 				'order_no' => 0,
-	// 				'group_no' => 0,
-	// 			),
-	// 			array (
-	// 			'param' => 'post_category',
-	// 			'operator' => '!=',
-	// 			'value' => '10',
-	// 		),
-	// 		),
-	// 	),
-	// 	'options' => array (
-	// 		'position' => 'side',
-	// 		'layout' => 'default',
-	// 		'hide_on_screen' => array (
-	// 		),
-	// 	),
-	// 	'menu_order' => 0,
-	// ));
-
-
-
-	// // Sponsor Page
-
-
-	// register_field_group(array (
-	// 	'id' => 'acf_sponsor-options',
-	// 	'title' => 'Sponsor Page Options',
-	// 	'fields' => array (
-	// 		array (
-	// 			'key' => 'field_73249p24',
-	// 			'label' => 'Small Logo',
-	// 			'instructions' => 'Upload a square logo. Will be cropped to 60x60 pixels',
-	// 			'name' => 'logo_small',
-	// 			'type' => 'image',
-	// 			'save_format' => 'url', 
-	// 			'layout' => 'horizontal',
-	// 		),
-	// 		array (
-	// 			'key' => 'field_73249p24_website',
-	// 			'label' => 'Website',
-	// 			'name' => 'sponsor_website',
-	// 			'type' => 'text',
-	// 			'layout' => 'horizontal',
-	// 		),
-	// 		array (
-	// 			'key' => 'field_73249p24_fb',
-	// 			'label' => 'Facebook Username',
-	// 			'name' => 'sponsor_social_facebook',
-	// 			'type' => 'text',
-	// 			'layout' => 'horizontal',
-	// 		),
-	// 		array (
-	// 			'key' => 'field_73249p24_tw',
-	// 			'label' => 'Twitter Username',
-	// 			'name' => 'sponsor_social_twitter',
-	// 			'type' => 'text',
-	// 			'layout' => 'horizontal',
-	// 		),
-	// 	),
-	// 	'location' => array (
-	// 		array (
-	// 			array (
-	// 				'param' => 'post_type',
-	// 				'operator' => '==',
-	// 				'value' => 'page',
-	// 				'order_no' => 0,
-	// 				'group_no' => 0,
-	// 			),
-	// 			array (
-	// 				'param' => 'page_template',
-	// 				'operator' => '==',
-	// 				'value' => 'page-sponsor.php',
-	// 				'order_no' => 1,
-	// 				'group_no' => 0,
-	// 			),
-	// 		),
-	// 	),
-	// 	'options' => array (
-	// 		'position' => 'normal',
-	// 		'layout' => 'default',
-	// 		'hide_on_screen' => array (
-	// 		),
-	// 	),
-	// 	'menu_order' => 0,
-	// ));
-
-
-
-	
-
-
-	// // Poll
-
-	// register_field_group(array (
-	// 	'id' => 'acf_register-poll',
-	// 	'title' => 'Poll Options',
-	// 	'fields' => array (
-
-
-	// 		// Toggle post
-	// 		array (
-	// 			'key' => 'post_poll_toggle',
-	// 			'label' => 'Add Poll',
-	// 			'name' => 'post_poll_toggle',
-	// 			'type' => 'true_false',
-	// 			'message' => 'Add a Poll',
-	// 			'default_value' => 0,
-	// 		),
-
-
-
-	// 		// Poll Question
-	// 		array (
-	// 			'key' => 'poll_question',
-	// 			'label' => 'Question',
-	// 			'name' => 'poll_question',
-	// 			'type' => 'text',
-	// 			'default_value' => '',
-
-	// 			'conditional_logic' => array (
-	// 				'status' => 1,
-	// 				'rules' => array (
-	// 					array (
-	// 						'field' => 'post_poll_toggle',
-	// 						'operator' => '==',
-	// 						'value' => 1,
-	// 					),
-	// 				),
-	// 				'allorany' => 'all',
-	// 			),
-	// 		),
-
-
-
-	// 		// Poll Anawers
-	// 		array (
-	// 			'key' => 'field_poll_answers',
-	// 			'label' => 'Answers',
-	// 			'name' => 'poll_answers1',
-	// 			'type' => 'repeater',
-	// 			'instructions' => 'Add the answers you want people to be able to give. You can add up to 10 answers.',
-	// 			'layout' => 'horizontal',
-	// 			'column_width' => '',
-	// 			'sub_fields' => array (
-
-	// 				array (
-	// 					'key' => 'poll_answer_text',
-	// 					'label' => 'Answer',
-	// 					'name' => 'poll_answer_text1',
-	// 					'type' => 'text',
-	// 					'default_value' => '',
-	// 					'parent' => 'field_poll_answers'
-	// 				),
-	// 				// array (
-	// 				// 	'key' => 'poll_answer_image',
-	// 				// 	'label' => 'Image',
-	// 				// 	'name' => 'poll_answer_image11',
-	// 				// 	'type' => 'image',
-	// 				// 	'save_format' => 'url',
-	// 				// 	'preview_size' => 'thumbnail',
-	// 				// 	'library' => 'all',
-	// 				// 	'parent' => 'field_poll_answers'
-	// 				// ),
-
-	// 			),
-	// 			'row_min' => 1,
-	// 			'row_limit' => 10,
-	// 			'layout' => 'row',
-	// 			'button_label' => 'Add Answer',
-
-	// 			'conditional_logic' => array (
-	// 				'status' => 1,
-	// 				'rules' => array (
-	// 					array (
-	// 						'field' => 'post_poll_toggle',
-	// 						'operator' => '==',
-	// 						'value' => 1,
-	// 					),
-	// 				),
-	// 				'allorany' => 'all',
-	// 			),
-	// 		),
-
-
-			
-	// 	),
-	// 	'location' => array (
-	// 		array (
-	// 			array (
-	// 				'param' => 'post_type',
-	// 				'operator' => '==',
-	// 				'value' => 'post',
-	// 				'order_no' => 0,
-	// 				'group_no' => 0,
-	// 			),
-	// 			array (
-	// 			'param' => 'post_category',
-	// 			'operator' => '!=',
-	// 			'value' => '10',
-	// 		),
-	// 		),
-	// 	),
-	// 	'options' => array (
-	// 		'position' => 'normal',
-	// 		'layout' => 'default',
-	// 		'hide_on_screen' => array (
-	// 		),
-	// 	),
-	// 	'menu_order' => 0,
-	// ));
-
-
-
-
-
-
-
-
-
-//}
-
-
-
-
-
+?>
