@@ -1157,7 +1157,10 @@ body.single article.post .entry-full-content .ig-logo {
   left: 0;
   width: 100%;
   background-color: #5A1490;
-  padding-bottom: 10px; }
+  padding-bottom: 50px; }
+  @media screen and (max-width: 650px) {
+    .conversion-prompt-cancel {
+      padding-bottom: 20px; } }
 
 /* -----------------------------
 
