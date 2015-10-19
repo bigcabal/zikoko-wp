@@ -6,11 +6,38 @@
 
 */
 
+var showSharing = function(question, answer, pollKey) {
 
-var answerPoll = function(answer, pollKey, postID) {
+	var thisURL = window.location.href;
 
-	console.log(answer +' & '+ pollKey)
+	var thisPoll = $('.pcblock__poll[data-pollkey="'+pollKey+'"]');
+	var shareText = 'I answered ' + answer + '! '+ question;
 
+
+	var facebookLink = 'https://facebook.com/dialog/feed?app_id=593692017438309&link='+thisURL+'?utm_source=fb%26utm_campaign=zkk_share&name='+shareText+'&redirect_uri=http://zikoko.com';
+
+	var twitterLink = 'http://twitter.com/share?url='+thisURL+'&text='+shareText+'&hashtags=zikokopoll&via=zikokomag';
+
+
+	thisPoll.find('.share-poll-result').show();
+
+	thisPoll.find('li#share-fb').children('a').href = facebookLink;
+	thisPoll.find('li#share-tw').children('a').attr('href', twitterLink);
+
+
+}
+
+
+
+var answerPoll = function(answer, pollKey, postID, question) {
+
+	var thisPoll = $('.pcblock__poll[data-pollkey="'+pollKey+'"]');
+	var thisAnswer = $('.pcblock__poll__answer[data-pollanswer="'+answer+'"]');
+
+	var cookieTitle = pollKey+'-'+postID;
+
+
+	if ( !$.cookie(cookieTitle) && !thisPoll.hasClass('disabled-poll') ) {
 
 
 	$.ajax({
@@ -24,36 +51,32 @@ var answerPoll = function(answer, pollKey, postID) {
        },  
        success: function(msg){
 
+       		console.log(msg);
 
-       		updatedVoteCount = msg.substring(0, msg.length - 1);
+       		var updatedVoteCount = msg.substring(0, msg.length - 1);
 
+       		console.log(updatedVoteCount);
 
-       		var thisPoll = $('.pcblock__poll[data-pollkey="'+pollKey+'"]');
-
-       		var thisAnswer = $('.pcblock__poll__answer[data-pollanswer="'+answer+'"]');
-
-
+       		
        		// Show the poll answers
-
-       		thisPoll.addClass('test');
 
 			thisPoll.find('.pollResults').addClass("pollResults-showing");
        		thisAnswer.addClass("poll-answer--picked");
 
+       		thisPoll.addClass("disabled-poll");
+
        		thisPoll.find('.pollResults__placeholder').hide();
-       		thisPoll.find('.pollResults__real').show
+       		thisPoll.find('.pollResults__real').show();
 
-            thisAnswer.find('.pollResults__real').html(updatedVoteCo);
+            thisAnswer.find('.pollResults__real').html(updatedVoteCount);
 
+            // Log answer as cookie
+            
+            $.cookie(cookieTitle, answer, { expires: 120, path: '/' });
 
-
-   //          // Log answer as cookie
-   //          $.cookie(cookieTitle, answerText, { expires: 120, path: '/' });
-   //          console.log($.cookie(cookieTitle));
-
-
-   //          // Show sharing
-   //          showSharing(answerText);
+    
+            // Show sharing
+            showSharing(question, answer, pollKey);
             
 
 
@@ -65,7 +88,13 @@ var answerPoll = function(answer, pollKey, postID) {
 
   	}); // end ajax
 
+
+	} // end if no cookie
+
 	return false;
 }
+
+
+
 
 

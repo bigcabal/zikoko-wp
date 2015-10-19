@@ -18,11 +18,7 @@
 		"
 	);
 
-
 	$poll_key = $poll_question_key[0]->meta_key;
-
-
-
 ?>
 
 <div class="pcblock__poll" data-pollkey="<?php echo $poll_key; ?>">
@@ -39,7 +35,7 @@
 $answer = get_sub_field('answer_text');
 
 ?>
-<li class="poll-answer pcblock__poll__answer" data-pollanswer="<?php echo $answer; ?>" data-pollkey="<?php echo $poll_key; ?>" onclick="answerPoll('<?php echo $answer; ?>', '<?php echo $poll_key; ?>', '<?php echo $post_id; ?>')">
+<li class="poll-answer pcblock__poll__answer" data-pollanswer="<?php echo $answer; ?>" data-pollkey="<?php echo $poll_key; ?>" onclick="answerPoll('<?php echo $answer; ?>', '<?php echo $poll_key; ?>', '<?php echo $post_id; ?>', '<?php echo $poll_question; ?>')">
 
 	
 
@@ -119,6 +115,45 @@ $answer = get_sub_field('answer_text');
 <?php endif; ?>
 </ul>
 
+<section class="share-poll-result">
+	<h5>Share your answer</h5>
+
+	<ul class="social-share-buttons social-share-buttons--share-result">
+		<li class="facebook social-share-btn" id="share-fb">
+		<a href="" target="_blank"><i class="fa fa-facebook"></i><span class="share-text">Share on Facebook</span></a>
+		</li><!--
+
+		--><li class="twitter social-share-btn" id="share-tw">
+		<a href="" target="_blank"><i class="fa fa-twitter"></i> <span class="share-text">Share on Twitter</span>
+		</a>
+		</li>
+	</ul>
+</section>
 
 	
 </div>
+
+
+<script>
+var thisPollCookieTitle = '<?php echo $poll_key; ?>-<?php echo $post_id; ?>';
+var thisPollKey = '<?php echo $poll_key; ?>';
+
+if ( $.cookie(thisPollCookieTitle) ) {
+
+	// Show Sharing Box
+	showSharing('<?php echo $poll_question; ?>', $.cookie(thisPollCookieTitle), thisPollKey );
+
+
+	// 
+	var answeredPoll = $('.pcblock__poll[data-pollkey='+thisPollKey+']');
+
+    var answeredAnswer = $('.pcblock__poll__answer[data-pollanswer="'+$.cookie(thisPollCookieTitle)+'"]');
+
+    answeredPoll.find('.pollResults').addClass("pollResults-showing");
+		answeredAnswer.addClass("poll-answer--picked");
+
+		answeredPoll.find('.pollResults__placeholder').hide();
+		answeredPoll.find('.pollResults__real').show();
+
+} 
+</script>
