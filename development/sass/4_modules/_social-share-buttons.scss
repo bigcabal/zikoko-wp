@@ -242,6 +242,37 @@
 }
 
 
+/* Share result of Poll or Quiz */
+
+
+
+.social-share-buttons--share-result {
+
+	margin-top: 15px;
+
+	.share-text {
+		margin-left: 10px;
+		padding-left: 10px;
+		border-left: 1px solid #fff;
+	}
+
+	li.social-share-btn {
+		 a,
+		 a:visited {
+		 	text-decoration: none;
+		 	color: #fff;
+		 }
+		 
+		padding: 10px 15px;
+		font-size: 1.6rem;
+
+		margin-right: 10px;
+		border-radius: 3px;
+
+	}
+}
+
+
 
 
 /* Social Profile */

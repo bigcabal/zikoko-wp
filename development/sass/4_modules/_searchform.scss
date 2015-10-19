@@ -43,6 +43,12 @@
 			padding: 0 10px;
 		}
 
+		@include screen(small) {
+			width: 70%;
+			font-size: 1rem;
+			padding: 0 10px;
+		}
+
 	}
 
 
@@ -53,6 +59,10 @@
 
 		@include screen(med-small) {
 			width: 20%;
+		}
+
+		@include screen(med-small) {
+			width: 30%;
 		}
 
 

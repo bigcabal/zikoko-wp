@@ -6,7 +6,7 @@ Theme URI: http://zikoko.com
 Author: Ire Aderinokun
 Author URI: www.ireaderinokun.com
 Description: This is the custom theme for the Zikoko website
-Version: 0.1.1
+Version: 1.0.0
 License: GNU General Public License
 License URI: license.txt
 */
@@ -156,12 +156,12 @@ h3 {
     h3 {
       font-size: 2rem; } }
 
-h4 {
+h4, .pcblock__quote--text {
   font-family: 'Montserrat', sans-serif;
   padding-bottom: 1rem;
   font-size: 2rem; }
   @media screen and (max-width: 960px) {
-    h4 {
+    h4, .pcblock__quote--text {
       font-size: 2.8rem; } }
 
 h5 {
@@ -233,6 +233,12 @@ ul.sub-menu {
 
 .entry-excerpt--2 .entry-excerpt--entry {
   z-index: 5; }
+
+.conversion-prompt-container {
+  z-index: 30; }
+
+.conversion-prompt-cancel {
+  z-index: 31; }
 
 /* -----------------------------
 
@@ -350,8 +356,7 @@ ul.sub-menu {
 
 .primary-menu-container, .secondary-menu-container {
   display: inline-block;
-  vertical-align: top;
-  width: 50%; }
+  vertical-align: top; }
   @media screen and (max-width: 960px) {
     .primary-menu-container, .secondary-menu-container {
       display: block;
@@ -368,7 +373,8 @@ ul.sub-menu {
       width: 100%; }
 
 .primary-menu-container {
-  line-height: 55px; }
+  line-height: 55px;
+  width: 70%; }
   @media screen and (max-width: 960px) {
     .primary-menu-container {
       text-align: center; } }
@@ -381,6 +387,7 @@ ul.sub-menu {
     opacity: 0.5; }
 
 .secondary-menu-container {
+  width: 30%;
   text-align: right; }
   @media screen and (max-width: 960px) {
     .secondary-menu-container {
@@ -674,6 +681,22 @@ body {
   text-align: center;
   margin-left: -20px; }
 
+/* Share result of Poll or Quiz */
+.social-share-buttons--share-result {
+  margin-top: 15px; }
+  .social-share-buttons--share-result .share-text {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #fff; }
+  .social-share-buttons--share-result li.social-share-btn {
+    padding: 10px 15px;
+    font-size: 1.6rem;
+    margin-right: 10px;
+    border-radius: 3px; }
+    .social-share-buttons--share-result li.social-share-btn a, .social-share-buttons--share-result li.social-share-btn a:visited {
+      text-decoration: none;
+      color: #fff; }
+
 /* Social Profile */
 .social-profile-buttons li {
   height: 50px;
@@ -836,6 +859,11 @@ body.single article.post .entry-full-content .ig-logo {
         width: 80%;
         font-size: 1.2rem;
         padding: 0 10px; } }
+    @media screen and (max-width: 600px) {
+      #searchform input[type="text"] {
+        width: 70%;
+        font-size: 1rem;
+        padding: 0 10px; } }
   #searchform button[type="submit"] {
     width: 15%;
     text-align: center;
@@ -843,6 +871,9 @@ body.single article.post .entry-full-content .ig-logo {
     @media screen and (max-width: 960px) {
       #searchform button[type="submit"] {
         width: 20%; } }
+    @media screen and (max-width: 960px) {
+      #searchform button[type="submit"] {
+        width: 30%; } }
 
 /* -----------------------------
 
@@ -986,8 +1017,7 @@ body.single article.post .entry-full-content .ig-logo {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2999; }
+  background-color: rgba(0, 0, 0, 0.8); }
 
 /* New Modal */
 .modal {
@@ -1109,11 +1139,29 @@ body.single article.post .entry-full-content .ig-logo {
     .next-post figure img {
       width: 100%;
       height: auto; }
+  @media screen and (max-height: 550px) {
+    .next-post {
+      height: 150px; } }
+  @media screen and (max-height: 500px) {
+    .next-post {
+      height: 130px; } }
+  @media screen and (max-height: 470px) {
+    .next-post {
+      height: 100px; } }
 
 .conversion-prompt-cancel {
   height: 40px;
   line-height: 40px;
-  display: block; }
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #5A1490;
+  padding-bottom: 50px; }
+  @media screen and (max-width: 650px) {
+    .conversion-prompt-cancel {
+      padding-bottom: 20px; } }
 
 /* -----------------------------
 
@@ -1179,6 +1227,32 @@ body.single article.post .entry-full-content .ig-logo {
 .entry-full-content hr {
   opacity: 0.5; }
 
+.pcblock {
+  margin-bottom: 50px; }
+  .pcblock h3.pcblock__headline {
+    padding: 0;
+    margin-bottom: 20px; }
+
+.pcblock__quote--text {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  display: block;
+  position: relative;
+  padding-left: 40px; }
+
+.pcblock__quote--text:before {
+  content: open-quote;
+  font-size: 8rem;
+  line-height: 1;
+  color: #5A1490;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.pcblock__quote--from {
+  display: block;
+  text-align: right;
+  font-style: italic; }
+
 .quiz-checklist .quiz-checklist--item {
   display: block;
   border: 1px solid #D8D8D8;
@@ -1240,7 +1314,96 @@ body.single article.post .entry-full-content .quiz-checklist a.quiz-checklist--s
          Poll
              
 ------------------------------- */
-.zkk-poll li {
+.pcblock__poll--q-container {
+  position: relative;
+  width: 100%;
+  padding: 50px 20px;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.pcblock__poll li.poll-answer {
+  border: 1px solid #D8D8D8;
+  background-color: #f2f2f2;
+  margin-bottom: 15px;
+  position: relative;
+  cursor: pointer;
+  vertical-align: top; }
+.pcblock__poll .pollResults {
+  background-color: #D8D8D8;
+  color: #fff;
+  text-align: center; }
+.pcblock__poll .pollResults.pollResults-showing {
+  background-color: #5A1490;
+  color: #fff; }
+
+.poll-answers--image {
+  text-align: center; }
+  .poll-answers--image li.poll-answer {
+    display: inline-block;
+    width: 47%;
+    margin-right: 15px;
+    padding: 10px 15px;
+    padding-bottom: 60px; }
+  .poll-answers--image li.poll-answer:nth-child(odd) {
+    margin-right: 2%; }
+  .poll-answers--image .poll-answer--image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 15px; }
+    .poll-answers--image .poll-answer--image img {
+      min-height: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: cover; }
+  .poll-answers--image .answerText {
+    display: inline-block;
+    max-width: 82%; }
+  .poll-answers--image .pollResults {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    line-height: 50px; }
+
+.poll-answers--text .poll-answer--image {
+  display: none; }
+.poll-answers--text li.poll-answer {
+  display: block;
+  padding: 10px 15px; }
+.poll-answers--text .answerText {
+  display: inline-block;
+  max-width: 82%; }
+.poll-answers--text .pollResults {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  min-width: 15%;
+  padding-top: 10px; }
+
+/* Both */
+li.poll-answer:hover {
+  background-color: #FEF195; }
+
+li.poll-answer.poll-answer--picked {
+  background-color: #8ac5ff;
+  color: #fff; }
+
+.pollResults__real, .answerCount--real {
+  display: none; }
+
+.share-poll-result {
+  margin-top: 40px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid #D8D8D8;
+  display: none; }
+
+/* Old Poll */
+.zkk-poll li.poll-answer {
   display: block;
   border: 1px solid #D8D8D8;
   background-color: #f2f2f2;
@@ -1248,30 +1411,23 @@ body.single article.post .entry-full-content .quiz-checklist a.quiz-checklist--s
   margin-bottom: 15px;
   position: relative;
   cursor: pointer; }
-  .zkk-poll li .answerText {
-    display: inline-block;
-    max-width: 82%; }
-  .zkk-poll li .answerCount {
-    background-color: #D8D8D8;
-    color: #fff;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 15%;
-    padding-top: 10px; }
-  .zkk-poll li .answerCount.answerCount-showing {
+  .zkk-poll li.poll-answer .answerCount.answerCount-showing {
     background-color: #5A1490;
     color: #fff; }
-.zkk-poll li:hover {
-  background-color: #FEF195; }
-.zkk-poll li.poll-answer--picked {
-  background-color: #8ac5ff;
-  color: #fff; }
-
-.answerCount--real {
-  display: none; }
+.zkk-poll .answerText {
+  display: inline-block;
+  max-width: 82%; }
+.zkk-poll .answerCount {
+  background-color: #D8D8D8;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  min-width: 15%;
+  padding-top: 10px; }
 
 body.single article.post .entry-full-content div.juxtapose img {
   position: absolute; }
@@ -1579,7 +1735,7 @@ body.single article.post .entry-full-content div.juxtapose img {
   height: 90px;
   overflow: hidden; }
 .aside-featured-posts .entry-excerpt--entry {
-  font-size: 1.3rem; }
+  font-size: 1.1rem; }
   .aside-featured-posts .entry-excerpt--entry a {
     color: #f0f0f0; }
 @media screen and (max-width: 1175px) {

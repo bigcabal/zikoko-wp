@@ -68,7 +68,6 @@
 .secondary-menu-container {
 	display: inline-block;
 	vertical-align: top;
-	width: 50%;
 
 
 	@include screen(med-small) {
@@ -98,6 +97,7 @@
 
 .primary-menu-container {
 	line-height: 55px;
+	width: 70%;
 
 	@include screen(med-small) {
 		text-align: center;
@@ -120,7 +120,7 @@
 
 
 .secondary-menu-container {
-
+	width: 30%;
 	text-align: right;
 
 	@include screen(med-small) {

@@ -1,5 +1,549 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
 /* ----------------------------
 
         Editor Styles
 
 ------------------------------ */
+/* CSS Reset Based on -
+ *    Eric Meyer's Reset CSS v2.0 (http://cssreset.com)
+ *    Paul Irish's Box Sizing Reset (http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
+ *    CSS Mojo's clearfix (http://cssmojo.com/latest_new_clearfix_so_far/)
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Box sizing */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/* Clearfix */
+.cf:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* -----------------------------
+
+        Mixins and Vars
+             
+------------------------------- */
+/* -------------------------
+
+	  Spacing
+
+------------------------- */
+.no-padd {
+  padding: 0; }
+
+.padd-top {
+  padding-top: 20px; }
+  @media screen and (max-width: 600px) {
+    .padd-top {
+      padding-top: 15px; } }
+
+.padd-right {
+  padding-right: 30px; }
+  @media screen and (max-width: 600px) {
+    .padd-right {
+      padding-right: 20px; } }
+
+.padd-bottom {
+  padding-bottom: 20px; }
+  @media screen and (max-width: 600px) {
+    .padd-bottom {
+      padding-bottom: 15px; } }
+
+.padd-left {
+  padding-left: 30px; }
+  @media screen and (max-width: 600px) {
+    .padd-left {
+      padding-left: 20px; } }
+
+.padd-all {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px; }
+  @media screen and (max-width: 600px) {
+    .padd-all {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 20px;
+      padding-right: 20px; } }
+
+@media screen and (max-width: 600px) {
+  .mobile-padd {
+    padding-left: 20px;
+    padding-right: 20px; } }
+
+/* -----------------------------
+
+             Type
+             
+------------------------------- */
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  color: #323232; }
+  @media screen and (max-width: 960px) {
+    body {
+      font-size: 1.6rem; } }
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.2rem; }
+  @media screen and (max-width: 960px) {
+    h1 {
+      font-size: 3rem; } }
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 2.8rem; } }
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem; }
+  @media screen and (max-width: 960px) {
+    h2 {
+      font-size: 2.6rem; } }
+  @media screen and (max-width: 600px) {
+    h2 {
+      font-size: 2.4rem; } }
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 1rem;
+  font-size: 2.4rem; }
+  @media screen and (max-width: 960px) {
+    h3 {
+      font-size: 2.4rem; } }
+  @media screen and (max-width: 600px) {
+    h3 {
+      font-size: 2rem; } }
+
+h4, .pcblock__quote--text {
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 1rem;
+  font-size: 2rem; }
+  @media screen and (max-width: 960px) {
+    h4, .pcblock__quote--text {
+      font-size: 2.8rem; } }
+
+h5 {
+  font-family: 'Montserrat', sans-serif; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+small {
+  font-size: 1.6rem; }
+
+.entry-excerpt--meta {
+  text-transform: uppercase;
+  color: #5A1490;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem; }
+
+.site-nav-container {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem; }
+  @media screen and (max-width: 960px) {
+    .site-nav-container {
+      color: #5A1490; } }
+
+#primary-nav {
+  font-size: 1.8rem; }
+  @media screen and (max-width: 960px) {
+    #primary-nav {
+      font-size: 1.6rem; } }
+
+#secondary-nav {
+  font-size: 1.4rem; }
+  @media screen and (max-width: 960px) {
+    #secondary-nav {
+      font-size: 1.6rem; } }
+
+/* -----------------------------
+
+        Wordpress
+        	 
+------------------------------- */
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
+/* -----------------------------
+
+      .entry-full.content
+             
+------------------------------- */
+.entry-full-content p, .entry-full-content div, .entry-full-content img, .entry-full-content iframe {
+  max-width: 100%; }
+.entry-full-content p {
+  line-height: 2;
+  margin-bottom: 1rem; }
+.entry-full-content img {
+  position: relative;
+  display: block;
+  height: auto;
+  width: 100%; }
+.entry-full-content img.alignleft {
+  float: left;
+  margin-right: 20px;
+  padding-bottom: 10px; }
+.entry-full-content img.alignright {
+  float: right;
+  margin-left: 20px;
+  padding-bottom: 10px; }
+.entry-full-content b, .entry-full-content strong {
+  font-weight: 600; }
+.entry-full-content h3 {
+  padding-top: 30px; }
+.entry-full-content a, .entry-full-content a:visited {
+  text-decoration: underline;
+  color: #3655C6; }
+.entry-full-content em, .entry-full-content i {
+  font-style: italic; }
+.entry-full-content .watermark-img {
+  position: relative;
+  padding-bottom: 35px; }
+  .entry-full-content .watermark-img em {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    padding-right: 80px; }
+.entry-full-content .watermark-img:after {
+  content: "";
+  height: 25px;
+  width: 70px;
+  background-image: url('inc/img/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+.entry-full-content .wp-caption-text {
+  font-size: 1.2rem;
+  text-transform: uppercase; }
+.entry-full-content small {
+  font-size: 1.4rem; }
+.entry-full-content .fluid-width-video-wrapper {
+  width: 100%;
+  position: relative;
+  padding: 0; }
+.entry-full-content hr {
+  opacity: 0.5; }
+
+.pcblock {
+  margin-bottom: 50px; }
+  .pcblock h3.pcblock__headline {
+    padding: 0;
+    margin-bottom: 20px; }
+
+.pcblock__quote--text {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  display: block;
+  position: relative;
+  padding-left: 40px; }
+
+.pcblock__quote--text:before {
+  content: open-quote;
+  font-size: 8rem;
+  line-height: 1;
+  color: #5A1490;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.pcblock__quote--from {
+  display: block;
+  text-align: right;
+  font-style: italic; }
+
+body.single article.post .entry-full-content div.juxtapose img {
+  position: absolute; }
+
+.entry-content {
+  /* Animation */
+  /* Knight Lab Credit */
+  /* keyboard accessibility */ }
+  .entry-content div.juxtapose {
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif; }
+    .entry-content div.juxtapose img {
+      height: 100%;
+      z-index: 5;
+      position: absolute;
+      max-height: none;
+      max-width: none;
+      max-height: initial;
+      max-width: initial;
+      width: initial; }
+  .entry-content div.jx-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; }
+  .entry-content div.jx-handle {
+    position: absolute;
+    height: 100%;
+    width: 40px;
+    cursor: col-resize;
+    z-index: 15;
+    margin-left: -20px; }
+  .entry-content .vertical div.jx-handle {
+    height: 40px;
+    width: 100%;
+    cursor: row-resize;
+    margin-top: -20px;
+    margin-left: 0; }
+  .entry-content div.jx-control {
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 3px;
+    background-color: white; }
+  .entry-content .vertical div.jx-control {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+  .entry-content div.jx-controller {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    height: 60px;
+    width: 9px;
+    margin-left: -3px;
+    background-color: white; }
+  .entry-content .vertical div.jx-controller {
+    height: 9px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    top: -3px;
+    position: relative; }
+  .entry-content div.jx-arrow {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    transition: all .2s ease; }
+  .entry-content .vertical div.jx-arrow {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    transition: all .2s ease; }
+  .entry-content div.jx-arrow.jx-left {
+    left: 2px;
+    border-style: solid;
+    border-width: 8px 8px 8px 0;
+    border-color: transparent #FFF transparent transparent; }
+  .entry-content div.jx-arrow.jx-right {
+    right: 2px;
+    border-style: solid;
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent #FFF; }
+  .entry-content .vertical div.jx-arrow.jx-left {
+    left: 0px;
+    top: 2px;
+    border-style: solid;
+    border-width: 0px 8px 8px 8px;
+    border-color: transparent transparent #FFF transparent; }
+  .entry-content .vertical div.jx-arrow.jx-right {
+    right: 0px;
+    top: initial;
+    bottom: 2px;
+    border-style: solid;
+    border-width: 8px 8px 0 8px;
+    border-color: #FFF transparent transparent transparent; }
+  .entry-content div.jx-handle:hover div.jx-arrow.jx-left, .entry-content div.jx-handle:active div.jx-arrow.jx-left {
+    left: -1px; }
+  .entry-content div.jx-handle:hover div.jx-arrow.jx-right, .entry-content div.jx-handle:active div.jx-arrow.jx-right {
+    right: -1px; }
+  .entry-content .vertical div.jx-handle:hover div.jx-arrow.jx-left, .entry-content .vertical div.jx-handle:active div.jx-arrow.jx-left {
+    left: 0px;
+    top: 0px; }
+  .entry-content .vertical div.jx-handle:hover div.jx-arrow.jx-right, .entry-content .vertical div.jx-handle:active div.jx-arrow.jx-right {
+    right: 0px;
+    bottom: 0px; }
+  .entry-content div.jx-image {
+    position: absolute;
+    height: 100%;
+    display: inline-block;
+    top: 0;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden; }
+  .entry-content .vertical div.jx-image {
+    width: 100%;
+    left: 0;
+    top: initial; }
+  .entry-content div.jx-image img {
+    height: 100%;
+    z-index: 5;
+    position: absolute;
+    max-height: none;
+    max-width: none;
+    max-height: initial;
+    max-width: initial; }
+  .entry-content .vertical div.jx-image img {
+    height: initial;
+    width: 100%; }
+  .entry-content div.jx-image.jx-left {
+    left: 0;
+    background-position: left; }
+  .entry-content div.jx-image.jx-left img {
+    left: 0; }
+  .entry-content div.jx-image.jx-right {
+    right: 0;
+    background-position: right; }
+  .entry-content div.jx-image.jx-right img {
+    right: 0;
+    bottom: 0; }
+  .entry-content .veritcal div.jx-image.jx-left {
+    top: 0;
+    background-position: top; }
+  .entry-content .veritcal div.jx-image.jx-left img {
+    top: 0; }
+  .entry-content .vertical div.jx-image.jx-right {
+    bottom: 0;
+    background-position: bottom; }
+  .entry-content .veritcal div.jx-image.jx-right img {
+    bottom: 0; }
+  .entry-content div.jx-image div.jx-label {
+    font-size: 1em;
+    padding: .25em .75em;
+    position: relative;
+    display: inline-block;
+    top: 0;
+    background-color: #000;
+    /* IE 8 */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    z-index: 10;
+    white-space: nowrap;
+    line-height: 18px;
+    vertical-align: middle; }
+  .entry-content div.jx-image.jx-left div.jx-label {
+    float: left;
+    left: 0; }
+  .entry-content div.jx-image.jx-right div.jx-label {
+    float: right;
+    right: 0; }
+  .entry-content .vertical div.jx-image div.jx-label {
+    display: table;
+    position: absolute; }
+  .entry-content .vertical div.jx-image.jx-right div.jx-label {
+    left: 0;
+    bottom: 0;
+    top: initial; }
+  .entry-content div.jx-credit {
+    line-height: 1.1;
+    font-size: 0.75em;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block; }
+  .entry-content div.jx-credit em {
+    font-weight: bold;
+    font-style: normal; }
+  .entry-content div.jx-image.transition {
+    transition: width .5s ease; }
+  .entry-content div.jx-handle.transition {
+    transition: left .5s ease; }
+  .entry-content .vertical div.jx-image.transition {
+    transition: height .5s ease; }
+  .entry-content .vertical div.jx-handle.transition {
+    transition: top .5s ease; }
+  .entry-content a.jx-knightlab {
+    background-color: #000;
+    /* IE 8 */
+    background-color: rgba(0, 0, 0, 0.25);
+    bottom: 0;
+    display: table;
+    height: 14px;
+    line-height: 14px;
+    padding: 1px 4px 1px 5px;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    z-index: 10; }
+  .entry-content a.jx-knightlab div.knightlab-logo {
+    display: inline-block;
+    vertical-align: middle;
+    height: 8px;
+    width: 8px;
+    background-color: #c34528;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    top: -1.25px;
+    position: relative;
+    cursor: pointer; }
+  .entry-content a.jx-knightlab:hover {
+    background-color: #000;
+    /* IE 8 */
+    background-color: rgba(0, 0, 0, 0.35); }
+  .entry-content a.jx-knightlab:hover div.knightlab-logo {
+    background-color: #ce4d28; }
+  .entry-content a.jx-knightlab span.juxtapose-name {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: white;
+    font-size: 10px;
+    padding-left: 0.375em;
+    vertical-align: middle;
+    line-height: normal; }
+  .entry-content div.jx-controller:focus, .entry-content div.jx-image.jx-left div.jx-label:focus, .entry-content div.jx-image.jx-right div.jx-label:focus, .entry-content a.jx-knightlab:focus {
+    background: #eae34a;
+    color: #000; }
+  .entry-content a.jx-knightlab:focus span.juxtapose-name {
+    color: #000;
+    border: none; }

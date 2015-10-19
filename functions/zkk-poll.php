@@ -8,7 +8,7 @@
 
 /* CRETE DATABASE IF DOESN'T ALREADY EXIST */
 
-$zkkpolls_table_name = $wpdb->prefix . 'zkkpolls_answers';
+$zkkpolls_table_name = 'bc_zkkpolls_answers';
 
 // will return NULL if there isn't one
 if ( $wpdb->get_var('SHOW TABLES LIKE ' . $zkkpolls_table_name) != $zkkpolls_table_name )
@@ -40,12 +40,12 @@ function add_poll_result_ajax() {
 
     
 
-    $update_polla_votes = $wpdb->query("UPDATE wp_zkkpolls_answers SET responses = (responses+1) WHERE answer = '".$answer."' AND post_id = $post_id");
+    $update_polla_votes = $wpdb->query("UPDATE bc_zkkpolls_answers SET responses = (responses+1) WHERE answer = '".$answer."' AND post_id = $post_id");
 
     $new_reponse = $wpdb->get_var( 
           "
           SELECT responses 
-          FROM wp_zkkpolls_answers
+          FROM bc_zkkpolls_answers
           WHERE answer = '".$answer."'
           "
         ); 

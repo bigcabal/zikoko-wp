@@ -126,3 +126,53 @@
 
 }
 
+
+
+.pcblock {
+	// border: 1px solid red;
+
+	margin-bottom: 50px;
+
+
+	h3.pcblock__headline {
+		padding: 0;
+		margin-bottom: 20px;
+	}
+}
+
+
+
+.pcblock__quote--text {
+	quotes: "\201C""\201D""\2018""\2019";
+
+
+	display: block;
+	position: relative;
+
+	padding-left: 40px;
+
+}
+
+.pcblock__quote--text:before {
+	content: open-quote;
+	font-size: 8rem;
+	line-height: 1;
+	color: $theme;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.pcblock__quote--from {
+	display: block;
+	text-align: right;
+	font-style: italic;
+
+}
+
+
+
+
+
+

@@ -4,4 +4,41 @@
 
 ------------------------------ */
 
+
+
+
+// Table of Contents ------------------------------- 
+	
+	// 1 - Library
+
+	@import
+		'1_lib/bourbon/bourbon',
+		'1_lib/reset'
+	;
+
+	// 2 - Base
+	
+	@import 
+		'2_base/vars',
+		'2_base/spacing',
+		'2_base/type',
+		'2_base/wp'
+	;
+
+
+	// 5 - Post
+
+	@import 
+		'5_post/entry-full-content',
+		'5_post/juxtapose'
+	;
+
+
+
+
+
+
+// END Table of Contents ------------------------------- 
+
+
 	

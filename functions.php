@@ -41,10 +41,14 @@ add_filter( 'excerpt_more', 'zkk_excerpt_more' );
 
 
 /* Custom Fields */
-include_once( 'admin/acf/plugin/acf.php' );
+//include_once( 'admin/acf/plugin/acf.php' );
 include_once( 'admin/acf/fields/post.php' );
-// include_once( 'admin/acf/fields/acf-fields.php' );
-define( 'ACF_LITE', true );
+
+
+if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
+  define( 'ACF_LITE', true );
+}
+
 
 
 
@@ -91,6 +95,9 @@ include_once( 'functions/google-analytics.php' );
 
 /* Register Shortcodes */
 include_once( 'functions/shortcodes.php' );
+
+/* User Capabilities */
+include_once( 'functions/user-roles.php' );
 
 
 
