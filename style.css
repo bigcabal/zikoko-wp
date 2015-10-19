@@ -762,38 +762,37 @@ body {
          Instagram Embed
              
 ------------------------------- */
-body.single article.post .entry-full-content .ig-embed-link {
+.entry-full-content .ig-embed-link {
   text-decoration: none;
   color: inherit;
   font-weight: 300; }
-body.single article.post .entry-full-content .ig-embed {
+.entry-full-content .ig-embed {
   border: 1px solid #c8c8c8;
   border-radius: 3px;
   margin: 0 auto;
-  /* Test */
   max-width: 600px; }
-body.single article.post .entry-full-content .ig-embed header {
+.entry-full-content .ig-embed header {
   position: relative;
   text-align: left;
   height: 80px;
   line-height: 80px;
   padding: 0 10px; }
-body.single article.post .entry-full-content .ig-embed header span {
+.entry-full-content .ig-embed header span {
   display: inline-block;
   margin: 0; }
-body.single article.post .entry-full-content .ig-embed header span, body.single article.post .entry-full-content .ig-embed-user--image {
+.entry-full-content .ig-embed header span, .entry-full-content .ig-embed-user--image {
   vertical-align: middle; }
-body.single article.post .entry-full-content img.ig-embed-user--image {
+.entry-full-content img.ig-embed-user--image {
   display: inline-block;
   border-radius: 50%;
   text-align: left;
   width: 10%;
   margin-right: 10px; }
-body.single article.post .entry-full-content .ig-embed-user--handle {
+.entry-full-content .ig-embed-user--handle {
   color: #125688;
   font-weight: 600;
   padding-right: 10px; }
-body.single article.post .entry-full-content .ig-embed-user--follow {
+.entry-full-content .ig-embed-user--follow {
   border: 1px solid #125688;
   border-radius: 3px;
   background-color: #fff;
@@ -805,25 +804,28 @@ body.single article.post .entry-full-content .ig-embed-user--follow {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%); }
   @media screen and (max-width: 600px) {
-    body.single article.post .entry-full-content .ig-embed-user--follow {
+    .entry-full-content .ig-embed-user--follow {
       font-size: 12px;
       padding: 3px 5px; } }
-body.single article.post .entry-full-content .ig-embed--main {
+.entry-full-content .ig-embed--main {
   width: 100%;
   height: auto;
   padding: 0 10px 8px 10px; }
-body.single article.post .entry-full-content .ig-embed footer {
+.entry-full-content .ig-embed footer {
   position: relative;
   padding: 10px;
   background-color: #f0f0f0;
   height: 40px; }
-body.single article.post .entry-full-content .ig-embed-meta {
+.entry-full-content .ig-embed-meta {
   color: #969696;
   display: inline-block;
   font-weight: 600; }
-body.single article.post .entry-full-content .ig-embed-meta span {
+  .entry-full-content .ig-embed-meta i.fa {
+    font-style: normal;
+    padding-right: 5px; }
+.entry-full-content .ig-embed-meta span {
   margin-right: 15px; }
-body.single article.post .entry-full-content .ig-logo {
+.entry-full-content .ig-logo {
   height: 100%;
   width: auto;
   float: right; }
@@ -1227,26 +1229,54 @@ body.single article.post .entry-full-content .ig-logo {
 .entry-full-content hr {
   opacity: 0.5; }
 
+/* POST CONTENT BLOCK */
 .pcblock {
   margin-bottom: 50px; }
   .pcblock h3.pcblock__headline {
     padding: 0;
     margin-bottom: 20px; }
 
+/* Image */
+.pcblock__image {
+  position: relative; }
+
+.pcblock__image--zkklogo {
+  content: "";
+  height: 25px;
+  width: 70px;
+  background-image: url('inc/img/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+/* Embed */
+.pcblock__embed iframe[id^='twitter-widget-'] {
+  width: 100% !important;
+  max-width: 100% !important; }
+
+/* Quote */
 .pcblock__quote--text {
   quotes: "\201C" "\201D" "\2018" "\2019";
-  display: block;
-  position: relative;
-  padding-left: 40px; }
+  border-left: 10px solid #ccc;
+  margin-bottom: 1rem;
+  padding: 15px 0 15px 15px; }
 
 .pcblock__quote--text:before {
-  content: open-quote;
-  font-size: 8rem;
-  line-height: 1;
   color: #5A1490;
-  position: absolute;
-  top: 0;
-  left: 0; }
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em; }
+
+.pcblock__quote--text:after {
+  content: close-quote;
+  visibility: hidden; }
+
+.pcblock__quote--text p {
+  display: inline; }
 
 .pcblock__quote--from {
   display: block;

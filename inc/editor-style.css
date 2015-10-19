@@ -270,26 +270,54 @@ small {
 .entry-full-content hr {
   opacity: 0.5; }
 
+/* POST CONTENT BLOCK */
 .pcblock {
   margin-bottom: 50px; }
   .pcblock h3.pcblock__headline {
     padding: 0;
     margin-bottom: 20px; }
 
+/* Image */
+.pcblock__image {
+  position: relative; }
+
+.pcblock__image--zkklogo {
+  content: "";
+  height: 25px;
+  width: 70px;
+  background-image: url('inc/img/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+/* Embed */
+.pcblock__embed iframe[id^='twitter-widget-'] {
+  width: 100% !important;
+  max-width: 100% !important; }
+
+/* Quote */
 .pcblock__quote--text {
   quotes: "\201C" "\201D" "\2018" "\2019";
-  display: block;
-  position: relative;
-  padding-left: 40px; }
+  border-left: 10px solid #ccc;
+  margin-bottom: 1rem;
+  padding: 15px 0 15px 15px; }
 
 .pcblock__quote--text:before {
-  content: open-quote;
-  font-size: 8rem;
-  line-height: 1;
   color: #5A1490;
-  position: absolute;
-  top: 0;
-  left: 0; }
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em; }
+
+.pcblock__quote--text:after {
+  content: close-quote;
+  visibility: hidden; }
+
+.pcblock__quote--text p {
+  display: inline; }
 
 .pcblock__quote--from {
   display: block;

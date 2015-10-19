@@ -39,8 +39,27 @@
 
 ************************* -->
 <?php if ( get_sub_field('media_choice') === 'image' ) : ?>
-<img src="<?php the_sub_field('image_upload'); ?>" alt="<?php the_sub_field('headline'); ?>">
+<div class="pcblock__image">
+	<img class="pcblock__image--img" src="<?php the_sub_field('image_upload'); ?>" alt="<?php the_sub_field('headline'); ?>">
+
+	<small class="pcblock__image--credit">
+	<?php if ( get_sub_field('image_credit') != '' && get_sub_field('via') != '' ) : ?>
+		via <a href="<?php the_sub_field('via'); ?>" target="_blank"><?php the_sub_field('image_credit'); ?></a>
+	<?php elseif ( get_sub_field('image_credit') != '') : ?>
+		via <?php the_sub_field('image_credit'); ?>
+
+	<?php elseif ( get_sub_field('via') != '') : 
+		$full_url = get_sub_field('via');
+		$shortened_url = explode("/", $full_url)[2]; ?>
+		via <a href="<?php the_sub_field('via'); ?>" target="_blank"><?php echo $shortened_url; ?></a>
+	<?php endif; ?>
+	</small>
+
+	<div class="pcblock__image--zkklogo"></div>
+</div>
 <?php endif; ?>
+
+
 
 
 
@@ -50,7 +69,7 @@
 
 ************************* -->
 <?php if ( get_sub_field('media_choice') === 'embed' ) : ?>
-
+<div class="pcblock__embed">
 
 	<?php if ( get_sub_field('choose_embed') === 'instagram' ) :
 
@@ -61,7 +80,7 @@
 		the_sub_field('embed_code_other');
 
 	endif; ?>
-
+</div>
 <?php endif; ?>
 
 
@@ -73,11 +92,16 @@
 
 ************************* -->
 <?php if ( get_sub_field('media_choice') === 'quote' ) : ?>
-<blockquote class="pcblock__quote--text">
-<?php the_sub_field('quote_text');?>
-</blockquote>
+	<blockquote class="pcblock__quote--text">
+	<p><?php the_sub_field('quote_text');?></p>
+	
+	</blockquote>
 
-<cite class="pcblock__quote--from"><span>&mdash;</span> <?php the_sub_field('from');?></cite>
+	<?php if ( get_sub_field('from') != '' ) : ?>
+	<cite class="pcblock__quote--from">
+		<span>&mdash;</span> <?php the_sub_field('from');?>
+	</cite>
+	<?php endif; ?>
 <?php endif; ?>
 
 

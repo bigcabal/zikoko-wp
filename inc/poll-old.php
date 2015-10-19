@@ -1,6 +1,6 @@
 <?php 
 /**
- * Poll
+ * Poll OLD VERSION
  *
  * @package ZikokoTheme
 **/

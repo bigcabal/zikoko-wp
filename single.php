@@ -23,6 +23,9 @@ get_header();
 
 $author = get_the_author(); 
 ?>
+
+
+
 <div class="main-body-area">
 <div class="container">
 
