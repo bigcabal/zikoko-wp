@@ -1,40 +1,23 @@
 
-<?php 
+<?php
 /**
  * Single Post Template
  *
  * @package ZikokoTheme
 **/
-
-// // Start Post Loop
-// if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-
-
-// if ( get_field('post_format_option') === 'card' ) {
-
-// 	get_header('post-cards');
-
-// } else {
-// 	get_header();
-// }
 get_header();
-
 
 $author = get_the_author(); 
 ?>
-
-
-
 <div class="main-body-area">
 <div class="container">
 
 <main class="site-main">
 <div class="site-box padd-all">
 
+	<!-- Start Post -->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('main-article'); ?>>
-
 
 
 	<!-- Floating Social Share Buttons -->
@@ -56,33 +39,20 @@ $author = get_the_author();
 	</header>
 
 	<div class="entry-full-content">
-
-		<?php  if ( get_field('post_format') === 'standard' ) : ?>
-		
-		<?php get_template_part('content', 'default'); ?>
-
-		<?php else: ?>
-
 		<?php the_content(); ?>
 
-		<?php endif; ?>
-
-
-		
-
-		<?php 
-			// wp_link_pages( array(
-			// 'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'ZikokoTheme' ) . '</span>',
-			// 'after'       => '</div>',
-			// 'link_before' => '<span>',
-			// 'link_after'  => '</span>',
-			// ) );
+		<?php wp_link_pages( array(
+			'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'ZikokoTheme' ) . '</span>',
+			'after'       => '</div>',
+			'link_before' => '<span>',
+			'link_after'  => '</span>',
+			) );
 		?>
 
 		<?php 
 
 			// if ( get_field('post_poll_toggle') === '1' ) {
-			// 	get_template_part('inc/poll-old');
+			// 	get_template_part('inc/poll');
 			// }
 		?>
 
@@ -92,7 +62,6 @@ $author = get_the_author();
 		
 	</article>
 	<?php endwhile; endif; ?>
-	
 
 </div>
 
@@ -143,4 +112,3 @@ $author = get_the_author();
 </div> <!-- end .container -->
 </div> <!-- end .main-body-area -->
 <?php get_footer(); ?>
-

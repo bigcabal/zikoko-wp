@@ -5,9 +5,15 @@
  * @package ZikokoTheme
 **/
 
+/* ******************************************
 
+	Remove Post Settings for Contributors
 
+if ( current_user_can('publish_posts') ) :
 
+endif;
+
+******************************************* */
 
 
 if( function_exists('acf_add_local_field_group') ):
@@ -175,7 +181,7 @@ acf_add_local_field_group(array (
 			'label' => 'Content Block (Standard Format)',
 			'name' => 'content_block_standard_format',
 			'type' => 'repeater',
-			'instructions' => 'Add a block of content',
+			'instructions' => 'Add each block of content below.',
 			'required' => 0,
 			'conditional_logic' => array (
 				array (
@@ -646,7 +652,7 @@ For certain...',
 							'label' => 'Answer',
 							'name' => 'answer_text',
 							'type' => 'text',
-							'instructions' => '',
+							'instructions' => 'Required even if you also use images',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
@@ -739,10 +745,7 @@ For certain...',
 	'description' => '',
 ));
 
-
-
 if ( current_user_can('publish_posts') ) :
-
 
 acf_add_local_field_group(array (
 	'key' => 'group_561f678b9ae6a',
@@ -838,7 +841,6 @@ acf_add_local_field_group(array (
 	'active' => 1,
 	'description' => '',
 ));
-
 endif;
 
 endif;
