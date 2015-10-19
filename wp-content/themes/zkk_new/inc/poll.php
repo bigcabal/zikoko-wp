@@ -10,13 +10,25 @@
 
 	$poll_question = get_sub_field('poll_question');
 
-	$poll_question_key = $wpdb->get_results (
-		"
-			SELECT meta_key 
-			FROM wp_postmeta 
-			WHERE meta_value = '".$poll_question."'
-		"
-	);
+	if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
+
+		$poll_question_key = $wpdb->get_results (
+			"
+				SELECT meta_key 
+				FROM bc_postmeta 
+				WHERE meta_value = '".$poll_question."'
+			"
+		);
+
+	} else {
+		$poll_question_key = $wpdb->get_results (
+			"
+				SELECT meta_key 
+				FROM wp_postmeta 
+				WHERE meta_value = '".$poll_question."'
+			"
+		);
+	}
 
 	$poll_key = $poll_question_key[0]->meta_key;
 ?>
