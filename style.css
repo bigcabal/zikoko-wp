@@ -1033,7 +1033,8 @@ body {
   width: 100%;
   height: auto;
   max-width: 500px;
-  min-height: 300px;
+  height: 100%;
+  max-height: 700px;
   text-align: center;
   padding: 40px; }
   @media screen and (max-width: 650px) {
@@ -1240,6 +1241,10 @@ body {
 .pcblock__image {
   position: relative; }
 
+.pcblock__image--credit {
+  display: block;
+  min-height: 30px; }
+
 .pcblock__image--zkklogo {
   content: "";
   height: 25px;
@@ -1255,6 +1260,12 @@ body {
 .pcblock__embed iframe[id^='twitter-widget-'] {
   width: 100% !important;
   max-width: 100% !important; }
+.pcblock__embed iframe[src^="https://www.youtube.com/"] {
+  width: 100% !important;
+  height: 400px; }
+  @media screen and (max-width: 600px) {
+    .pcblock__embed iframe[src^="https://www.youtube.com/"] {
+      height: 250px; } }
 
 /* Quote */
 .pcblock__quote--text {
@@ -1365,6 +1376,8 @@ body.single article.post .entry-full-content .quiz-checklist a.quiz-checklist--s
 .pcblock__poll .pollResults.pollResults-showing {
   background-color: #5A1490;
   color: #fff; }
+.pcblock__poll .share-poll-result {
+  display: none; }
 
 .poll-answers--image {
   text-align: center; }

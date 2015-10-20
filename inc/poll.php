@@ -10,13 +10,27 @@
 
 	$poll_question = get_sub_field('poll_question');
 
-	$poll_question_key = $wpdb->get_results (
-		"
-			SELECT meta_key 
-			FROM wp_postmeta 
-			WHERE meta_value = '".$poll_question."'
-		"
-	);
+	if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
+
+		$poll_question_key = $wpdb->get_results (
+			"
+				SELECT meta_key 
+				FROM bc_postmeta 
+				WHERE meta_value = '".$poll_question."' AND post_id = ".$post_id."
+			"
+		);
+
+	} else {
+		$poll_question_key = $wpdb->get_results (
+			"
+				SELECT meta_key 
+				FROM wp_postmeta 
+				WHERE meta_value = '".$poll_question."' AND post_id = ".$post_id."
+			"
+		);
+
+		echo $poll_question_key[0]->meta_key;
+	}
 
 	$poll_key = $poll_question_key[0]->meta_key;
 ?>
@@ -35,7 +49,20 @@
 $answer = get_sub_field('answer_text');
 
 ?>
-<li class="poll-answer pcblock__poll__answer" data-pollanswer="<?php echo $answer; ?>" data-pollkey="<?php echo $poll_key; ?>" onclick="answerPoll('<?php echo $answer; ?>', '<?php echo $poll_key; ?>', '<?php echo $post_id; ?>', '<?php echo $poll_question; ?>')">
+
+<script>
+	var poll_answer = "<?php echo $answer; ?>";
+	var poll_key = "<?php echo $poll_key; ?>";
+	var post_id = "<?php echo $post_id; ?>";
+	var poll_question = "<?php echo $poll_question; ?>";
+
+	var handleClick = function() {
+		console.log(poll_answer);
+		//answerPoll(poll_answer, poll_key, post_id, poll_question);
+	}	
+</script>
+
+<li class="poll-answer pcblock__poll__answer" data-pollanswer="<?php echo $answer; ?>" data-pollkey="<?php echo $poll_key; ?>" onclick='handleClick();'>
 
 	
 
@@ -111,6 +138,34 @@ $answer = get_sub_field('answer_text');
 		</span>
 	</span>
 </li> 
+
+
+<script>
+var thisPollCookieTitle = '<?php echo $poll_key; ?>-<?php echo $post_id; ?>';
+var thisPollKey = '<?php echo $poll_key; ?>';
+
+if ( $.cookie(thisPollCookieTitle) ) {
+
+	// Show Sharing Box
+	showSharing("<?php echo $poll_question; ?>", $.cookie(thisPollCookieTitle), thisPollKey );
+
+	console.log(thisPollKey);
+	console.log(thisPollCookieTitle);
+
+	// 
+	// var answeredPoll = $('.pcblock__poll[data-pollkey="'+thisPollKey+'"]');
+
+ //    var answeredAnswer = answeredPoll.find('.pcblock__poll__answer[data-pollanswer="'+$.cookie(thisPollCookieTitle)+'"]');
+
+ //    answeredPoll.find('.pollResults').addClass("pollResults-showing");
+	// answeredAnswer.addClass("poll-answer--picked");
+
+	// answeredPoll.find('.pollResults__placeholder').hide();
+	// answeredPoll.find('.pollResults__real').show();
+
+} 
+</script>
+
 <?php endwhile; ?>
 <?php endif; ?>
 </ul>
@@ -134,26 +189,3 @@ $answer = get_sub_field('answer_text');
 </div>
 
 
-<script>
-var thisPollCookieTitle = '<?php echo $poll_key; ?>-<?php echo $post_id; ?>';
-var thisPollKey = '<?php echo $poll_key; ?>';
-
-if ( $.cookie(thisPollCookieTitle) ) {
-
-	// Show Sharing Box
-	showSharing('<?php echo $poll_question; ?>', $.cookie(thisPollCookieTitle), thisPollKey );
-
-
-	// 
-	var answeredPoll = $('.pcblock__poll[data-pollkey='+thisPollKey+']');
-
-    var answeredAnswer = $('.pcblock__poll__answer[data-pollanswer="'+$.cookie(thisPollCookieTitle)+'"]');
-
-    answeredPoll.find('.pollResults').addClass("pollResults-showing");
-		answeredAnswer.addClass("poll-answer--picked");
-
-		answeredPoll.find('.pollResults__placeholder').hide();
-		answeredPoll.find('.pollResults__real').show();
-
-} 
-</script>

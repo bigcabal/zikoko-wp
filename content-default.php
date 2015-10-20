@@ -6,12 +6,9 @@
 **/
 ?>
 
-
-
-
 <?php if( have_rows('content_block_standard_format') ): ?>
 <?php while( have_rows('content_block_standard_format') ): the_row(); ?>
-<div class="pcblock">
+<div class="pcblock <?php if ( get_sub_field('display_block_number') ) { echo 'pcblock_numbered'; } ?>">
 
 
 
@@ -135,7 +132,7 @@ endif; ?>
 
 <!-- ************************
 
-		Description
+	   Additional Text
 
 ************************* -->
 <?php if ( get_sub_field('additional_text') != '' ) : ?>
@@ -149,40 +146,38 @@ endif; ?>
 
 
 
+<?php if ( get_field('post_type') === 'numbered' ) : ?>
 <script>
+	var number = $('.pcblock').length;
+	var n = 1;
 
-// STILL NEED TO DO NUMBERED POSTS
+	for (i = 1; i <= number ; i++) {
 
-	// var number = $('.pcblock').length;
+		if ( $('.pcblock:nth-of-type('+i+')').hasClass('pcblock_numbered') ) {
 
-	// console.log(number);
-
-	// var thisBlock;
-
-
-	// for (i = 0; i < number; i++) {
-
-	// 	thisBlock = i + 1;
-
-	// 	//console.log(n);
-
-	// 	//$('.pcblock:nth-child('+thisBlock+') .number-normal').html(thisBlock+'.');
-
-	// }
-
-
-	// for (i = number; i > 0; i--) {
-
-	// 	var n = i + 1;
-
-	// 	console.log(n);
-
-	// 	$('.pcblock:nth-child('+thisBlock+') .number-reverse').html(n+'.');
-
-	// }
-
-
+			$('.pcblock:nth-of-type('+i+') .number-normal').html(n+'.');
+			n++;
+		} 
+	}
 </script>
+<?php elseif ( get_field('post_type') === 'countdown' ) : ?>
+<script>
+	var number = $('.pcblock').length;
+
+	var n = $('.pcblock_numbered').length;
+
+	for (i = number; i >= 1; i--) {
+		var h = number + 1;
+		var nth = Math.abs(i - h);
+
+		if ( $('.pcblock:nth-of-type('+nth+')').hasClass('pcblock_numbered') ) {
+
+			$('.pcblock:nth-of-type('+nth+') .number-reverse').html(n+'.');
+			n--;
+		} 
+	}
+</script>
+<?php endif; ?>
 
 
 

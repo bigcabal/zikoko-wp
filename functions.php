@@ -40,11 +40,11 @@ add_filter( 'excerpt_more', 'zkk_excerpt_more' );
 
 
 
+
+
 /* Custom Fields */
-//include_once( 'admin/acf/plugin/acf.php' );
 include_once( 'admin/acf/fields/post.php' );
-
-
+include_once( 'admin/acf/fields/sponsor.php' );
 if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
   define( 'ACF_LITE', true );
 }
@@ -56,30 +56,27 @@ if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.
 function post_meta_data(){
 	
 
-
 	echo '<span class="entry-category">'; the_category(', '); echo '</span> / ';
 	
 
 
-
 	// Relative Date
 
-
 	$current = strtotime(date("Y-m-d"));
-    $date    = get_post_time();
+  $date    = get_post_time();
 
-    $datediff = $date - $current;
-    $differance = floor($datediff/(60*60*24));
+  $datediff = $date - $current;
+  $differance = floor($datediff/(60*60*24));
 
-    if ($differance == 0) {
-       $displayDate = 'Today';
-    }
-    else if ($differance == -1) {
-       $displayDate = 'Yesterday';
-    }
-    else {
-       $displayDate = get_the_time( get_option( 'date_format' ) );
-    }
+  if ($differance == 0) {
+     $displayDate = 'Today';
+  }
+  else if ($differance == -1) {
+     $displayDate = 'Yesterday';
+  }
+  else {
+     $displayDate = get_the_time( get_option( 'date_format' ) );
+  }
 
 
 	$publish_date = '<time class="entry-date updated" datetime="' . get_the_time( 'c' ) . '" itemprop="datePublished">' . $displayDate . '</time>';

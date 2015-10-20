@@ -147,6 +147,12 @@
 
 .pcblock__image {
 	position: relative;
+	
+}
+
+.pcblock__image--credit {
+	display: block;
+	min-height: 30px;
 }
 
 .pcblock__image--zkklogo {
@@ -173,6 +179,15 @@
 	iframe[id^='twitter-widget-'] { 
 		width: 100% !important;
 		max-width: 100% !important;
+	}
+
+	iframe[src^="https://www.youtube.com/"] {
+		width: 100% !important;
+		height: 400px;
+
+		@include screen(small) {
+			height: 250px;
+		}
 	}
 
 }

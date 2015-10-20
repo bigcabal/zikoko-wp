@@ -5,221 +5,16 @@
  * @package ZikokoTheme
 **/
 
-
-if( function_exists('acf_add_local_field_group') ):
-
-
 /* ******************************************
 
 	Remove Post Settings for Contributors
 
-******************************************* */
-
 if ( current_user_can('publish_posts') ) :
-
-
-acf_add_local_field_group(array (
-	'key' => 'group_561f678b9ae6a',
-	'title' => 'Post Settings',
-	'fields' => array (
-		array (
-			'key' => 'field_561f67a340b12',
-			'label' => 'Feature Post',
-			'name' => 'featured_post_add',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => 'Make this post featured',
-			'default_value' => 0,
-		),
-		array (
-			'key' => 'field_561f680f40b13',
-			'label' => 'Sponsored Post',
-			'name' => 'sponsored_post_q',
-			'type' => 'radio',
-			'instructions' => 'Is this a sponsored post?',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => array (
-				'no' => 'No',
-				'yes' => 'Yes',
-			),
-			'other_choice' => 0,
-			'save_other_choice' => 0,
-			'default_value' => 'no',
-			'layout' => 'horizontal',
-		),
-		array (
-			'key' => 'field_561f685940b14',
-			'label' => 'Choose Sponsor Page',
-			'name' => 'sponsored_post',
-			'type' => 'post_object',
-			'instructions' => 'Choose the post sponsor\'s Official Sponsor Page',
-			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
-						'field' => 'field_561f680f40b13',
-						'operator' => '==',
-						'value' => 'yes',
-					),
-				),
-			),
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'post_type' => array (
-				0 => 'page',
-			),
-			'taxonomy' => array (
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'return_format' => 'object',
-			'ui' => 1,
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'post',
-			),
-		),
-	),
-	'menu_order' => 2,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'left',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => array (
-		0 => 'the_content',
-	),
-	'active' => 1,
-	'description' => '',
-));
 
 endif;
 
-acf_add_local_field_group(array (
-	'key' => 'group_561f6a8916b4a',
-	'title' => 'Sponsor Page',
-	'fields' => array (
-		array (
-			'key' => 'field_561f6ad123dff',
-			'label' => 'Logo (Small)',
-			'name' => 'logo_small',
-			'type' => 'image',
-			'instructions' => 'Upload a square logo. The image will be cropped to 60x60 pixels',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'return_format' => 'url',
-			'preview_size' => 'thumbnail',
-			'library' => 'all',
-			'min_width' => '',
-			'min_height' => '',
-			'min_size' => '',
-			'max_width' => '',
-			'max_height' => '',
-			'max_size' => '',
-			'mime_types' => '',
-		),
-		array (
-			'key' => 'field_561f6b2a23e00',
-			'label' => 'Website',
-			'name' => 'sponsor_website',
-			'type' => 'url',
-			'instructions' => 'Official website for the Sponsor',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => 'http://',
-		),
-		array (
-			'key' => 'field_561f6b4a23e01',
-			'label' => 'Facebook Username',
-			'name' => 'sponsor_social_facebook',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-			'readonly' => 0,
-			'disabled' => 0,
-		),
-		array (
-			'key' => 'field_561f6b7123e02',
-			'label' => 'Twitter Username',
-			'name' => 'twitter_username',
-			'type' => 'text',
-			'instructions' => 'Do not include the @',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-			'readonly' => 0,
-			'disabled' => 0,
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'page_template',
-				'operator' => '==',
-				'value' => 'page-sponsor.php',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'left',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => 1,
-	'description' => '',
-));
+******************************************* */
+if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
 	'key' => 'group_561e2e561152b',
@@ -278,7 +73,7 @@ acf_add_local_field_group(array (
 			'label' => 'Content Block (Standard Format)',
 			'name' => 'content_block_standard_format',
 			'type' => 'repeater',
-			'instructions' => 'Add a block of content',
+			'instructions' => 'Add each block of content below.',
 			'required' => 0,
 			'conditional_logic' => array (
 				array (
@@ -299,6 +94,37 @@ acf_add_local_field_group(array (
 			'layout' => 'row',
 			'button_label' => 'Add',
 			'sub_fields' => array (
+				array (
+					'key' => 'field_5626604bb7afe',
+					'label' => 'Block Number',
+					'name' => 'display_block_number',
+					'type' => 'true_false',
+					'instructions' => 'Display the number for this post',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'field_561e47c2a85e5',
+								'operator' => '==',
+								'value' => 'numbered',
+							),
+						),
+						array (
+							array (
+								'field' => 'field_561e47c2a85e5',
+								'operator' => '==',
+								'value' => 'countdown',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 1,
+				),
 				array (
 					'key' => 'field_561e29beffd27',
 					'label' => 'Headline',
@@ -749,7 +575,7 @@ For certain...',
 							'label' => 'Answer',
 							'name' => 'answer_text',
 							'type' => 'text',
-							'instructions' => '',
+							'instructions' => 'Required even if you also use images',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
@@ -835,18 +661,125 @@ For certain...',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => array (
-		0 => 'the_content',
-		1 => 'custom_fields',
+		0 => 'custom_fields',
+		1 => 'comments',
 	),
 	'active' => 1,
 	'description' => '',
 ));
 
-
-
+acf_add_local_field_group(array (
+	'key' => 'group_561f678b9ae6a',
+	'title' => 'Post Settings',
+	'fields' => array (
+		array (
+			'key' => 'field_561f67a340b12',
+			'label' => 'Feature Post',
+			'name' => 'featured_post_add',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Make this post featured',
+			'default_value' => 0,
+		),
+		array (
+			'key' => 'field_561f680f40b13',
+			'label' => 'Sponsored Post',
+			'name' => 'sponsored_post_q',
+			'type' => 'radio',
+			'instructions' => 'Is this a sponsored post?',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'no' => 'No',
+				'yes' => 'Yes',
+			),
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'no',
+			'layout' => 'horizontal',
+		),
+		array (
+			'key' => 'field_561f685940b14',
+			'label' => 'Choose Sponsor Page',
+			'name' => 'sponsored_post',
+			'type' => 'post_object',
+			'instructions' => 'Choose the post sponsor\'s Official Sponsor Page',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_561f680f40b13',
+						'operator' => '==',
+						'value' => 'yes',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array (
+				0 => 'page',
+			),
+			'taxonomy' => array (
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'return_format' => 'object',
+			'ui' => 1,
+		),
+		array (
+			'key' => 'field_5626062012586',
+			'label' => 'Old Post',
+			'name' => 'legacy_post',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Check this box if this is an old post and the content is still in the old content editor',
+			'default_value' => 0,
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 2,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => array (
+		0 => 'the_content',
+		1 => 'comments',
+	),
+	'active' => 1,
+	'description' => '',
+));
 
 endif;
-
-
 
 ?>

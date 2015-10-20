@@ -57,7 +57,7 @@ $author = get_the_author();
 
 	<div class="entry-full-content">
 
-		<?php  if ( get_field('post_format') === 'standard' ) : ?>
+		<?php  if ( get_field('post_format') === 'standard' && !get_field('legacy_post') ) : ?>
 		
 		<?php get_template_part('content', 'default'); ?>
 
@@ -65,10 +65,17 @@ $author = get_the_author();
 
 		<?php the_content(); ?>
 
+		<?php 
+
+			if ( get_field('post_poll_toggle') === '1' ) {
+				get_template_part('inc/poll-old');
+			}
+		?>
+
 		<?php endif; ?>
 
 
-		
+	
 
 		<?php 
 			// wp_link_pages( array(
@@ -79,13 +86,7 @@ $author = get_the_author();
 			// ) );
 		?>
 
-		<?php 
-
-			// if ( get_field('post_poll_toggle') === '1' ) {
-			// 	get_template_part('inc/poll-old');
-			// }
-		?>
-
+		
 	</div>
 
 
