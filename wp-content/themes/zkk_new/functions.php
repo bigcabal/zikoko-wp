@@ -43,6 +43,7 @@ add_filter( 'excerpt_more', 'zkk_excerpt_more' );
 /* Custom Fields */
 //include_once( 'admin/acf/plugin/acf.php' );
 include_once( 'admin/acf/fields/post.php' );
+include_once( 'admin/acf/fields/sponsor.php' );
 
 
 if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {

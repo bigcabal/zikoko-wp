@@ -159,13 +159,13 @@ if ( $.cookie(thisPollCookieTitle) ) {
 	// 
 	var answeredPoll = $('.pcblock__poll[data-pollkey='+thisPollKey+']');
 
-    var answeredAnswer = $('.pcblock__poll__answer[data-pollanswer="'+$.cookie(thisPollCookieTitle)+'"]');
+    var answeredAnswer = answeredPoll.find('.pcblock__poll__answer[data-pollanswer="'+$.cookie(thisPollCookieTitle)+'"]');
 
     answeredPoll.find('.pollResults').addClass("pollResults-showing");
-		answeredAnswer.addClass("poll-answer--picked");
+	answeredAnswer.addClass("poll-answer--picked");
 
-		answeredPoll.find('.pollResults__placeholder').hide();
-		answeredPoll.find('.pollResults__real').show();
+	answeredPoll.find('.pollResults__placeholder').hide();
+	answeredPoll.find('.pollResults__real').show();
 
 } 
 </script>

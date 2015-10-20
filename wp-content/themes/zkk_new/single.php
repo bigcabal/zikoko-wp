@@ -65,10 +65,17 @@ $author = get_the_author();
 
 		<?php the_content(); ?>
 
+		<?php 
+
+			if ( get_field('post_poll_toggle') === '1' ) {
+				get_template_part('inc/poll-old');
+			}
+		?>
+
 		<?php endif; ?>
 
 
-		
+	
 
 		<?php 
 			// wp_link_pages( array(
@@ -79,13 +86,7 @@ $author = get_the_author();
 			// ) );
 		?>
 
-		<?php 
-
-			// if ( get_field('post_poll_toggle') === '1' ) {
-			// 	get_template_part('inc/poll-old');
-			// }
-		?>
-
+		
 	</div>
 
 
