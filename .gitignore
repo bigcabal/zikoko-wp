@@ -5,8 +5,8 @@ wp-content/uploads
 wp-content/cache
 wp-content/themes/*/cache/*
 wp-content/gallery/*
-wp-config.php
 wp-config-sample.php
+wp-config.php
 local-config.php
 googled55f65561e9205a3.html
 
