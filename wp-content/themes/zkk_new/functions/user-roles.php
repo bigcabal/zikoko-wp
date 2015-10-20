@@ -39,12 +39,26 @@ add_action( 'init', 'zkk_set_capabilities' );
 
 function zkk_custom_menu_pages() {
 
+    // Everyone
 	remove_menu_page('edit-comments.php'); 
 
-	// Everyone except Admin
-	if( !current_user_can('edit_dashboard') ) {
-		remove_menu_page('tools.php'); 
-	}
+
+    // Contributors
+    if( !current_user_can('publish_posts') ) {
+
+        remove_menu_page('jetpack');
+        remove_menu_page( 'options-general.php' );  // Settings
+    }
+
+    // Authors + Contributors
+    if( !current_user_can('edit_others_posts') ) {
+        
+    }
+
+    // Everyone except Admin (Authors + Contributors + Editors)
+    if( !current_user_can('manage_options') ) {
+        remove_menu_page('tools.php'); 
+    }
 
 }
 add_action( 'admin_menu', 'zkk_custom_menu_pages' );
