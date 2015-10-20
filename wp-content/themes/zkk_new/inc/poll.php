@@ -160,7 +160,7 @@ var thisPollKey = '<?php echo $poll_key; ?>';
 if ( $.cookie(thisPollCookieTitle) ) {
 
 	// Show Sharing Box
-	showSharing("<?php echo $poll_question; ?>", $.cookie(thisPollCookieTitle), thisPollKey );
+	showSharing('<?php echo $poll_question; ?>', $.cookie(thisPollCookieTitle), thisPollKey );
 
 
 	// 
