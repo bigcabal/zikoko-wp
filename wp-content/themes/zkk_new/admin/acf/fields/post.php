@@ -631,7 +631,7 @@ For certain...',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => array (
-		0 => 'custom_fields',
+		0 => 'the_content',
 		1 => 'comments',
 	),
 	'active' => 1,
@@ -743,7 +743,8 @@ acf_add_local_field_group(array (
 	'label_placement' => 'left',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => array (
-		0 => 'comments',
+		0 => 'the_content',
+		1 => 'comments',
 	),
 	'active' => 1,
 	'description' => '',
