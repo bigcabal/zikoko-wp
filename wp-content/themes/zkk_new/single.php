@@ -57,7 +57,7 @@ $author = get_the_author();
 
 	<div class="entry-full-content">
 
-		<?php  if ( get_field('post_format') === 'standard' ) : ?>
+		<?php  if ( get_field('post_format') === 'standard' && !get_field('legacy_post') ) : ?>
 		
 		<?php get_template_part('content', 'default'); ?>
 

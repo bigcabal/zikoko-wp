@@ -15,7 +15,6 @@ endif;
 
 ******************************************* */
 
-
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
@@ -63,7 +62,7 @@ acf_add_local_field_group(array (
 			),
 			'choices' => array (
 				'standard' => 'Standard',
-				// 'cards' => 'Cards',
+				'cards' => 'Cards',
 			),
 			'other_choice' => 0,
 			'save_other_choice' => 0,
@@ -632,16 +631,12 @@ For certain...',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => array (
-		0 => 'the_content',
-		1 => 'custom_fields',
-		2 => 'comments',
+		0 => 'custom_fields',
+		1 => 'comments',
 	),
 	'active' => 1,
 	'description' => '',
 ));
-
-
-if ( current_user_can('publish_posts') ) :
 
 acf_add_local_field_group(array (
 	'key' => 'group_561f678b9ae6a',
@@ -716,6 +711,22 @@ acf_add_local_field_group(array (
 			'return_format' => 'object',
 			'ui' => 1,
 		),
+		array (
+			'key' => 'field_5626062012586',
+			'label' => 'Old Post',
+			'name' => 'legacy_post',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Check this box if this is an old post and the content is still in the old content editor',
+			'default_value' => 0,
+		),
 	),
 	'location' => array (
 		array (
@@ -727,21 +738,17 @@ acf_add_local_field_group(array (
 		),
 	),
 	'menu_order' => 2,
-	'position' => 'normal',
+	'position' => 'acf_after_title',
 	'style' => 'default',
 	'label_placement' => 'left',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => array (
-		0 => 'the_content',
-		1 => 'comments',
+		0 => 'comments',
 	),
 	'active' => 1,
 	'description' => '',
 ));
 
 endif;
-
-endif;
-
 
 ?>
