@@ -60,7 +60,7 @@ html {
 ------------------------------- */
 /* -------------------------
 
-    Spacing
+	  Spacing
 
 ------------------------- */
 .no-padd {
@@ -203,7 +203,7 @@ small {
 /* -----------------------------
 
         Wordpress
-           
+        	 
 ------------------------------- */
 .float-right {
   float: right; }
@@ -213,8 +213,8 @@ small {
 
 /* -----------------------------
 
-           Z-Index
-           
+        	 Z-Index
+        	 
 ------------------------------- */
 .social-share-buttons--floating {
   z-index: 5; }
@@ -724,7 +724,7 @@ body {
 /* -----------------------------
 
         Mailchimp Subscription
-           
+        	 
 ------------------------------- */
 .mailchimp-scubscription-box {
   background-color: #5A1490;
@@ -1238,7 +1238,9 @@ body {
 
 /* Image */
 .pcblock__image {
-  position: relative; }
+  position: relative;
+  display: block;
+  min-height: 30px; }
 
 .pcblock__image--zkklogo {
   content: "";
@@ -1715,7 +1717,7 @@ body.single article.post .entry-full-content div.juxtapose img {
 
 /* -------------------------
 
-    Homepage
+	  Homepage
 
 ------------------------- */
 /* Featured Content */
@@ -1796,7 +1798,7 @@ body.single article.post .entry-full-content div.juxtapose img {
 
 /* -------------------------
 
-    Sponsors
+	  Sponsors
 
 ------------------------- */
 .post-sponsor {
