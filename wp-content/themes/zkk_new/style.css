@@ -1238,7 +1238,9 @@ body {
 
 /* Image */
 .pcblock__image {
-  position: relative;
+  position: relative; }
+
+.pcblock__image--credit {
   display: block;
   min-height: 30px; }
 
