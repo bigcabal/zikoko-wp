@@ -1259,6 +1259,12 @@ body {
 .pcblock__embed iframe[id^='twitter-widget-'] {
   width: 100% !important;
   max-width: 100% !important; }
+.pcblock__embed iframe[src^="https://www.youtube.com/"] {
+  width: 100% !important;
+  height: 400px; }
+  @media screen and (max-width: 600px) {
+    .pcblock__embed iframe[src^="https://www.youtube.com/"] {
+      height: 250px; } }
 
 /* Quote */
 .pcblock__quote--text {
