@@ -10,32 +10,14 @@
 
 	$poll_question = get_sub_field('poll_question');
 	$poll_question = str_replace("'","", $poll_question);
+	$poll_question = str_replace('"','', $poll_question);
 
-	// if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
-
-	// 	$poll_question_key = $wpdb->get_results (
-	// 		"
-	// 			SELECT meta_key 
-	// 			FROM bc_postmeta 
-	// 			WHERE meta_value = '".$poll_question."'
-	// 		"
-	// 	);
-
-	// } else {
-	// 	$poll_question_key = $wpdb->get_results (
-	// 		"
-	// 			SELECT meta_key 
-	// 			FROM wp_postmeta 
-	// 			WHERE meta_value = '".$poll_question."'
-	// 		"
-	// 	);
-	// }
-	//$poll_key = $poll_question_key[0]->meta_key;
 
 
 	$poll_key = str_replace("?","", $poll_question);
 	$poll_key = str_replace(" ","", $poll_key);
 	$poll_key = str_replace(".","", $poll_key);
+	$poll_key = str_replace(",","", $poll_key);
 	$poll_key = str_replace("!","", $poll_key);
 ?>
 
@@ -52,6 +34,7 @@
 
 $answer = get_sub_field('answer_text');
 $answer = str_replace("'","", $answer);
+$answer = str_replace('"','', $answer);
 
 ?>
 <li class="poll-answer pcblock__poll__answer" data-pollanswer="<?php echo $answer; ?>" data-pollkey="<?php echo $poll_key; ?>" onclick='answerPoll("<?php echo $answer; ?>", "<?php echo $poll_key; ?>", "<?php echo $post_id; ?>", "<?php echo $poll_question; ?>")'>
