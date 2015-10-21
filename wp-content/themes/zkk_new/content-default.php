@@ -6,12 +6,9 @@
 **/
 ?>
 
-
-
-
 <?php if( have_rows('content_block_standard_format') ): ?>
 <?php while( have_rows('content_block_standard_format') ): the_row(); ?>
-<div class="pcblock">
+<div class="pcblock <?php if ( get_sub_field('display_block_number') ) { echo 'pcblock_numbered'; } ?>">
 
 
 
@@ -152,19 +149,32 @@ endif; ?>
 <?php if ( get_field('post_type') === 'numbered' ) : ?>
 <script>
 	var number = $('.pcblock').length;
-	for (i = 0; i < number; i++) {
-		var h = i + 1;
-		$('.pcblock:nth-child('+h+') .number-normal').html(h+'.');
+	var n = 1;
+
+	for (i = 1; i <= number ; i++) {
+
+		if ( $('.pcblock:nth-of-type('+i+')').hasClass('pcblock_numbered') ) {
+
+			$('.pcblock:nth-of-type('+i+') .number-normal').html(n+'.');
+			n++;
+		} 
 	}
 </script>
 <?php elseif ( get_field('post_type') === 'countdown' ) : ?>
 <script>
 	var number = $('.pcblock').length;
-	for (i = number; i > 0; i--) {
+
+	var n = $('.pcblock_numbered').length;
+
+	for (i = number; i >= 1; i--) {
 		var h = number + 1;
 		var nth = Math.abs(i - h);
 
-		$('.pcblock:nth-child('+nth+') .number-reverse').html(i+'.');
+		if ( $('.pcblock:nth-of-type('+nth+')').hasClass('pcblock_numbered') ) {
+
+			$('.pcblock:nth-of-type('+nth+') .number-reverse').html(n+'.');
+			n--;
+		} 
 	}
 </script>
 <?php endif; ?>

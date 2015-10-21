@@ -14,7 +14,6 @@ if ( current_user_can('publish_posts') ) :
 endif;
 
 ******************************************* */
-
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
@@ -62,7 +61,7 @@ acf_add_local_field_group(array (
 			),
 			'choices' => array (
 				'standard' => 'Standard',
-				// 'cards' => 'Cards',
+				'cards' => 'Cards',
 			),
 			'other_choice' => 0,
 			'save_other_choice' => 0,
@@ -95,6 +94,37 @@ acf_add_local_field_group(array (
 			'layout' => 'row',
 			'button_label' => 'Add',
 			'sub_fields' => array (
+				array (
+					'key' => 'field_5626604bb7afe',
+					'label' => 'Block Number',
+					'name' => 'display_block_number',
+					'type' => 'true_false',
+					'instructions' => 'Display the number for this post',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'field_561e47c2a85e5',
+								'operator' => '==',
+								'value' => 'numbered',
+							),
+						),
+						array (
+							array (
+								'field' => 'field_561e47c2a85e5',
+								'operator' => '==',
+								'value' => 'countdown',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 1,
+				),
 				array (
 					'key' => 'field_561e29beffd27',
 					'label' => 'Headline',
