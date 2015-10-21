@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
 	  		// Modal
 	  		if( (wScroll > $('#comments').offset().top - ($(window).height() / 10)) && !$('.modal').hasClass('activated') && !$('article.main-article').hasClass('category-quizzes')  ) {
 
-	  			console.log("hit comments-area")
+	  			//console.log("hit comments-area")
 				
 				$('.conversion-prompt-container').fadeIn(1000);
 				$('.modal').addClass('activated');
