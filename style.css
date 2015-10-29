@@ -533,6 +533,79 @@ body {
 
 /* -----------------------------
 
+             Cards
+             
+------------------------------- */
+body.single-cards {
+  background-color: #fff; }
+
+/* Header Cards */
+.sh-cards {
+  height: 30px;
+  background-color: #f0f0f0;
+  position: relative;
+  text-align: center; }
+  .sh-cards .sh-cards__branding, .sh-cards .sh-cards__close {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0; }
+  .sh-cards .sh-cards__branding {
+    left: 0; }
+    .sh-cards .sh-cards__branding img {
+      height: 30px;
+      width: 30px; }
+  .sh-cards .sh-cards__page-header {
+    width: 100%;
+    line-height: 30px;
+    padding: 0 40px;
+    font-size: 1.2rem; }
+  .sh-cards .sh-cards__close {
+    right: 0;
+    background-color: #323232;
+    color: #fff; }
+
+.sf-cards {
+  height: 30px;
+  background-color: #f0f0f0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+
+.sf-cards__nav--right, .sf-cards__nav--left {
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #323232;
+  color: #fff;
+  text-align: center; }
+
+.sf-cards__nav--right {
+  right: 0; }
+
+.sf-cards__nav--left {
+  left: 0; }
+
+.main-body-area--cards {
+  padding-bottom: 20px; }
+
+.cbpadd {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.cb__image {
+  height: 50vh;
+  overflow: hidden; }
+  .cb__image img {
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover; }
+
+/* -----------------------------
+
             General
              
 ------------------------------- */
@@ -1369,6 +1442,8 @@ body.single article.post .entry-full-content .quiz-checklist a.quiz-checklist--s
   position: relative;
   cursor: pointer;
   vertical-align: top; }
+  .pcblock__poll li.poll-answer label {
+    cursor: pointer; }
 .pcblock__poll .pollResults {
   background-color: #D8D8D8;
   color: #fff;

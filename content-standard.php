@@ -1,6 +1,6 @@
 <?php
 /**
- * Default Content Block
+ * Content Block for Standard Layout
  *
  * @package ZikokoTheme
 **/
@@ -30,12 +30,13 @@
 <!-- Start Media -->
 <div class="pcblock__media">
 
+
+<?php if ( get_sub_field('media_choice') === 'image' ) : ?>
 <!-- ************************
 
 		Media - Image
 
 ************************* -->
-<?php if ( get_sub_field('media_choice') === 'image' ) : ?>
 <div class="pcblock__image">
 	<img class="pcblock__image--img" src="<?php the_sub_field('image_upload'); ?>" alt="<?php the_sub_field('headline'); ?>">
 
@@ -60,12 +61,13 @@
 
 
 
+
+<?php if ( get_sub_field('media_choice') === 'embed' ) : ?>
 <!-- ************************
 
 		Media - Embed
 
 ************************* -->
-<?php if ( get_sub_field('media_choice') === 'embed' ) : ?>
 <div class="pcblock__embed">
 
 	<?php if ( get_sub_field('choose_embed') === 'instagram' ) :
@@ -83,12 +85,13 @@
 
 
 
+
+<?php if ( get_sub_field('media_choice') === 'quote' ) : ?>
 <!-- ************************
 
 		Media - Quote
 
 ************************* -->
-<?php if ( get_sub_field('media_choice') === 'quote' ) : ?>
 	<blockquote class="pcblock__quote--text">
 	<p><?php the_sub_field('quote_text');?></p>
 	
@@ -102,26 +105,30 @@
 <?php endif; ?>
 
 
+
+
+
+<?php if ( get_sub_field('media_choice') === 'quiz' ) : ?>
 <!-- ************************
 
 		Media - Quiz
 
 ************************* -->
-<?php if ( get_sub_field('media_choice') === 'quiz' ) : 
-	echo do_shortcode( get_sub_field('quiz_shortcode') );
-endif; ?>
+	<?php echo do_shortcode( get_sub_field('quiz_shortcode') ); ?>
+<?php endif; ?>
 
 
 
 
+
+<?php if ( get_sub_field('media_choice') === 'poll' ) : ?>
 <!-- ************************
 
 		Media - Poll
 
 ************************* -->
-<?php if ( get_sub_field('media_choice') === 'poll' ) : 
-	get_template_part('inc/poll');
-endif; ?>
+	<?php get_template_part('inc/poll'); ?>
+<?php endif; ?>
 
 
 

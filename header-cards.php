@@ -72,7 +72,7 @@ googletag.cmd = googletag.cmd || [];
   });
 </script>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('single-cards'); ?>>
 
 
 <!-- Facebook -->
@@ -97,37 +97,22 @@ window.fbAsyncInit = function() {
 <!-- -->
 
 
-<header class="site-header">
-  <div class="container">
+<header class="sh-cards">
 
-    <div class="branding">
-      <a href="<?php echo home_url( '/' ); ?>">
-      <img src="http://zikoko.com/wp-content/uploads/2015/07/logo-300x92.png" alt="">
-      </a>
-
-      <a href="/" class="nav-toggle--open show-on-mobile-nav mobile-padd"> <i class="fa fa-bars" aria-label="Open Navigation"></i> </a>
-    </div>
-
-
-    <div class="advert-leaderboard">
-    <?php if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
-        get_template_part('inc/ad', 'leaderboard'); 
-      } ?>
-    </div>
-
-
+  <div class="sh-cards__branding">
+    <a href="<?php echo home_url( '/' ); ?>">
+    <img src="<?php echo get_template_directory_uri(); ?>/inc/img/apple-touch-icon-76x76.png?v=1" alt="">
+    </a>
   </div>
 
-  <div class="site-nav-container site-nav-container--hidden">
-    <div class="container">
-
-
-      Cards format
-
+  <div class="sh-cards__page-header">
+    <?php the_title(); ?>
+  </div>
 
 
 
-    </div>
+  <div class="sh-cards__close">
+    <i class="fa fa-times"></i>
   </div>
 
 </header>
