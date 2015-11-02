@@ -115,10 +115,8 @@ function change_content_frontend($post_id) {
       
 
       
-
-
-      if ( $i === $mid_point ) {
-         $post_content = $post_content . $headline . $image . $additional_text . $next_page . $advert;
+      if ( $i == $mid_point ) {
+        $post_content = $post_content . $headline . $image . $additional_text . $next_page . $advert;
       } else {
         $post_content = $post_content . $headline . $image . $additional_text . $next_page;
       }
@@ -144,7 +142,7 @@ function change_content_frontend($post_id) {
       <h1 class="cpstart__title">'.$post_title.'</h1>
 
       <p class="entry-excerpt--meta">
-        Meta Info Here
+        Meta Info Here '.$mid_point.'
       </p>
       </div>
 
