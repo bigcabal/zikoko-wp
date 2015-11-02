@@ -80,7 +80,7 @@ function instagram_embed_handler($atts) {
 	    	'.$media.'
 	    	
 	    	<footer>
-	    		<div class="ig-embed-meta">
+	    		<div class="ig-embed-meta cf">
 	    			<span> <i class="fa fa-heart"></i> '.$data->likes->count.'</span>
 	    			<span> <i class="fa fa-comment"></i> '.$data->comments->count.'</span>
 	    		</div>

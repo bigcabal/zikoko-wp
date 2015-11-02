@@ -1,26 +1,12 @@
 <?php 
 /**
- * Single Post Template
+ * Single Post - Standard Layout
  *
  * @package ZikokoTheme
 **/
+get_header();
 
-// Start Post Loop
-if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-
-	if ( get_field('post_format') === 'standard' && !get_field('legacy_post') ) :
-
-		get_template_part('post', 'standard');
-
-	elseif ( get_field('post_format') === 'cards' && !get_field('legacy_post') ) :
-
-		get_template_part('post', 'cards');
-
-	else :
-
-		get_header();
-		$author = get_the_author(); 
+$author = get_the_author(); 
 ?>
 
 
@@ -31,7 +17,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 <main class="site-main">
 <div class="site-box padd-all">
 
+
 	<article id="post-<?php the_ID(); ?>" <?php post_class('main-article'); ?>>
+
+
 
 	<!-- Floating Social Share Buttons -->
 	<ul class="social-share-buttons social-share-buttons--floating">
@@ -52,17 +41,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 	</header>
 
 	<div class="entry-full-content">
-		<?php the_content(); ?>
-
-		<?php 
-			if ( get_field('post_poll_toggle') === '1' ) {
-				get_template_part('inc/poll-old');
-			}
-		?>
+		<?php get_template_part('content', 'standard'); ?>
 	</div>
 
 	</article>
-
 </div>
 
 <ul class="site-box social-profile-buttons social-profile-btns--mobileonly">
@@ -112,7 +94,3 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 </div> <!-- end .container -->
 </div> <!-- end .main-body-area -->
 <?php get_footer(); ?>
-
-<?php endif; ?>
-
-<?php endwhile; endif; ?>
