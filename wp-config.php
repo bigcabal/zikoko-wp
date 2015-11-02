@@ -19,7 +19,7 @@ if (file_exists(dirname(__FILE__) . '/local-config.php')) {
 	require_once dirname(__FILE__) . '/local-config.php';
 } else {
 
-	define('DB_NAME', 'bigcabal');
+	define('DB_NAME', 'bigcabal'); 
 	define('DB_USER', 'bigcabal');
 	define('DB_PASSWORD', 'Ca8a1-b1g');
 	define('DB_HOST', 'localhost');
