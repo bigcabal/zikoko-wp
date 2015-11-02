@@ -20,15 +20,15 @@ function change_content_frontend($post_id) {
 
     $post_title = get_the_title( $post_id );
     $number_of_rows = get_post_meta($post_id,'content_block_cards_format',true);
-    $mid_point = $number_of_rows / 2;
+    $mid_point = ceil($number_of_rows / 2);
 
     $post_content = '';
+    $next_page = '<!--nextpage-->';
 
 
     //$advert_image = wp_get_attachment_image( get_post_meta($post_id,'in_post_advert',true) );
 
-    $advert = '<div class="cb-advert">ADVERT HERE</div>
-    <!--nextpage-->';
+    $advert = '<div class="cb-advert">ADVERT HERE</div>' . $next_page;
 
 
   
@@ -103,7 +103,7 @@ function change_content_frontend($post_id) {
       $raw_additional_text = get_post_meta($post_id,'content_block_cards_format_'.$i.'_additional_text',true);
       $additional_text = '';
       if ( $raw_additional_text ) {
-        $additional_text = '<p class="cbpadd">'.$raw_additional_text.'</p>';
+        $additional_text = '<div class="cbpadd">'.$raw_additional_text.'</div>';
       }
 
 
@@ -112,7 +112,7 @@ function change_content_frontend($post_id) {
 
 
 
-      $next_page = '<!--nextpage-->';
+      
 
       
 
