@@ -45,8 +45,6 @@ function zkk_custom_menu_pages() {
 
     // Contributors
     if( !current_user_can('publish_posts') ) {
-
-        remove_menu_page('jetpack');
         remove_menu_page( 'options-general.php' );  // Settings
     }
 
@@ -58,6 +56,7 @@ function zkk_custom_menu_pages() {
     // Everyone except Admin (Authors + Contributors + Editors)
     if( !current_user_can('manage_options') ) {
         remove_menu_page('tools.php'); 
+        remove_menu_page('jetpack');
     }
 
 }

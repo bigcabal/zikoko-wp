@@ -40,13 +40,16 @@ add_filter( 'excerpt_more', 'zkk_excerpt_more' );
 
 
 
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
 
 
 /* Custom Fields */
-//include_once( 'admin/acf/fields/post.php' );
-//include_once( 'admin/acf/fields/sponsor.php' );
 if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
   define( 'ACF_LITE', true );
+  include_once( 'admin/acf/fields/post.php' );
+  include_once( 'admin/acf/fields/sponsor.php' );
 }
 
 

@@ -91,7 +91,7 @@
 	.ig-embed--main {
 		width: 100%;
 		height: auto;
-		padding: 0 10px 8px 10px;
+		padding: 0 10px 9px 10px;
 	}
 
 
@@ -107,8 +107,9 @@
 
 	.ig-embed-meta {
 		color: rgb(150, 150, 150);
-		display: inline-block;
 		font-weight: 600;
+		font-size: 1.4rem;
+		float: left;
 
 
 		i.fa {

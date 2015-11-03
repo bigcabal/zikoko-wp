@@ -47,6 +47,16 @@ $author = get_the_author();
 	</article>
 </div>
 
+<?php if ( get_field('enable_reaction_buttons') == '1' ) { ?>
+<div class="site-box padd-all">
+	<?php get_template_part('inc/reaction-buttons'); ?>
+</div>
+<?php } ?>
+
+
+	
+
+
 <ul class="site-box social-profile-buttons social-profile-btns--mobileonly">
 	<?php get_template_part('inc/social-profile', 'btns'); ?>
 </ul>

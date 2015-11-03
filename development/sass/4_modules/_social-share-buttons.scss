@@ -322,3 +322,63 @@
 
 
 
+
+/* Cards */
+.social-share-buttons--cards {
+
+	li.facebook {
+		border-color: #3B5998;
+		background-color: #fff;
+
+	}
+	li.twitter {
+		border-color: #4099FF;
+		background-color: #fff;
+	}
+	li.google-plus {
+		border-color: #d34836;
+		background-color: #fff;
+	}
+	li.pinterest {
+		border-color: #cc2127;
+		background-color: #fff;
+	}
+	li.instagram {
+		border-color: #517fa4;
+		background-color: #fff;
+	}
+	li.email {
+		border-color: #9f9f9f;
+		background-color: #fff;
+	}
+
+	li.wechat {
+		border-color: #7bb32e;
+		background-color: #fff;
+	}
+
+	li.whatsapp {
+		border-color: #60b82d;
+		background-color: #fff;
+
+	}
+
+	li {
+		border-width: 3px;
+		border-style: solid;
+		border-radius: 5px;
+		background-color: #fff;
+		display: block;
+		width: 100%;
+		margin-bottom: 20px;
+		padding: 5px 0;
+
+		a {
+			color: #000;
+		}
+	}
+}
+
+
+
+

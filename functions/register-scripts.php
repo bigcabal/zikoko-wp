@@ -39,6 +39,8 @@ function zkk_scripts() {
 
 		wp_enqueue_script('post-script', get_template_directory_uri() . '/js/post.js', array('jquery-min'), '1.0', true );
 
+		wp_enqueue_script('post-cards-script', get_template_directory_uri() . '/js/post_cards.js', array('jquery-min'), '1.0', true );
+
 		wp_enqueue_script('poll-script', get_template_directory_uri() . '/js/poll.js', array('jquery-min'), '1.0', false );
 
 	//}

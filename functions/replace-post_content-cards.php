@@ -20,8 +20,15 @@ function change_content_frontend($post_id) {
 
     $post_title = get_the_title( $post_id );
     $number_of_rows = get_post_meta($post_id,'content_block_cards_format',true);
+    $mid_point = ceil($number_of_rows / 2);
 
     $post_content = '';
+    $next_page = '<!--nextpage-->';
+
+
+    //$advert_image = wp_get_attachment_image( get_post_meta($post_id,'in_post_advert',true) );
+
+    $advert = '<div class="cb-advert">ADVERT HERE</div>' . $next_page;
 
 
   
@@ -41,7 +48,7 @@ function change_content_frontend($post_id) {
       $raw_headline = get_post_meta($post_id,'content_block_cards_format_'.$i.'_headline',true);
       $headline = '';
       if ( $raw_headline ) {
-        $headline = '<h3 class="pcblock__headline cbpadd">'.$raw_headline.'</h3>';
+        $headline = '<h3 class="pcblock__headline cb__headline cbpadd">'.$raw_headline.'</h3>';
       }
       
 
@@ -65,7 +72,7 @@ function change_content_frontend($post_id) {
             <small class="pcblock__image--credit cbpadd">
               via <a href="'.$raw_image_via.'" target="_blank">'.$raw_image_credit.'</a>
             </small>
-            <div class="pcblock__image--zkklogo"></div>
+            <div class="pcblock__image--zkklogo cb__image--zkklogo"></div>
           </div>';
 
         } elseif ( $raw_image_credit && !$raw_image_via ) {
@@ -74,14 +81,14 @@ function change_content_frontend($post_id) {
             <small class="pcblock__image--credit cbpadd">
               via '.$raw_image_credit.'
             </small>
-            <div class="pcblock__image--zkklogo"></div>
+            <div class="pcblock__image--zkklogo cb__image--zkklogo"></div>
           </div>';
 
         } else {
           $image = '<div class="pcblock__image">
           <div class="cb__image">'.$raw_image.'</div>
           <small class="pcblock__image--credit"></small>
-          <div class="pcblock__image--zkklogo"></div></div>';
+          <div class="pcblock__image--zkklogo cb__image--zkklogo"></div></div>';
         }
 
       }
@@ -96,24 +103,78 @@ function change_content_frontend($post_id) {
       $raw_additional_text = get_post_meta($post_id,'content_block_cards_format_'.$i.'_additional_text',true);
       $additional_text = '';
       if ( $raw_additional_text ) {
-        $additional_text = '<p class="cbpadd">'.$raw_additional_text.'</p>';
+        $additional_text = '<div class="cbpadd">'.$raw_additional_text.'</div>';
       }
 
 
-      $next_page = '<!--nextpage-->';
-
-      $post_content = $post_content . $headline . $image . $additional_text . $next_page;
-
-    }
 
 
 
 
-    $post_start = 'Post start here';
 
-    $post_start = $post_start . '<!--nextpage-->';
+      
 
-    $post_end = 'Post end here';
+      
+      if ( $i == $mid_point ) {
+        $post_content = $post_content . $headline . $image . $additional_text . $next_page . $advert;
+      } else {
+        $post_content = $post_content . $headline . $image . $additional_text . $next_page;
+      }
+
+    } // end for loop
+
+
+
+
+    /* *************************
+     *
+     *  POST START
+     *
+     ************************* */
+    $post_start = '<div class="cpstart">
+
+
+      <div class="cpstart__container">
+      <a href="/" class="cpstart__branding">
+      <img src="http://zikoko.com/wp-content/uploads/2015/07/logo-300x92.png" alt="">
+      </a>
+
+      <h1 class="cpstart__title">'.$post_title.'</h1>
+
+      <p class="entry-excerpt--meta">
+        Meta Info Here '.$mid_point.'
+      </p>
+      </div>
+
+
+      <a href="2/" class="cpstart__cta">
+        <span class="cpstart__cta--sub">Click here to</span>
+        <span class="cpstart__cta--main">Start Reading</span>
+        <span class="cpstart__cta--sub">Or swipe right <i class="fa fa-long-arrow-right"></i></span>
+      </a>
+
+    </div>
+    <!--nextpage-->';
+
+    //$post_start = $post_start . '';
+
+
+
+    /* *************************
+     *
+     *  POST END
+     *
+     ************************* */
+    $post_end = '<div class="cpstart">
+      <div class="cpstart__container">
+
+
+      <h1 class="cpstart__title">End of the Post Stuff Here</h1>
+
+
+
+      </div>
+    </div>';
 
 
 

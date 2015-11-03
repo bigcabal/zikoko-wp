@@ -10,7 +10,7 @@ var showSharing = function(question, answer, pollKey) {
 
       var thisURL = window.location.href;
 
-      var thisPoll = $('.pcblock__poll[data-pollkey="'+pollKey+'"]');
+      var thisPoll = $('.pollBlock[data-pollkey="'+pollKey+'"]');
       var shareText = 'I answered ' + answer + '! '+ question;
 
 
@@ -27,7 +27,7 @@ var showSharing = function(question, answer, pollKey) {
 
 
 var answerPoll = function(l,o,a,e) { 
-	var s=$('.pcblock__poll[data-pollkey="'+o+'"]'),
+	var s=$('.pollBlock[data-pollkey="'+o+'"]'),
 		r=s.find('.pcblock__poll__answer[data-pollanswer="'+l+'"]'),
 		i=o+"-"+a;
 
@@ -50,6 +50,7 @@ var answerPoll = function(l,o,a,e) {
 				s.find(".pollResults__placeholder").hide(),
 				s.find(".pollResults__real").show(),
 				r.find(".pollResults__real").html(t),
+				r.find(".reaction-count").html(t),
 				$.cookie(i,l,{expires:120,path:"/"}),
 				showSharing(e,l,o)
 

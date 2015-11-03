@@ -1,0 +1,125 @@
+/* -----------------------------
+
+         Reaction Buttons
+             
+------------------------------- */
+
+
+/* Javascript Selectors */
+
+
+
+
+
+.pcblock__poll.reaction_poll {
+
+
+
+	li.poll-answer {
+		display: inline-block;
+		width: 19%;
+		text-align: center;
+		padding: 0 1% 10px 0;
+
+	}
+
+	li.reaction_answer {
+		position: relative;
+		vertical-align: bottom;
+	}
+	
+	li.poll-answer,
+	li.poll-answer.poll-answer--picked {
+		background-color: #fff;
+		border: 0;
+		color: #000;
+	}
+	li.poll-answer:hover .reaction-text {
+		background-color: #FEF195;
+	}
+
+
+
+	.pollResults {
+
+		position: relative;
+		display: block;
+		margin-bottom: 10px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+	}
+
+	
+
+	/* */
+
+
+	.reaction-btns--text {
+
+		.reaction-image {
+			display: none;
+		}
+		
+	}
+
+
+	.reaction-btns--image {
+
+
+
+		.reaction-image {
+			width: 100%;
+			height: 100px;
+			padding: 0;
+			overflow: hidden;
+			margin-bottom: 10px;
+
+			img {
+				min-height: 100%;
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}	
+		}
+
+	}
+
+
+}
+
+
+
+
+.reaction-chart {
+	background-color: $theme;
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.reaction-text {
+	display: block;
+	width: 100%;
+	border: 1px solid #D8D8D8;
+    background-color: #f2f2f2;
+    margin: 0 auto;
+} 
+
+
+.reaction_poll_title {
+	
+}
+
+
+li.poll-answer.poll-answer--picked {
+
+	.reaction-text {
+		background-color:#8ac5ff;
+		color: #fff;
+	}
+}
+
+
+
+
