@@ -14,7 +14,6 @@
  * @package WordPress
  */
  
- 
 if (file_exists(dirname(__FILE__) . '/local-config.php')) {
 	require_once dirname(__FILE__) . '/local-config.php';
 } else {
