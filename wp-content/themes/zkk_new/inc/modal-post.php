@@ -29,7 +29,7 @@
 ?>
 
 
-<div class="conversion-prompt-container">
+<div class="conversion-prompt-container modalContainer">
 	<div class="modal">
 
 		<div class="modal-top">

@@ -21,7 +21,7 @@
 	$poll_key = str_replace("!","", $poll_key);
 ?>
 
-<div class="pcblock__poll" data-pollkey="<?php echo $poll_key; ?>">
+<div class="pcblock__poll pollBlock" data-pollkey="<?php echo $poll_key; ?>">
 
 <header class="pcblock__poll--q-container" style="background-color: <?php the_sub_field('question_background_colour'); ?>">
 	<h3 class="pcblock__poll--q" style="color: <?php the_sub_field('question_text_colour'); ?>"><?php the_sub_field('poll_question'); ?></h3>
@@ -29,6 +29,9 @@
 
 
 <ul class="poll-answers-list <?php if ( get_sub_field('answers_format') === 'images' ) { ?>poll-answers--image<?php } else { ?>poll-answers--text<?php } ?>">
+
+
+
 <?php if( have_rows('answers') ): ?>
 <?php while( have_rows('answers') ): the_row(); 
 
@@ -37,7 +40,7 @@ $answer = str_replace("'","", $answer);
 $answer = str_replace('"','', $answer);
 
 ?>
-<li class="poll-answer pcblock__poll__answer" data-pollanswer="<?php echo $answer; ?>" data-pollkey="<?php echo $poll_key; ?>" onclick='answerPoll("<?php echo $answer; ?>", "<?php echo $poll_key; ?>", "<?php echo $post_id; ?>", "<?php echo $poll_question; ?>")'>
+<li class="poll-answer pcblock__poll__answer" data-pollanswer="<?php echo $answer; ?>" data-pollkey="<?php echo $poll_key; ?>" onclick='answerPoll("<?php echo $answer; ?>", "<?php echo $poll_key; ?>", "<?php echo $post_id; ?>", "<?php echo $poll_question; ?>", "poll")'>
 
 	
 
@@ -147,7 +150,7 @@ if ( $.cookie(thisPollCookieTitle) ) {
 
 
 	// 
-	var answeredPoll = $('.pcblock__poll[data-pollkey='+thisPollKey+']');
+	var answeredPoll = $('.pollBlock[data-pollkey='+thisPollKey+']');
 
     var answeredAnswer = answeredPoll.find('.pcblock__poll__answer[data-pollanswer="'+$.cookie(thisPollCookieTitle)+'"]');
 

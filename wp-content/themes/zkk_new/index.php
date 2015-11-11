@@ -15,7 +15,7 @@ get_header();
 
 			/* Get Main Featured Post */
 			global $post;
-			$ti_featured_posts = new WP_Query(
+			$zkk_main_featured_post = new WP_Query(
 				array(
 					'post_type' => 'post',
 					'meta_key' => 'featured_post_add',
@@ -24,7 +24,7 @@ get_header();
 				)
 			);
 			?>
-			<?php while ( $ti_featured_posts->have_posts() ) : $ti_featured_posts->the_post(); ?>
+			<?php while ( $zkk_main_featured_post->have_posts() ) : $zkk_main_featured_post->the_post(); ?>
 
 				<?php get_template_part( 'excerpt', '2' ); ?>
 
@@ -42,18 +42,14 @@ get_header();
 
 			/* Get Featured Posts */
 			global $post;
-			$ti_featured_posts = new WP_Query(
+			$zkk_aside_featured_posts = new WP_Query(
 				array(
 					'post_type' => 'post',
-
-					// IRE - NEED TO SET AS FEATURED
-					// 'meta_key' => 'featured_post',
-		   //   		'meta_value' => '1',
 					'posts_per_page' => 6
 				)
 			);
 			?>
-			<?php while ( $ti_featured_posts->have_posts() ) : $ti_featured_posts->the_post(); ?>
+			<?php while ( $zkk_aside_featured_posts->have_posts() ) : $zkk_aside_featured_posts->the_post(); ?>
 
 				<?php get_template_part( 'excerpt', '2' ); ?>
 
