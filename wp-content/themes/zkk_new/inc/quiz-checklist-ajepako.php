@@ -79,7 +79,7 @@
 
 <label for="checklist-item-13" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="13" id="checklist-item-13">
-	<span>13. Drank Chelse Dry gin</span>
+	<span>13. Drank Chelsea Dry gin</span>
 </label>
 
 <label for="checklist-item-14" class="quiz-checklist--item">
@@ -191,7 +191,7 @@
 
 <label for="checklist-item-35" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="35" id="checklist-item-35">
-	<span>35. Used bottle covers to play football</span>
+	<span>35. Played Tinko Tinko</span>
 </label>
 
 <label for="checklist-item-36" class="quiz-checklist--item">
@@ -386,6 +386,26 @@
 <label for="checklist-item-73" class="quiz-checklist--item">
 	<input type="checkbox" name="checklist" value="73" id="checklist-item-73">
 	<span>73. Towel dryed your clothes</span>
+</label>
+
+<label for="checklist-item-74" class="quiz-checklist--item">
+	<input type="checkbox" name="checklist" value="74" id="checklist-item-74">
+	<span>74. Bathed outside</span>
+</label>
+
+<label for="checklist-item-75" class="quiz-checklist--item">
+	<input type="checkbox" name="checklist" value="75" id="checklist-item-75">
+	<span>75. Rolled Tyre</span>
+</label>
+
+<label for="checklist-item-76" class="quiz-checklist--item">
+	<input type="checkbox" name="checklist" value="76" id="checklist-item-76">
+	<span>76. Roll a wheel made out of a paint can cover and a stick</span>
+</label>
+
+<label for="checklist-item-77" class="quiz-checklist--item">
+	<input type="checkbox" name="checklist" value="77" id="checklist-item-77">
+	<span>77. Played Nylon kite</span>
 </label>
 
 
