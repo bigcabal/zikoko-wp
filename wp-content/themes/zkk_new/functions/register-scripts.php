@@ -28,7 +28,7 @@ function zkk_scripts() {
 
 	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js', array('jquery-min'), '1.0', true );
 
-	wp_enqueue_script('quizHandler', get_template_directory_uri() . '/js/quizHandlerNigeria.js', array('jquery-min'), '1.0', true );
+	wp_enqueue_script('quizHandler', get_template_directory_uri() . '/js/checklistQuizHandler.js', array('jquery-min'), '2.0', true );
 
 
 	wp_enqueue_script('jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.js', array('jquery-min'), '1.0', false );
