@@ -40,13 +40,16 @@ add_filter( 'excerpt_more', 'zkk_excerpt_more' );
 
 
 
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
 
 
 /* Custom Fields */
-include_once( 'admin/acf/fields/post.php' );
-include_once( 'admin/acf/fields/sponsor.php' );
 if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
-  define( 'ACF_LITE', true );
+  //define( 'ACF_LITE', true );
+  include_once( 'admin/acf/fields/post.php' );
+  include_once( 'admin/acf/fields/sponsor.php' );
 }
 
 
@@ -162,6 +165,40 @@ function first_post_image() {
 /* ZKK Poll */
 include_once( 'functions/zkk-poll.php' );
 include_once( 'functions/zkk-poll-old.php' );
+
+
+
+
+ 
+
+
+/* Cards */
+//include_once( 'functions/replace-post_content-cards.php' );
+
+
+
+
+
+
+
+/* Login Page */
+
+
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon-196x196.png);
+            padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+
+
+
+
 
 
 
