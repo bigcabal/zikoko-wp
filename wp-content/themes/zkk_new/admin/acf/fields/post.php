@@ -14,6 +14,8 @@ if ( current_user_can('publish_posts') ) :
 endif;
 
 ******************************************* */
+
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
@@ -61,7 +63,7 @@ acf_add_local_field_group(array (
 			),
 			'choices' => array (
 				'standard' => 'Standard',
-				'cards' => 'Cards',
+				// 'cards' => 'Cards',
 			),
 			'other_choice' => 0,
 			'save_other_choice' => 0,
@@ -645,6 +647,246 @@ For certain...',
 				),
 			),
 		),
+		array (
+			'key' => 'field_562f3b6de13cf',
+			'label' => 'Content Block (Cards Format)',
+			'name' => 'content_block_cards_format',
+			'type' => 'repeater',
+			'instructions' => 'Add each block of content below.',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_561e2c60d251f',
+						'operator' => '==',
+						'value' => 'cards',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'min' => 1,
+			'max' => '',
+			'layout' => 'row',
+			'button_label' => 'Add',
+			'sub_fields' => array (
+				array (
+					'key' => 'field_562f3b6de13d0',
+					'label' => 'Block Number',
+					'name' => 'display_block_number',
+					'type' => 'true_false',
+					'instructions' => 'Display the number for this post',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'field_561e47c2a85e5',
+								'operator' => '==',
+								'value' => 'numbered',
+							),
+						),
+						array (
+							array (
+								'field' => 'field_561e47c2a85e5',
+								'operator' => '==',
+								'value' => 'countdown',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 1,
+				),
+				array (
+					'key' => 'field_562f3b6de13d1',
+					'label' => 'Headline',
+					'name' => 'headline',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => 'Headline',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array (
+					'key' => 'field_562f3b6de13d2',
+					'label' => 'Add Media',
+					'name' => 'media_choice',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'none' => 'None',
+						'image' => 'Image',
+						'embed' => 'Embed',
+						'quote' => 'Quote',
+						'poll' => 'Poll',
+					),
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => 'none',
+					'layout' => 'horizontal',
+				),
+				array (
+					'key' => 'field_562f3b6de13d3',
+					'label' => 'Image Upload',
+					'name' => 'image_upload',
+					'type' => 'image',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'field_562f3b6de13d2',
+								'operator' => '==',
+								'value' => 'image',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'url',
+					'preview_size' => 'medium',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array (
+					'key' => 'field_562f3b6de13d4',
+					'label' => 'Image Credit',
+					'name' => 'image_credit',
+					'type' => 'text',
+					'instructions' => 'Who does this image belong to?',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'field_562f3b6de13d2',
+								'operator' => '==',
+								'value' => 'image',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => 'Paste the name of the person or organisation here',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array (
+					'key' => 'field_562f3b6de13d5',
+					'label' => 'Via',
+					'name' => 'via',
+					'type' => 'url',
+					'instructions' => 'Where did you get the image? ',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'field_562f3b6de13d2',
+								'operator' => '==',
+								'value' => 'image',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => 'Paste the URL here (http://...)',
+				),
+				array (
+					'key' => 'field_562f6be68ec8d',
+					'label' => 'Additional Text',
+					'name' => 'additional_text',
+					'type' => 'wysiwyg',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'tabs' => 'all',
+					'toolbar' => 'basic',
+					'media_upload' => 0,
+				),
+			),
+		),
+		array (
+			'key' => 'field_563745ac3a336',
+			'label' => 'In-Post Advert',
+			'name' => 'in_post_advert',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_561e2c60d251f',
+						'operator' => '==',
+						'value' => 'cards',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
 	),
 	'location' => array (
 		array (
@@ -662,7 +904,8 @@ For certain...',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => array (
 		0 => 'the_content',
-		1 => 'comments',
+		1 => 'custom_fields',
+		2 => 'comments',
 	),
 	'active' => 1,
 	'description' => '',
@@ -781,5 +1024,7 @@ acf_add_local_field_group(array (
 ));
 
 endif;
+
+
 
 ?>

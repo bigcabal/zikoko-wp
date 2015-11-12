@@ -15,8 +15,11 @@ function quiz_checklist_handler($atts, $content, $tag) {
 	
 	$output = '';
 
-	if($values['quiz'] == 'how_nigerian_are_you'){
+	if ($values['quiz'] == 'how_nigerian_are_you') {
 		$output = get_template_part('inc/quiz-checklist', 'nigerian');
+	}
+	elseif ($values['quiz'] == 'how_ajepako_are_you') {
+		$output = get_template_part('inc/quiz-checklist', 'ajepako');
 	}
 	else{
 		$output = get_template_part('inc/quiz-checklist', 'nigerian');
@@ -80,7 +83,7 @@ function instagram_embed_handler($atts) {
 	    	'.$media.'
 	    	
 	    	<footer>
-	    		<div class="ig-embed-meta">
+	    		<div class="ig-embed-meta cf">
 	    			<span> <i class="fa fa-heart"></i> '.$data->likes->count.'</span>
 	    			<span> <i class="fa fa-comment"></i> '.$data->comments->count.'</span>
 	    		</div>
