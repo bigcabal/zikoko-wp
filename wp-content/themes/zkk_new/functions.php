@@ -47,7 +47,7 @@ remove_filter( 'the_excerpt', 'wpautop' );
 
 /* Custom Fields */
 if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
-  //define( 'ACF_LITE', true );
+  define( 'ACF_LITE', true );
   include_once( 'admin/acf/fields/post.php' );
   include_once( 'admin/acf/fields/sponsor.php' );
 }
