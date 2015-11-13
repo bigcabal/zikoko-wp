@@ -811,8 +811,7 @@ body.single-cards {
       height: 50px;
       width: 100%;
       padding-bottom: 5px;
-      padding-top: 5px;
-      background-color: #fff; }
+      padding-top: 5px; }
       .social-share-buttons--floating li {
         display: inline-block;
         height: 40px;
@@ -824,7 +823,8 @@ body.single-cards {
       .social-share-buttons--floating li a {
         height: 40px;
         line-height: 40px;
-        font-size: 3rem; }
+        font-size: 3rem;
+        border-radius: 0px; }
         .social-share-buttons--floating li a i.fa {
           position: relative;
           top: -1px; }
@@ -848,7 +848,9 @@ body.single-cards {
       .social-share-buttons--floating li.twitter, .social-share-buttons--floating li.whatsapp {
         width: 25%; }
       .social-share-buttons--floating li.whatsapp {
-        display: inline-block; } }
+        display: inline-block; }
+        .social-share-buttons--floating li.whatsapp span {
+          border-radius: 0px; } }
 
 .social-share-buttons--floating:not(.showing) {
   visibility: hidden;
