@@ -28,7 +28,7 @@
 
 <li class="facebook social-share-btn" id="share-fb">
 	<a href="https://facebook.com/dialog/feed?app_id=593692017438309&link=<?php echo $cleanPermalink; ?>?utm_source=fb%26utm_campaign=zkk_share&name=<?php echo $cleanTitle; ?>&redirect_uri=<?php echo $cleanPermalink; ?>" target="_blank">
-		<i class="fa fa-facebook"></i>
+		<i class="fa fa-facebook-official"></i>
 	</a>
 	<div class="fb-like" data-href="<?php echo $cleanPermalink; ?>?utm_source=fb%26utm_campaign=zkk_share" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
 </li><!--
@@ -61,7 +61,9 @@
 
 
 --><li class="whatsapp socia-share-btn" id="share-wa">
+	<span>
 	<a href="whatsapp://send" data-text="<?php echo $rawTitle; ?> -" data-href="<?php echo $rawPermalink; ?>?utm_source=wa&utm_campaign=zkk_share" class="wa_btn wa_btn_l">
 	<i class="fa fa-whatsapp"></i>
 	</a>
+	</span>
 </li>
