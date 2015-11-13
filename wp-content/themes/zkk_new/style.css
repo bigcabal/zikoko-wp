@@ -822,6 +822,9 @@ body.single-cards {
         height: 40px;
         line-height: 40px;
         font-size: 3rem; }
+        .social-share-buttons--floating li a i.fa {
+          position: relative;
+          top: -2px; }
       .social-share-buttons--floating li.google-plus, .social-share-buttons--floating li.pinterest {
         display: none; }
       .social-share-buttons--floating li.facebook {
@@ -880,8 +883,12 @@ body.single-cards {
   height: 50px;
   line-height: 50px;
   width: 100%;
-  text-align: left;
-  padding: 0 20px; }
+  text-align: left; }
+  .social-profile-buttons li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px; }
 .social-profile-buttons i.fa {
   width: 30px;
   padding-right: 20px; }
