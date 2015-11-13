@@ -40,8 +40,8 @@ add_filter( 'excerpt_more', 'zkk_excerpt_more' );
 
 
 
-remove_filter( 'the_content', 'wpautop' );
-remove_filter( 'the_excerpt', 'wpautop' );
+// remove_filter( 'the_content', 'wpautop' );
+// remove_filter( 'the_excerpt', 'wpautop' );
 
 
 
