@@ -725,37 +725,41 @@ body.single-cards {
      Social Share Buttons + Social Profile Buttons 
              
 ------------------------------- */
-.social-profile-buttons li.facebook, .social-share-buttons li.facebook {
+.social-profile-buttons li.facebook a, .social-share-buttons li.facebook a {
   background-color: #3B5998; }
-.social-profile-buttons li.twitter, .social-share-buttons li.twitter {
+.social-profile-buttons li.twitter a, .social-share-buttons li.twitter a {
   background-color: #4099FF; }
-.social-profile-buttons li.google-plus, .social-share-buttons li.google-plus {
+.social-profile-buttons li.google-plus a, .social-share-buttons li.google-plus a {
   background-color: #d34836; }
-.social-profile-buttons li.pinterest, .social-share-buttons li.pinterest {
+.social-profile-buttons li.pinterest a, .social-share-buttons li.pinterest a {
   background-color: #cc2127; }
-.social-profile-buttons li.instagram, .social-share-buttons li.instagram {
+.social-profile-buttons li.instagram a, .social-share-buttons li.instagram a {
   background-color: #517fa4; }
-.social-profile-buttons li.email, .social-share-buttons li.email {
+.social-profile-buttons li.email a, .social-share-buttons li.email a {
   background-color: #9f9f9f; }
-.social-profile-buttons li.wechat, .social-share-buttons li.wechat {
+.social-profile-buttons li.wechat a, .social-share-buttons li.wechat a {
   background-color: #7bb32e; }
-.social-profile-buttons li.whatsapp, .social-share-buttons li.whatsapp {
+.social-profile-buttons li.whatsapp span, .social-share-buttons li.whatsapp span {
   background-color: #60b82d;
   text-align: center;
   margin: 0;
   vertical-align: top;
-  text-align: center; }
-  .social-profile-buttons li.whatsapp iframe, .social-share-buttons li.whatsapp iframe {
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%; }
+  .social-profile-buttons li.whatsapp span iframe, .social-share-buttons li.whatsapp span iframe {
     text-align: center;
     margin-left: -20px; }
-.social-profile-buttons li:hover, .social-share-buttons li:hover {
+.social-profile-buttons li:hover a, .social-share-buttons li:hover a {
   background-color: #5A1490; }
 .social-profile-buttons li a, .social-share-buttons li a {
   color: #fff; }
 .social-profile-buttons li, .social-share-buttons li {
   display: inline-block;
   text-align: center;
-  font-size: 2rem; }
+  font-size: 2rem;
+  vertical-align: top; }
 .social-profile-buttons li a, .social-share-buttons li a {
   display: block;
   width: 100%;
@@ -803,23 +807,28 @@ body.single-cards {
         line-height: 60px; } }
   @media screen and (max-width: 650px) {
     .social-share-buttons--floating {
-      bottom: 0;
+      bottom: 10px;
       height: 40px;
       width: 100%; }
       .social-share-buttons--floating li {
         display: inline-block;
         height: 40px;
-        font-size: 15px; }
+        font-size: 15px;
+        background-color: transparent;
+        padding: 0 10px; }
+        .social-share-buttons--floating li.twitter {
+          padding: 0; }
       .social-share-buttons--floating li a {
         height: 40px;
-        line-height: 40px; }
+        line-height: 40px;
+        font-size: 3rem; }
       .social-share-buttons--floating li.google-plus, .social-share-buttons--floating li.pinterest {
         display: none; }
       .social-share-buttons--floating li.facebook {
         width: 50%;
         position: relative; }
         .social-share-buttons--floating li.facebook a {
-          padding-left: 50px;
+          padding-left: 65px;
           position: relative; }
         .social-share-buttons--floating li.facebook a:after {
           content: 'Share on';
