@@ -824,7 +824,7 @@ body.single-cards {
         font-size: 3rem; }
         .social-share-buttons--floating li a i.fa {
           position: relative;
-          top: -2px; }
+          top: -1px; }
       .social-share-buttons--floating li.google-plus, .social-share-buttons--floating li.pinterest {
         display: none; }
       .social-share-buttons--floating li.facebook {
