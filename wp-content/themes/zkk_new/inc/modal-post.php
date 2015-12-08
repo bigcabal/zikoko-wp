@@ -19,6 +19,8 @@
 	$cleanTitle = str_replace("&#038;","&", $cleanTitle);
 	$cleanTitle = str_replace("&#8230;","...", $cleanTitle);
 	$cleanTitle = str_replace("&#8216;","'", $cleanTitle);
+	$cleanTitle = str_replace("&#8220;","'", $cleanTitle);
+	$cleanTitle = str_replace("&#8221;","'", $cleanTitle);
 
 
 	
