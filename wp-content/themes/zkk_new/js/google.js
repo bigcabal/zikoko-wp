@@ -3,8 +3,11 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-43216024-9', 'auto');
+ga('create', 'UA-43216024-9', 'auto', {'allowLinker': true});
 ga('require', 'displayfeatures');
+
+ga('require', 'linker');
+ga('linker:autoLink', ['yesorno.vote'] );
 
 ga('set', 'dimension1', category.name);
 ga('set', 'dimension2', author.name);
