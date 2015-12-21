@@ -15,7 +15,7 @@ get_header();
 	<header class="page-header mobile-padd error-header">
 		<h1><img src="http://zikoko.com/wp-content/uploads/2015/12/w44wo.jpg" alt="Your page was not found"></h1>
 
-	    <p>Sorry, the page you're looking for doesn't exist. Why not try one of our popular posts below?</p>
+	    <p>Sorry, the page you're looking for doesn't exist. Why not try one of our popular posts below? Or <a class="ul" href="<?php echo bloginfo('url'); ?>">go back home</a>.</p>
 	</header>
 
     
@@ -55,12 +55,6 @@ get_header();
 	<ul class="social-profile-buttons social-profile-btns--sidebar">
 		<?php get_template_part('inc/social-profile', 'btns'); ?>
 	</ul>
-</div>
-
-<div class="site-box">
-	<?php if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
-        get_template_part('inc/ad', 'sidebar'); 
-      } ?>
 </div>
 
 <div class="site-box">
