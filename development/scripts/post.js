@@ -34,13 +34,13 @@ jQuery(document).ready(function($) {
 
 	  			//console.log("hit comments-area")
 				
-				$('.conversion-prompt-container').fadeIn(1000);
+				$('.conversion-prompt-container').addClass('modal-showing');
 				$('.modal').addClass('activated');
 	  		}
 		}); // end window.scroll
 
 		$('.conversion-prompt-cancel').on('click', function() {
-			$('.conversion-prompt-container').fadeOut(1000);
+			$('.conversion-prompt-container').removeClass('modal-showing');
 			ga('send', 'event', 'button', 'click', 'modal close');
 			return false;
 		})

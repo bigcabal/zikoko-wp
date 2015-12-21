@@ -63,7 +63,7 @@ acf_add_local_field_group(array (
 			),
 			'choices' => array (
 				'standard' => 'Standard',
-				'cards' => 'Cards',
+				// 'cards' => 'Cards',
 			),
 			'other_choice' => 0,
 			'save_other_choice' => 0,

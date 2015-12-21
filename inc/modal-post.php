@@ -19,6 +19,8 @@
 	$cleanTitle = str_replace("&#038;","&", $cleanTitle);
 	$cleanTitle = str_replace("&#8230;","...", $cleanTitle);
 	$cleanTitle = str_replace("&#8216;","'", $cleanTitle);
+	$cleanTitle = str_replace("&#8220;","'", $cleanTitle);
+	$cleanTitle = str_replace("&#8221;","'", $cleanTitle);
 
 
 	
@@ -29,7 +31,7 @@
 ?>
 
 
-<div class="conversion-prompt-container">
+<div class="conversion-prompt-container modalContainer">
 	<div class="modal">
 
 		<div class="modal-top">

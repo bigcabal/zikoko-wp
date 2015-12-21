@@ -4,6 +4,34 @@
              
 ------------------------------- */
 
+
+.mobile-banner-ad {
+
+	@media screen and (min-width: $breakpoint-small) {
+		display: none;
+	}
+
+
+	@include screen(small) {
+		display: block;
+		background-color: #fff;
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+		text-align: center;
+		padding: 10px;
+
+		#div-gpt-ad-1449527877015-0 {
+			// width: 300px;
+			// height: 250px;
+			// border: 1px solid red;
+			margin: 0 auto;
+		}
+	}
+
+}
+
+
 .site-header {
 	background-color: #fff;
 	display: block;

@@ -33,7 +33,7 @@ $answer = str_replace("'","", $answer);
 $answer = str_replace('"','', $answer);
 
 ?>
-<li class="poll-answer pcblock__poll__answer reaction_answer" data-pollanswer="<?php echo $answer; ?>" data-pollkey="<?php echo $poll_key; ?>" onclick='answerPoll("<?php echo $answer; ?>", "<?php echo $poll_key; ?>", "<?php echo $post_id; ?>", "<?php echo $poll_question; ?>")'>
+<li class="poll-answer pcblock__poll__answer reaction_answer" data-pollanswer="<?php echo $answer; ?>" data-pollkey="<?php echo $poll_key; ?>" onclick='answerPoll("<?php echo $answer; ?>", "<?php echo $poll_key; ?>", "<?php echo $post_id; ?>", "<?php echo $poll_question; ?>", "reaction")'>
 
 
 	<?php 

@@ -9,30 +9,30 @@
 
 	// Colours
 
-	li.facebook {
+	li.facebook a {
 		background-color: #3B5998;
 	}
-	li.twitter {
+	li.twitter a {
 		background-color: #4099FF;
 	}
-	li.google-plus {
+	li.google-plus a {
 		background-color: #d34836;
 	}
-	li.pinterest {
+	li.pinterest a {
 		background-color: #cc2127;
 	}
-	li.instagram {
+	li.instagram a {
 		background-color: #517fa4;
 	}
-	li.email {
+	li.email a {
 		background-color: #9f9f9f;
 	}
 
-	li.wechat {
+	li.wechat a {
 		background-color: #7bb32e;
 	}
 
-	li.whatsapp {
+	li.whatsapp span {
 		background-color: #60b82d;
 		text-align: center;
 
@@ -41,6 +41,10 @@
 
 		text-align: center;
 
+		display: block;
+		width: 100%;
+		height: 100%;
+
 		iframe {
 			text-align: center;
 			margin-left: -20px;
@@ -48,7 +52,7 @@
 
 	}
 
-	li:hover {
+	li:hover a {
 		background-color: $theme;
 	}
 
@@ -60,6 +64,7 @@
 		display: inline-block;
 		text-align: center;
 		font-size: 2rem;
+		vertical-align: top;
 	}
 
 
@@ -150,19 +155,41 @@
 
 	@include screen-custom(max, 650) {
 
-		bottom: 0;
-		height: 40px;
+		bottom: 0px;
+		height: 50px;
 		width: 100%;
+		padding-bottom: 5px;
+		padding-top: 5px;
+
+		// background-color: #fff;
+
 
 		li {
 			display: inline-block;
-			// float: left;
 			height: 40px;
 			font-size: 15px;
+
+			background-color: transparent;
+
+
+			padding: 0 5px;
+
+			&.twitter {
+				padding: 0;
+			}
 		}
+
 		li a {
 			height: 40px;
 			line-height: 40px;
+
+			font-size: 3rem;
+			border-radius: 0px;
+
+			i.fa {
+				position: relative;
+				top: -1px;
+			}
 		}
 
 		li.google-plus,
@@ -176,7 +203,7 @@
 
 
 			a {
-				padding-left: 50px;
+				padding-left: 65px;
 				position: relative;
 			}
 
@@ -201,6 +228,11 @@
 
 		li.whatsapp {
 			display: inline-block;
+
+			span {
+				border-radius: 0px;
+			}
+
 		}
 
 
@@ -284,7 +316,14 @@
 		line-height: 50px;
 		width: 100%;
 		text-align: left;
-		padding: 0 20px;
+		
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding: 0 20px;
+		}
 	}
 
 

@@ -181,13 +181,6 @@ function change_content_frontend($post_id) {
 
 
 
-    //$post_content = 
-
-    //$image_upload = ;
-
-
-
-
 
     $my_post = array();
 

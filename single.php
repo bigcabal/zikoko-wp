@@ -13,9 +13,9 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 		get_template_part('post', 'standard');
 
-	elseif ( get_field('post_format') === 'cards' && !get_field('legacy_post') ) :
+	// elseif ( get_field('post_format') === 'cards' && !get_field('legacy_post') ) :
 
-		get_template_part('post', 'cards');
+	// 	get_template_part('post', 'cards');
 
 	else :
 
