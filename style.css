@@ -506,6 +506,10 @@ body {
       width: 100%;
       margin-right: 0; } }
 
+.error-header img {
+  width: 100%;
+  height: auto; }
+
 .site-sidebar {
   width: 30%; }
   @media screen and (max-width: 960px) {
