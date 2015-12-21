@@ -1,3 +1,28 @@
+<<<<<<< HEAD
 development
 node_modules
 gulpfile.js
+=======
+.git
+.svn
+.htaccess
+wp-content/uploads
+wp-content/cache
+wp-content/themes/*/cache/*
+wp-content/gallery/*
+wp-config-sample.php
+wp-config.php
+local-config.php
+googled55f65561e9205a3.html
+google1ee6dac208dfb3a1.html
+
+wp-content/themes/zkk/development/
+wp-content/themes/zkk/gulpfile.js
+wp-content/themes/zkk/node_modules/
+wp-content/themes/zkk/package.json
+
+wp-content/themes/zkk_new/development/
+wp-content/themes/zkk_new/gulpfile.js
+wp-content/themes/zkk_new/node_modules/
+wp-content/themes/zkk_new/package.json
+>>>>>>> 4713808dab7ed66eb8091fc460a11356e68eb0e1
