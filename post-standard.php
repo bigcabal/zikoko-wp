@@ -32,7 +32,7 @@ $author = get_the_author();
 		<h1 class="entry-title padd-bottom"><?php the_title(); ?></h1>
 
 		<!-- Post Sponsor -->
-		<?php get_template_part('inc/post', 'sponsor'); ?>
+		<?php get_template_part('inc/post-sponsor', 'full'); ?>
 
 		<ul class="social-share-buttons social-share-buttons--inpost">
         	<?php get_template_part('inc/social-share', 'btns'); ?>
@@ -47,11 +47,11 @@ $author = get_the_author();
 	</article>
 </div>
 
-<?php if ( get_field('enable_reaction_buttons') == '1' ) { ?>
+<!-- <?php //if ( get_field('enable_reaction_buttons') == '1' ) { ?>
 <div class="site-box padd-all">
-	<?php get_template_part('inc/reaction-buttons'); ?>
+	<?php //get_template_part('inc/reaction-buttons'); ?>
 </div>
-<?php } ?>
+<?php //} ?> -->
 
 
 	

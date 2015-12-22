@@ -985,6 +985,66 @@ acf_add_local_field_group(array (
 			'ui' => 1,
 		),
 		array (
+			'key' => 'field_567812bad3dfd',
+			'label' => 'Sponsor CTA Link',
+			'name' => 'sponsor_cta_link',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_561f680f40b13',
+						'operator' => '==',
+						'value' => 'yes',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array (
+			'key' => 'field_567812d5d3dfe',
+			'label' => 'Sponsor CTA Text',
+			'name' => 'sponsor_cta_text',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_561f680f40b13',
+						'operator' => '==',
+						'value' => 'yes',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'Sign Up Now' => 'Sign Up Now',
+				'Download' => 'Download',
+				'Learn More' => 'Learn More',
+			),
+			'default_value' => array (
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'placeholder' => '',
+			'disabled' => 0,
+			'readonly' => 0,
+		),
+		array (
 			'key' => 'field_5626062012586',
 			'label' => 'Old Post',
 			'name' => 'legacy_post',
