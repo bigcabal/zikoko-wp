@@ -50,11 +50,11 @@ if (  get_field( 'sponsored_post_q' ) == "yes" ) :
                     </li>
                     <?php } ?>
 
-                    <?php //if ( $sponsor_cta_text != "" ) { ?>
+                    <?php if ( $sponsor_cta_url != "" ) { ?>
                     <li class="website">
                         <a href="<?php echo $sponsor_cta_url; ?>" target="_blank"><?php echo $sponsor_cta_text; ?></a>
                     </li>
-                    <?php //} ?>                    
+                    <?php } ?>                    
                 </ul>
         
             </div>

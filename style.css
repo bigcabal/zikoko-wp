@@ -586,24 +586,24 @@ ul.sub-menu {
   width: 70%;
 }
 
-@media screen and (max-width: 960px) {
-  .primary-menu-container {
-    text-align: center;
-  }
-}
-
 .primary-menu-container li a {
   padding-right: 15px;
 }
 
-@media screen and (max-width: 960px) {
-  .primary-menu-container li a {
-    padding-right: 0;
-  }
-}
-
 .primary-menu-container li:hover {
   opacity: 0.5;
+}
+
+@media screen and (max-width: 960px) {
+  .primary-menu-container {
+    width: 100%;
+    text-align: center;
+  }
+  .primary-menu-container li a {
+    padding-right: 0;
+    line-height: 1;
+    padding-bottom: 20px;
+  }
 }
 
 .secondary-menu-container {
@@ -614,6 +614,7 @@ ul.sub-menu {
 @media screen and (max-width: 960px) {
   .secondary-menu-container {
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -644,6 +645,11 @@ ul.sub-menu {
   .secondary-menu-container ul.sub-menu {
     background-color: #f0f0f0;
     padding-left: 20px;
+    display: block;
+    line-height: 1;
+  }
+  .secondary-menu-container ul.sub-menu li {
+    padding-bottom: 10px;
   }
 }
 
@@ -672,6 +678,15 @@ ul.sub-menu {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.nav-toggle--open .svga-menu {
+  height: 14px;
+  width: auto;
+}
+
+.nav-toggle--open .svga-menu .svga-fill {
+  fill: #000;
 }
 
 .nav-toggle--close {
@@ -1139,6 +1154,17 @@ body.single-cards {
   height: 100%;
 }
 
+.social-profile-buttons .svga,
+.social-share-buttons .svga {
+  height: 20px;
+  width: auto;
+}
+
+.social-profile-buttons .svga-fill,
+.social-share-buttons .svga-fill {
+  fill: #fff;
+}
+
 /* Share buttons */
 .social-share-buttons li.facebook {
   position: relative;
@@ -1173,7 +1199,7 @@ body.single-cards {
 
 .social-share-buttons--inpost a {
   height: 40px;
-  line-height: 40px;
+  padding: 5px;
 }
 
 .social-share-buttons--floating {
@@ -1194,7 +1220,7 @@ body.single-cards {
   }
   .social-share-buttons--floating a {
     height: 60px;
-    line-height: 60px;
+    padding: 15px 0;
   }
 }
 
@@ -1596,6 +1622,7 @@ body.single-cards {
 #searchform {
   background-color: #5A1490;
   display: block;
+  position: relative;
 }
 
 #searchform input[type="text"],
@@ -1613,9 +1640,10 @@ body.single-cards {
 }
 
 #searchform input[type="text"] {
-  width: 85%;
+  width: 100%;
   outline: none;
   padding: 0 15px;
+  padding: 0 50px 0 15px;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 1.4rem;
@@ -1623,17 +1651,13 @@ body.single-cards {
 
 @media screen and (max-width: 960px) {
   #searchform input[type="text"] {
-    width: 80%;
     font-size: 1.2rem;
-    padding: 0 10px;
   }
 }
 
 @media screen and (max-width: 600px) {
   #searchform input[type="text"] {
-    width: 70%;
     font-size: 1rem;
-    padding: 0 10px;
   }
 }
 
@@ -1641,18 +1665,15 @@ body.single-cards {
   width: 15%;
   text-align: center;
   line-height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
 }
 
-@media screen and (max-width: 960px) {
-  #searchform button[type="submit"] {
-    width: 20%;
-  }
-}
-
-@media screen and (max-width: 960px) {
-  #searchform button[type="submit"] {
-    width: 30%;
-  }
+.svga-a-width {
+  width: 100%;
+  height: auto;
 }
 
 /* -----------------------------

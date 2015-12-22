@@ -69,7 +69,9 @@ window.fbAsyncInit = function() {
 			<img src="http://zikoko.com/wp-content/uploads/2015/07/logo-300x92.png" alt="">
 			</a>
 
-      <a href="/" class="nav-toggle--open show-on-mobile-nav mobile-padd"> <i class="fa fa-bars" aria-label="Open Navigation"></i> </a>
+      <a href="/" class="nav-toggle--open show-on-mobile-nav mobile-padd" aria-label="Open Navigation">
+        <?php include('inc/icons/menu.php'); ?> 
+      </a>
 		</div>
 
 
