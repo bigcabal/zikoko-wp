@@ -100,6 +100,10 @@ include_once( 'functions/shortcodes.php' );
 include_once( 'functions/user-roles.php' );
 
 
+// remove Jetpack og tags
+remove_action('wp_head','jetpack_og_tags');
+
+
 
 function zkk_pagination() {
   // Don't print empty markup if there's only one page.
