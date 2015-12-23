@@ -99,6 +99,8 @@ include_once( 'functions/shortcodes.php' );
 /* User Capabilities */
 include_once( 'functions/user-roles.php' );
 
+// remove Jetpack og tags
+remove_action('wp_head','jetpack_og_tags');
 
 
 function zkk_pagination() {
