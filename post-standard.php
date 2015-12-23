@@ -32,7 +32,7 @@ $author = get_the_author();
 		<h1 class="entry-title padd-bottom"><?php the_title(); ?></h1>
 
 		<!-- Post Sponsor -->
-		<?php get_template_part('inc/post-sponsor', 'full'); ?>
+		<?php get_template_part('inc/post', 'sponsor'); ?>
 
 		<ul class="social-share-buttons social-share-buttons--inpost">
         	<?php get_template_part('inc/social-share', 'btns'); ?>
@@ -42,6 +42,10 @@ $author = get_the_author();
 
 	<div class="entry-full-content">
 		<?php get_template_part('content', 'standard'); ?>
+
+
+		<!-- Post Sponsor -->
+		<?php get_template_part('inc/post-sponsor', 'full'); ?>
 	</div>
 
 	</article>

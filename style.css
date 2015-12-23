@@ -71,7 +71,7 @@ html {
 }
 
 /* Clearfix */
-.cf:after, .sponsor-buttons:after {
+.cf:after, .sponsor-social-buttons:after {
   content: "";
   display: table;
   clear: both;
@@ -1426,30 +1426,30 @@ body.single-cards {
 }
 
 /* Sponsor Buttons */
-.sponsor-buttons li.facebook a {
+.sponsor-social-buttons li.facebook a {
   background-color: #3B5998;
 }
 
-.sponsor-buttons li.twitter a {
+.sponsor-social-buttons li.twitter a {
   background-color: #4099FF;
 }
 
-.sponsor-buttons li.website a {
+.sponsor-social-buttons li.website a {
   background-color: #9f9f9f;
 }
 
-.sponsor-buttons li:hover a {
+.sponsor-social-buttons li:hover a {
   background-color: #5A1490;
 }
 
-.sponsor-buttons li a {
+.sponsor-social-buttons li a {
   color: #fff;
   font-size: 1.2rem;
   text-align: center;
-  padding: 3px 5px;
+  padding: 7px;
 }
 
-.sponsor-buttons li {
+.sponsor-social-buttons li {
   display: inline-block;
   text-align: center;
   vertical-align: top;
@@ -1457,10 +1457,19 @@ body.single-cards {
   text-align: center;
 }
 
-.sponsor-buttons li a {
+.sponsor-social-buttons li a {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.sponsor-social-buttons .svga {
+  height: 20px;
+  width: auto;
+}
+
+.sponsor-social-buttons .svga-fill {
+  fill: #fff;
 }
 
 /* -----------------------------
@@ -3117,6 +3126,24 @@ body.single article.post .entry-full-content div.juxtapose img {
   width: auto;
 }
 
+.post-sponsor .sponsor-image {
+  height: 60px;
+  width: 60px;
+  padding-right: 10px;
+  float: left;
+  overflow: hidden;
+}
+
+.post-sponsor .sponsor-image img {
+  width: 100%;
+  height: auto;
+}
+
+.post-sponsor h1.sponsor-title {
+  line-height: 60px;
+  padding: 0;
+}
+
 .post-sponsor .sponsor-text {
   margin-bottom: 10px;
   display: inline-block;
@@ -3152,34 +3179,77 @@ body.single article.post .entry-full-content div.juxtapose img {
   color: #000;
 }
 
-.sponsor-image {
-  height: 60px;
-  width: 60px;
-  padding-right: 10px;
-  float: left;
-  overflow: hidden;
-}
-
-.sponsor-image img {
-  width: 100%;
-  height: auto;
-}
-
-h1.sponsor-title {
-  line-height: 60px;
-  padding: 0;
-}
-
 .website-link {
   display: block;
   font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   letter-spacing: normal;
 }
 
-.post-sponsor-full .sponsor-text {
-  vertical-align: top;
+.entry-full-content .post-sponsor-full {
+  width: 100%;
+  max-width: 350px;
+  position: relative;
 }
 
-.post-sponsor-full .sponsor-buttons {
-  margin-top: -3px;
+.entry-full-content .post-sponsor-full .sponsor-image {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-image img {
+  width: 100%;
+  height: auto;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-text {
+  vertical-align: top;
+  height: 80px;
+  width: 100%;
+  padding-left: 90px;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-url-button {
+  width: 100%;
+  height: 35px;
+  background-color: #9f9f9f;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-top: 4px;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-url-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-url-button:hover {
+  background-color: #5A1490;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-social-buttons {
+  width: 100%;
+  height: 35px;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-social-buttons li {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-social-buttons li.facebook {
+  padding-right: 2%;
+}
+
+.entry-full-content .post-sponsor-full .sponsor-social-buttons li.twitter {
+  padding-left: 2%;
 }
