@@ -4,7 +4,7 @@
  *
  * @package ZikokoTheme
 **/
-if (  get_field( 'sponsored_post_q' ) == "yes" ) : 
+if (  get_field( 'sponsored_post_q' ) == "yes" && get_field('sponsor_cta_link') != '' ) : 
 
     $sponsor_cta_text = get_field('sponsor_cta_text');;
     $sponsor_cta_url = "";

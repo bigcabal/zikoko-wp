@@ -992,7 +992,7 @@ acf_add_local_field_group(array (
 			'label' => 'Sponsor CTA Link',
 			'name' => 'sponsor_cta_link',
 			'type' => 'url',
-			'instructions' => '',
+			'instructions' => 'Add a link for the Call-To-Action button at the bottom of the post.  Leave blank to not include a CTA button.',
 			'required' => 0,
 			'conditional_logic' => array (
 				array (
@@ -1016,7 +1016,7 @@ acf_add_local_field_group(array (
 			'label' => 'Sponsor CTA Text',
 			'name' => 'sponsor_cta_text',
 			'type' => 'select',
-			'instructions' => '',
+			'instructions' => 'What should the CTA button say?',
 			'required' => 0,
 			'conditional_logic' => array (
 				array (
