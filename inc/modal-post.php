@@ -44,22 +44,24 @@
 
 			<li class="facebook social-share-btn" id="share-fb-modal">
 				<a href="https://facebook.com/dialog/feed?app_id=593692017438309&link=<?php echo $cleanPermalink; ?>?utm_source=fb%26utm_campaign=zkk_share&name=<?php echo $cleanTitle; ?>&redirect_uri=<?php echo $cleanPermalink; ?>" target="_blank">
-					<i class="fa fa-facebook"></i> <span class="share-text">Share on Facebook</span>
+					<?php include('icons/facebook.php'); ?> <span class="share-text">Share on Facebook</span>
 				</a>
 			</li><!--
 
 
 			--><li class="twitter social-share-btn" id="share-tw-modal">
 				<a href="https://twitter.com/intent/tweet/?text=<?php echo $cleanTitle; ?>&url=<?php echo $cleanPermalink; ?>?utm_source=tw%26utm_campaign=zkk_share&via=zikokomag&related=zikokomag" target="_blank">
-					<i class="fa fa-twitter"></i> <span class="share-text">Share on Twitter</span>
+					<?php include('icons/twitter.php'); ?> <span class="share-text">Share on Twitter</span>
 				</a>
 			</li><!--
 
 
-			--><li class="whatsapp socia-share-btn" id="share-wa-modal">
+			--><li class="whatsapp social-share-btn" id="share-wa-modal">
+				<span>
 				<a href="whatsapp://send" data-text="<?php echo $rawTitle; ?> -" data-href="<?php echo $rawPermalink; ?>?utm_source=wa&utm_campaign=zkk_share" class="wa_btn wa_btn_l">
-				<i class="fa fa-whatsapp"></i>
+				<?php include('icons/whatsapp.php'); ?>
 				</a>
+				</span>
 			</li>
 
 

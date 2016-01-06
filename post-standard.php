@@ -42,16 +42,20 @@ $author = get_the_author();
 
 	<div class="entry-full-content">
 		<?php get_template_part('content', 'standard'); ?>
+
+
+		<!-- Post Sponsor -->
+		<?php get_template_part('inc/post-sponsor', 'full'); ?>
 	</div>
 
 	</article>
 </div>
 
-<?php if ( get_field('enable_reaction_buttons') == '1' ) { ?>
+<!-- <?php //if ( get_field('enable_reaction_buttons') == '1' ) { ?>
 <div class="site-box padd-all">
-	<?php get_template_part('inc/reaction-buttons'); ?>
+	<?php //get_template_part('inc/reaction-buttons'); ?>
 </div>
-<?php } ?>
+<?php //} ?> -->
 
 
 	

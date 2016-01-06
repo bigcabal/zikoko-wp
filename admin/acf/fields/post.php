@@ -911,6 +911,9 @@ For certain...',
 	'description' => '',
 ));
 
+
+
+
 acf_add_local_field_group(array (
 	'key' => 'group_561f678b9ae6a',
 	'title' => 'Post Settings',
@@ -985,6 +988,71 @@ acf_add_local_field_group(array (
 			'ui' => 1,
 		),
 		array (
+			'key' => 'field_567812bad3dfd',
+			'label' => 'Sponsor CTA Link',
+			'name' => 'sponsor_cta_link',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_561f680f40b13',
+						'operator' => '==',
+						'value' => 'yes',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array (
+			'key' => 'field_567812d5d3dfe',
+			'label' => 'Sponsor CTA Text',
+			'name' => 'sponsor_cta_text',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_561f680f40b13',
+						'operator' => '==',
+						'value' => 'yes',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'Learn More' => 'Learn More',
+				'Download Now' => 'Download Now',
+				'Sign Up' => 'Sign Up',
+				'Contact Us' => 'Contact Us',
+				'Book Now' => 'Book Now',
+				'Use App' => 'Use App',
+				'Shop Now' => 'Shop Now',
+				'Watch Video' => 'Watch Video',
+			),
+			'default_value' => array (
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'placeholder' => '',
+			'disabled' => 0,
+			'readonly' => 0,
+		),
+		array (
 			'key' => 'field_5626062012586',
 			'label' => 'Old Post',
 			'name' => 'legacy_post',
@@ -1022,6 +1090,8 @@ acf_add_local_field_group(array (
 	'active' => 1,
 	'description' => '',
 ));
+
+endif;
 
 endif;
 
