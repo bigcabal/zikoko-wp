@@ -36,11 +36,11 @@ if (  get_field( 'sponsored_post_q' ) == "yes" ) :
             </div>
 
 
-            <ul class="sponsor-social-buttons cf">
+            <ul class="sponsor-social-buttons cf no-ul">
                 <?php if ( get_field( 'sponsor_social_facebook' ) != "" ) { ?>
                 <li class="facebook">
                     <a href="https://www.facebook.com/<?php the_field( 'sponsor_social_facebook' ); ?>" target="_blank">
-                        <?php include('icons/facebook.php'); ?>
+                        <?php include('icons/facebook.php'); ?> <span class="cta-text">Like <span>Us</span></span>
                     </a>
                 </li>
                 <?php } ?>
@@ -48,7 +48,7 @@ if (  get_field( 'sponsored_post_q' ) == "yes" ) :
                 <?php if ( get_field( 'sponsor_social_twitter' ) != "" ) { ?>
                 <li class="twitter">
                     <a href="https://twitter.com/<?php the_field( 'sponsor_social_twitter' ); ?>" target="_blank">
-                        <?php include('icons/twitter.php'); ?>
+                        <?php include('icons/twitter.php'); ?> <span class="cta-text">Follow <span>Us</span></span>
                     </a>
                 </li>
                 <?php } ?>

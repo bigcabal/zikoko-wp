@@ -257,7 +257,7 @@ small {
 
 .entry-excerpt--meta {
   text-transform: uppercase;
-  color: #5A1490;
+  color: #8235b6;
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
 }
@@ -270,7 +270,7 @@ small {
 
 @media screen and (max-width: 960px) {
   .site-nav-container {
-    color: #5A1490;
+    color: #8235b6;
   }
 }
 
@@ -470,7 +470,7 @@ small {
 }
 
 .pcblock__quote--text:before {
-  color: #5A1490;
+  color: #8235b6;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
