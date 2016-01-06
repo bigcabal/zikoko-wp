@@ -911,6 +911,9 @@ For certain...',
 	'description' => '',
 ));
 
+
+
+
 acf_add_local_field_group(array (
 	'key' => 'group_561f678b9ae6a',
 	'title' => 'Post Settings',
@@ -1030,9 +1033,14 @@ acf_add_local_field_group(array (
 				'id' => '',
 			),
 			'choices' => array (
-				'Sign Up Now' => 'Sign Up Now',
-				'Download' => 'Download',
 				'Learn More' => 'Learn More',
+				'Download Now' => 'Download Now',
+				'Sign Up' => 'Sign Up',
+				'Contact Us' => 'Contact Us',
+				'Book Now' => 'Book Now',
+				'Use App' => 'Use App',
+				'Shop Now' => 'Shop Now',
+				'Watch Video' => 'Watch Video',
 			),
 			'default_value' => array (
 			),
@@ -1082,6 +1090,8 @@ acf_add_local_field_group(array (
 	'active' => 1,
 	'description' => '',
 ));
+
+endif;
 
 endif;
 
