@@ -11,21 +11,21 @@
 $zkkpolls_table_name = 'bc_zkkpolls_answers';
 
 // will return NULL if there isn't one
-// if ( $wpdb->get_var('SHOW TABLES LIKE ' . $zkkpolls_table_name) != $zkkpolls_table_name )
-// {
-//   $sql = 'CREATE TABLE ' . $zkkpolls_table_name . '( 
-//       id INTEGER(10) UNSIGNED AUTO_INCREMENT,
-//       post_id INTEGER(10) NOT NULL default "0", 
-//       answer varchar(200) character set utf8 NOT NULL default "",
-//       responses INTEGER(10) NOT NULL default "0",
-//       PRIMARY KEY  (id) )';
+if ( $wpdb->get_var('SHOW TABLES LIKE ' . $zkkpolls_table_name) != $zkkpolls_table_name )
+{
+  $sql = 'CREATE TABLE ' . $zkkpolls_table_name . '( 
+      id INTEGER(10) UNSIGNED AUTO_INCREMENT,
+      post_id INTEGER(10) NOT NULL default "0", 
+      answer varchar(200) character set utf8 NOT NULL default "",
+      responses INTEGER(10) NOT NULL default "0",
+      PRIMARY KEY  (id) )';
   
-//   require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+  require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 
-//   dbDelta($sql);
+  dbDelta($sql);
   
-//   add_option('zkkpolls_database_version','1.0');
-// }
+  add_option('zkkpolls_database_version','1.0');
+}
 
 
 
