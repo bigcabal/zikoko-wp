@@ -914,6 +914,7 @@ For certain...',
 
 
 
+
 acf_add_local_field_group(array (
 	'key' => 'group_561f678b9ae6a',
 	'title' => 'Post Settings',
@@ -933,6 +934,22 @@ acf_add_local_field_group(array (
 			),
 			'message' => 'Make this post featured',
 			'default_value' => 0,
+		),
+		array (
+			'key' => 'field_5693c1bb47645',
+			'label' => 'Show Post Author',
+			'name' => 'show_post_author',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 1,
 		),
 		array (
 			'key' => 'field_561f680f40b13',
@@ -992,7 +1009,7 @@ acf_add_local_field_group(array (
 			'label' => 'Sponsor CTA Link',
 			'name' => 'sponsor_cta_link',
 			'type' => 'url',
-			'instructions' => 'Add a link for the Call-To-Action button at the bottom of the post.  Leave blank to not include a CTA button.',
+			'instructions' => 'Add a link for the Call-To-Action button at the bottom of the post. Leave blank to not include a CTA button.',
 			'required' => 0,
 			'conditional_logic' => array (
 				array (
@@ -1090,6 +1107,8 @@ acf_add_local_field_group(array (
 	'active' => 1,
 	'description' => '',
 ));
+
+
 
 
 
