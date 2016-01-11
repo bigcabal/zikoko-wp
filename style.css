@@ -1192,6 +1192,10 @@ body.single-cards {
   }
 }
 
+.social-share-buttons--inpost {
+  margin-top: 20px;
+}
+
 .social-share-buttons--inpost li {
   height: 40px;
   width: 20%;
@@ -1728,6 +1732,76 @@ body.single-cards {
   .entry-full-header {
     margin-bottom: 40px;
   }
+}
+
+/* -----------------------------
+
+     Post Author / Sponsor Box
+             
+------------------------------- */
+.post-author {
+  height: 50px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-right: 35px;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+.pa__image {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  float: left;
+  overflow: hidden;
+}
+
+.pa__image a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.pa__image img {
+  width: 100%;
+  height: auto;
+}
+
+.pa__text {
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: 600;
+  padding: 0;
+  height: 50px;
+}
+
+.pa__text__title {
+  background-color: #f0f0f0;
+  color: #8235b6;
+  font-size: 1.2rem;
+  line-height: 1;
+  position: relative;
+  top: 0;
+  display: inline-block;
+  padding: 2px 5px;
+  margin-bottom: 5px;
+  width: auto;
+  vertical-align: top;
+}
+
+.pa__text__name {
+  display: block;
+}
+
+@media screen {
+  .pa__text__name {
+    font-size: 14px;
+  }
+}
+
+.pa__text__name a {
+  color: #000;
 }
 
 /* -----------------------------
@@ -3139,8 +3213,9 @@ body.single article.post .entry-full-content div.juxtapose img {
 .post-sponsor {
   height: 60px;
   position: relative;
-  display: block;
+  display: inline-block;
   margin-bottom: 35px;
+  margin-right: 35px;
   font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   letter-spacing: normal;
 }

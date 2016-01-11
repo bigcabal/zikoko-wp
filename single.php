@@ -45,6 +45,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 		<!-- Post Sponsor -->
 		<?php get_template_part('inc/post', 'sponsor'); ?>
 
+
 		<ul class="social-share-buttons social-share-buttons--inpost">
         	<?php get_template_part('inc/social-share', 'btns'); ?>
         </ul>
