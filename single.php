@@ -42,10 +42,18 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 	<header class="entry-full-header">
 		<h1 class="entry-title padd-bottom"><?php the_title(); ?></h1>
 
-		<!-- Post Sponsor -->
-		<?php get_template_part('inc/post', 'sponsor'); ?>
+		<!-- Post Author -->
+	    <?php if (  (get_field( 'show_post_author' ) != false) | (get_field( 'show_post_author' ) === null) ) :
+	    	include('inc/post-author.php'); 
+	    endif; ?>
+
+	    <!-- Post Sponsor -->
+		<?php if (  get_field( 'sponsored_post_q' ) == "yes" ) : 
+			get_template_part('inc/post', 'sponsor');
+		endif; ?>
 
 
+		<!-- Social Share Buttons -->
 		<ul class="social-share-buttons social-share-buttons--inpost">
         	<?php get_template_part('inc/social-share', 'btns'); ?>
         </ul>

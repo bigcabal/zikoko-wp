@@ -39,7 +39,9 @@
 			<?php the_excerpt(); ?><br>
 
 			<!-- Post Sponsor -->
-			<?php get_template_part('inc/post', 'sponsor'); ?>
+			<?php if (  get_field( 'sponsored_post_q' ) == "yes" ) : 
+				get_template_part('inc/post', 'sponsor');
+			endif; ?>
 
 		</div>
 		

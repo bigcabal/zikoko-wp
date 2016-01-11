@@ -64,4 +64,13 @@ add_action( 'after_setup_theme', 'zkk_add_editor_styles' );
 
 
 
+/* Add the media uploader script */
+function my_media_lib_uploader_enqueue() {
+	wp_enqueue_media();
+	wp_enqueue_script('media-lib-uploader', get_template_directory_uri() . '/js/media-lib-uploader.js', array(), '1.0', false );
+
+}
+add_action('admin_enqueue_scripts', 'my_media_lib_uploader_enqueue');
+
+
 ?>

@@ -8,18 +8,6 @@ get_header();
 
 $author = get_the_author(); 
 
-
-$author_id = $post->post_author;
-$author_level = get_the_author_meta( 'user_level', $author_id );
-$author_level == '1' ? $author_title = 'Contributor' : $author_title = 'Staff Author';
-$author_twitter = get_the_author_meta( 'twitter', $author_id );
-
-
-
-
-
-
-
 ?>
 
 
@@ -44,36 +32,18 @@ $author_twitter = get_the_author_meta( 'twitter', $author_id );
 	<header class="entry-full-header">
 		<h1 class="entry-title padd-bottom"><?php the_title(); ?></h1>
 
-		
-
-
-
-
-		<div class="post-author cf">
-        
-	        <div class="pa__image">
-	            <a href="https://twitter.com/<?php echo $author_twitter; ?>" target="_blank">
-	            <img src="<?php echo get_template_directory_uri(); ?>/inc/img/female-emoji.png" alt="<?php the_title(); ?>">
-	            </a>
-	        </div>
-	        <div class="pa__text">
-	            <div class="pa__text__title">
-	            	<?php echo $author_title; ?>
-	            </div>
-	            <div class="pa__text__name">
-	                <a href="https://twitter.com/<?php echo $author_twitter; ?>" target="_blank">
-	                	@<?php echo $author_twitter; ?>
-	                </a>
-	            </div>
-	        </div> 
-	 
-	    </div>
+		<!-- Post Author -->
+	    <?php if (  (get_field( 'show_post_author' ) != false) | (get_field( 'show_post_author' ) === null) ) :
+	    	include('inc/post-author.php'); 
+	    endif; ?>
 
 	    <!-- Post Sponsor -->
-		<?php get_template_part('inc/post', 'sponsor'); ?>
+		<?php if (  get_field( 'sponsored_post_q' ) == "yes" ) : 
+			get_template_part('inc/post', 'sponsor');
+		endif; ?>
 
 
-
+		<!-- Social Share Buttons -->
 		<ul class="social-share-buttons social-share-buttons--inpost">
         	<?php get_template_part('inc/social-share', 'btns'); ?>
         </ul>
