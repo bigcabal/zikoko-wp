@@ -44,11 +44,11 @@ googletag.cmd = googletag.cmd || [];
 
 <!-- Mobile Top -->
 <script type='text/javascript'>
-  googletag.cmd.push(function() {
-    googletag.defineSlot('/24669334/zkk_mobile_top', [300, 250], 'div-gpt-ad-1449527877015-0').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-  });
+  // googletag.cmd.push(function() {
+  //   googletag.defineSlot('/24669334/zkk_mobile_top', [300, 250], 'div-gpt-ad-1449527877015-0').addService(googletag.pubads());
+  //   googletag.pubads().enableSingleRequest();
+  //   googletag.enableServices();
+  // });
 </script>
 
 
