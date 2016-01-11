@@ -46,7 +46,7 @@ get_the_author_meta( 'zkk_profile', $author_id ) != '' ? $author_profile = get_t
             <?php echo $author_title; ?>
         </div>
         <div class="pa__text__name">
-            @<?php echo $author; ?>
+            <?php echo $author; ?>
         </div>
     </div> 
 
