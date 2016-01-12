@@ -1757,8 +1757,8 @@ body.single-cards {
 }
 
 .pa__image img {
-  width: 100%;
-  height: auto;
+  min-width: 100%;
+  height: 100%;
 }
 
 .pa__text {
@@ -3200,7 +3200,7 @@ body.single article.post .entry-full-content div.juxtapose img {
 
 /* -------------------------
 
-	  Sponsors
+	  Sponsor Widget
 
 ------------------------- */
 @media screen and (max-width: 600px) {
