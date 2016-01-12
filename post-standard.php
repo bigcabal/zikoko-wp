@@ -53,31 +53,26 @@ $author = get_the_author();
 	<div class="entry-full-content">
 		<?php get_template_part('content', 'standard'); ?>
 
-
-		<!-- Post Sponsor -->
-		<?php get_template_part('inc/post-sponsor', 'full'); ?>
 	</div>
 
 	</article>
 </div>
 
-<!-- <?php //if ( get_field('enable_reaction_buttons') == '1' ) { ?>
-<div class="site-box padd-all">
-	<?php //get_template_part('inc/reaction-buttons'); ?>
-</div>
-<?php //} ?> -->
 
-
-	
-
-
-<ul class="site-box social-profile-buttons social-profile-btns--mobileonly">
-	<?php get_template_part('inc/social-profile', 'btns'); ?>
-</ul>
+<!-- Post Sponsor (Widget) -->
+<?php if (  get_field( 'sponsored_post_q' ) == "yes" && get_field('sponsor_cta_link') != '' ) : ?>
+	<div class="site-box no-bg post-sponsor-widget-container">
+	<?php get_template_part('inc/post-sponsor', 'widget'); ?>
+	</div>
+<?php endif; ?>
 
 <div class="site-box padd-all">
 	<?php comments_template(); ?>
 </div>
+
+<ul class="site-box no-bg social-profile-buttons social-profile-btns--mobileonly">
+	<?php get_template_part('inc/social-profile', 'btns'); ?>
+</ul>
 
 <!-- The Vortex -->
 <?php get_template_part('inc/modal', 'post'); ?>

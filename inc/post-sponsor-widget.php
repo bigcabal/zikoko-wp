@@ -4,8 +4,6 @@
  *
  * @package ZikokoTheme
 **/
-if (  get_field( 'sponsored_post_q' ) == "yes" && get_field('sponsor_cta_link') != '' ) : 
-
     $sponsor_cta_text = get_field('sponsor_cta_text');;
     $sponsor_cta_url = "";
     $sponsor_cta_url = get_field('sponsor_cta_link');
@@ -18,7 +16,7 @@ if (  get_field( 'sponsored_post_q' ) == "yes" && get_field('sponsor_cta_link') 
 
     
 ?>
-    <div class="post-sponsor-full cf">
+    <div class="post-sponsor-widget cf">
         
         <div class="sponsor-image">
         	<a href="<?php the_permalink(); ?>">
@@ -40,7 +38,8 @@ if (  get_field( 'sponsored_post_q' ) == "yes" && get_field('sponsor_cta_link') 
                 <?php if ( get_field( 'sponsor_social_facebook' ) != "" ) { ?>
                 <li class="facebook">
                     <a href="https://www.facebook.com/<?php the_field( 'sponsor_social_facebook' ); ?>" target="_blank">
-                        <?php include('icons/facebook.php'); ?> <span class="cta-text">Like <span>Us</span></span>
+                        <?php include('icons/facebook.php'); ?> 
+                        <span class="cta-text">Like <span class="small">Us</span> <span class="med">on Facebook</span> </span>
                     </a>
                 </li>
                 <?php } ?>
@@ -48,7 +47,8 @@ if (  get_field( 'sponsored_post_q' ) == "yes" && get_field('sponsor_cta_link') 
                 <?php if ( get_field( 'sponsor_social_twitter' ) != "" ) { ?>
                 <li class="twitter">
                     <a href="https://twitter.com/<?php the_field( 'sponsor_social_twitter' ); ?>" target="_blank">
-                        <?php include('icons/twitter.php'); ?> <span class="cta-text">Follow <span>Us</span></span>
+                        <?php include('icons/twitter.php'); ?> 
+                        <span class="cta-text">Follow <span class="small">Us</span> <span class="med">on Twitter</span></span>
                     </a>
                 </li>
                 <?php } ?>
@@ -62,5 +62,4 @@ if (  get_field( 'sponsored_post_q' ) == "yes" && get_field('sponsor_cta_link') 
     </div>
 <?php 
 wp_reset_postdata();
-endif; 
 ?>

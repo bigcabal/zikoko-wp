@@ -1044,7 +1044,6 @@ body.single-cards {
              
 ------------------------------- */
 .site-box {
-  background-color: #fff;
   position: relative;
   border: 0;
   margin-bottom: 35px;
@@ -1054,6 +1053,10 @@ body.single-cards {
   .site-box {
     margin-bottom: 25px;
   }
+}
+
+.site-box:not(.no-bg) {
+  background-color: #fff;
 }
 
 .page-header {
@@ -1368,10 +1371,16 @@ body.single-cards {
   }
   .social-profile-btns--mobileonly li {
     text-align: center;
-    padding: 0 10px;
+    padding: 0;
   }
   .social-profile-btns--mobileonly span {
     font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .social-profile-btns--mobileonly li {
+    padding: 0 10px;
   }
 }
 
@@ -1467,17 +1476,6 @@ body.single-cards {
   display: block;
   width: 100%;
   height: 100%;
-}
-
-.sponsor-social-buttons .cta-text {
-  display: inline-block;
-  padding-left: 5px;
-}
-
-@media screen and (max-width: 400px) {
-  .sponsor-social-buttons .cta-text span {
-    display: none;
-  }
 }
 
 .sponsor-social-buttons .svga {
@@ -3205,99 +3203,18 @@ body.single article.post .entry-full-content div.juxtapose img {
 	  Sponsors
 
 ------------------------- */
-.post-sponsor {
-  height: 60px;
-  position: relative;
-  display: inline-block;
-  margin-bottom: 35px;
-  margin-right: 35px;
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: normal;
-}
-
-@media screen and (max-width: 650px) {
-  .post-sponsor {
-    height: 50px;
-  }
-}
-
-.post-sponsor img {
-  height: 100%;
-  width: auto;
-}
-
-.post-sponsor .sponsor-image {
-  height: 60px;
-  width: 60px;
-  padding-right: 10px;
-  float: left;
-  overflow: hidden;
-}
-
-.post-sponsor .sponsor-image img {
-  width: 100%;
-  height: auto;
-}
-
-.post-sponsor h1.sponsor-title {
-  line-height: 60px;
-  padding: 0;
-}
-
-.post-sponsor .sponsor-text {
-  margin-bottom: 10px;
-  display: inline-block;
-  font-weight: 600;
-  padding: 0;
-}
-
-.post-sponsor .sponsored-by {
-  background-color: #f0f0f0;
-  color: #8235b6;
-  font-size: 1.2rem;
-  line-height: 1;
-  position: relative;
-  top: 0;
-  display: inline-block;
-  padding: 2px 5px;
-  margin-bottom: 5px;
-  width: auto;
-  vertical-align: top;
-}
-
-.post-sponsor .sponsor-name {
-  display: block;
-}
-
-@media screen {
-  .post-sponsor .sponsor-name {
-    font-size: 14px;
-  }
-}
-
-.post-sponsor .sponsor-name a {
-  color: #000;
-}
-
-.website-link {
-  display: block;
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: normal;
-}
-
-.entry-full-content .post-sponsor-full {
-  width: 100%;
-  max-width: 350px;
-  position: relative;
-}
-
 @media screen and (max-width: 600px) {
-  .entry-full-content .post-sponsor-full {
-    max-width: 100%;
+  .post-sponsor-widget-container {
+    padding: 0 10px;
   }
 }
 
-.entry-full-content .post-sponsor-full .sponsor-image {
+.post-sponsor-widget {
+  width: 100%;
+  position: relative;
+}
+
+.post-sponsor-widget .sponsor-image {
   width: 75px;
   height: 75px;
   position: absolute;
@@ -3305,18 +3222,18 @@ body.single article.post .entry-full-content div.juxtapose img {
   left: 0;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-image a {
+.post-sponsor-widget .sponsor-image a {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-image img {
+.post-sponsor-widget .sponsor-image img {
   width: 100%;
   height: auto;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-text {
+.post-sponsor-widget .sponsor-text {
   vertical-align: top;
   height: 75px;
   width: 100%;
@@ -3324,7 +3241,7 @@ body.single article.post .entry-full-content div.juxtapose img {
   font-family: "Montserrat", sans-serif;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-url-button {
+.post-sponsor-widget .sponsor-url-button {
   width: 100%;
   height: 35px;
   background-color: #9f9f9f;
@@ -3332,7 +3249,7 @@ body.single article.post .entry-full-content div.juxtapose img {
   margin-bottom: 5px;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-url-button a {
+.post-sponsor-widget .sponsor-url-button a {
   color: #fff;
   text-decoration: none;
   display: block;
@@ -3342,25 +3259,42 @@ body.single article.post .entry-full-content div.juxtapose img {
   padding-top: 6px;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-url-button:hover {
+.post-sponsor-widget .sponsor-url-button:hover {
   background-color: #8235b6;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-social-buttons {
+.post-sponsor-widget .sponsor-social-buttons {
   width: 100%;
   height: 35px;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-social-buttons li {
+.post-sponsor-widget .sponsor-social-buttons li {
   float: left;
   width: 50%;
   height: 100%;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-social-buttons li.facebook {
+.post-sponsor-widget .sponsor-social-buttons li.facebook {
   padding-right: 1%;
 }
 
-.entry-full-content .post-sponsor-full .sponsor-social-buttons li.twitter {
+.post-sponsor-widget .sponsor-social-buttons li.twitter {
   padding-left: 1%;
+}
+
+.post-sponsor-widget .cta-text {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .post-sponsor-widget .cta-text span.med {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .post-sponsor-widget .cta-text span.small {
+    display: none;
+  }
 }
