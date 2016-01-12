@@ -12,8 +12,9 @@ $author_twitter = get_the_author_meta( 'twitter', $author_id );
 
 
 
-$default_profile = get_template_directory_uri() . '/inc/img/female-emoji.png';
-get_the_author_meta( 'zkk_profile', $author_id ) != '' ? $author_profile = get_the_author_meta( 'zkk_profile', $author_id ) : $author_profile = $default_profile
+$author_zkk_profile = '<img alt="' . $author . '" src="' . get_the_author_meta( 'zkk_profile', $author_id ) . '" class="avatar avatar-50 photo">';
+$author_gravatar = get_avatar($author_id, 100, 'http://zikoko.com/wp-content/uploads/2016/01/female-emoji.png', $author, ''); 
+get_the_author_meta( 'zkk_profile', $author_id ) != '' ? $author_profile = $author_zkk_profile : $author_profile = $author_gravatar;
 
 ?>
 <div class="post-author cf">
@@ -22,7 +23,7 @@ get_the_author_meta( 'zkk_profile', $author_id ) != '' ? $author_profile = get_t
 
     <div class="pa__image">
         <a href="https://twitter.com/<?php echo $author_twitter; ?>" target="_blank">
-        <img src="<?php echo $author_profile; ?>" alt="<?php echo $author; ?>">
+        <?php echo $author_profile; ?>
         </a>
     </div>
     <div class="pa__text">
@@ -39,7 +40,7 @@ get_the_author_meta( 'zkk_profile', $author_id ) != '' ? $author_profile = get_t
     <?php else : ?>
     
     <div class="pa__image">
-        <img src="<?php echo $author_profile; ?>" alt="<?php echo $author; ?>">
+        <?php echo $author_profile; ?>
     </div>
     <div class="pa__text">
         <div class="pa__text__title">
