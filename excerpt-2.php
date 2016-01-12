@@ -6,7 +6,7 @@
  * @package ZikokoTheme
 **/
 ?>
-<article <?php post_class("site-box entry-excerpt entry-excerpt--2"); ?>>
+<article <?php post_class("site-box entry-excerpt entry-excerpt--2 no-bg"); ?>>
 
 	<div class="entry-excerpt--image">
 		<a href="<?php the_permalink() ?>">
