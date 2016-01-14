@@ -1324,7 +1324,6 @@ body.single-cards {
 }
 
 .social-share-buttons--share-result li.social-share-btn {
-  padding: 10px 15px;
   font-size: 1.6rem;
   margin-right: 10px;
   border-radius: 3px;
@@ -1334,6 +1333,10 @@ body.single-cards {
 .social-share-buttons--share-result li.social-share-btn a:visited {
   text-decoration: none;
   color: #fff;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px 15px;
 }
 
 /* Social Profile */
