@@ -1507,7 +1507,7 @@ body.single-cards {
   display: inline-block;
   margin-right: 10px;
   border-radius: 3px;
-  padding: 10px;
+  padding: 5px;
   width: auto;
   text-align: center;
 }
@@ -1535,7 +1535,6 @@ body.single-cards {
 }
 
 .quiz-checklist--results-container .wpvq-play-again-area {
-  text-align: center;
   margin: 20px 0;
 }
 
@@ -1544,7 +1543,6 @@ body.single-cards {
   border: 0;
   color: #fff;
   cursor: pointer;
-  font-size: 20px;
   font-weight: 700;
   padding: 10px;
 }

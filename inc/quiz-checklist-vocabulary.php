@@ -82,11 +82,9 @@ $answers = array(
 
 <form class="quiz-checklist" id="quiz-checklist--vocabulary">
 
-<img src="" alt="How Nigerian is Your Vocaulary? Check All That Apply To You">
+<img src="http://zikoko.com/wp-content/uploads/2016/01/What-do-you-want-the-most-1-19.jpg" alt="How Nigerian is Your Vocaulary? Check All That Apply To You">
 
-
-<p>*taps mic* My fellow Nigerians – IJGBs and Student Visa included – please tick any or all of these words of phrases that you’ve ever used.<br>
-We’ve provided context where needed.</p><br>
+<br>
 
 
 <?php foreach ($answers as $key => $value) { ?>
