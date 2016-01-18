@@ -21,6 +21,9 @@ function quiz_checklist_handler($atts, $content, $tag) {
 	elseif ($values['quiz'] == 'how_ajepako_are_you') {
 		$output = get_template_part('inc/quiz-checklist', 'ajepako');
 	}
+	elseif ($values['quiz'] == 'how_nigerian_is_your_vocabulary') {
+		$output = get_template_part('inc/quiz-checklist', 'vocabulary');
+	}
 	else{
 		$output = get_template_part('inc/quiz-checklist', 'nigerian');
 	}
