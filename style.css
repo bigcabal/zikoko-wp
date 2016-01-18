@@ -1502,6 +1502,51 @@ body.single-cards {
   text-decoration: none;
 }
 
+/*wpviral quix  */
+.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-button {
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 3px;
+  padding: 5px;
+  width: auto;
+  text-align: center;
+}
+
+.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-facebook {
+  background-color: #3B5998;
+  color: #fff;
+}
+
+.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-twitter {
+  background-color: #4099FF;
+  color: #fff;
+}
+
+.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-slide {
+  display: inline-block;
+  border-left: 1px solid #fff;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-slide p {
+  line-height: 1;
+  margin: 0;
+}
+
+.quiz-checklist--results-container .wpvq-play-again-area {
+  margin: 20px 0;
+}
+
+.quiz-checklist--results-container .wpvq-play-again-area button {
+  background-color: #333;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px;
+}
+
 /* -----------------------------
 
         Mailchimp Subscription
