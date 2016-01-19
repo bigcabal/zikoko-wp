@@ -74,6 +74,9 @@ $answers = array(
 	"Before nko",
 	"Fear fear",
 	"No vex",
+	"Baddo",
+	"My friend! (In anger)",
+	"Haba now"
 );
 
 ?>
