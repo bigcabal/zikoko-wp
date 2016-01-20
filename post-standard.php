@@ -67,7 +67,7 @@ $author = get_the_author();
 
 
 <!-- The Vortex -->
-<?php get_template_part('inc/reaction', 'buttons'); ?>
+<?php //get_template_part('inc/reaction', 'buttons'); ?>
 
 
 <div class="site-box padd-all">
