@@ -24,6 +24,9 @@ function quiz_checklist_handler($atts, $content, $tag) {
 	elseif ($values['quiz'] == 'how_nigerian_is_your_vocabulary') {
 		$output = get_template_part('inc/quiz-checklist', 'vocabulary');
 	}
+	elseif ($values['quiz'] == 'how_nigerian_are_your_parents') {
+		$output = get_template_part('inc/quiz-checklist', 'parents');
+	}
 	else{
 		$output = get_template_part('inc/quiz-checklist', 'nigerian');
 	}
