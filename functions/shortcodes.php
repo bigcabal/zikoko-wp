@@ -16,19 +16,19 @@ function quiz_checklist_handler($atts, $content, $tag) {
 	$output = '';
 
 	if ($values['quiz'] == 'how_nigerian_are_you') {
-		$output = get_template_part('inc/quiz-checklist', 'nigerian');
+		$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'nigerian');
 	}
 	elseif ($values['quiz'] == 'how_ajepako_are_you') {
-		$output = get_template_part('inc/quiz-checklist', 'ajepako');
+		$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'ajepako');
 	}
 	elseif ($values['quiz'] == 'how_nigerian_is_your_vocabulary') {
-		$output = get_template_part('inc/quiz-checklist', 'vocabulary');
+		$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'vocabulary');
 	}
 	elseif ($values['quiz'] == 'how_nigerian_are_your_parents') {
-		$output = get_template_part('inc/quiz-checklist', 'parents');
+		$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'parents');
 	}
 	else{
-		$output = get_template_part('inc/quiz-checklist', 'nigerian');
+		$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'nigerian');
 	}
 	
 	return $output;
