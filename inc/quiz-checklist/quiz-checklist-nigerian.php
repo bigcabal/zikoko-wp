@@ -6,7 +6,7 @@
 **/
 ?>
 
-<div class="quiz-how-nigerian-are-you">
+
 
 <p>Happy Independence!!!</p>
 
@@ -14,7 +14,7 @@
 
 <Br>
 
-<form class="quiz-checklist" id="quiz-checklist--nigerian">
+<form class="quiz-checklist">
 
 
 <img src="http://zikoko.com/wp-content/uploads/2015/09/how-nigerian-are-you.jpg" alt="How Nigerian Are You? Check All That Apply To You"><br>
@@ -342,4 +342,4 @@
 </form>
 
 
-</div>
+<script>var quizID = 'how_nigerian_are_you';</script>

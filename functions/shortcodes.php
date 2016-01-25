@@ -27,6 +27,9 @@ function quiz_checklist_handler($atts, $content, $tag) {
 	elseif ($values['quiz'] == 'how_nigerian_are_your_parents') {
 		$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'parents');
 	}
+	elseif ($values['quiz'] == 'how_single_are_you') {
+		$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'single');
+	}
 	else{
 		$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'nigerian');
 	}

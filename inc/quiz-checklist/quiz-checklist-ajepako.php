@@ -6,10 +6,9 @@
 **/
 ?>
 
-<div class="quiz-how-ajepako-are-you">
 
 
-<form class="quiz-checklist" id="quiz-checklist--ajepako">
+<form class="quiz-checklist">
 
 
 <img src="http://zikoko.com/wp-content/uploads/2015/11/How-Ajepako-Are-You_.jpg" alt="How Ajepako Are You? Check All That Apply To You"><br>
@@ -425,4 +424,4 @@
 </form>
 
 
-</div>
+<script>var quizID = 'how_ajepako_are_you';</script>

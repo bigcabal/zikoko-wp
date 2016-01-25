@@ -75,9 +75,8 @@ $answers = array(
 
 ?>
 
-<div class="quiz-how-nigerian-are-your-parents">
 
-<form class="quiz-checklist" id="quiz-checklist--parents">
+<form class="quiz-checklist">
 
 <img src="http://zikoko.com/wp-content/uploads/2016/01/do-what-you-love.jpg" alt="How Nigerian Are Your Parents? Check All That Apply To You">
 
@@ -108,4 +107,4 @@ $answers = array(
 </form>
 
 
-</div>
+<script>var quizID = 'how_nigerian_are_your_parents';</script>
