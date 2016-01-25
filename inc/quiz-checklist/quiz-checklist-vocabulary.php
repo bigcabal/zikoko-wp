@@ -74,13 +74,15 @@ $answers = array(
 	"Before nko",
 	"Fear fear",
 	"No vex",
+	"Baddo",
+	"My friend! (In anger)",
+	"Haba now"
 );
 
 ?>
 
-<div class="quiz-how-nigerian-is-your-vocabulary">
 
-<form class="quiz-checklist" id="quiz-checklist--vocabulary">
+<form class="quiz-checklist">
 
 <img src="http://zikoko.com/wp-content/uploads/2016/01/What-do-you-want-the-most-1-19.jpg" alt="How Nigerian is Your Vocaulary? Check All That Apply To You">
 
@@ -112,4 +114,7 @@ $answers = array(
 </form>
 
 
-</div>
+
+
+<script>var quizID = 'how_nigerian_is_your_vocabulary';</script>
+

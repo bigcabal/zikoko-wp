@@ -5,28 +5,42 @@
  * @package ZikokoTheme
 **/
 
+$template_dir = get_template_directory();
+
+$checklistQuizData = require($template_dir . '/inc/quiz-checklist-answers.php');
+
 
 function quiz_checklist_handler($atts, $content, $tag) {
 
-	//collect values, combining passed in values and defaults
 	$values = shortcode_atts(array(
 		'quiz' => 'default'
 	),$atts);  
 	
 	$output = '';
 
-	if ($values['quiz'] == 'how_nigerian_are_you') {
-		$output = get_template_part('inc/quiz-checklist', 'nigerian');
+	switch ($values['quiz']) {
+		case 'how_nigerian_are_you':
+			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'nigerian');
+			break;
+		case 'how_ajepako_are_you':
+			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'ajepako');
+			break;
+		case 'how_nigerian_is_your_vocabulary':
+			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'vocabulary');
+			break;
+		case 'how_nigerian_are_your_parents':
+			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'parents');
+			break;
+		case 'how_single_are_you':
+			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'single');
+			//$output = get_template_part('inc/quiz', 'checklist');
+			break;
+		
+		default:
+			$output = '';
+			break;
 	}
-	elseif ($values['quiz'] == 'how_ajepako_are_you') {
-		$output = get_template_part('inc/quiz-checklist', 'ajepako');
-	}
-	elseif ($values['quiz'] == 'how_nigerian_is_your_vocabulary') {
-		$output = get_template_part('inc/quiz-checklist', 'vocabulary');
-	}
-	else{
-		$output = get_template_part('inc/quiz-checklist', 'nigerian');
-	}
+
 	
 	return $output;
 

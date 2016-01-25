@@ -58,13 +58,17 @@ $author = get_the_author();
 	</article>
 </div>
 
-
 <!-- Post Sponsor (Widget) -->
 <?php if (  get_field( 'sponsored_post_q' ) == "yes" && get_field('sponsor_cta_link') != '' ) : ?>
 	<div class="site-box no-bg post-sponsor-widget-container">
 	<?php get_template_part('inc/post-sponsor', 'widget'); ?>
 	</div>
 <?php endif; ?>
+
+
+<!-- The Vortex -->
+<?php //get_template_part('inc/reaction', 'buttons'); ?>
+
 
 <div class="site-box padd-all">
 	<?php comments_template(); ?>
