@@ -47,13 +47,15 @@ function zkk_scripts() {
 
 
 	// AJAX Script
-	wp_register_script('be-like', get_template_directory_uri() . '/js/belike.js', array('jquery-min'), '1.0', true );
+	wp_enqueue_script('canvas-to-blob', get_template_directory_uri() . '/js/ctb.min.js', array(), '1.0', false );
+
+	wp_register_script('be-like', get_template_directory_uri() . '/js/belike.js', array('jquery-min', 'canvas-to-blob'), '1.0', true );
 	wp_localize_script( 'be-like', 'ajaxpagination', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
 	));
 
 	if ( is_page_template( 'page-belike.php' ) ) {
-		wp_enqueue_script('be-like');  
+		wp_enqueue_script('be-like');
 	} 
 
 	        	
@@ -92,11 +94,14 @@ function my_ajax_upload() {
 
 	require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
-	//$image = $_POST['image'];
 
 	$image = $_FILES['image'];
 
 	$image_uploaded = wp_handle_upload( $image, array('test_form' => false ) );
+
+	$rand = rand ( 0 , 9999 );
+
+	//$image_uploaded = wp_insert_attachment( $image, 'BeLike_'.$rand);
 	
 
     echo json_encode($image_uploaded);

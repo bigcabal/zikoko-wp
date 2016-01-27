@@ -1,12 +1,6 @@
 <?php 
 
 
-	$rawPermalink = get_the_permalink();
-	$cleanPermalink = urlencode($rawPermalink);
-
-
-	$fb_text = "";
-	$twitter_text = "";
 
 
 ?>
@@ -87,3 +81,4 @@
 
 
 </section>
+
