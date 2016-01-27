@@ -89,20 +89,13 @@ add_action('admin_enqueue_scripts', 'my_media_lib_uploader_enqueue');
 
 
 
-////////
+
 function my_ajax_upload() {
 
 	require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
-
 	$image = $_FILES['image'];
-
 	$image_uploaded = wp_handle_upload( $image, array('test_form' => false ) );
-
-	$rand = rand ( 0 , 9999 );
-
-	//$image_uploaded = wp_insert_attachment( $image, 'BeLike_'.$rand);
-	
 
     echo json_encode($image_uploaded);
 

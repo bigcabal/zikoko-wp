@@ -38,8 +38,8 @@
 
 <?php
 
-	header("Location: " . get_bloginfo( 'url' ) . "/be-like");
-	exit();
+	//header("Location: " . get_bloginfo( 'url' ) . "/be-like");
+	//exit();
 
 ?>
 
