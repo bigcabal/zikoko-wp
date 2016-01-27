@@ -20,7 +20,7 @@
 
 		<div class="input-group">
 			<label for="name">Your Name</label>
-			<input type="text" name="name" id="name" placeholder="e.g. Femi" value="Ire" required>
+			<input type="text" name="name" id="name" placeholder="e.g. Femi"  required>
 		</div>
 
 		<div class="input-group">
@@ -42,7 +42,7 @@
 		</div>
 
 		<div class="input-group-submit">
-		<input type="submit" id="generateMeme">
+		<input type="submit" id="generateMeme" value="See Your Story">
 		</div>
 
 	</form>
