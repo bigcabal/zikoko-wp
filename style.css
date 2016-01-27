@@ -1918,6 +1918,11 @@ body.single-cards {
   margin-bottom: 10px;
 }
 
+.entry-full-content .share-image-btns li.download {
+  float: none;
+  width: 100%;
+}
+
 .entry-full-content .share-image-btns a {
   display: block;
   width: 100%;

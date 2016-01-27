@@ -48,7 +48,9 @@ function zkk_scripts() {
 
 	// AJAX Script
 	wp_register_script('be-like', get_template_directory_uri() . '/js/belike.js', array('jquery-min'), '1.0', true );
-	//wp_localize_script( 'be-like', 'ajaxpagination', array());
+	wp_localize_script( 'be-like', 'ajaxpagination', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	));
 
 	if ( is_page_template( 'page-belike.php' ) ) {
 		wp_enqueue_script('be-like');  
@@ -80,6 +82,31 @@ function my_media_lib_uploader_enqueue() {
 
 }
 add_action('admin_enqueue_scripts', 'my_media_lib_uploader_enqueue');
+
+
+
+
+
+////////
+function my_ajax_upload() {
+
+	require_once( ABSPATH . 'wp-admin/includes/file.php' );
+
+	//$image = $_POST['image'];
+
+	$image = $_FILES['image'];
+
+	$image_uploaded = wp_handle_upload( $image, array('test_form' => false ) );
+	
+
+    echo json_encode($image_uploaded);
+
+    die();
+}
+add_action( 'wp_ajax_nopriv_ajax_upload', 'my_ajax_upload' );
+add_action( 'wp_ajax_ajax_upload', 'my_ajax_upload' );
+
+
 
 
 ?>

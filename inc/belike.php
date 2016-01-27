@@ -60,7 +60,11 @@
 
 
 		<ul class="share-image-btns cf">
-			
+			<li class="download">
+				<a href="" download="BeLikeZikoko.png">
+					Download Image
+				</a>
+			</li>
 			<li class="facebook">
 				<a href="" target="_blank">
 					Share on Facebook
@@ -69,11 +73,6 @@
 			<li class="twitter">
 				<a href="" target="_blank">
 					Share on Twitter
-				</a>
-			</li>
-			<li class="download">
-				<a href="" download="BeLikeZikoko.png">
-					Download Image
 				</a>
 			</li>
 			<li class="repeat">
