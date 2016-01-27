@@ -5,6 +5,10 @@
 	$cleanPermalink = urlencode($rawPermalink);
 
 
+	$fb_text = "";
+	$twitter_text = "";
+
+
 ?>
 
 <!-- -->
@@ -20,7 +24,7 @@
 
 		<div class="input-group">
 			<label for="name">Your Name</label>
-			<input type="text" name="name" id="name" placeholder="e.g. Femi" value="Ire" required>
+			<input type="text" name="name" id="name" placeholder="e.g. Femi"  required>
 		</div>
 
 		<div class="input-group">
@@ -42,7 +46,7 @@
 		</div>
 
 		<div class="input-group-submit">
-		<input type="submit" id="generateMeme">
+		<input type="submit" id="generateMeme" value="See Your Story">
 		</div>
 
 	</form>
@@ -58,18 +62,23 @@
 		<ul class="share-image-btns cf">
 			
 			<li class="facebook">
-				<a href="">
+				<a href="" target="_blank">
 					Share on Facebook
 				</a>
 			</li>
 			<li class="twitter">
-				<a href="">
+				<a href="" target="_blank">
 					Share on Twitter
 				</a>
 			</li>
 			<li class="download">
 				<a href="" download="BeLikeZikoko.png">
 					Download Image
+				</a>
+			</li>
+			<li class="repeat">
+				<a href="">
+					Retry
 				</a>
 			</li>
 

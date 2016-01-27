@@ -1907,9 +1907,15 @@ body.single-cards {
   color: #fff;
 }
 
+.entry-full-content .share-image-btns li.repeat a {
+  background-color: #000;
+  color: #fff;
+}
+
 .entry-full-content .share-image-btns li {
   float: left;
   width: 32%;
+  margin-bottom: 10px;
 }
 
 .entry-full-content .share-image-btns a {
