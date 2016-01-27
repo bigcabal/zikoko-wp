@@ -71,7 +71,7 @@ html {
 }
 
 /* Clearfix */
-.cf:after, .sponsor-social-buttons:after {
+.cf:after, .sponsor-social-buttons:after, .entry-full-content .belike-container:after {
   content: "";
   display: table;
   clear: both;
@@ -1758,6 +1758,179 @@ body.single-cards {
 .svga-a-width {
   width: 100%;
   height: auto;
+}
+
+.entry-full-content .belike-container {
+  margin-top: 30px;
+  overflow-x: scroll;
+}
+
+.entry-full-content form {
+  /* FormHack v1.1.0 (formhack.io) */
+  /* Global Reset Styles ------------------ */
+  /* Input & Textarea ------------------ */
+  /* Fields with standard width */
+  /* Fields with standard height */
+  /* Select ------------------ */
+  /* Buttons, Input Type Submit/Reset ------------------ */
+  /* States ------------------ */
+}
+
+.entry-full-content form input,
+.entry-full-content form textarea,
+.entry-full-content form select,
+.entry-full-content form option,
+.entry-full-content form optgroup,
+.entry-full-content form button,
+.entry-full-content form legend,
+.entry-full-content form fieldset {
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  color: #282828;
+  vertical-align: top;
+  display: block;
+}
+
+.entry-full-content form label {
+  display: block;
+  font-weight: 600;
+  color: #8235b6;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.entry-full-content form .input-group {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.entry-full-content form input[type="text"],
+.entry-full-content form select,
+.entry-full-content form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  background-color: #fff;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #c8c8c8;
+}
+
+.entry-full-content form input[type="text"] {
+  height: 40px;
+  -webkit-appearance: none;
+}
+
+.entry-full-content form select {
+  height: 40px;
+}
+
+.entry-full-content form button,
+.entry-full-content form input[type="button"],
+.entry-full-content form input[type="submit"],
+.entry-full-content form input[type="reset"],
+.entry-full-content form input[type="image"] {
+  height: 40px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #8235b6;
+  padding: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #c8c8c8;
+}
+
+.entry-full-content form input[type="image"] {
+  text-align: center;
+  padding: 8px;
+}
+
+.entry-full-content form input:focus,
+.entry-full-content form textarea:focus,
+.entry-full-content form select:focus,
+.entry-full-content form option:focus,
+.entry-full-content form button:focus {
+  background-color: #fff;
+  border-color: #8235b6;
+}
+
+.entry-full-content form button:hover,
+.entry-full-content form input[type="button"]:hover,
+.entry-full-content form input[type="submit"]:hover,
+.entry-full-content form input[type="reset"]:hover,
+.entry-full-content form button:focus,
+.entry-full-content form input[type="button"]:focus,
+.entry-full-content form input[type="submit"]:focus,
+.entry-full-content form input[type="reset"]:focus {
+  background-color: #c8c8c8;
+  color: #282828;
+}
+
+.entry-full-content img.hide-source {
+  display: none;
+}
+
+.entry-full-content .belike-result {
+  margin-top: 30px;
+  display: none;
+}
+
+.entry-full-content #beLikeZikoko {
+  display: none;
+}
+
+.entry-full-content .share-image-btns {
+  margin: 20px 0;
+}
+
+.entry-full-content .share-image-btns li.facebook a {
+  background-color: #3B5998;
+  color: #fff;
+}
+
+.entry-full-content .share-image-btns li.twitter a {
+  background-color: #4099FF;
+  color: #fff;
+}
+
+.entry-full-content .share-image-btns li.download a {
+  background-color: #8235b6;
+  color: #fff;
+}
+
+.entry-full-content .share-image-btns li {
+  float: left;
+  width: 32%;
+}
+
+.entry-full-content .share-image-btns a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px 5px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.entry-full-content .share-image-btns li.twitter {
+  margin: 0 2%;
+}
+
+.entry-full-content .share-image-btns:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* -----------------------------
