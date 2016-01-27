@@ -45,6 +45,15 @@ function zkk_scripts() {
 
 	//}
 
+
+	// AJAX Script
+	wp_register_script('be-like', get_template_directory_uri() . '/js/belike.js', array('jquery-min'), '1.0', true );
+	//wp_localize_script( 'be-like', 'ajaxpagination', array());
+
+	if ( is_page_template( 'page-belike.php' ) ) {
+		wp_enqueue_script('be-like');  
+	} 
+
 	        	
 }
 add_action( 'wp_enqueue_scripts', 'zkk_scripts' );
