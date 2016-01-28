@@ -15,7 +15,7 @@
 <?php 
 
 	$meta_title = "Be Like Me. See Your Story";
-	$meta_image = $_GET['img'];
+	$meta_image = $_GET['img'] . '.png';
 	$meta_description = "Be Like Me. See Your Story";
 	$url = get_bloginfo( 'url' ) . "/be-like";
 
