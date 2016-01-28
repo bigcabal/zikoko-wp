@@ -1,8 +1,6 @@
 <?php 
 
 
-	$rawPermalink = get_the_permalink();
-	$cleanPermalink = urlencode($rawPermalink);
 
 
 ?>
@@ -56,20 +54,24 @@
 
 
 		<ul class="share-image-btns cf">
-			
+			<li class="download">
+				<a href="" download="BeLikeZikoko.png">
+					Download Image
+				</a>
+			</li>
 			<li class="facebook">
-				<a href="">
+				<a href="" target="_blank">
 					Share on Facebook
 				</a>
 			</li>
 			<li class="twitter">
-				<a href="">
+				<a href="" target="_blank">
 					Share on Twitter
 				</a>
 			</li>
-			<li class="download">
-				<a href="" download="BeLikeZikoko.png">
-					Download Image
+			<li class="repeat">
+				<a href="">
+					Retry
 				</a>
 			</li>
 
@@ -79,3 +81,4 @@
 
 
 </section>
+

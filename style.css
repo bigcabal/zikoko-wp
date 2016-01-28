@@ -294,6 +294,22 @@ small {
   }
 }
 
+.pwc-nav {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 600px) {
+  .pwc-nav {
+    font-size: 1.2rem;
+  }
+}
+
+.pwcs__header h1 {
+  font-size: 2.4rem;
+}
+
 .reaction_poll {
   font-size: 1.4rem;
 }
@@ -326,6 +342,10 @@ small {
 
 ul.sub-menu {
   z-index: 15;
+}
+
+.pwc-nav {
+  z-index: 10;
 }
 
 .featured-content,
@@ -1765,7 +1785,7 @@ body.single-cards {
   overflow-x: scroll;
 }
 
-.entry-full-content form {
+.entry-full-content form.belike-form {
   /* FormHack v1.1.0 (formhack.io) */
   /* Global Reset Styles ------------------ */
   /* Input & Textarea ------------------ */
@@ -1776,14 +1796,14 @@ body.single-cards {
   /* States ------------------ */
 }
 
-.entry-full-content form input,
-.entry-full-content form textarea,
-.entry-full-content form select,
-.entry-full-content form option,
-.entry-full-content form optgroup,
-.entry-full-content form button,
-.entry-full-content form legend,
-.entry-full-content form fieldset {
+.entry-full-content form.belike-form input,
+.entry-full-content form.belike-form textarea,
+.entry-full-content form.belike-form select,
+.entry-full-content form.belike-form option,
+.entry-full-content form.belike-form optgroup,
+.entry-full-content form.belike-form button,
+.entry-full-content form.belike-form legend,
+.entry-full-content form.belike-form fieldset {
   box-sizing: border-box;
   outline: none;
   font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
@@ -1793,7 +1813,7 @@ body.single-cards {
   display: block;
 }
 
-.entry-full-content form label {
+.entry-full-content form.belike-form label {
   display: block;
   font-weight: 600;
   color: #8235b6;
@@ -1801,14 +1821,14 @@ body.single-cards {
   margin-bottom: 10px;
 }
 
-.entry-full-content form .input-group {
+.entry-full-content form.belike-form .input-group {
   display: block;
   margin-bottom: 20px;
 }
 
-.entry-full-content form input[type="text"],
-.entry-full-content form select,
-.entry-full-content form textarea {
+.entry-full-content form.belike-form input[type="text"],
+.entry-full-content form.belike-form select,
+.entry-full-content form.belike-form textarea {
   width: 100%;
   max-width: 400px;
   padding: 8px;
@@ -1819,20 +1839,20 @@ body.single-cards {
   border: 1px solid #c8c8c8;
 }
 
-.entry-full-content form input[type="text"] {
+.entry-full-content form.belike-form input[type="text"] {
   height: 40px;
   -webkit-appearance: none;
 }
 
-.entry-full-content form select {
+.entry-full-content form.belike-form select {
   height: 40px;
 }
 
-.entry-full-content form button,
-.entry-full-content form input[type="button"],
-.entry-full-content form input[type="submit"],
-.entry-full-content form input[type="reset"],
-.entry-full-content form input[type="image"] {
+.entry-full-content form.belike-form button,
+.entry-full-content form.belike-form input[type="button"],
+.entry-full-content form.belike-form input[type="submit"],
+.entry-full-content form.belike-form input[type="reset"],
+.entry-full-content form.belike-form input[type="image"] {
   height: 40px;
   width: 100%;
   max-width: 200px;
@@ -1849,28 +1869,28 @@ body.single-cards {
   border: 1px solid #c8c8c8;
 }
 
-.entry-full-content form input[type="image"] {
+.entry-full-content form.belike-form input[type="image"] {
   text-align: center;
   padding: 8px;
 }
 
-.entry-full-content form input:focus,
-.entry-full-content form textarea:focus,
-.entry-full-content form select:focus,
-.entry-full-content form option:focus,
-.entry-full-content form button:focus {
+.entry-full-content form.belike-form input:focus,
+.entry-full-content form.belike-form textarea:focus,
+.entry-full-content form.belike-form select:focus,
+.entry-full-content form.belike-form option:focus,
+.entry-full-content form.belike-form button:focus {
   background-color: #fff;
   border-color: #8235b6;
 }
 
-.entry-full-content form button:hover,
-.entry-full-content form input[type="button"]:hover,
-.entry-full-content form input[type="submit"]:hover,
-.entry-full-content form input[type="reset"]:hover,
-.entry-full-content form button:focus,
-.entry-full-content form input[type="button"]:focus,
-.entry-full-content form input[type="submit"]:focus,
-.entry-full-content form input[type="reset"]:focus {
+.entry-full-content form.belike-form button:hover,
+.entry-full-content form.belike-form input[type="button"]:hover,
+.entry-full-content form.belike-form input[type="submit"]:hover,
+.entry-full-content form.belike-form input[type="reset"]:hover,
+.entry-full-content form.belike-form button:focus,
+.entry-full-content form.belike-form input[type="button"]:focus,
+.entry-full-content form.belike-form input[type="submit"]:focus,
+.entry-full-content form.belike-form input[type="reset"]:focus {
   background-color: #c8c8c8;
   color: #282828;
 }
@@ -1907,9 +1927,20 @@ body.single-cards {
   color: #fff;
 }
 
+.entry-full-content .share-image-btns li.repeat a {
+  background-color: #000;
+  color: #fff;
+}
+
 .entry-full-content .share-image-btns li {
   float: left;
   width: 32%;
+  margin-bottom: 10px;
+}
+
+.entry-full-content .share-image-btns li.download {
+  float: none;
+  width: 100%;
 }
 
 .entry-full-content .share-image-btns a {
@@ -2070,7 +2101,7 @@ body.single-cards {
 }
 
 /* Entry Excerpt Format 1 */
-.entry-excerpt--1 .entry-excerpt--image {
+.entry-excerpt--1 .entry-excerpt--image, .entry-excerpt--3 .entry-excerpt--image {
   width: 45%;
   height: 100%;
   overflow: hidden;
@@ -2080,21 +2111,21 @@ body.single-cards {
   background-color: #8235b6;
 }
 
-.entry-excerpt--1 .entry-excerpt--image a {
+.entry-excerpt--1 .entry-excerpt--image a, .entry-excerpt--3 .entry-excerpt--image a {
   position: relative;
   display: block;
   height: 100%;
   width: 100%;
 }
 
-.entry-excerpt--1 .entry-excerpt--image img {
+.entry-excerpt--1 .entry-excerpt--image img, .entry-excerpt--3 .entry-excerpt--image img {
   min-height: 100%;
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.entry-excerpt--1 .entry-excerpt--image .image-cover {
+.entry-excerpt--1 .entry-excerpt--image .image-cover, .entry-excerpt--3 .entry-excerpt--image .image-cover {
   position: absolute;
   top: 0;
   left: 0;
@@ -2106,38 +2137,46 @@ body.single-cards {
 }
 
 @media screen and (max-width: 960px) {
-  .entry-excerpt--1 .entry-excerpt--image {
+  .entry-excerpt--1 .entry-excerpt--image, .entry-excerpt--3 .entry-excerpt--image {
     position: relative;
     display: block;
     width: 100%;
   }
-  .entry-excerpt--1 .entry-excerpt--image img {
+  .entry-excerpt--1 .entry-excerpt--image img, .entry-excerpt--3 .entry-excerpt--image img {
     width: 100%;
     height: auto;
     margin-bottom: -10px;
   }
 }
 
-.entry-excerpt--1 .entry-excerpt--image:hover .image-cover {
+.entry-excerpt--1 .entry-excerpt--image:hover .image-cover, .entry-excerpt--3 .entry-excerpt--image:hover .image-cover {
   opacity: 0.5;
   transition: opacity 0.5s;
 }
 
-.entry-excerpt--1 .entry-excerpt--entry {
+.entry-excerpt--1 .entry-excerpt--entry, .entry-excerpt--3 .entry-excerpt--entry {
   padding-left: 50%;
   width: 100%;
 }
 
 @media screen and (max-width: 960px) {
-  .entry-excerpt--1 .entry-excerpt--entry {
+  .entry-excerpt--1 .entry-excerpt--entry, .entry-excerpt--3 .entry-excerpt--entry {
     padding-left: 30px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .entry-excerpt--1 .entry-excerpt--entry {
+  .entry-excerpt--1 .entry-excerpt--entry, .entry-excerpt--3 .entry-excerpt--entry {
     padding-left: 20px;
   }
+}
+
+.entry-excerpt--1 .entry-excerpt--title, .entry-excerpt--3 .entry-excerpt--title {
+  padding-bottom: 10px;
+}
+
+.entry-excerpt--3 .entry-excerpt--title {
+  padding-bottom: 10px;
 }
 
 /* Entry Excerpt Format 2 */

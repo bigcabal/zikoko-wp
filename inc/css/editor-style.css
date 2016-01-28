@@ -289,6 +289,22 @@ small {
   }
 }
 
+.pwc-nav {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 600px) {
+  .pwc-nav {
+    font-size: 1.2rem;
+  }
+}
+
+.pwcs__header h1 {
+  font-size: 2.4rem;
+}
+
 .reaction_poll {
   font-size: 1.4rem;
 }

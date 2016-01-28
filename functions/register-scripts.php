@@ -47,11 +47,15 @@ function zkk_scripts() {
 
 
 	// AJAX Script
-	wp_register_script('be-like', get_template_directory_uri() . '/js/belike.js', array('jquery-min'), '1.0', true );
-	//wp_localize_script( 'be-like', 'ajaxpagination', array());
+	wp_enqueue_script('canvas-to-blob', get_template_directory_uri() . '/js/ctb.min.js', array(), '1.0', false );
+
+	wp_register_script('be-like', get_template_directory_uri() . '/js/belike.js', array('jquery-min', 'canvas-to-blob'), '1.0', true );
+	wp_localize_script( 'be-like', 'ajaxpagination', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	));
 
 	if ( is_page_template( 'page-belike.php' ) ) {
-		wp_enqueue_script('be-like');  
+		wp_enqueue_script('be-like');
 	} 
 
 	        	
@@ -67,7 +71,7 @@ add_action('wp_head','my_ajaxurl');
 
 
 function zkk_add_editor_styles() {
-    add_editor_style( 'inc/editor-style.css' );
+    add_editor_style( 'inc/css/editor-style.css' );
 }
 add_action( 'after_setup_theme', 'zkk_add_editor_styles' );
 
@@ -80,6 +84,32 @@ function my_media_lib_uploader_enqueue() {
 
 }
 add_action('admin_enqueue_scripts', 'my_media_lib_uploader_enqueue');
+
+
+
+
+
+
+function my_ajax_upload() {
+
+	require_once( ABSPATH . 'wp-admin/includes/file.php' );
+
+	$allowed_file_types = array('jpg' =>'image/jpg','jpeg' =>'image/jpeg', 'gif' => 'image/gif', 'png' => 'image/png');
+    $overrides = array('test_form' => false, 'mimes' => $allowed_file_types);
+
+
+	$image = $_FILES['image'];
+	$image_uploaded = wp_handle_upload( $image, $overrides );
+
+    echo json_encode($image_uploaded);
+
+
+    die();
+}
+add_action( 'wp_ajax_nopriv_ajax_upload', 'my_ajax_upload' );
+add_action( 'wp_ajax_ajax_upload', 'my_ajax_upload' );
+
+
 
 
 ?>
