@@ -26,7 +26,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="<?php echo $meta_image; ?>">
 <meta property="og:site_name" content="Zikoko!">
-<meta property="og:url" content="<?php bloginfo('url'); ?>/be-like-share/?img=<?php echo $meta_image; ?>">
+<meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:description" content="<?php echo $meta_description; ?>">
 <meta property="fb:app_id" content="593692017438309">
 
