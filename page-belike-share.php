@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:image" content="<?php echo $meta_image; ?>">
-<meta property="og:site_name" content="Be Like (ZIkoko)">
+<meta property="og:site_name" content="Be Like (Zikoko)">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:description" content="<?php echo $meta_description; ?>">
 
@@ -36,16 +36,18 @@
 <meta name="twitter:creator" content="@zikokomag">
 
 
-<?php
-
-	header("Location: " . get_bloginfo( 'url' ) . "/be-like");
-	exit();
-
-?>
+<?php $url = get_bloginfo( 'url' ) . "/be-like"; ?>
 
 </head>
 <body>
+Redirecting...
+<script
+>
+setTimeout(function(){ 
+	window.location.href = '<?php echo $url; ?>';
 
+ }, 1000);
+</script>
 
 	
 </body>
