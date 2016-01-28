@@ -16,18 +16,19 @@
 
 	$meta_title = "Be Like Me. See Your Story";
 	$meta_image = $_GET['img'] . '.png';
-	$meta_description = "Be Like Me. See Your Story";
+	$meta_description = "See Your Story";
 	$url = get_bloginfo( 'url' ) . "/be-like";
 
  ?>
 
 <meta property="og:title" content="<?php echo $meta_title; ?>">
 <meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:image" content="<?php echo $meta_image; ?>">
-<meta property="og:site_name" content="Be Like (Zikoko)">
-<meta property="og:url" content="<?php the_permalink(); ?>">
+<meta property="og:site_name" content="Zikoko!">
+<meta property="og:url" content="<?php bloginfo('url'); ?>/be-like-share/?img=<?php echo $meta_image; ?>">
 <meta property="og:description" content="<?php echo $meta_description; ?>">
+<meta property="fb:app_id" content="593692017438309">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:description" content="<?php echo $meta_description; ?>">
