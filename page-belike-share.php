@@ -46,7 +46,7 @@ Redirecting...
 setTimeout(function(){ 
 	window.location.href = '<?php echo $url; ?>';
 
- }, 1000);
+ }, 5000);
 </script>
 
 	
