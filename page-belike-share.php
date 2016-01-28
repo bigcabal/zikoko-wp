@@ -17,6 +17,7 @@
 	$meta_title = "Be Like Me. See Your Story";
 	$meta_image = $_GET['img'];
 	$meta_description = "Be Like Me. See Your Story";
+	$url = get_bloginfo( 'url' ) . "/be-like";
 
  ?>
 
@@ -35,18 +36,46 @@
 <meta name="twitter:site" content="@zikokomag">
 <meta name="twitter:creator" content="@zikokomag">
 
+<!-- Stylesheet with version number -->
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?v=' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen, projection" />
 
-<?php $url = get_bloginfo( 'url' ) . "/be-like"; ?>
+<style>
+	.container {
+		width: 90%;
+		max-width: 600px;
+		margin: 50px auto;
+	}
+
+	.btn {
+		background-color: #8235b6;
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 10px;
+		color: #fff;
+	}
+</style>
 
 </head>
 <body>
-Redirecting...
-<script
->
-setTimeout(function(){ 
-	window.location.href = '<?php echo $url; ?>';
 
- }, 5000);
+<div class="container">
+	<img src="<?php echo $meta_image; ?>">
+	<a href="<?php echo $url; ?>" class="btn">See Your Story in <span id="countdown-timer"></span></a>
+</div>
+
+<script>
+var counter = 5;
+document.getElementById('countdown-timer').innerHTML = counter;
+
+var interval = setInterval(function() {
+    counter--;
+    if (counter == 0) {
+        clearInterval(interval);
+        window.location.href = '<?php echo $url; ?>';
+    }
+    document.getElementById('countdown-timer').innerHTML = counter;
+}, 1000);
 </script>
 
 	
