@@ -53,6 +53,14 @@
 		text-align: center;
 		padding: 10px;
 		color: #fff;
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+
+	.redirect {
+		font-size: 13px;
+		display: block;
+		text-align: center;
 	}
 </style>
 
@@ -61,7 +69,8 @@
 
 <div class="container">
 	<img src="<?php echo $meta_image; ?>">
-	<a href="<?php echo $url; ?>" class="btn">See Your Story in <span id="countdown-timer"></span></a>
+	<a href="<?php echo $url; ?>" class="btn">See Your Story</a>
+	<p class="redirect">(Redirecting in <span id="countdown-timer"></span>)</p>
 </div>
 
 <script>

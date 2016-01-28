@@ -94,10 +94,15 @@ function my_ajax_upload() {
 
 	require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
+	$allowed_file_types = array('jpg' =>'image/jpg','jpeg' =>'image/jpeg', 'gif' => 'image/gif', 'png' => 'image/png');
+    $overrides = array('test_form' => false, 'mimes' => $allowed_file_types);
+
+
 	$image = $_FILES['image'];
-	$image_uploaded = wp_handle_upload( $image, array('test_form' => false ) );
+	$image_uploaded = wp_handle_upload( $image, $overrides );
 
     echo json_encode($image_uploaded);
+
 
     die();
 }
