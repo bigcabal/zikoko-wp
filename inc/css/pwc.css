@@ -1237,12 +1237,12 @@ body {
 }
 
 .pwc-header .branding .branding-zikoko img {
-  height: 35px;
+  height: 32px;
 }
 
 .pwc-header .branding .branding-pwc img {
   vertical-align: middle;
-  height: 25px;
+  height: 23px;
 }
 
 .pwc-header .branding span {
@@ -1293,4 +1293,10 @@ body {
 
 .pwcs__header {
   margin-bottom: 20px;
+}
+
+.pwc-ad {
+  margin-bottom: 50px;
+  background-color: #fff;
+  text-align: center;
 }
