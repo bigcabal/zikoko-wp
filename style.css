@@ -1765,7 +1765,7 @@ body.single-cards {
   overflow-x: scroll;
 }
 
-.entry-full-content form {
+.entry-full-content form.belike-form {
   /* FormHack v1.1.0 (formhack.io) */
   /* Global Reset Styles ------------------ */
   /* Input & Textarea ------------------ */
@@ -1776,14 +1776,14 @@ body.single-cards {
   /* States ------------------ */
 }
 
-.entry-full-content form input,
-.entry-full-content form textarea,
-.entry-full-content form select,
-.entry-full-content form option,
-.entry-full-content form optgroup,
-.entry-full-content form button,
-.entry-full-content form legend,
-.entry-full-content form fieldset {
+.entry-full-content form.belike-form input,
+.entry-full-content form.belike-form textarea,
+.entry-full-content form.belike-form select,
+.entry-full-content form.belike-form option,
+.entry-full-content form.belike-form optgroup,
+.entry-full-content form.belike-form button,
+.entry-full-content form.belike-form legend,
+.entry-full-content form.belike-form fieldset {
   box-sizing: border-box;
   outline: none;
   font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
@@ -1793,7 +1793,7 @@ body.single-cards {
   display: block;
 }
 
-.entry-full-content form label {
+.entry-full-content form.belike-form label {
   display: block;
   font-weight: 600;
   color: #8235b6;
@@ -1801,14 +1801,14 @@ body.single-cards {
   margin-bottom: 10px;
 }
 
-.entry-full-content form .input-group {
+.entry-full-content form.belike-form .input-group {
   display: block;
   margin-bottom: 20px;
 }
 
-.entry-full-content form input[type="text"],
-.entry-full-content form select,
-.entry-full-content form textarea {
+.entry-full-content form.belike-form input[type="text"],
+.entry-full-content form.belike-form select,
+.entry-full-content form.belike-form textarea {
   width: 100%;
   max-width: 400px;
   padding: 8px;
@@ -1819,20 +1819,20 @@ body.single-cards {
   border: 1px solid #c8c8c8;
 }
 
-.entry-full-content form input[type="text"] {
+.entry-full-content form.belike-form input[type="text"] {
   height: 40px;
   -webkit-appearance: none;
 }
 
-.entry-full-content form select {
+.entry-full-content form.belike-form select {
   height: 40px;
 }
 
-.entry-full-content form button,
-.entry-full-content form input[type="button"],
-.entry-full-content form input[type="submit"],
-.entry-full-content form input[type="reset"],
-.entry-full-content form input[type="image"] {
+.entry-full-content form.belike-form button,
+.entry-full-content form.belike-form input[type="button"],
+.entry-full-content form.belike-form input[type="submit"],
+.entry-full-content form.belike-form input[type="reset"],
+.entry-full-content form.belike-form input[type="image"] {
   height: 40px;
   width: 100%;
   max-width: 200px;
@@ -1849,28 +1849,28 @@ body.single-cards {
   border: 1px solid #c8c8c8;
 }
 
-.entry-full-content form input[type="image"] {
+.entry-full-content form.belike-form input[type="image"] {
   text-align: center;
   padding: 8px;
 }
 
-.entry-full-content form input:focus,
-.entry-full-content form textarea:focus,
-.entry-full-content form select:focus,
-.entry-full-content form option:focus,
-.entry-full-content form button:focus {
+.entry-full-content form.belike-form input:focus,
+.entry-full-content form.belike-form textarea:focus,
+.entry-full-content form.belike-form select:focus,
+.entry-full-content form.belike-form option:focus,
+.entry-full-content form.belike-form button:focus {
   background-color: #fff;
   border-color: #8235b6;
 }
 
-.entry-full-content form button:hover,
-.entry-full-content form input[type="button"]:hover,
-.entry-full-content form input[type="submit"]:hover,
-.entry-full-content form input[type="reset"]:hover,
-.entry-full-content form button:focus,
-.entry-full-content form input[type="button"]:focus,
-.entry-full-content form input[type="submit"]:focus,
-.entry-full-content form input[type="reset"]:focus {
+.entry-full-content form.belike-form button:hover,
+.entry-full-content form.belike-form input[type="button"]:hover,
+.entry-full-content form.belike-form input[type="submit"]:hover,
+.entry-full-content form.belike-form input[type="reset"]:hover,
+.entry-full-content form.belike-form button:focus,
+.entry-full-content form.belike-form input[type="button"]:focus,
+.entry-full-content form.belike-form input[type="submit"]:focus,
+.entry-full-content form.belike-form input[type="reset"]:focus {
   background-color: #c8c8c8;
   color: #282828;
 }
