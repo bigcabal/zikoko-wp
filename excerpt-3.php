@@ -1,12 +1,12 @@
 <?php
 /**
- * Post Excerpt Style 1
- * Format for homepage, archive, serach results
+ * Post Excerpt Style 3
+ * Format PWC Feed Page
  *
  * @package ZikokoTheme
 **/
 ?>
-<article <?php post_class("site-box entry-excerpt entry-excerpt--1 targetInfiniteScroll"); ?>>
+<article <?php post_class("site-box entry-excerpt entry-excerpt--3 targetInfiniteScroll"); ?>>
 
 	<div class="entry-excerpt--image">
 		<a href="<?php the_permalink() ?>">
@@ -24,11 +24,7 @@
 
 		<header>
 
-			<p class="entry-excerpt--meta">
-				<?php post_meta_data(); ?>
-			</p>
-
-			<h3 class="entry-excerpt--title padd-top">
+			<h3 class="entry-excerpt--title">
 				<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 			</h3>
 			
@@ -36,13 +32,7 @@
 
 
 		<div class="entry-excerpt--summary">
-			<?php the_excerpt(); ?><br>
-
-			<!-- Post Sponsor -->
-			<?php if (  get_field( 'sponsored_post_q' ) == "yes" ) : 
-				get_template_part('inc/post', 'sponsor');
-			endif; ?>
-
+			<?php the_excerpt(); ?>
 		</div>
 		
 	</div>

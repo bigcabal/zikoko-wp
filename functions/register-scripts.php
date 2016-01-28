@@ -71,7 +71,7 @@ add_action('wp_head','my_ajaxurl');
 
 
 function zkk_add_editor_styles() {
-    add_editor_style( 'inc/editor-style.css' );
+    add_editor_style( 'inc/css/editor-style.css' );
 }
 add_action( 'after_setup_theme', 'zkk_add_editor_styles' );
 
