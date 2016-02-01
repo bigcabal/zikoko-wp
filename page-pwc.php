@@ -59,6 +59,10 @@ $pwc_more_posts = new WP_Query(
 	?>
 </section>
 
+<div class="pwc-ad">
+	Ad Here
+</div>
+
 
 <section id="featured" class="pwc-section">
 	<header class="pwcs__header mobile-padd">

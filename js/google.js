@@ -7,7 +7,7 @@ ga('create', 'UA-43216024-9', 'auto', {'allowLinker': true});
 ga('require', 'displayfeatures');
 
 ga('require', 'linker');
-ga('linker:autoLink', ['yesorno.vote'] );
+ga('linker:autoLink', ['polls.zikoko.com'] );
 
 ga('set', 'dimension1', category.name);
 ga('set', 'dimension2', author.name);
