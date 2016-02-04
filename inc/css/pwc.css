@@ -255,7 +255,7 @@ small {
 .site-nav-container {
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.3rem;
 }
 
 @media screen and (max-width: 960px) {
