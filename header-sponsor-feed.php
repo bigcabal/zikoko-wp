@@ -25,7 +25,7 @@
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/inc/img/favicon-16x16.png?v=1" sizes="16x16" />
 
 <!-- Stylesheet with version number -->
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/inc/css/pwc.css?v=' . filemtime( get_stylesheet_directory() . '/inc/css/pwc.css'); ?>" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/inc/css/sponsorhomepage.css?v=' . filemtime( get_stylesheet_directory() . '/inc/css/sponsorhomepage.css'); ?>" type="text/css" media="screen, projection" />
 
 <?php wp_head(); ?>
 
@@ -44,7 +44,9 @@
 			</a>
 
       <div class="branding-pwc">
-      <span>Powered by</span><img src="<?php echo get_template_directory_uri(); ?>/inc/img/pwc.png" alt="Pay With Capture Logo">
+      <span>Powered by</span><img src="<?php the_field('sponsor_logo'); ?>" alt="<?php the_field('sponsor_name'); ?> Logo">
+
+
       </div>
 		</div>
 	</div>

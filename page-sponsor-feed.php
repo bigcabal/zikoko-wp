@@ -1,10 +1,10 @@
 <?php
 /**
- * Template Name: PWC/Access Feed
+ * Template Name: Sponsor Homepage Feed
  *
  * @package ZikokoTheme
 **/
-get_header('pwc');
+get_header('sponsor-feed');
 
 $pwc_latest_posts = new WP_Query(
 	array(
@@ -59,9 +59,11 @@ $pwc_more_posts = new WP_Query(
 	?>
 </section>
 
+<?php if ( get_field('advert_space') != "" ) : ?>
 <div class="pwc-ad">
-	Ad Here
+	<?php the_field('advert_space'); ?>
 </div>
+<?php endif; ?>
 
 
 <section id="featured" class="pwc-section">
