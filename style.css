@@ -265,7 +265,7 @@ small {
 .site-nav-container {
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.3rem;
 }
 
 @media screen and (max-width: 960px) {
@@ -598,7 +598,7 @@ ul.sub-menu {
 
 .primary-menu-container {
   line-height: 55px;
-  width: 70%;
+  width: 80%;
 }
 
 .primary-menu-container li a {
@@ -622,7 +622,7 @@ ul.sub-menu {
 }
 
 .secondary-menu-container {
-  width: 30%;
+  width: 20%;
   text-align: right;
 }
 
