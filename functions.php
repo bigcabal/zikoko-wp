@@ -48,8 +48,9 @@ add_filter( 'excerpt_more', 'zkk_excerpt_more' );
 /* Custom Fields */
 if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
   define( 'ACF_LITE', true );
-  include_once( 'admin/acf/fields/post.php' );
-  include_once( 'admin/acf/fields/sponsor.php' );
+  include_once( 'admin/acf/post.php' );
+  include_once( 'admin/acf/sponsor.php' );
+  include_once( 'admin/acf/belike.php' );
 }
 
 
