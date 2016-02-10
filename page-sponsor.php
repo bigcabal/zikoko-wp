@@ -23,7 +23,13 @@ get_header();
     </ul>
 
 
-	<header class="entry-full-header">
+	<header class="entry-full-header sponsor-page-header">
+
+		<div class="sponsor-logo">
+            <a href="<?php the_field( 'sponsor_website' ); ?>">
+            <img src="<?php the_field('logo_small'); ?>" alt="<?php the_title(); ?>">
+            </a>
+        </div>
 
         <h1 class="entry-title sponsor-title padd-bottom"><?php the_title(); ?></h1>
 

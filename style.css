@@ -3559,3 +3559,17 @@ body.single article.post .entry-full-content div.juxtapose img {
     display: none;
   }
 }
+
+/* Sponsor Page */
+.sponsor-page-header .sponsor-logo {
+  float: left;
+  height: 55px;
+  width: 55px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.sponsor-page-header .sponsor-logo img {
+  width: 100%;
+  height: auto;
+}
