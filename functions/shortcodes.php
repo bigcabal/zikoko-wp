@@ -5,11 +5,12 @@
  * @package ZikokoTheme
 **/
 
-$template_dir = get_template_directory();
 
-$checklistQuizData = require($template_dir . '/inc/quiz-checklist-answers.php');
-
-
+/* ************************
+*
+*  CHECKLIST QUIZ
+*
+************************ */
 function quiz_checklist_handler($atts, $content, $tag) {
 
 	$values = shortcode_atts(array(
@@ -33,18 +34,11 @@ function quiz_checklist_handler($atts, $content, $tag) {
 			break;
 		case 'how_single_are_you':
 			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'single');
-			//$output = get_template_part('inc/quiz', 'checklist');
 			break;
-		
 		default:
-			$output = '';
 			break;
 	}
-
-	
 	return $output;
-
-
 }
 
 add_shortcode( 'quiz_checklist', 'quiz_checklist_handler' );
@@ -55,6 +49,60 @@ add_shortcode( 'quiz_checklist', 'quiz_checklist_handler' );
 
 
 
+/* ************************
+*
+*  ZIKOKO POLL
+*
+************************ */
+function zkk_poll_handler($atts, $content, $tag) {
+
+	$values = shortcode_atts(array(
+		'poll' => 'default',
+		'post' => 'default'
+	),$atts);  
+
+
+	$poll = $values['poll'];
+	$poll = split('_', $poll);
+	$content_block_number = $poll[4];
+
+	$post = get_post( $values['post'] );
+	setup_postdata( $post ); 
+
+		if( have_rows('content_block_standard_format') ): $i = 0;
+		while( have_rows('content_block_standard_format') ): the_row(); 
+
+			if ( $i == $content_block_number ) {
+
+				global $content;
+			    ob_start();
+			    include ( TEMPLATEPATH . '/inc/poll.php' );
+			    $output = ob_get_clean();
+			}
+
+			$i++;
+
+		endwhile;
+		endif;
+
+	return $output;
+
+	wp_reset_postdata();
+
+}
+
+add_shortcode( 'zkk_poll', 'zkk_poll_handler' );
+
+
+
+
+
+
+/* ************************
+*
+*  INSTAGRAM EMBED
+*
+************************ */
 function instagram_embed_handler($atts) {
 
 	$values = shortcode_atts(array(
@@ -63,7 +111,12 @@ function instagram_embed_handler($atts) {
 
 	$raw_url = $values['url'];
 	$raw_url_1 = explode("instagram.com/p/", $raw_url)[1];
-	$imageID = explode("/", $raw_url_1)[0];;
+	$imageID = explode("/", $raw_url_1)[0];
+
+
+	//$zikoko_instagram_access_token = '22156862.2284ca5.17bbd4e1aa77479381184b8ad4047efe';
+
+	//$zikoko_instagram_access_token = '2025378743.96f901d.ef0d0f539127400f8d3b925b64e09744';
 
 	$response = file_get_contents('https://api.instagram.com/v1/media/shortcode/'.$imageID.'?access_token=22156862.1fb234f.2bdfa1f73084463cbf628b55878198f0&callback=?');
 	$response = json_decode($response);

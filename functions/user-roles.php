@@ -16,7 +16,7 @@ function zkk_set_capabilities() {
         'upload_files',
     );
     foreach ( $add_contributor_caps as $cap ) {
-        $contributor->add_cap( $cap );
+        // $contributor->add_cap( $cap );
     }
 
     $add_editor_caps = array(
@@ -27,7 +27,7 @@ function zkk_set_capabilities() {
         'manage_links',
     );
     foreach ( $add_editor_caps as $cap ) {
-        $editor->add_cap( $cap );
+        // $editor->add_cap( $cap );
     }
 
 

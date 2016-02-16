@@ -8,19 +8,15 @@
 // Start Post Loop
 if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-
-	if ( get_field('post_format') === 'standard' && !get_field('legacy_post') ) :
-
+	
+	if ( get_field('post_format') === 'standard' && get_the_content() === '' ) :
+		
 		get_template_part('post', 'standard');
 
-	// elseif ( get_field('post_format') === 'cards' && !get_field('legacy_post') ) :
-
-	// 	get_template_part('post', 'cards');
-
 	else :
-
 		get_header();
 		$author = get_the_author(); 
+
 ?>
 
 
@@ -62,12 +58,6 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 	<div class="entry-full-content">
 		<?php the_content(); ?>
-
-		<?php 
-			if ( get_field('post_poll_toggle') === '1' ) {
-				get_template_part('inc/poll-old');
-			}
-		?>
 	</div>
 
 	</article>
@@ -122,6 +112,6 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 </div> <!-- end .main-body-area -->
 <?php get_footer(); ?>
 
-<?php endif; ?>
+<?php endif; // end if post format ?>
 
 <?php endwhile; endif; ?>
