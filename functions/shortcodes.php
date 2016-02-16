@@ -19,6 +19,9 @@ function quiz_checklist_handler($atts, $content, $tag) {
 	
 	$output = '';
 
+	global $content;
+	ob_start();
+
 	switch ($values['quiz']) {
 		case 'how_nigerian_are_you':
 			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'nigerian');
@@ -38,6 +41,8 @@ function quiz_checklist_handler($atts, $content, $tag) {
 		default:
 			break;
 	}
+
+	$output = ob_get_clean();
 	return $output;
 }
 

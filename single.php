@@ -14,6 +14,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 		get_template_part('post', 'standard');
 
 	else :
+
 		get_header();
 		$author = get_the_author(); 
 

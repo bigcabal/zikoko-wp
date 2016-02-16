@@ -7,8 +7,13 @@
 
 function change_content_frontend($post_id) {
 
-  // This function won't run if adding/updated fields/field-groups in wp-admin
-  if ( get_post_type( $post_id ) != 'acf' && get_post_meta($post_id,'content_block_standard_format',true) ) { 
+  // CHECK LEGACY POST
+  $is_legacy_post = get_post_meta( $post_id, 'content_block_standard_format_0_headline', true) === '' && get_post_meta( $post_id, 'content_block_standard_format_0_additional_text', true) === '' && get_post_meta( $post_id, 'content_block_standard_format_0_media_choice', true) === 'none';
+
+
+  if ( get_post_type( $post_id ) != 'acf' &&
+       get_post_meta( $post_id, 'content_block_standard_format', true) &&
+       !$is_legacy_post ) { 
 
 
 
@@ -269,7 +274,7 @@ function change_content_frontend($post_id) {
     add_action('acf/save_post', 'change_content_frontend');
 
 
-  } // end if post content stabndard format
+  } // end if post content standard format
 } // end function
 
 add_action('acf/save_post', 'change_content_frontend');
