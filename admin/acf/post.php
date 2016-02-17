@@ -1069,22 +1069,7 @@ acf_add_local_field_group(array (
 			'disabled' => 0,
 			'readonly' => 0,
 		),
-		array (
-			'key' => 'field_5626062012586',
-			'label' => 'Old Post',
-			'name' => 'legacy_post',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => 'Check this box if this is an old post and the content is still in the old content editor',
-			'default_value' => 0,
-		),
+		
 	),
 	'location' => array (
 		array (
@@ -1113,6 +1098,24 @@ acf_add_local_field_group(array (
 
 
 endif;
+
+
+// array (
+// 	'key' => 'field_5626062012586',
+// 	'label' => 'Old Post',
+// 	'name' => 'legacy_post',
+// 	'type' => 'true_false',
+// 	'instructions' => '',
+// 	'required' => 0,
+// 	'conditional_logic' => 0,
+// 	'wrapper' => array (
+// 		'width' => '',
+// 		'class' => '',
+// 		'id' => '',
+// 	),
+// 	'message' => 'Check this box if this is an old post and the content is still in the old content editor',
+// 	'default_value' => 0,
+// ),
 
 
 

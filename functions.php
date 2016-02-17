@@ -40,8 +40,27 @@ add_filter( 'excerpt_more', 'zkk_excerpt_more' );
 
 
 
-// remove_filter( 'the_content', 'wpautop' );
-// remove_filter( 'the_excerpt', 'wpautop' );
+
+
+
+function custom_wpautop($content) {
+
+  // Custom function from - https://grahamwalters.me/2014/03/07/disable-wpautop-on-specific-postspages/
+
+  $post_id = get_the_ID();
+
+  // CHECK LEGACY POST
+  $is_legacy_post = get_post_meta( $post_id, 'content_block_standard_format_0_headline', true) === '' && get_post_meta( $post_id, 'content_block_standard_format_0_additional_text', true) === '' && get_post_meta( $post_id, 'content_block_standard_format_0_media_choice', true) === 'none';
+
+  if ( $is_legacy_post )
+    return wpautop($content);
+  else
+    return $content;
+}
+
+remove_filter('the_content', 'wpautop');
+add_filter('the_content', 'custom_wpautop');
+
 
 
 
@@ -181,6 +200,10 @@ include_once( 'functions/zkk-poll-old.php' );
 
 /* Cards */
 //include_once( 'functions/replace-post_content-cards.php' );
+
+
+
+include_once( 'functions/replace-post-content.php' );
 
 
 

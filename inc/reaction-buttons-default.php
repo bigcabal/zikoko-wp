@@ -93,7 +93,7 @@
 
 			
 
-	<input type="radio" name="pcblock__poll_test" style="display: none;">
+	<input type="radio" style="display: none;">
 	
 	<div class="reaction-count"><?php echo $poll_result; ?></div>
 	<div class="reaction-chart" style="height: <?php echo $chart_height; ?>px"></div>

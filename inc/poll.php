@@ -5,8 +5,11 @@
  * @package ZikokoTheme
 **/
 	$db_table_name = 'bc_zkkpoll';
+	global $wpdb; 
 
 	$post_id = get_the_ID();
+
+	echo $this_content_block;
 
 	$poll_question = get_sub_field('poll_question');
 	$poll_question = str_replace("'","", $poll_question);
@@ -45,11 +48,9 @@ $answer = str_replace('"','', $answer);
 	
 
 	<?php 
-
 	/* 
 	 *
 	 * ADD ANSWER TO DATABASE  
-	 * IF NOT ALREADY THERE
 	 *
 	 */
 
@@ -62,18 +63,13 @@ $answer = str_replace('"','', $answer);
 		"
 	);
 
-
 	// If answer is already there
 	if (count ($check_answer_in_db) > 0) {
 
 		// echo "already in db";
 
-
 	// If answer is not there
 	} else {
-
-		// echo "not yet in db";
-
 		//Add to Database
 		$wpdb->replace(
 		$db_table_name ,
@@ -83,10 +79,7 @@ $answer = str_replace('"','', $answer);
 			'answer'=> $answer
 			)
 		);
-
 	}
-
-
 	?>
 
 
@@ -96,7 +89,7 @@ $answer = str_replace('"','', $answer);
 	</div>
 	
 
-	<input type="radio" name="pcblock__poll_test" style="display: none;">
+	<input type="radio" style="display: none;">
 
 	<label for="" class="answerText"><?php the_sub_field('answer_text'); ?></label>
 
@@ -147,7 +140,6 @@ if ( $.cookie(thisPollCookieTitle) ) {
 
 	// Show Sharing Box
 	showSharing('<?php echo $poll_question; ?>', $.cookie(thisPollCookieTitle), thisPollKey );
-
 
 	// 
 	var answeredPoll = $('.pollBlock[data-pollkey='+thisPollKey+']');

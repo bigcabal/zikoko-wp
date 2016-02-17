@@ -1,3 +1,9 @@
 development
 node_modules
 gulpfile.js
+.DS_Store
+admin/.DS_Store
+admin/acf/.DS_Store
+inc/.DS_Store
+inc/img/.DS_Store
+js/.DS_Store
