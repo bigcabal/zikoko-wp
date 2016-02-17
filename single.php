@@ -65,38 +65,6 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 </div>
 
-<?php if ( get_field('post_type') === 'numbered' ) : ?>
-<script>
-	var number = $('.pcblock').length;
-	var n = 1;
-
-	for (i = 1; i <= number ; i++) {
-
-		if ( $('.pcblock:nth-of-type('+i+')').hasClass('pcblock_numbered') ) {
-
-			$('.pcblock:nth-of-type('+i+') .number-normal').html(n+'.');
-			n++;
-		} 
-	}
-</script>
-<?php elseif ( get_field('post_type') === 'countdown' ) : ?>
-<script>
-	var number = $('.pcblock').length;
-
-	var n = $('.pcblock_numbered').length;
-
-	for (i = number; i >= 1; i--) {
-		var h = number + 1;
-		var nth = Math.abs(i - h);
-
-		if ( $('.pcblock:nth-of-type('+nth+')').hasClass('pcblock_numbered') ) {
-
-			$('.pcblock:nth-of-type('+nth+') .number-reverse').html(n+'.');
-			n--;
-		} 
-	}
-</script>
-<?php endif; ?>
 
 <ul class="site-box social-profile-buttons social-profile-btns--mobileonly">
 	<?php get_template_part('inc/social-profile', 'btns'); ?>
