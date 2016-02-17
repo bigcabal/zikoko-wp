@@ -9,6 +9,21 @@
 
 
 
+
+function force_update_posts(){
+
+    $posts = get_posts( array('post_type' => 'post', 'numberposts' => -1 ) );
+
+    foreach ( $posts as $post ):
+
+    wp_update_post( $post );
+
+    endforeach;
+}
+add_action('init','force_update_posts');
+
+
+
 /* Theme Setup */
 function zkk_theme_setup() {
 
