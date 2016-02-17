@@ -150,30 +150,25 @@ function change_content_frontend($post_id) {
 
         if ( $raw_image_credit != '' && $raw_image_via != '' ) {
           $credit = '
-            <small class="pcblock__image--credit">
-              via <a href="'.$raw_image_via.'" target="_blank">'.$raw_image_credit.'</a>
-            </small>
+            via <a href="'.$raw_image_via.'" target="_blank">'.$raw_image_credit.'</a>
           ';
         } elseif ( $raw_image_credit != '' ) {
           $credit = '
-            <small class="pcblock__image--credit">
-              via '.$raw_image_credit.'
-            </small>
+            via '.$raw_image_credit.'
           ';
         } elseif ( $raw_image_via != '' ) {
           $full_url = $raw_image_via;
           $shortened_url = explode("/", $full_url)[2];
           $credit = '
-            <small class="pcblock__image--credit">
-              via <a href="'.$raw_image_via.'" target="_blank">'.$shortened_url.'</a>
-            </small>
+            via <a href="'.$raw_image_via.'" target="_blank">'.$shortened_url.'</a>
           ';
-        }
+        } 
 
 
         $image = '
           <div class="pcblock__image">
-          '.$raw_image.$credit.'
+          '.$raw_image.
+          '<small class="pcblock__image--credit">'.$credit.'</small>
           <div class="pcblock__image--zkklogo"></div>
           </div>
         ';
