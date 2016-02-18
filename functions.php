@@ -58,8 +58,8 @@ function custom_wpautop($content) {
     return $content;
 }
 
-remove_filter('the_content', 'wpautop');
-add_filter('the_content', 'custom_wpautop');
+//remove_filter('the_content', 'wpautop');
+//add_filter('the_content', 'custom_wpautop');
 
 
 
