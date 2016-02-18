@@ -8,15 +8,8 @@
 // Start Post Loop
 if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-	
-	if ( get_field('post_format') === 'standard' && get_the_content() === '' ) :
-		
-		get_template_part('post', 'standard');
-
-	else :
-
-		get_header();
-		$author = get_the_author(); 
+	get_header();
+	$author = get_the_author(); 
 
 ?>
 
@@ -113,7 +106,5 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 </div> <!-- end .container -->
 </div> <!-- end .main-body-area -->
 <?php get_footer(); ?>
-
-<?php endif; // end if post format ?>
 
 <?php endwhile; endif; ?>
