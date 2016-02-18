@@ -25,6 +25,35 @@ function change_content_frontend($post_id) {
 
     $post_title = get_the_title( $post_id );
     $content_blocks = get_post_meta($post_id,'content_block_standard_format',true);
+    $post_type = get_post_meta($post_id,'post_type',true);
+
+    
+
+    if ( $post_type === 'numbered' | $post_type === 'countdown' ) {
+
+      $block_number = 0;
+      $number_of_numbered_blocks = 0; 
+
+      for ( $i = 0; $i < $content_blocks; $i++ ) {
+
+        $display_block_number_q = get_post_meta($post_id,'content_block_standard_format_'.$i.'_display_block_number',true);
+
+        if ( $display_block_number_q === '1' ) {
+          $number_of_numbered_blocks++;
+        }
+
+      }
+
+      if ( $post_type === 'countdown' ) {
+        $block_number = $number_of_numbered_blocks;
+      }
+
+
+    }
+
+    
+
+    
 
 
     $post_content = '';
@@ -53,17 +82,32 @@ function change_content_frontend($post_id) {
       $raw_headline = get_post_meta($post_id, $this_content_block.'_headline',true);
       $headline = '';
 
+
+      // BLOCK NUMBER CALCULATIONS
+      $display_block_number_q = get_post_meta($post_id,'content_block_standard_format_'.$i.'_display_block_number',true);
+      $headline_number = '';
+
+      if ( $post_type === 'numbered' && $display_block_number_q === '1' ) {
+        $block_number++;
+        $headline_number = $block_number . '.';
+      }
+      if ( $post_type === 'countdown' && $display_block_number_q === '1' ) {
+        $headline_number = $block_number . '.';
+        $block_number--;
+      }
+
       if ( $raw_headline ) {
 
         $headline = '
           <h3 class="pcblock__headline">
-          <span class="number-normal"></span>
-          <span class="number-reverse"></span>
+          <span>'.$headline_number.'</span>
           '.$raw_headline.'
           </h3>
         ';
 
       }
+
+     
 
       $content_block = $content_block . $headline;
 
@@ -106,30 +150,25 @@ function change_content_frontend($post_id) {
 
         if ( $raw_image_credit != '' && $raw_image_via != '' ) {
           $credit = '
-            <small class="pcblock__image--credit">
-              via <a href="'.$raw_image_via.'" target="_blank">'.$raw_image_credit.'</a>
-            </small>
+            via <a href="'.$raw_image_via.'" target="_blank">'.$raw_image_credit.'</a>
           ';
         } elseif ( $raw_image_credit != '' ) {
           $credit = '
-            <small class="pcblock__image--credit">
-              via '.$raw_image_credit.'
-            </small>
+            via '.$raw_image_credit.'
           ';
         } elseif ( $raw_image_via != '' ) {
           $full_url = $raw_image_via;
           $shortened_url = explode("/", $full_url)[2];
           $credit = '
-            <small class="pcblock__image--credit">
-              via <a href="'.$raw_image_via.'" target="_blank">'.$shortened_url.'</a>
-            </small>
+            via <a href="'.$raw_image_via.'" target="_blank">'.$shortened_url.'</a>
           ';
-        }
+        } 
 
 
         $image = '
           <div class="pcblock__image">
-          '.$raw_image.$credit.'
+          '.$raw_image.
+          '<small class="pcblock__image--credit">'.$credit.'</small>
           <div class="pcblock__image--zkklogo"></div>
           </div>
         ';
