@@ -9,7 +9,6 @@
 
 	$post_id = get_the_ID();
 
-	echo $this_content_block;
 
 	$poll_question = get_sub_field('poll_question');
 	$poll_question = str_replace("'","", $poll_question);
@@ -22,6 +21,8 @@
 	$poll_key = str_replace(".","", $poll_key);
 	$poll_key = str_replace(",","", $poll_key);
 	$poll_key = str_replace("!","", $poll_key);
+
+	$poll_key = $poll_key . '_' . rand ( 9 , 9999 );
 ?>
 
 <div class="pcblock__poll pollBlock" data-pollkey="<?php echo $poll_key; ?>">
