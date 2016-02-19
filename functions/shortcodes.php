@@ -139,7 +139,7 @@ function instagram_embed_handler($atts) {
 				  <img class="ig-embed--main" src="'.$data->images->standard_resolution->url.'" alt="'.$data->caption->text.'">
 				</video>';
 	} else {
-		$media = '<img class="ig-embed--main" src="'.$data->images->standard_resolution->url.'" alt="'.$data->caption->text.'">';
+		$media = '<img class="ig-embed--main" src="'.$data->images->standard_resolution->url.'" alt="'.$data->user->username.' Instagram Post">';
 
 	}
 
