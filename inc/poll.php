@@ -14,15 +14,13 @@
 	$poll_question = str_replace("'","", $poll_question);
 	$poll_question = str_replace('"','', $poll_question);
 
-
-
 	$poll_key = str_replace("?","", $poll_question);
 	$poll_key = str_replace(" ","", $poll_key);
 	$poll_key = str_replace(".","", $poll_key);
 	$poll_key = str_replace(",","", $poll_key);
 	$poll_key = str_replace("!","", $poll_key);
 
-	$poll_key = $poll_key . '_' . rand ( 9 , 9999 );
+	$poll_key = $poll_key . '_' . $content_block_number;
 ?>
 
 <div class="pcblock__poll pollBlock" data-pollkey="<?php echo $poll_key; ?>">
