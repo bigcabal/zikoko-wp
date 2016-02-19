@@ -51,7 +51,7 @@ function custom_wpautop($content) {
   $post_id = get_the_ID();
 
   // CHECK LEGACY POST
-  $is_legacy_post = !get_post_meta( $post_id, 'content_block_standard_format_0_headline', true) | ( get_post_meta( $post_id, 'content_block_standard_format_0_headline', true) === '' && get_post_meta( $post_id, 'content_block_standard_format_0_additional_text', true) === '' && get_post_meta( $post_id, 'content_block_standard_format_0_media_choice', true) === 'none'  );
+  $is_legacy_post = !get_post_meta( $post_id, 'content_block_standard_format', true) | ( get_post_meta( $post_id, 'content_block_standard_format_0_headline', true) === '' && get_post_meta( $post_id, 'content_block_standard_format_0_additional_text', true) === '' && get_post_meta( $post_id, 'content_block_standard_format_0_media_choice', true) === 'none'  );
 
   if ( $is_legacy_post )
     return wpautop($content);
