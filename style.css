@@ -516,6 +516,9 @@ ul.sub-menu {
     margin-bottom: 25px;
     text-align: center;
   }
+  .advert-mobilesquare div {
+    margin: 0 auto;
+  }
 }
 
 /* -----------------------------
