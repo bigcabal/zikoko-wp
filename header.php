@@ -12,7 +12,6 @@
 <title><?php wp_title( '|', true, 'right' ); ?> <?php bloginfo( 'name' ); ?></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
 <!-- Favicons and Touch Icons 
 -->

@@ -2,8 +2,8 @@
 /*
 Theme Name: ZKK New
 Theme URI: http://zikoko.com
-Author: Ire Aderinokun
-Author URI: www.ireaderinokun.com
+Author: Big Cabal Media
+Author URI: www.bigcabal.com
 Description: This is the custom theme for the Zikoko website
 Version: 1.0.0
 License: GNU General Public License
@@ -504,6 +504,18 @@ ul.sub-menu {
 #div-gpt-ad-1436520880435-0 {
   height: 90px;
   width: 728px;
+}
+
+.advert-mobilesquare {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .advert-mobilesquare {
+    display: block;
+    margin-bottom: 25px;
+    text-align: center;
+  }
 }
 
 /* -----------------------------

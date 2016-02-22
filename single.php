@@ -64,6 +64,11 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 </div>
 
+<div class="advert-mobilesquare">
+<?php //if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
+    get_template_part('inc/ad-mobile', 'square'); 
+  //} ?>
+</div>
 
 <ul class="site-box social-profile-buttons social-profile-btns--mobileonly">
 	<?php get_template_part('inc/social-profile', 'btns'); ?>
