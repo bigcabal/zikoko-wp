@@ -38,6 +38,9 @@ function quiz_checklist_handler($atts, $content, $tag) {
 		case 'how_single_are_you':
 			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'single');
 			break;
+		case 'yoruba_demon':
+			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'ydemon');
+			break;
 		default:
 			break;
 	}
