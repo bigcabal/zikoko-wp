@@ -6,11 +6,6 @@
 **/
 ?>
 
-
-<div class="site-box">
-	<iframe src="http://polls.zikoko.com/question-feed" frameborder="0" height="450px" width="100%"></iframe>
-</div>
-
 <div class="site-box">
 	<?php get_search_form(); ?>
 </div>
