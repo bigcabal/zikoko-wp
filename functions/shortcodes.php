@@ -175,4 +175,40 @@ function instagram_embed_handler($atts) {
 add_shortcode( 'instagram_embed', 'instagram_embed_handler' );
 
 
+
+
+
+
+
+
+/* ************************
+*
+*  ZIKOKO POLL EMBED
+*
+************************ */
+function zikoko_poll_embed_handler($atts) {
+
+	$values = shortcode_atts(array(
+		'url' => ''
+	),$atts);
+
+
+	$response = file_get_contents('http://polls.zikoko.com/question/17970&callback=?');
+	$response = json_decode($response);
+
+	$data = $response;
+
+
+
+	return $data;
+
+}
+
+
+
+add_shortcode( 'zkk_poll_embed', 'zikoko_poll_embed_handler' );
+
+
+
+
 ?>
