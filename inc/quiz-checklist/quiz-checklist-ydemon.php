@@ -9,7 +9,7 @@ $answers = array(
 	"Own only one black native",
 	"Own more than one black native",
 	"Own only one white native",
-	"Own more than one black native",
+	"Own more than one white native",
 	"Own only an iPhone",
 	"Own only an android phone",
 	"Own an android device and an iPhone",
