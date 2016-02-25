@@ -9,18 +9,11 @@
 
 	$post_id = get_the_ID();
 
-
 	$poll_question = get_sub_field('poll_question');
 	$poll_question = str_replace("'","", $poll_question);
 	$poll_question = str_replace('"','', $poll_question);
 
-	$poll_key = str_replace("?","", $poll_question);
-	$poll_key = str_replace(" ","", $poll_key);
-	$poll_key = str_replace(".","", $poll_key);
-	$poll_key = str_replace(",","", $poll_key);
-	$poll_key = str_replace("!","", $poll_key);
-
-	$poll_key = $poll_key . '_' . $content_block_number;
+	$poll_key = 'poll_' . $post_id . '_' . $content_block_number;
 ?>
 
 <div class="pcblock__poll pollBlock" data-pollkey="<?php echo $poll_key; ?>">
