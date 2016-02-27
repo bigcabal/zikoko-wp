@@ -28,22 +28,24 @@ function zkk_scripts() {
 
 	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js', array('jquery-min'), '1.0', true );
 
-	wp_enqueue_script('quizHandler', get_template_directory_uri() . '/js/checklistQuizHandler.js', array('jquery-min'), '2.0', true );
+	
 
 
 	wp_enqueue_script('jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.js', array('jquery-min'), '1.0', false );
 
 
 
-	//if ( is_single() ) {
+	if ( is_single() ) {
 
 		wp_enqueue_script('post-script', get_template_directory_uri() . '/js/post.js', array('jquery-min'), '1.0', true );
+
+		wp_enqueue_script('quizHandler', get_template_directory_uri() . '/js/checklistQuizHandler.js', array('jquery-min'), '2.0', true );
 
 		//wp_enqueue_script('post-cards-script', get_template_directory_uri() . '/js/post_cards.js', array('jquery-min'), '1.0', true );
 
 		wp_enqueue_script('poll-script', get_template_directory_uri() . '/js/poll.js', array('jquery-min'), '1.0', false );
 
-	//}
+	}
 
 
 	// AJAX Script
