@@ -86,7 +86,7 @@ $answer = str_replace('"','', $answer);
 
 	<?php if ( is_amp_endpoint() ) : ?>
 	<input type="radio" id="poll-radio" style="display: none;">
-	<?php the_sub_field('answer_text'); ?>
+	<span class="answerText"><?php the_sub_field('answer_text'); ?></span>
 
 	<span class="pollResults pollResults-showing">
 		<span class="pollResults__real">

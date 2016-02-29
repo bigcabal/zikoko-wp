@@ -379,6 +379,9 @@ h3.pcblock__headline {
 .pcblock__image {
 	position: relative;
 }
+.pcblock__image--img {
+	margin: 0 auto;
+}
 .pcblock__image--credit {
 	display: block;
 	min-height: 30px;
@@ -594,6 +597,7 @@ li.poll-answer {
 	padding-top: 10px;
 	padding-top: 10px;
     display: inline-block;
+    font-weight: 700;
 }
 .poll-answers-list {
 	padding: 0;
@@ -645,14 +649,9 @@ li.poll-answer {
 }
 
 
-
-
-
 li.poll-answer {
 	display: block;
-
     padding: 10px 15px;
-
 }
 
 
