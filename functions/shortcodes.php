@@ -165,7 +165,7 @@ function instagram_embed_handler($atts) {
 	    			<span> <i class="fa fa-heart"></i> '.$data->likes->count.'</span>
 	    			<span> <i class="fa fa-comment"></i> '.$data->comments->count.'</span>
 	    		</div>
-	    		<img class="ig-logo" src="http://zikoko.com/wp-content/uploads/2015/09/instagram-logo.png" alt="Instagram Logo">
+	    		<img class="ig-logo" src="http://zikoko.com/wp-content/uploads/2016/02/instagram-logo.png" alt="Instagram Logo">
 	    	</footer>
 
 		</article>

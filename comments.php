@@ -14,7 +14,7 @@
 	<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5" data-width="100%"></div>
 
 <?php } else {
-	echo "Comments here";
+	echo "Comments will be loaded here";
 	} ?>
 
 </div><!-- #comments -->

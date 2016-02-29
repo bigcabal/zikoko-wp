@@ -10,11 +10,15 @@
 
 
 
-/* Theme Setup */
+/* *******************
+  
+    THEME SETUP
+  
+******************* */
+
 function zkk_theme_setup() {
 
 	add_theme_support( 'post-thumbnails' );
-
 
   /* Register Menus  */
   register_nav_menus( array(
@@ -22,28 +26,23 @@ function zkk_theme_setup() {
     'secondary_menu' => __( 'Secondary Menu', 'themetext' )
   ));
 
-	
 }
 add_action( 'after_setup_theme', 'zkk_theme_setup' );
 
 
-// Excerpts
-
-function zkk_excerpt_length( $length ) {
-	return 20;
-}
+// EXCERPTS
+function zkk_excerpt_length( $length ) { return 20; }
 add_filter( 'excerpt_length', 'zkk_excerpt_length', 999 );
 
-function zkk_excerpt_more( $more ) {
-	return '...';
-}
+function zkk_excerpt_more( $more ) { return '...'; }
 add_filter( 'excerpt_more', 'zkk_excerpt_more' );
 
 
+// remove Jetpack og tags
+remove_action('wp_head','jetpack_og_tags');
 
 
-
-
+// WORDPRESS AUTO-PARAGRAPH CUSTOM
 function custom_wpautop($content) {
 
   // Custom function from - https://grahamwalters.me/2014/03/07/disable-wpautop-on-specific-postspages/
@@ -58,32 +57,37 @@ function custom_wpautop($content) {
   else
     return $content;
 }
-
 remove_filter('the_content', 'wpautop');
 add_filter('the_content', 'custom_wpautop');
 
 
+/* Login Page */
+function my_login_logo() { ?>
+    <style type="text/css">
+        .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon-196x196.png);
+            padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 
-/* Custom Fields */
-if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
-  define( 'ACF_LITE', true );
-  include_once( 'admin/acf/post.php' );
-  include_once( 'admin/acf/sponsor.php' );
-  include_once( 'admin/acf/belike.php' );
-}
 
 
 
+
+/* *******************
+  
+    HELPER FUNCTIONS
+  
+******************* */
 
 
 function post_meta_data(){
 	
-
 	echo '<span class="entry-category">'; the_category(', '); echo '</span> / ';
 	
-
-
 	// Relative Date
 
 	$current = strtotime(date("Y-m-d"));
@@ -102,29 +106,10 @@ function post_meta_data(){
      $displayDate = get_the_time( get_option( 'date_format' ) );
   }
 
-
 	$publish_date = '<time class="entry-date updated" datetime="' . get_the_time( 'c' ) . '" itemprop="datePublished">' . $displayDate . '</time>';
 
 	echo $publish_date;
 }
-
-
-/* Register JS Scripts and CSS Styles */
-include_once( 'functions/register-scripts.php' );
-include_once( 'functions/google-analytics.php' );
-
-
-/* Register Shortcodes */
-include_once( 'functions/shortcodes.php' );
-
-/* User Capabilities */
-include_once( 'functions/user-roles.php' );
-
-// remove Jetpack og tags
-remove_action('wp_head','jetpack_og_tags');
-
-// remove Jetpack og tags
-remove_action('wp_head','jetpack_og_tags');
 
 
 
@@ -171,9 +156,8 @@ function zkk_pagination() {
   endif;
 }
 
-/**
- * Get The First Image From a Post
- */
+
+/* Get The First Image From a Post */
 function first_post_image() {
   global $post, $posts;
   $first_img = '';
@@ -189,99 +173,46 @@ function first_post_image() {
 
 
 
+
+/* *******************
+  
+    INCLUDE OTHER FUNCTIONS
+  
+******************* */
+
+/* Custom Fields */
+if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
+  define( 'ACF_LITE', true );
+  include_once( 'admin/acf/post.php' );
+  include_once( 'admin/acf/sponsor.php' );
+  include_once( 'admin/acf/belike.php' );
+}
+
+/* Register JS Scripts and CSS Styles */
+include_once( 'functions/register-scripts.php' );
+include_once( 'functions/google-analytics.php' );
+
+/* Register Shortcodes */
+include_once( 'functions/shortcodes.php' );
+
+/* Custom Admin Functions */
+include_once( 'functions/user-roles.php' );
+include_once( 'functions/author-profile-custom-fields.php' );
+
+
 /* ZKK Poll */
 include_once( 'functions/zkk-poll.php' );
 include_once( 'functions/zkk-poll-old.php' );
 
-
-
-
- 
-
-
-/* Cards */
-//include_once( 'functions/replace-post_content-cards.php' );
-
-
-
+/* Replace post content */
 include_once( 'functions/replace-post-content.php' );
 
 
+/* AMP */
+include_once( 'functions/AMP.php' );
 
-
-
-
-
-/* Login Page */
-
-
-
-function my_login_logo() { ?>
-    <style type="text/css">
-        .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon-196x196.png);
-            padding-bottom: 30px;
-        }
-    </style>
-<?php }
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
-
-
-
-
-/* */
-
-add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
-add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
-
-function my_show_extra_profile_fields( $user ) { 
-
-  $user_profile_image = esc_attr( get_the_author_meta( 'zkk_profile', $user->ID ) ); ?>
-
-
-  <h3>Zikoko Profile Picture</h3>
-
-  <table class="form-table">
-
-    <tr>
-      <th>
-        <label for="zkk_profile">Profile Picture</label>
-      </th>
-
-      <td>
-        <?php if ( $user_profile_image != '' ) { ?>
-          <img class="zkk_profile_img" src="<?php echo $user_profile_image; ?>" alt="" style="width: 110px;">
-        <?php } else { ?>
-          <img class="zkk_profile_img" src="http://0.gravatar.com/avatar/62efdbf0df5ad68a9a7066a287b623c1?s=192&d=mm&r=g" alt="" style="width: 110px;">
-        <?php } ?>
-
-        <br><br>
-
-        <input class="image-url zkk_profile" id="zkk_profile" type="text" name="zkk_profile" style="display: none;" />
-        <input id="upload-button" type="button" class="button" value="Upload Image" />
-
-      </td>
-    </tr>
-
-
-  </table>
-<?php }
-
-
-
-
-
-function my_save_extra_profile_fields( $user_id ) {
-
-  if ( !current_user_can( 'edit_user', $user_id ) )
-    return false;
-
-  update_usermeta( $user_id, 'zkk_profile', $_POST['zkk_profile'] );
-
-}
-add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
-add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
-
+/* Cards */
+//include_once( 'functions/replace-post_content-cards.php' );
 
 
 
