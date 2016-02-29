@@ -203,7 +203,7 @@ amp-carousel {
 }
 
 amp-img {
-	width: 100%;
+
 }
 
 amp-iframe,
@@ -390,7 +390,6 @@ h3.pcblock__headline {
 
 .pcblock__embed iframe[src^="https://www.youtube.com/"] {
 	width: 100%;
-	height: 300px;
 }
 
 

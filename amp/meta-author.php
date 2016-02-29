@@ -12,13 +12,8 @@ $author_level == '1' ? $author_title = 'Contributor' : $author_title = 'Staff Wr
 $author_zkk_profile = '<img alt="' . $author . '" src="' . get_the_author_meta( 'zkk_profile', $author_id ) . '" class="avatar avatar-50 photo">';
 $author_gravatar = get_avatar($author_id, 100, 'http://zikoko.com/wp-content/uploads/2016/01/female-emoji.png', $author, ''); 
 get_the_author_meta( 'zkk_profile', $author_id ) != '' ? $author_profile = $author_zkk_profile : $author_profile = $author_gravatar;
-
-
-
 $author_profile = str_replace("img", "amp-img height='50' width='50'", $author_profile);
 $author_profile = str_replace("http:", "", $author_profile);
-
-
 
 $post_author = $this->get( 'post_author' );
 
