@@ -13,14 +13,18 @@ $author_zkk_profile = '<img alt="' . $author . '" src="' . get_the_author_meta( 
 $author_gravatar = get_avatar($author_id, 100, 'http://zikoko.com/wp-content/uploads/2016/01/female-emoji.png', $author, ''); 
 get_the_author_meta( 'zkk_profile', $author_id ) != '' ? $author_profile = $author_zkk_profile : $author_profile = $author_gravatar;
 
+echo $author_profile;
 
 
 $author_profile = explode('src="http:', $author_profile)[1];
+echo $author_profile;
 
 $author_profile = explode('"', $author_profile)[0];
+echo $author_profile;
 
 
- $post_author = $this->get( 'post_author' );
+$post_author = $this->get( 'post_author' );
+
 ?>
 
 <div class="post-author cf">

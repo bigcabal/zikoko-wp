@@ -210,7 +210,7 @@ amp-iframe,
 amp-youtube,
 amp-instagram,
 amp-vine {
-	background: #f3f6f8;
+
 }
 
 .amp-wp-iframe-placeholder {
