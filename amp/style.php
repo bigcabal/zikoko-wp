@@ -84,6 +84,12 @@ nav.amp-wp-title-bar .amp-wp-site-icon {
 
 /* Title */
 
+.amp-wp-post-header {
+	margin-bottom: 40px;
+}
+.amp-wp-post-footer {
+	margin-top: 40px;
+}
 
 .amp-wp-title {
 	font-size: 30px;
@@ -236,13 +242,6 @@ amp-vine {
 
 
 
-/* */
-
-
-/*.pcblock__poll {
-	display: none;
-}*/
-
 
 /* ---------------------
 	INSTAGRAM EMBED
@@ -311,6 +310,7 @@ amp-vine {
 	padding: 10px;
 	background-color: rgb(240, 240, 240);
 	height: 23px;
+	margin-top: 10px;
 }
 .ig-embed-meta {
 	color: rgb(150, 150, 150);
@@ -502,11 +502,9 @@ h3.pcblock__headline {
 
 
 .amp-social-links {
-
 	display: flex;
 	margin: 0;
 	padding: 0;
-	margin-bottom: 40px;
 }
 
 .amp-social-links li {

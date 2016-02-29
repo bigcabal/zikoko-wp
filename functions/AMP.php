@@ -8,6 +8,30 @@
 
 
 
+function removePollsFilter($content) {
+
+
+
+	$cleaned_content = str_replace("controls","",$content);
+
+	return $cleaned_content;
+
+}
+
+
+// WORDPRESS AUTO-PARAGRAPH CUSTOM
+function amp_filter($content) {
+	if ( is_amp_endpoint() ) {
+		return removePollsFilter($content);
+	} else {
+		return $content;
+	}
+}
+add_filter('the_content', 'amp_filter');
+
+
+
+
 
 
 function xyz_amp_set_custom_template( $file, $type, $post ) {
@@ -17,6 +41,8 @@ function xyz_amp_set_custom_template( $file, $type, $post ) {
     return $file;
 }
 add_filter( 'amp_post_template_file', 'xyz_amp_set_custom_template', 10, 3 );
+
+
 
 
 function xyz_amp_set_custom_author_meta_template( $file, $type, $post ) {

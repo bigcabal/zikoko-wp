@@ -20,15 +20,23 @@
 	</div>
 </nav>
 <div class="amp-wp-content">
-	<h1 class="amp-wp-title"><?php echo esc_html( $this->get( 'post_title' ) ); ?></h1>
-	<ul class="amp-wp-meta">
-		<?php $this->load_parts( apply_filters( 'amp_post_template_meta_parts', array( 'meta-author' ) ) ); ?>
-	</ul>
-	<ul class="amp-social-links">
-		<?php get_template_part('amp/social', 'share'); ?>
-	</ul>
+	<header class="amp-wp-post-header">
+		<h1 class="amp-wp-title"><?php echo esc_html( $this->get( 'post_title' ) ); ?></h1>
+		<ul class="amp-wp-meta">
+			<?php $this->load_parts( apply_filters( 'amp_post_template_meta_parts', array( 'meta-author' ) ) ); ?>
+		</ul>
+		<ul class="amp-social-links">
+			<?php get_template_part('amp/social', 'share'); ?>
+		</ul>
+	</header>
 
 	<?php echo $this->get( 'post_amp_content' ); // amphtml content; no kses ?>
+
+	<footer class="amp-wp-post-footer">
+		<ul class="amp-social-links">
+			<?php get_template_part('amp/social', 'share'); ?>
+		</ul>
+	</footer>
 </div>
 <?php do_action( 'amp_post_template_footer', $this ); ?>
 </body>
