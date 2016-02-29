@@ -22,7 +22,7 @@
 <div class="amp-wp-content">
 	<h1 class="amp-wp-title"><?php echo esc_html( $this->get( 'post_title' ) ); ?></h1>
 	<ul class="amp-wp-meta">
-		<?php $this->load_parts( apply_filters( 'amp_post_template_meta_parts', array( 'meta-author', 'meta-time', 'meta-taxonomy' ) ) ); ?>
+		<?php $this->load_parts( apply_filters( 'amp_post_template_meta_parts', array( 'meta-author' ) ) ); ?>
 	</ul>
 	<ul class="amp-social-links">
 		<?php get_template_part('amp/social', 'share'); ?>
