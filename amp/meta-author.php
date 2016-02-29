@@ -17,10 +17,10 @@ echo $author_profile;
 
 
 $author_profile = explode('src="http:', $author_profile)[1];
-echo $author_profile;
+print_r($author_profile);
 
 $author_profile = explode('"', $author_profile)[0];
-echo $author_profile;
+print_r($author_profile);
 
 
 $post_author = $this->get( 'post_author' );
