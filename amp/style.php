@@ -389,7 +389,7 @@ h3.pcblock__headline {
 	height: 25px;
 	width: 70px;
 
-	background-image: url('inc/img/logo.png');
+	background-image: url('http://zikoko.com/wp-content/themes/zkk_new/inc/img/logo.png');
 	background-repeat: no-repeat;
 	background-position: center;
 
