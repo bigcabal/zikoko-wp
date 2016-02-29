@@ -13,14 +13,11 @@ $author_zkk_profile = '<img alt="' . $author . '" src="' . get_the_author_meta( 
 $author_gravatar = get_avatar($author_id, 100, 'http://zikoko.com/wp-content/uploads/2016/01/female-emoji.png', $author, ''); 
 get_the_author_meta( 'zkk_profile', $author_id ) != '' ? $author_profile = $author_zkk_profile : $author_profile = $author_gravatar;
 
-echo $author_profile;
 
 
-$author_profile = explode('src="http:', $author_profile)[1];
-print_r($author_profile);
+$author_profile = str_replace("img", "amp-img height='50' width='50'", $author_profile);
+$author_profile = str_replace("http:", "", $author_profile);
 
-$author_profile = explode('"', $author_profile)[0];
-print_r($author_profile);
 
 
 $post_author = $this->get( 'post_author' );
@@ -29,8 +26,7 @@ $post_author = $this->get( 'post_author' );
 
 <div class="post-author cf">
     <div class="pa__image">
-        <amp-img src="<?php echo $author_profile; ?>" width="50" height="50" alt="Author Profile">
-        </amp-img>
+        <?php echo $author_profile; ?>
     </div>
     <div class="pa__text">
         <div class="pa__text__title">
