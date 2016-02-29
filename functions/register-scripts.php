@@ -15,48 +15,50 @@ function zkk_scripts() {
 
 	wp_enqueue_style('fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 
-
 	
 
 	/*
 	 *  Register Scripts
 	 */
 
-	// wp_enqueue_script( 'jquery' );
+
+	/* MAIN SCRIPTS FOR ALL PAGES */
 
 	wp_enqueue_script('jquery-min', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.11.2', true );
 
 	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js', array('jquery-min'), '1.0', true );
 
-	
-
-
 	wp_enqueue_script('jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.js', array('jquery-min'), '1.0', false );
 
 
+	wp_enqueue_script('psot-script', get_template_directory_uri() . '/js/post.js', array('jquery-min'), '1.0', true );
+
+
+
+	/* POST SCRIPTS */
 
 	if ( is_single() ) {
-
-		wp_enqueue_script('post-script', get_template_directory_uri() . '/js/post.js', array('jquery-min'), '1.0', true );
-
+		
 		wp_enqueue_script('quizHandler', get_template_directory_uri() . '/js/checklistQuizHandler.js', array('jquery-min'), '2.0', true );
-
-		//wp_enqueue_script('post-cards-script', get_template_directory_uri() . '/js/post_cards.js', array('jquery-min'), '1.0', true );
 
 		wp_enqueue_script('poll-script', get_template_directory_uri() . '/js/poll.js', array('jquery-min'), '1.0', false );
 
+		//wp_enqueue_script('post-cards-script', get_template_directory_uri() . '/js/post_cards.js', array('jquery-min'), '1.0', true );
 	}
 
 
-	// AJAX Script
-	wp_enqueue_script('canvas-to-blob', get_template_directory_uri() . '/js/ctb.min.js', array(), '1.0', false );
+	/* BE LIKE SCRIPTS */
+
+	wp_register_script('canvas-to-blob', get_template_directory_uri() . '/js/ctb.min.js', array(), '1.0', false );
 
 	wp_register_script('be-like', get_template_directory_uri() . '/js/belike.js', array('jquery-min', 'canvas-to-blob'), '1.0', true );
+
 	wp_localize_script( 'be-like', 'ajaxpagination', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
 	));
 
 	if ( is_page_template( 'page-belike.php' ) ) {
+		wp_enqueue_script('canvas-to-blob');
 		wp_enqueue_script('be-like');
 	} 
 
