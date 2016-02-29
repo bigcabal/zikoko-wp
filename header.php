@@ -28,7 +28,7 @@
 
 <?php wp_head(); ?>
 
-<?php get_template_part('inc/scripts'); ?>
+<?php //get_template_part('inc/scripts'); ?>
 
 </head>
 <body <?php body_class(); ?>>
