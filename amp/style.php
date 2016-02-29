@@ -210,7 +210,7 @@ blockquote {
 	margin: 8px 0 24px 0;
 	border-left: 2px solid #87a6bc;
 	color: #4f748e;
-	background: #e9eff3;
+	background: rgb(230, 230, 230);
 }
 
 blockquote p:last-child {
@@ -259,9 +259,9 @@ amp-vine {
 /* */
 
 
-.pcblock__poll {
+/*.pcblock__poll {
 	display: none;
-}
+}*/
 
 
 /* ---------------------
@@ -401,12 +401,12 @@ h3.pcblock__headline {
 
 /* Embed */
 .pcblock__embed iframe[id^='twitter-widget-'] { 
-	width: 100% !important;
-	max-width: 100% !important;
+	width: 100%;
+	max-width: 100%;
 }
 
 .pcblock__embed iframe[src^="https://www.youtube.com/"] {
-	width: 100% !important;
+	width: 100%;
 	height: 300px;
 }
 
@@ -448,7 +448,9 @@ h3.pcblock__headline {
 
 
 
-/* POST AUTHOR */
+/* ---------------------
+	POST AUTHOR
+--------------------- */
 
 
 .post-author {
@@ -512,7 +514,9 @@ h3.pcblock__headline {
 
 
 
-/* */
+/* ---------------------
+	SOCIAL SHARE BUTTONS
+--------------------- */
 
 
 .amp-social-links {
@@ -547,6 +551,117 @@ h3.pcblock__headline {
 .amp-social-links li.twitter a {
 	background-color: #4099FF;
 }
+
+
+
+
+
+/* ---------------------
+	POLL
+--------------------- */
+.pcblock__poll--q-container {
+	position: relative;
+	width: 100%;
+	padding: 30px 20px;
+	text-align: center;
+	margin-bottom: 30px;
+
+    box-sizing: border-box;
+	background-color: #8235b6;
+	color: #fff;
+}
+
+li.poll-answer {
+	border: 1px solid #D8D8D8;
+    background-color: #f2f2f2;
+    margin-bottom: 15px;
+    position: relative;
+    vertical-align: top;
+}
+.pollResults {
+	background-color: #D8D8D8;
+	color: #8235b6;
+	text-align: center;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: auto;
+	min-width: 15%;
+}
+.pollResults__real {
+	padding-top: 10px;
+	padding-top: 10px;
+    display: inline-block;
+}
+.poll-answers-list {
+	padding: 0;
+}
+
+
+
+
+/* Image poll */
+.poll-answers--image li.poll-answer {
+	display: inline-block;
+	width: 47%;
+	margin-right: 15px;
+    padding: 10px 15px;
+    padding-bottom: 60px;
+}
+.poll-answers--image li.poll-answer:nth-child(odd) {
+	margin-right: 2%;
+}
+.poll-answers--image .poll-answers--image {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.poll-answers--image .poll-answers--image img {
+	min-height: 100%;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+.poll-answers--image .pollResults {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 50px;
+	width: 100%;
+	line-height: 50px;
+}
+.poll-answers--image .answerText {
+	display: inline-block;
+	max-width: 82%;
+}
+.poll-answers--image {
+	text-align: center;
+}
+.poll-answer--image {
+	display: none;
+}
+
+
+
+
+
+li.poll-answer {
+	display: block;
+
+    padding: 10px 15px;
+
+}
+
+
+.answerText {
+	display: inline-block;
+	max-width: 82%;
+}
+
+
 
 
 

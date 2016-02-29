@@ -76,15 +76,35 @@ $answer = str_replace('"','', $answer);
 
 
 	<!-- Image here -->
+	<?php if ( get_sub_field('answers_format') === 'images' ) { ?>
 	<div class="poll-answer--image">
 		<img src="<?php the_sub_field('answer_image'); ?>" alt="<?php the_sub_field('answer_text'); ?>">
 	</div>
+	<?php } ?>
 	
 
-	<input type="radio" style="display: none;">
 
-	<label for="" class="answerText"><?php the_sub_field('answer_text'); ?></label>
+	<?php if ( is_amp_endpoint() ) : ?>
+	<input type="radio" id="poll-radio" style="display: none;">
+	<?php the_sub_field('answer_text'); ?>
 
+	<span class="pollResults pollResults-showing">
+		<span class="pollResults__real">
+			<?php
+			echo $wpdb->get_var( 
+				"
+				SELECT responses 
+				FROM ".$db_table_name."
+				WHERE answer = '".$answer."' AND post_id = ".$post_id." AND poll_key = '".$poll_key."'
+				"
+			); 
+		?>
+		</span>
+	</span>
+	<?php else : ?>
+	<input type="radio" id="poll-radio" style="display: none;">
+
+	<label for="poll-radio" class="answerText"><?php the_sub_field('answer_text'); ?></label>
 
 	<span class="pollResults">
 		<span class="pollResults__placeholder">?</span>
@@ -100,10 +120,18 @@ $answer = str_replace('"','', $answer);
 		?>
 		</span>
 	</span>
+	<?php endif; ?>
+
+
+
+
 </li> 
 <?php endwhile; ?>
 <?php endif; ?>
 </ul>
+
+
+<?php if ( !is_amp_endpoint() ) : ?>
 
 <section class="share-poll-result">
 	<h5>Share your answer</h5>
@@ -146,3 +174,5 @@ if ( $.cookie(thisPollCookieTitle) ) {
 
 } 
 </script>
+
+<?php endif; ?>

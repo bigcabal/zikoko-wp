@@ -8,6 +8,28 @@
 
 
 
+function removePollsFilter($content) {
+
+
+
+	$cleaned_content = str_replace("Image Content Block","Blah",$content);
+
+	return $cleaned_content;
+
+}
+
+
+// WORDPRESS AUTO-PARAGRAPH CUSTOM
+function amp_filter($content) {
+	if ( is_amp_endpoint() ) {
+		return removePollsFilter($content);
+	} else {
+		return $content;
+	}
+}
+add_filter('the_content', 'amp_filter');
+
+
 
 
 
