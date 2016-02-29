@@ -75,8 +75,8 @@ $answer = str_replace('"','', $answer);
 	?>
 
 
-	<!-- Image here -->
-	<?php if ( get_sub_field('answers_format') === 'images' ) { ?>
+	
+	<?php if ( get_sub_field('answer_image') != "" ) { ?>
 	<div class="poll-answer--image">
 		<img src="<?php the_sub_field('answer_image'); ?>" alt="<?php the_sub_field('answer_text'); ?>">
 	</div>
@@ -129,6 +129,7 @@ $answer = str_replace('"','', $answer);
 <?php endwhile; ?>
 <?php endif; ?>
 </ul>
+</div>
 
 
 <?php if ( !is_amp_endpoint() ) : ?>
@@ -149,9 +150,6 @@ $answer = str_replace('"','', $answer);
 </section>
 
 	
-</div>
-
-
 <script>
 var thisPollCookieTitle = '<?php echo $poll_key; ?>-<?php echo $post_id; ?>';
 var thisPollKey = '<?php echo $poll_key; ?>';
@@ -174,5 +172,4 @@ if ( $.cookie(thisPollCookieTitle) ) {
 
 } 
 </script>
-
 <?php endif; ?>

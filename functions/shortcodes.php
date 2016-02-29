@@ -135,6 +135,7 @@ function instagram_embed_handler($atts) {
 
 
 	if ( $data->videos ) {
+
 		$media = '<video class="ig-embed--main" controls>
 				  <source src="'.$data->videos->low_bandwidth->url.'" type="video/mp4">
 

@@ -53,31 +53,13 @@ body {
 
 /* Titlebar */
 nav.amp-wp-title-bar {
-	padding: 15px;
+	padding: 15px 15px 10px;
 	background: #fff;
 	border-bottom: 3px solid #8235b6;
-}
-
-nav.amp-wp-title-bar div {
-	line-height: 54px;
-	color: #fff;
+	text-align: center;
 }
 nav.amp-wp-title-bar .amp-wp-site-icon {
-	/** site icon is 32px **/
-	float: left;
-	margin: 11px 8px 0 0;
-	border-radius: 50%;
-}
-nav.amp-wp-title-bar a {
-    background-image: url( 'http://zikoko.com/wp-content/uploads/2015/07/logo-300x92.png' );
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: block;
-    height: 28px;
-    width: 94px;
-    margin: 0 auto;
-    text-indent: -9999px;
-    text-decoration: none;
+	margin: 0 auto;	
 }
 
 
@@ -196,7 +178,6 @@ nav.amp-wp-title-bar,
 }
 
 
-
 /* Captions */
 .wp-caption-text {
 	padding: 8px 16px;
@@ -209,7 +190,6 @@ blockquote {
 	padding: 16px;
 	margin: 8px 0 24px 0;
 	border-left: 2px solid #87a6bc;
-	color: #4f748e;
 	background: rgb(230, 230, 230);
 }
 
@@ -607,16 +587,21 @@ li.poll-answer {
 
 
 /* Image poll */
+.poll-answers--image {
+	display: flex;
+	justify-content: space-between;
+}
 .poll-answers--image li.poll-answer {
 	display: inline-block;
-	width: 47%;
-	margin-right: 15px;
+	width: 44%;
+	/*margin-right: 15px;*/
     padding: 10px 15px;
     padding-bottom: 60px;
+    position: relative;
 }
-.poll-answers--image li.poll-answer:nth-child(odd) {
+/*.poll-answers--image li.poll-answer:nth-child(odd) {
 	margin-right: 2%;
-}
+}*/
 .poll-answers--image .poll-answers--image {
 	width: 100%;
 	height: 200px;
@@ -632,10 +617,14 @@ li.poll-answer {
 .poll-answers--image .pollResults {
 	position: absolute;
 	bottom: 0;
+	top: 50px;
 	left: 0;
 	height: 50px;
 	width: 100%;
 	line-height: 50px;
+}
+.poll-answers--image .pollResults__real {
+	padding: 0;
 }
 .poll-answers--image .answerText {
 	display: inline-block;
