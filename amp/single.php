@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 	<?php do_action( 'amp_post_template_head', $this ); ?>
-
 	<style amp-custom>
 	<?php $this->load_parts( array( 'style' ) ); ?>
 	<?php do_action( 'amp_post_template_css', $this ); ?>
@@ -33,19 +32,17 @@
 	<?php $post = get_post($id);
 	if ( has_category( 'Quizzes', $post ) ) : ?>
 
-
-			<p>Hi there! In order to take this quiz, you need to view the full version of this page. Click the link to find out, <a href="<?php the_permalink(); ?>"><?php echo esc_html( $this->get( 'post_title' ) ); ?></a></p>
-
-
+		<p>Hi there! In order to take this quiz, you need to view the full version of this page. Click the link to find out, <a href="<?php the_permalink(); ?>"><?php echo esc_html( $this->get( 'post_title' ) ); ?></a></p>
 
 	<?php else : ?>
-			<?php echo $this->get( 'post_amp_content' ); // amphtml content; no kses ?>
+
+		<?php echo $this->get( 'post_amp_content' ); // amphtml content; no kses ?>
 	
-	<footer class="amp-wp-post-footer">
-		<ul class="amp-social-links">
-			<?php get_template_part('amp/social', 'share'); ?>
-		</ul>
-	</footer>
+		<footer class="amp-wp-post-footer">
+			<ul class="amp-social-links">
+				<?php get_template_part('amp/social', 'share'); ?>
+			</ul>
+		</footer>
 
 	<?php endif; ?>
 </div>

@@ -4,7 +4,6 @@
  *
  * @package ZikokoTheme
 **/
-
 $author_id = $post->post_author;
 $author_level = get_the_author_meta( 'user_level', $author_id );
 $author_level == '1' ? $author_title = 'Contributor' : $author_title = 'Staff Writer';
@@ -14,11 +13,8 @@ $author_gravatar = get_avatar($author_id, 100, 'http://zikoko.com/wp-content/upl
 get_the_author_meta( 'zkk_profile', $author_id ) != '' ? $author_profile = $author_zkk_profile : $author_profile = $author_gravatar;
 $author_profile = str_replace("img", "amp-img height='50' width='50'", $author_profile);
 $author_profile = str_replace("http:", "", $author_profile);
-
-$post_author = $this->get( 'post_author' );
-
+$author_name = $this->get( 'post_author' )->display_name;
 ?>
-
 <div class="post-author cf">
     <div class="pa__image">
         <?php echo $author_profile; ?>
@@ -28,7 +24,7 @@ $post_author = $this->get( 'post_author' );
             <?php echo $author_title; ?>
         </div>
         <div class="pa__text__name">
-            <?php echo esc_html( $post_author->display_name ); ?>
+            <?php echo esc_html( $author_name ); ?>
         </div>
     </div> 
 </div>
