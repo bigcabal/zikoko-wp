@@ -30,14 +30,26 @@
 		</ul>
 	</header>
 
-	<?php echo $this->get( 'post_amp_content' ); // amphtml content; no kses ?>
+	<?php $post = get_post($id);
+	if ( has_category( 'Quizzes', $post ) ) : ?>
 
+
+			<p>Hi there! In order to take this quiz, you need to view the full version of this page. Click the link to find out, <a href="<?php the_permalink(); ?>"><?php echo esc_html( $this->get( 'post_title' ) ); ?></a></p>
+
+
+
+	<?php else : ?>
+			<?php echo $this->get( 'post_amp_content' ); // amphtml content; no kses ?>
+	
 	<footer class="amp-wp-post-footer">
 		<ul class="amp-social-links">
 			<?php get_template_part('amp/social', 'share'); ?>
 		</ul>
 	</footer>
+
+	<?php endif; ?>
 </div>
+<?php //get_template_part('amp/footer'); ?>
 <?php do_action( 'amp_post_template_footer', $this ); ?>
 </body>
 </html>
