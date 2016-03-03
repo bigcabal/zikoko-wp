@@ -34,7 +34,7 @@
 <body <?php body_class(); ?>>
 
 
-<!-- Facebook -->
+<!-- Facebook SDK -->
 <div id="fb-root"></div>
 <script>
 window.fbAsyncInit = function() {
@@ -44,11 +44,8 @@ window.fbAsyncInit = function() {
       version    : 'v2.5'
     });
   };
-
-  
-
 (function(d, s, id){
-    //var old src = "//connect.facebook.net/en_US/sdk.js" 
+    //var oldSrc = "//connect.facebook.net/en_US/sdk.js" 
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
@@ -56,7 +53,6 @@ window.fbAsyncInit = function() {
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<!-- -->
 
 
 
