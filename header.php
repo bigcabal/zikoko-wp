@@ -126,14 +126,15 @@ window.fbAsyncInit = function() {
 
 </header>
 
-
-<!-- <div class="mobile-banner-ad">
+<?php /*
+<div class="mobile-banner-ad">
 <?php 
-// if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
-//     get_template_part('inc/ad', 'mobiletop'); 
-// } 
+if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
+     get_template_part('inc/ad', 'mobiletop'); 
+} 
 ?>
-</div> -->
+</div> */
+?>
 
 	
 
