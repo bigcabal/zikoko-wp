@@ -29,18 +29,10 @@
 <!-- Don't add the <ul> tag, it is added in the including template -->
 
 <li class="facebook social-share-btn" id="share-fb">
-	<a href="<?php the_permalink(); ?>" target="_blank" class="share-fb">
+	<a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo $rawPermalink; ?>?ref=fbc" target="_blank" class="share-fb">
 		<?php include('icons/facebook.php'); ?>
 	</a>
-</li><!-- 
-
-<li class="facebook social-share-btn share-fb" id="share-fb">
-	<a href="https://facebook.com/dialog/feed?app_id=593692017438309&link=<?php //echo $cleanPermalink; ?>?utm_source=fb%26utm_campaign=zkk_share&name=<?php //echo $cleanTitle; ?>&redirect_uri=<?php //echo $cleanPermalink; ?>" target="_blank" class="socialPopup">
-
-		<?php //include('icons/facebook.php'); ?>
-	</a>
-	<div class="fb-like" data-href="<?php //echo $cleanPermalink; ?>?utm_source=fb%26utm_campaign=zkk_share" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
-</li> --><!--
+</li><!--
 
 
 --><li class="twitter social-share-btn" id="share-tw">

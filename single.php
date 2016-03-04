@@ -19,7 +19,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 ?>
 
-
+<div class="fb-quote"></div>
 
 <div class="main-body-area">
 <div class="container">
@@ -121,4 +121,3 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 <?php endif; ?>
 
 <?php endwhile; endif; ?>
-<div class="fb-quote"></div>
