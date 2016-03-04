@@ -19,8 +19,6 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 ?>
 
-<div class="fb-quote"></div>
-
 <div class="main-body-area">
 <div class="container">
 
@@ -28,6 +26,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 <div class="site-box padd-all">
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class('main-article'); ?>>
+
+	<div class="fb-quote"></div>
 
 	<!-- Floating Social Share Buttons -->
 	<ul class="social-share-buttons social-share-buttons--floating">
