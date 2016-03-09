@@ -2488,6 +2488,10 @@ body.single-cards {
       .entry-full.content
              
 ------------------------------- */
+.fb-quote {
+  z-index: 1;
+}
+
 .entry-full-content p,
 .entry-full-content div,
 .entry-full-content img,
