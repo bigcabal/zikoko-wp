@@ -34,7 +34,8 @@ function load_related_posts() {
 	$mega_related_posts = new WP_Query(
 		array(
 			'post_type' => 'post',
-			'posts_per_page' => 36
+			'posts_per_page' => 36,
+			'post_status' => 'publish'
 		)
 	);
 
