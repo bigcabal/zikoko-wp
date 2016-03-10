@@ -41,6 +41,9 @@ function quiz_checklist_handler($atts, $content, $tag) {
 		case 'yoruba_demon':
 			$output = get_template_part('inc/quiz-checklist/quiz-checklist', 'ydemon');
 			break;
+		case 'strict_parents':
+			$output = get_template_part('inc/quiz-checklist/quiz-checklist-strict', 'parents');
+			break;
 		default:
 			break;
 	}

@@ -68,7 +68,7 @@ add_action( 'wp_enqueue_scripts', 'zkk_scripts' );
 
 
 function my_ajaxurl() {
-	$script = '<script type="text/javascript">var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '"</script>';
+	$script = '<script type="text/javascript">var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '"; var templateDirectory = "' . get_template_directory_uri() . '"</script>';
 	echo $script;
 }
 add_action('wp_head','my_ajaxurl');
@@ -88,30 +88,6 @@ function my_media_lib_uploader_enqueue() {
 
 }
 add_action('admin_enqueue_scripts', 'my_media_lib_uploader_enqueue');
-
-
-
-
-
-
-function my_ajax_upload() {
-
-	require_once( ABSPATH . 'wp-admin/includes/file.php' );
-
-	$allowed_file_types = array('jpg' =>'image/jpg','jpeg' =>'image/jpeg', 'gif' => 'image/gif', 'png' => 'image/png');
-    $overrides = array('test_form' => false, 'mimes' => $allowed_file_types);
-
-
-	$image = $_FILES['image'];
-	$image_uploaded = wp_handle_upload( $image, $overrides );
-
-    echo json_encode($image_uploaded);
-
-
-    die();
-}
-add_action( 'wp_ajax_nopriv_ajax_upload', 'my_ajax_upload' );
-add_action( 'wp_ajax_ajax_upload', 'my_ajax_upload' );
 
 
 

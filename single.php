@@ -92,26 +92,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 
 <!-- Mega Related Posts -->
-<div class="mega-related-posts cf">
-<?php
-
-	global $post;
-	$ti_featured_posts = new WP_Query(
-		array(
-			'post_type' => 'post',
-			'posts_per_page' => 36
-		)
-	);
-	?>
-	<?php while ( $ti_featured_posts->have_posts() ) : $ti_featured_posts->the_post(); ?>
-
-		<?php get_template_part( 'excerpt', '2' ); ?>
-
-<?php 
-	endwhile; 
-	wp_reset_postdata();
-?>
-</div>
+<div class="mega-related-posts cf"></div>
 
 
 </div> <!-- end .container -->

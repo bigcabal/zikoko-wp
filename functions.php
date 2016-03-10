@@ -192,6 +192,8 @@ if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.
 include_once( 'functions/register-scripts.php' );
 include_once( 'functions/google-analytics.php' );
 
+include_once( 'functions/ajax-functions.php' );
+
 /* Register Shortcodes */
 include_once( 'functions/shortcodes.php' );
 
