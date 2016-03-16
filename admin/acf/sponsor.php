@@ -224,5 +224,71 @@ endif;
 
 
 
+////
+
+
+
+/* ETISALAT CUSTOM POST PAGE */
+
+
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array (
+	'key' => 'group_56b862e53ab99',
+	'title' => 'Etisalat Custom Post Page',
+	'fields' => array (
+		array (
+			'key' => 'field_561f685940b99',
+			'label' => 'Choose the Post to Display',
+			'name' => 'etisalat_post',
+			'type' => 'post_object',
+			'instructions' => 'Choose the post to display',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array (
+				0 => 'page',
+			),
+			'taxonomy' => array (
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'return_format' => 'object',
+			'ui' => 1,
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'page-etisalat.php',
+			),
+		),
+	),
+	'menu_order' => 1,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => array (
+		0 => 'the_content',
+		1 => 'revisions',
+	),
+	'active' => 1,
+	'description' => 'Custom page for etisalat',
+));
+
+endif;
+
+
+		
+
+
+
 
 ?>
