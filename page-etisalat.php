@@ -13,9 +13,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 	<!-- Stylesheet with version number -->
-	<!-- <link rel="stylesheet" href="<?php //bloginfo('stylesheet_url'); echo '?v=' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen, projection" /> -->
-
-	<!-- Stylesheet with version number -->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/inc/css/etisalat.css?v=' . filemtime( get_stylesheet_directory() . '/inc/css/etisalat.css'); ?>" type="text/css" media="screen, projection" />
 
 	<?php wp_head(); ?>
