@@ -37,7 +37,7 @@ function zkk_scripts() {
 
 	/* POST SCRIPTS */
 
-	if ( is_single() ) {
+	if ( is_single() | is_page_template( 'page-etisalat.php' ) ) {
 		
 		wp_enqueue_script('quizHandler', get_template_directory_uri() . '/js/checklistQuizHandler.js', array('jquery-min'), '3.0', true );
 
