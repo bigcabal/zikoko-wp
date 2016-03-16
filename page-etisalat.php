@@ -51,6 +51,6 @@
 </div> <!-- end .main-body-area -->
 <?php wp_reset_postdata(); ?>
 
-
+<?php wp_footer(); ?>
 </body>
 </html>

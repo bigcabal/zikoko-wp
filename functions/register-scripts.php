@@ -50,9 +50,7 @@ function zkk_scripts() {
 	/* BE LIKE SCRIPTS */
 
 	wp_register_script('canvas-to-blob', get_template_directory_uri() . '/js/ctb.min.js', array(), '1.0', false );
-
 	wp_register_script('be-like', get_template_directory_uri() . '/js/belike.js', array('jquery-min', 'canvas-to-blob'), '1.0', true );
-
 	wp_localize_script( 'be-like', 'ajaxpagination', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
 	));
