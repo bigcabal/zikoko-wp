@@ -15,10 +15,10 @@ ga('set', 'dimension2', author.name);
 
 // OPERA DETECTION DIMENSIONS
 if ( operaDetect.isOpera ) {
-	ga('set', 'dimension3', operaDetect.results.mode);
-	ga('set', 'dimension4', operaDetect.results.platform);
-	ga('set', 'dimension5', operaDetect.results.browser);
-	ga('set', 'dimension6', operaDetect.results.OS);
+ga('set', 'dimension3', operaDetect.results.mode);
+ga('set', 'dimension4', operaDetect.results.platform);
+ga('set', 'dimension5', operaDetect.results.browser);
+ga('set', 'dimension6', operaDetect.results.OS);
 }
 
 ga('send', 'pageview');
