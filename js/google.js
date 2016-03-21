@@ -12,5 +12,12 @@ ga('linker:autoLink', ['polls.zikoko.com'] );
 ga('set', 'dimension1', category.name);
 ga('set', 'dimension2', author.name);
 
+
+ga('set', 'dimension3', operaDetect.results.mode);
+ga('set', 'dimension4', operaDetect.results.platform);
+ga('set', 'dimension5', operaDetect.results.browser);
+ga('set', 'dimension6', operaDetect.results.OS);
+
+
 ga('send', 'pageview');
 

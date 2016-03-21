@@ -34,6 +34,9 @@ function zkk_scripts() {
 	wp_enqueue_script('post-script', get_template_directory_uri() . '/js/post.js', array('jquery-min'), '2.0', true );
 
 
+	wp_enqueue_script('opera-detect', get_template_directory_uri() . '/js/opera-detect.min.js', array(), '2.0', false );
+
+
 
 	/* POST SCRIPTS */
 

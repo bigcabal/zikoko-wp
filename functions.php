@@ -183,10 +183,10 @@ function first_post_image() {
 /* Custom Fields */
 if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
   define( 'ACF_LITE', true );
-  include_once( 'admin/acf/post.php' );
-  include_once( 'admin/acf/sponsor.php' );
-  include_once( 'admin/acf/belike.php' );
 }
+include_once( 'admin/acf/post.php' );
+include_once( 'admin/acf/sponsor.php' );
+include_once( 'admin/acf/belike.php' );
 
 /* Register JS Scripts and CSS Styles */
 include_once( 'functions/register-scripts.php' );

@@ -1,9 +1,14 @@
 @charset "UTF-8";
-/*
-  
-  STYLESHEET FOR ETISALAT CUSTOM POST PAGE
+/* ---------------
 
-*/
+    	Eisalat
+
+------------------ */
+/* CSS Reset Based on -
+ *    Eric Meyer's Reset CSS v2.0 (http://cssreset.com)
+ *    Paul Irish's Box Sizing Reset (http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
+ *    CSS Mojo's clearfix (http://cssmojo.com/latest_new_clearfix_so_far/)
+ */
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
 html, body, div, span, applet, object, iframe,
@@ -61,7 +66,7 @@ html {
 }
 
 /* Clearfix */
-.cf:after, .sponsor-social-buttons:after, .entry-full-content .belike-container:after {
+.cf:after {
   content: "";
   display: table;
   clear: both;
@@ -368,8 +373,6 @@ ul.sub-menu {
   z-index: 35;
 }
 
-
-
 /* -----------------------------
 
              Main
@@ -457,8 +460,22 @@ body {
   height: auto;
 }
 
+/* Sidebar ads*/
+#div-gpt-ad-1436517701090-0 {
+  margin: 0 auto;
+  text-align: center;
+}
 
+/* Infinite Scroll */
+.infiniteScrollLoader-container {
+  display: block;
+  text-align: center;
+}
 
+.infiniteScrollLoader-container .infiniteScrollLoader {
+  height: 100px;
+  width: auto;
+}
 
 /* -----------------------------
 
@@ -490,55 +507,6 @@ body {
     margin-bottom: 20px;
   }
 }
-
-
-
-/*wpviral quix  */
-.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-button {
-  display: inline-block;
-  margin-right: 10px;
-  border-radius: 3px;
-  padding: 5px;
-  width: auto;
-  text-align: center;
-}
-
-.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-facebook {
-  background-color: #3B5998;
-  color: #fff;
-}
-
-.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-twitter {
-  background-color: #4099FF;
-  color: #fff;
-}
-
-.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-slide {
-  display: inline-block;
-  border-left: 1px solid #fff;
-  margin-left: 15px;
-  padding: 0 20px;
-}
-
-.quiz-checklist--share-container #wpvq-share-buttons .wpvq-social-slide p {
-  line-height: 1;
-  margin: 0;
-}
-
-.quiz-checklist--results-container .wpvq-play-again-area {
-  margin: 20px 0;
-}
-
-.quiz-checklist--results-container .wpvq-play-again-area button {
-  background-color: #333;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 700;
-  padding: 10px;
-}
-
-
 
 /* -----------------------------
 
@@ -645,13 +613,6 @@ body {
   float: right;
 }
 
-
-.svga-a-width {
-  width: 100%;
-  height: auto;
-}
-
-
 /* -----------------------------
 
          Post Header
@@ -667,7 +628,117 @@ body {
   }
 }
 
+/* -----------------------------
 
+     Post Author / Sponsor Box
+             
+------------------------------- */
+.post-author {
+  height: 50px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-right: 35px;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+.pa__image {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  float: left;
+  overflow: hidden;
+}
+
+.pa__image a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.pa__image img {
+  min-width: 100%;
+  height: 100%;
+  width: auto;
+}
+
+.pa__text {
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: 600;
+  padding: 0;
+  height: 50px;
+}
+
+.pa__text__title {
+  background-color: #f0f0f0;
+  color: #8235b6;
+  font-size: 1.2rem;
+  line-height: 1;
+  position: relative;
+  top: 0;
+  display: inline-block;
+  padding: 2px 5px;
+  margin-bottom: 5px;
+  width: auto;
+  vertical-align: top;
+}
+
+.pa__text__name {
+  display: block;
+}
+
+@media screen {
+  .pa__text__name {
+    font-size: 14px;
+  }
+}
+
+.pa__text__name a {
+  color: #000;
+}
+
+/* -----------------------------
+
+          Post Footer
+             
+------------------------------- */
+.mega-related-posts article {
+  float: left;
+  background-color: #f0f0f0;
+  width: 31%;
+  padding: 0;
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-bottom: 20px;
+  height: 300px;
+}
+
+.mega-related-posts article .entry-excerpt--image {
+  height: 170px;
+  overflow: hidden;
+}
+
+.mega-related-posts article .entry-excerpt--entry {
+  padding: 0 10px 10px 10px;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 960px) {
+  .mega-related-posts article {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mega-related-posts article {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
 
 /* -----------------------------
 
@@ -1095,25 +1166,19 @@ li.poll-answer.poll-answer--picked {
   padding-top: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* -------------------------
 
     ETISALAT CUSTOM POST PAGE
 
 ------------------------- */
- 
 .main-body-area--post-only > .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1122,7 +1187,3 @@ li.poll-answer.poll-answer--picked {
   width: 100%;
   max-width: 740px;
 }
-
-
-
-
