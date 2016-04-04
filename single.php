@@ -66,6 +66,14 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 </div>
 
+<!-- Post Sponsor (Widget) -->
+<?php if (  get_field( 'sponsored_post_q' ) == "yes" && get_field('sponsor_cta_link') != '' ) : ?>
+	<div class="site-box no-bg post-sponsor-widget-container">
+	<?php get_template_part('inc/post-sponsor', 'widget'); ?>
+	</div>
+<?php endif; ?>
+
+
 <div class="advert-mobilesquare">
 <?php //if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
     get_template_part('inc/ad-mobile', 'square'); 
