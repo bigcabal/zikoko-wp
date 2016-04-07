@@ -2163,7 +2163,6 @@ body.single-cards {
     width: 100%;
     height: auto;
     object-fit: initial;
-    border: 5px solid red;
   }
 }
 
