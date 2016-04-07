@@ -576,8 +576,10 @@ body {
   }
   .entry-excerpt--1 .entry-excerpt--image img, .entry-excerpt--3 .entry-excerpt--image img {
     width: 100%;
+    min-height: auto;
     height: auto;
     object-fit: initial;
+    border: 5px solid red;
   }
 }
 
