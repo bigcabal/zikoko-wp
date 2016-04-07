@@ -2156,9 +2156,12 @@ body.single-cards {
     position: relative;
     display: block;
     width: 100%;
+    height: auto;
   }
   .entry-excerpt--1 .entry-excerpt--image img, .entry-excerpt--3 .entry-excerpt--image img {
     width: 100%;
+    max-width: 100%;
+    min-height: auto;
     height: auto;
     margin-bottom: -10px;
   }
@@ -2190,6 +2193,7 @@ body.single-cards {
   padding-bottom: 10px;
 }
 
+/* Entry Excerpt Format 3 */
 .entry-excerpt--3 .entry-excerpt--title {
   padding-bottom: 10px;
 }

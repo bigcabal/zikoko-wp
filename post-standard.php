@@ -10,8 +10,6 @@ $author = get_the_author();
 
 ?>
 
-
-
 <div class="main-body-area">
 <div class="container">
 
@@ -20,8 +18,6 @@ $author = get_the_author();
 
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class('main-article'); ?>>
-
-
 
 	<!-- Floating Social Share Buttons -->
 	<ul class="social-share-buttons social-share-buttons--floating">
