@@ -2128,7 +2128,7 @@ body.single-cards {
 
 .entry-excerpt--1 .entry-excerpt--image a, .entry-excerpt--3 .entry-excerpt--image a {
   position: relative;
-  display: block;
+  display: flex;
   height: 100%;
   width: 100%;
 }
@@ -2149,6 +2149,7 @@ body.single-cards {
   background-color: #8235b6;
   opacity: 0;
   transition: opacity 0.5s;
+  display: none;
 }
 
 @media screen and (max-width: 960px) {
@@ -2163,7 +2164,7 @@ body.single-cards {
     max-width: 100%;
     min-height: auto;
     height: auto;
-    object-fit: none;
+    object-fit: initial;
     border: 5px solid red;
   }
 }
