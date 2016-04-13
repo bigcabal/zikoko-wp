@@ -26,6 +26,8 @@
 <!-- Stylesheet with version number -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?v=' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen, projection" />
 
+<meta property="fb:pages" content="1587103198245131" />
+
 <?php wp_head(); ?>
 
 <?php get_template_part('inc/scripts'); ?>
