@@ -22,7 +22,7 @@ $post_content = esc_html( get_the_content() );
 $post_content = "<![CDATA[" . $post_content . "]]>";
 
 $post = "<item>
-			<title>" . get_the_title() . "</title>
+			<title>Title: " . get_the_title() . "</title>
 			<link>" . get_the_permalink() . "</link>
 
 			<content:encoded>
