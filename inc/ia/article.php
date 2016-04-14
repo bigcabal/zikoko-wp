@@ -6,9 +6,11 @@
 <!doctype html>
 <html lang="en" prefix="op: http://media.facebook.com/op#">
 <head>
-	<meta property="op:markup_version" content="v1.0">
-	<meta property="fb:use_automatic_ad_placement" content="true">
+	<meta charset="utf-8">
+	<meta property="op:markup_version" content="v1.3">
 	<link rel="canonical" href="<?php the_permalink(); ?>">
+
+	<meta property="fb:use_automatic_ad_placement" content="true">
 	<meta property="fb:article_style" content="zikoko">
 </head>
 <body>
@@ -20,7 +22,7 @@
 				<summary>Kicker</summary>
 			</details>
 
-			<h1> title: <?php esc_html( the_title_rss() ); ?> </h1>
+			<h1> <?php esc_html( the_title_rss() ); ?> </h1>
 		  	<h2> <?php the_excerpt_rss(); ?> </h2>
 
 			<address><?php the_author(); ?></address>
@@ -35,6 +37,9 @@
 		<?php 
 			$content = get_the_content();
 			$content = str_replace("h3","h2",$content);
+			$content = str_replace("h3","h2",$content);
+			$content = str_replace("<p></p>","",$content);
+
 			echo $content;
 		?>
 		<?php do_action( 'simple_fb_after_the_content' ); ?>

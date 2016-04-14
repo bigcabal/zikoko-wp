@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Sponsor Homepage Feed
+ * Template Name: Instant Articles (Development)
  * Instant Articles RSS feed template
  */
 // Set RSS header.
