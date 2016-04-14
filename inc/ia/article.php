@@ -7,7 +7,7 @@
 <html lang="en" prefix="op: http://media.facebook.com/op#">
 <head>
 	<meta charset="utf-8">
-	<meta property="og:markup_version" content="v1.2">
+	<meta property="op:markup_version" content="v1.2">
 
     <link rel="canonical" href="<?php the_permalink(); ?>">
     
