@@ -39,16 +39,12 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 			'posts_per_page' => 5
 		)
 	);
-	while ( $instant_articles->have_posts() ) : $instant_articles->the_post(); do_action( 'simple_fb_pre_render', get_the_id() ); ?>
+	while ( $instant_articles->have_posts() ) : $instant_articles->the_post(); ?>
 			<item>
-				<title>Title 1.2: <?php esc_html( the_title_rss() ); ?></title>
+				<title><?php esc_html( the_title_rss() ); ?></title>
 				<link><?php the_permalink_rss(); ?></link>
 				<pubDate><?php echo esc_html( mysql2date( 'D, d M Y H:i:s +0000', get_post_time( 'Y-m-d H:i:s', true ), false ) ); ?></pubDate>
-				<?php if ( function_exists( 'coauthors' ) ) : ?>
-					<?php coauthors( '</dc:creator><dc:creator>', '</dc:creator><dc:creator>', '<dc:creator>', '</dc:creator>' ); ?>
-				<?php else : ?>
-					<dc:creator><?php the_author(); ?></dc:creator>
-				<?php endif; ?>
+				<author><?php the_author(); ?></author>
 				<guid isPermaLink="false"><?php esc_html( the_guid() ); ?></guid>
 				<description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
 				<content:encoded><![CDATA[<?php include( 'inc/ia/article.php' ); ?>]]></content:encoded>
