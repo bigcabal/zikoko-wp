@@ -6,10 +6,8 @@
 <!doctype html>
 <html lang="en" prefix="op: http://media.facebook.com/op#">
 <head>
-	<meta charset="utf-8">
 	<meta property="op:markup_version" content="v1.0">
 	<link rel="canonical" href="<?php the_permalink(); ?>">
-
 	<meta property="fb:use_automatic_ad_placement" content="true">
 	<meta property="fb:article_style" content="zikoko">
 </head>
@@ -22,7 +20,7 @@
 				<summary>Kicker</summary>
 			</details>
 
-			<h1> <?php esc_html( the_title_rss() ); ?> </h1>
+			<h1> version 2: <?php esc_html( the_title_rss() ); ?> </h1>
 		  	<h2> <?php the_excerpt_rss(); ?> </h2>
 
 			<address><?php the_author(); ?></address>
