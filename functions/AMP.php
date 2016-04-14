@@ -8,21 +8,14 @@
 
 
 
-function removePollsFilter($content) {
-
-
-
-	$cleaned_content = str_replace("controls","",$content);
-
-	return $cleaned_content;
-
-}
-
 
 // WORDPRESS AUTO-PARAGRAPH CUSTOM
 function amp_filter($content) {
 	if ( is_amp_endpoint() ) {
-		return removePollsFilter($content);
+
+        $cleaned_content = str_replace("controls","",$content);
+        return $cleaned_content;
+
 	} else {
 		return $content;
 	}

@@ -40,7 +40,7 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 	);
 	while ( $instant_articles->have_posts() ) : $instant_articles->the_post(); do_action( 'simple_fb_pre_render', get_the_id() ); ?>
 			<item>
-				<title>Title: <?php esc_html( the_title_rss() ); ?></title>
+				<title>Title 1.2: <?php esc_html( the_title_rss() ); ?></title>
 				<link><?php the_permalink_rss(); ?></link>
 				<pubDate><?php echo esc_html( mysql2date( 'D, d M Y H:i:s +0000', get_post_time( 'Y-m-d H:i:s', true ), false ) ); ?></pubDate>
 				<?php if ( function_exists( 'coauthors' ) ) : ?>

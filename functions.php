@@ -219,5 +219,8 @@ include_once( 'functions/AMP.php' );
 
 
 
+/* Instant Articles */
+
+
 
 ?>
