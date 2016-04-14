@@ -34,7 +34,8 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 	global $post;
 	$instant_articles = new WP_Query(
 		array(
-			'post_type' => 'post',
+			'post_type'      => 'post',
+			'post_status'    => 'publish',
 			'posts_per_page' => 5
 		)
 	);
