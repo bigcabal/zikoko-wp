@@ -7,7 +7,7 @@
 <html lang="en" prefix="op: http://media.facebook.com/op#">
 <head>
 	<meta charset="utf-8">
-	<meta property="op:markup_version" content="v1.1">
+	<meta property="op:markup_version" content="v1.2">
 
     <link rel="canonical" href="<?php the_permalink(); ?>">
     
@@ -26,7 +26,7 @@
 				} ?>
 			</figure>
 
-			<h1> <?php esc_html( the_title_rss() ); ?> </h1>
+			<h1> v1.2: <?php esc_html( the_title_rss() ); ?> </h1>
 	      	<h2> <?php the_excerpt_rss(); ?> </h2>
 	      	<address>
 	          <?php the_author(); ?>
