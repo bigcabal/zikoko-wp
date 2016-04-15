@@ -19,7 +19,7 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 >
 
 <channel>
-	<title><?php echo esc_html( wp_title() ); ?></title>
+	<title><?php echo esc_html( "Staging!" ); ?></title>
 	<atom:link href="<?php self_link(); ?>" rel="self" type="application/rss+xml" />
 	<link><?php echo esc_url( apply_filters( 'simple_fb_home_url', home_url() ) ) ?></link>
 	<description><?php echo bloginfo( 'description' ); ?></description>
@@ -35,10 +35,13 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 	$instant_articles = new WP_Query(
 		array(
 			'post_type'      => 'post',
-			// 'post_status'    => 'publish',
 			'posts_per_page' => 5
 		)
 	);
+	/*
+		NEED TO DO - 
+			- Exclude Quiz category
+	*/ 
 	while ( $instant_articles->have_posts() ) : $instant_articles->the_post(); ?>
 			<item>
 				<title><?php esc_html( the_title_rss() ); ?></title>
