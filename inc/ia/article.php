@@ -16,11 +16,20 @@
 		<?php do_action( 'simple_fb_before_the_cover' ); ?>
 		<header>
 
+			<figure>
+				<?php 
+				if ( get_the_post_thumbnail( $next_post->ID ) != '' ) {
+					echo get_the_post_thumbnail();
+				} elseif( first_post_image( $next_post->ID ) ) { 
+					echo '<img src="' . first_post_image( $next_post->ID ) . '" />';
+				} ?>
+			</figure>
+
 			<details>
 				<summary>Kicker</summary>
 			</details>
 
-			<h1> version 2: <?php esc_html( the_title_rss() ); ?> </h1>
+			<h1> v 3: <?php esc_html( the_title_rss() ); ?> </h1>
 		  	<h2> <?php the_excerpt_rss(); ?> </h2>
 
 			<address><?php the_author(); ?></address>
