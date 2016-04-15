@@ -38,6 +38,11 @@
 			<time class="op-published" dateTime="<?php echo esc_attr( get_the_time( 'c' ) ); ?>"><?php echo esc_attr( get_post_time( 'Y-m-d\TH:i:s\Z' ) ); ?></time>
 			<time class="op-modified" dateTime="<?php echo esc_attr( get_the_modified_time( 'c' ) ); ?>"><?php echo esc_attr( get_the_modified_date('Y-m-d\TH:i:s\Z') ); ?></time>
 
+
+			<figure class="op-ad">
+		        <iframe src="https://www.adserver.com/ss;adtype=banner320x50" height="50" width="320"></iframe>
+		      </figure>
+
 		</header>
 		<?php do_action( 'simple_fb_after_the_cover' ); ?>
 		<?php do_action( 'simple_fb_before_the_content' ); ?>
