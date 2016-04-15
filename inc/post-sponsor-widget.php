@@ -33,7 +33,7 @@
             </div>
 
 
-            <ul class="sponsor-social-buttons no-ul <?php if ( get_field( 'sponsor_social_facebook' ) != "" | get_field( 'twitter_username' ) != "" ) { echo "sponsor-social-buttons--single"; } ?>">
+            <ul class="sponsor-social-buttons no-ul <?php if ( get_field( 'sponsor_social_facebook' ) == "" | get_field( 'twitter_username' ) == "" ) { echo "sponsor-social-buttons--single"; } ?>">
                 <?php if ( get_field( 'sponsor_social_facebook' ) != "" ) { ?>
                 <li class="facebook">
                     <a href="https://www.facebook.com/<?php the_field( 'sponsor_social_facebook' ); ?>" target="_blank">
