@@ -18,13 +18,13 @@
 ?>
     <div class="post-sponsor-widget cf">
         
-        <div class="sponsor-image">
+        <div class="psw__image">
         	<a href="<?php the_permalink(); ?>">
         	<img src="<?php the_field('logo_small'); ?>" alt="<?php the_title(); ?>">
         	</a>
         </div>
 
-        <div class="sponsor-text">
+        <div class="psw__text">
 
 
             <div class="sponsor-url-button">
