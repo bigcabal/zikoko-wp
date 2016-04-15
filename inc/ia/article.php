@@ -25,7 +25,7 @@
 				} ?>
 			</figure>
 
-			<h1><?php esc_html( the_title_rss() ); ?></h1>
+			<h1><?php esc_html( the_title_rss() ); ?> (v5)</h1>
 		  	<h2><?php the_excerpt_rss(); ?> </h2>
 
 			<address><?php the_author(); ?></address>
@@ -36,7 +36,7 @@
 
 			<figure class="op-ad">
 		        <iframe src="https://www.adserver.com/ss;adtype=banner320x50" height="50" width="320"></iframe>
-		      </figure>
+		    </figure>
 
 		</header>
 		<?php do_action( 'simple_fb_after_the_cover' ); ?>
@@ -44,8 +44,9 @@
 		<?php 
 
 			$content = get_the_content();
+			$content = str_replace("h2","h1",$content);
 			$content = str_replace("h3","h2",$content);
-			$content = str_replace("h3","h2",$content);
+			$content = str_replace("h4","h2",$content);
 			$content = str_replace("<p></p>","",$content);
 			$content = str_replace("<span></span>","",$content);
 			$content = str_replace('<div class="pcblock__media"></div>',"",$content);
@@ -63,11 +64,17 @@
 			$content = preg_replace('#<span class="ig-embed-user--handle">(.*?)</span>#', ' ', $content);
 
 
-			
+			//$poll_replacement = "(View poll on our site)";
+
+			//$content = preg_replace('#[zkk_poll post=(.*?) ]#', ' ', $content);
+
 
 			echo $content;
 		?>
-		<?php do_action( 'simple_fb_after_the_content' ); ?>
+
+		<footer>
+	        <small>Copyright &copy; Big Cabal Media</small>
+     	</footer>
 	</article>
 </body>
 </html>
