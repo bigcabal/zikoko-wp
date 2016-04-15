@@ -26,7 +26,7 @@
 			</figure>
 
 			<h1><?php esc_html( the_title_rss() ); ?> (v5)</h1>
-		  	<h2><?php the_excerpt_rss(); ?> </h2>
+		  	<h2><?php the_excerpt(); ?> </h2>
 
 			<address><?php the_author(); ?></address>
 

@@ -14,8 +14,8 @@
     <?php } ?>
 
 
-    <?php if ( get_field( 'sponsor_social_twitter' ) != "" ) { ?>
-    <a href="https://twitter.com/<?php the_field( 'sponsor_social_twitter' ); ?>" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @<?php the_field( 'sponsor_social_twitter' ); ?> on Twitter</a> <br>
+    <?php if ( get_field( 'twitter_username' ) != "" ) { ?>
+    <a href="https://twitter.com/<?php the_field( 'twitter_username' ); ?>" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @<?php the_field( 'twitter_username' ); ?> on Twitter</a> <br>
 
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     <?php } ?>

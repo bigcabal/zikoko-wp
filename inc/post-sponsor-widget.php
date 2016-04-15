@@ -18,14 +18,13 @@
 ?>
     <div class="post-sponsor-widget cf">
         
-        <div class="sponsor-image">
+        <div class="psw__image">
         	<a href="<?php the_permalink(); ?>">
         	<img src="<?php the_field('logo_small'); ?>" alt="<?php the_title(); ?>">
         	</a>
         </div>
 
-        <div class="sponsor-text">
-
+        <div class="psw__text">
 
             <div class="sponsor-url-button">
                 <a href="<?php echo $sponsor_cta_url; ?>" target="_blank">
@@ -34,7 +33,7 @@
             </div>
 
 
-            <ul class="sponsor-social-buttons cf no-ul">
+            <ul class="sponsor-social-buttons no-ul <?php if ( get_field( 'sponsor_social_facebook' ) != "" | get_field( 'twitter_username' ) != "" ) { echo "sponsor-social-buttons--single"; } ?>">
                 <?php if ( get_field( 'sponsor_social_facebook' ) != "" ) { ?>
                 <li class="facebook">
                     <a href="https://www.facebook.com/<?php the_field( 'sponsor_social_facebook' ); ?>" target="_blank">
@@ -44,9 +43,9 @@
                 </li>
                 <?php } ?>
 
-                <?php if ( get_field( 'sponsor_social_twitter' ) != "" ) { ?>
+                <?php if ( get_field( 'twitter_username' ) != "" ) { ?>
                 <li class="twitter">
-                    <a href="https://twitter.com/<?php the_field( 'sponsor_social_twitter' ); ?>" target="_blank">
+                    <a href="https://twitter.com/<?php the_field( 'twitter_username' ); ?>" target="_blank">
                         <?php include('icons/twitter.php'); ?> 
                         <span class="cta-text">Follow <span class="small">Us</span> <span class="med">on Twitter</span></span>
                     </a>
