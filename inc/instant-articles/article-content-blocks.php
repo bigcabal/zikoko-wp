@@ -3,14 +3,13 @@
 <div>
 
 
-
 <?php /* ********************
 
 		Headline
 
 ************************* */ ?>
 <?php if ( get_sub_field('headline') != '' ) : ?>
-<h1><?php the_sub_field('headline'); ?></h1>
+<h1><?php echo get_sub_field('headline'); ?></h1>
 <?php endif; ?>
 
 
@@ -146,17 +145,14 @@
 
 
 
-
-
-
 <?php /* ********************
 
 	   Additional Text
 
 ************************* */ ?>
-<?php if ( get_sub_field('additional_text') && get_sub_field('additional_text') != '' ) : ?>
-<p><?php the_sub_field('additional_text'); ?></p>
-<?php endif; ?>
+<?php if ( get_sub_field('additional_text') && get_sub_field('additional_text') != '' ) : 
+	the_sub_field('additional_text');
+endif; ?>
 
 </div>
 <?php endwhile; ?>

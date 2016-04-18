@@ -1,11 +1,11 @@
 <?php
 /**
- * Template Name: Instant Articles (Development)
- * Instant Articles RSS feed template
+ * Template Name: Facebook Instant Articles
+ *
+ *
  */
-// Set RSS header.
+
 header( 'Content-Type: ' . feed_content_type( 'rss-http' ) . '; charset=' . get_option( 'blog_charset' ), true );
-// Use `echo` for first line to prevent any extra characters at start of document.
 echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) ) . '"?>'; ?>
 
 <rss version="2.0"
@@ -26,7 +26,7 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 	<lastBuildDate><?php echo esc_html( mysql2date( 'D, d M Y H:i:s +0000', get_lastpostmodified( 'GMT' ), false ) ); ?></lastBuildDate>
 	<language><?php echo bloginfo( 'language' ); ?></language>
 
-	<?php do_action( 'rss2_head' ); // Add RSS2 headers ?>
+	<?php do_action( 'rss2_head' ); ?>
 
 
 
@@ -38,10 +38,6 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 			'posts_per_page' => 5
 		)
 	);
-	/*
-		NEED TO DO - 
-			- Exclude Quiz category
-	*/ 
 	while ( $instant_articles->have_posts() ) : $instant_articles->the_post(); ?>
 			<item>
 				<title><?php esc_html( the_title_rss() ); ?></title>
@@ -50,7 +46,7 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 				<author><?php the_author(); ?></author>
 				<guid isPermaLink="false"><?php esc_html( the_guid() ); ?></guid>
 				<description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
-				<content:encoded><![CDATA[<?php include( 'inc/ia/article.php' ); ?>]]></content:encoded>
+				<content:encoded><![CDATA[<?php include( 'inc/instant-articles/article.php' ); ?>]]></content:encoded>
 			</item>
 	<?php endwhile; ?>
 </channel>
