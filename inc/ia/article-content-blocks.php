@@ -10,7 +10,7 @@
 
 ************************* */ ?>
 <?php if ( get_sub_field('headline') != '' ) : ?>
-<h2><?php the_sub_field('headline'); ?></h2>
+<h1><?php the_sub_field('headline'); ?></h1>
 <?php endif; ?>
 
 
@@ -119,7 +119,7 @@
 		Media - Quiz
 
 ************************* */ ?>
-	<p>View quiz on our site</p>
+	<p><a href="<?php the_permalink(); ?>">Take this quiz</a> on our website.</p>
 <?php endif; ?>
 
 
@@ -132,7 +132,17 @@
 		Media - Poll
 
 ************************* */ ?>
-	<p>View poll on our site</p>
+	<h2><?php the_sub_field('poll_question'); ?></h2>
+
+	<?php if( have_rows('answers') ): ?>
+	<ul>
+		<?php while( have_rows('answers') ): the_row();  ?>
+		<li><?php the_sub_field('answer_text'); ?></li>
+		<?php endwhile; ?>
+	</ul>
+	<?php endif; ?>
+
+	<p>(<a href="<?php the_permalink(); ?>">Visit our site to see the results</a>)</p>
 <?php endif; ?>
 
 
