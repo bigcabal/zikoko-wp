@@ -9,7 +9,7 @@
 		} ?>
 	</figure>
 
-	<h1><?php esc_html( the_title_rss() ); ?> (v7)</h1>
+	<h1><?php esc_html( the_title_rss() ); ?> (v8)</h1>
   	<h2><?php esc_html( the_excerpt_rss() ); ?>  </h2>
 
 	<address><?php the_author(); ?></address>
