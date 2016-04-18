@@ -60,7 +60,7 @@
 
 			$content = preg_replace('#<span class="ig-embed-user--handle">(.*?)</span>#', ' ', $content);
 
-			$content = str_replace("<figure>","<figure data-feedback="fb:likes, fb:comments">",$content);
+			$content = str_replace("<figure>","<figure data-feedback='fb:likes, fb:comments'>",$content);
 
 
 
