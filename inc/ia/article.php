@@ -60,6 +60,10 @@
 
 			$content = preg_replace('#<span class="ig-embed-user--handle">(.*?)</span>#', ' ', $content);
 
+			$content = str_replace("<figure>","<figure data-feedback="fb:likes, fb:comments">",$content);
+
+
+
 
 			//$poll_replacement = "(View poll on our site)";
 
@@ -70,11 +74,13 @@
 		?>
 
 		<footer>
+			<aside>Zikoko, Enjoy &amp; Share</aside>
+			<small>© Big Cabal Media</small>
+
 			<ul class="op-related-articles">
 				<?php $next_post = get_previous_post(); ?>
 				<li><a href="<?php echo get_permalink( $next_post->ID ); ?>"></a></li>
 			</ul>
-	        <small>Copyright &copy; Big Cabal Media</small>
      	</footer>
 	</article>
 </body>
