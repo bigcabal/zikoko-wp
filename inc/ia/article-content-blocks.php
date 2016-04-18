@@ -157,7 +157,7 @@
 	   Additional Text
 
 ************************* */ ?>
-<?php if ( get_sub_field('additional_text') != '' ) : ?>
+<?php if ( get_sub_field('additional_text') && get_sub_field('additional_text') != '' ) : ?>
 <p><?php the_sub_field('additional_text'); ?></p>
 <?php endif; ?>
 
