@@ -13,7 +13,6 @@
 </head>
 <body>
 	<article>
-		<?php //do_action( 'simple_fb_before_the_cover' ); ?>
 		<header>
 
 			<figure>
@@ -25,8 +24,8 @@
 				} ?>
 			</figure>
 
-			<h1><?php esc_html( the_title_rss() ); ?> (v5)</h1>
-		  	<h2><?php the_excerpt(); ?> </h2>
+			<h1><?php esc_html( the_title_rss() ); ?> (v6)</h1>
+		  	<h2><?php esc_html( the_excerpt_rss() ); ?>  </h2>
 
 			<address><?php the_author(); ?></address>
 
@@ -39,8 +38,6 @@
 		    </figure>
 
 		</header>
-		<?php //do_action( 'simple_fb_after_the_cover' ); ?>
-		<?php //do_action( 'simple_fb_before_the_content' ); ?>
 		<?php 
 
 			$content = get_the_content();
@@ -73,8 +70,10 @@
 		?>
 
 		<footer>
-			<ul class="op-related-articles" title="Read these next">
-			 </ul>
+			<ul class="op-related-articles">
+				<?php $next_post = get_previous_post(); ?>
+				<li><a href="<?php echo get_permalink( $next_post->ID ); ?>"></a></li>
+			</ul>
 	        <small>Copyright &copy; Big Cabal Media</small>
      	</footer>
 	</article>
