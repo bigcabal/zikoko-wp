@@ -1,7 +1,5 @@
 <?php if( have_rows('content_block_standard_format') ): ?>
 <?php while( have_rows('content_block_standard_format') ): the_row(); ?>
-<div>
-
 
 <?php /* ********************
 
@@ -11,7 +9,6 @@
 <?php if ( get_sub_field('headline') != '' ) : ?>
 <h1><?php echo get_sub_field('headline'); ?></h1>
 <?php endif; ?>
-
 
 
 
@@ -43,8 +40,6 @@
 
 </figure>
 <?php endif; ?>
-
-
 
 
 
@@ -90,8 +85,6 @@
 
 
 
-
-
 <?php if ( get_sub_field('media_choice') === 'quote' ) : ?>
 <?php /* ********************
 
@@ -104,7 +97,6 @@
 	<cite>&mdash; <?php the_sub_field('from');?></cite>
 	<?php endif; ?>
 <?php endif; ?>
-
 
 
 
@@ -138,7 +130,7 @@
 	</ul>
 	<?php endif; ?>
 
-	<p>(<a href="<?php the_permalink(); ?>">Visit our site to see the results</a>)</p>
+	<small>(<a href="<?php the_permalink(); ?>">Visit our site</a> to vote and see the results)</small>
 <?php endif; ?>
 
 
@@ -154,6 +146,6 @@
 	the_sub_field('additional_text');
 endif; ?>
 
-</div>
+
 <?php endwhile; ?>
 <?php endif; ?>
