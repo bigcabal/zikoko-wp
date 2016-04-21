@@ -141,7 +141,7 @@
 	</ul>
 	<?php endif; ?>
 
-	<small>(<a href="<?php the_permalink(); ?>">Visit our site</a> to vote and see the results)</small>
+	<p>(<a href="<?php the_permalink(); ?>">Visit our site</a> to vote and see the results)</p>
 <?php endif; ?>
 
 
