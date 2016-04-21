@@ -12,6 +12,8 @@
 			ga('require', 'linker');
 			ga('linker:autoLink', ['polls.zikoko.com'] );
 
+			ga('set', 'dimension7', 'Facebook Instant Articles');
+
 			ga('send', 'pageview');
     	</script>
     </iframe>
