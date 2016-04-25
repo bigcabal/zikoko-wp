@@ -147,16 +147,25 @@
 
 
 
-
 <?php /* ********************
 
 	   Additional Text
 
 ************************* */ ?>
 <?php if ( get_sub_field('additional_text') && get_sub_field('additional_text') != '' ) : 
-	the_sub_field('additional_text');
+
+	$additional_text = get_sub_field('additional_text');
+
+	$additional_text = str_replace("h2","h1",$additional_text);
+	$additional_text = str_replace("h3","h2",$additional_text);
+	$additional_text = str_replace("h4","h2",$additional_text);
+	$additional_text = str_replace("<p></p>","",$additional_text);
+	$additional_text = str_replace("<span></span>","",$additional_text);
+	$additional_text = str_replace("<h1></h1>","",$additional_text);
+	$additional_text = str_replace("<h2></h2>","",$additional_text);
+
+	echo $additional_text;
+
 endif; ?>
-
-
 <?php endwhile; ?>
 <?php endif; ?>
