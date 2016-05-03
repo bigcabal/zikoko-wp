@@ -89,7 +89,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 </div>
 
 <!-- The Vortex -->
-<?php get_template_part('inc/modal', 'post'); ?>
+<?php //get_template_part('inc/modal', 'post'); ?>
 
 
 </main><!--
