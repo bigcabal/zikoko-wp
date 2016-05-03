@@ -921,7 +921,7 @@ acf_add_local_field_group(array (
 	'fields' => array (
 		array (
 			'key' => 'field_561f67a340b12',
-			'label' => 'Feature Post',
+			'label' => 'Featured Post',
 			'name' => 'featured_post_add',
 			'type' => 'true_false',
 			'instructions' => '',
@@ -932,7 +932,7 @@ acf_add_local_field_group(array (
 				'class' => '',
 				'id' => '',
 			),
-			'message' => 'Make this post featured',
+			'message' => '',
 			'default_value' => 0,
 		),
 		array (
@@ -950,6 +950,28 @@ acf_add_local_field_group(array (
 			),
 			'message' => '',
 			'default_value' => 1,
+		),
+		array (
+			'key' => 'field_5693c1bb476499',
+			'label' => 'Facebook Instant Articles',
+			'name' => 'instant_article_choice',
+			'type' => 'radio',
+			'instructions' => 'Should this article be displayed in Facebook as an Instant Article?',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'no' => 'No',
+				'yes' => 'Yes',
+			),
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'yes',
+			'layout' => 'horizontal',
 		),
 		array (
 			'key' => 'field_561f680f40b13',
