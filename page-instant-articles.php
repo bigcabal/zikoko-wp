@@ -35,18 +35,19 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 	$instant_articles = new WP_Query(
 		array(
 			'post_type'      => 'post',
-			'posts_per_page' => 5,
-     		'meta_query' => array(
-				array(
-					'key'     => 'instant_article_choice',
-					'value'   => 'no',
-					'compare' => 'NOT EXISTS',
-				),
+			'posts_per_page' => 15,
+   //   		'meta_query' => array(
+			// 	array(
+			// 		'key'     => 'instant_article_choice',
+			// 		'value'   => 'no',
+			// 		'compare' => 'NOT EXISTS',
+			// 	),
 				
-			),
+			// ),
 		)
 	);
-	while ( $instant_articles->have_posts() ) : $instant_articles->the_post(); ?>
+	while ( $instant_articles->have_posts() ) : $instant_articles->the_post();
+		if ( get_field('instant_article_choice') != 'no' ) : ?>
 			<item>
 				<title><?php esc_html( the_title_rss() ); ?></title>
 				<link><?php the_permalink_rss(); ?></link>
@@ -56,6 +57,6 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 				<description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
 				<content:encoded><![CDATA[<?php include( 'inc/instant-articles/article.php' ); ?>]]></content:encoded>
 			</item>
-	<?php endwhile; ?>
+	<?php endif; endwhile; ?>
 </channel>
 </rss>
