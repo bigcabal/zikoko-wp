@@ -122,59 +122,57 @@ function instagram_embed_handler($atts) {
 
 	$raw_url = $values['url'];
 	$parsed = \ogp\Parser::parse( file_get_contents($raw_url) );
-
+	$url = $parsed['og:url'];
 	$description = $parsed['og:description'];
 
-	$image = $parsed['og:image'];
-	$caption = $description;
 
-	$url = $parsed['og:url'];
+	if ( strpos($description, 'video') !== false ) {
 
-	$user_profile = '';
-	$user_name = explode('@', $description)[1];
-	$user_name = explode(' ', $user_name)[0];
+		return wp_oembed_get($url);
 
-	$likes = explode('• ', $description)[1];
-	$likes = explode(' ', $likes)[0];
-
-	$comments = '';
-
-
-	$videos = false;
-
-
-
-	if ( $videos ) {
-		$media = '<video class="ig-embed--main" controls>
-				  <source src="'.$video.'" type="video/mp4">
-
-				  <!-- Fallback image -->
-				  <img class="ig-embed--main" src="'.$image.'" alt="'.$caption.'">
-				</video>';
 	} else {
-		$media = '<img class="ig-embed--main" src="'.$image.'" alt="'.$caption.' Instagram Post">';
+
+		$image = $parsed['og:image'];
+		$caption = $description;
+
+		$user_name = explode('@', $description)[1];
+		$user_name = explode(' ', $user_name)[0];
+
+		$likes = explode('• ', $description)[1];
+		$likes = explode(' ', $likes)[0];
+
+		return '<a href="'.$url.'" class="ig-embed-link" target="_blank">
+		    <article class="ig-embed">
+
+		    	<header>
+		    		<span class="ig-embed-user--handle">@'.$user_name.'</span>
+		    		<span class="ig-embed-post--date"></span>
+		    		<button class="ig-embed-user--follow">+ Follow</button>
+		    	</header>
+
+		    	<img class="ig-embed--main" src="'.$image.'" alt="'.$caption.' Instagram Post">
+		    	
+		    	<footer>
+		    		<div class="ig-embed-meta cf">
+		    			<span> <i class="fa fa-heart"></i> '.$likes.'</span>
+		    		</div>
+		    		<img class="ig-logo" src="http://zikoko.com/wp-content/uploads/2016/02/instagram-logo.png" alt="Instagram Logo">
+		    	</footer>
+
+			</article>
+			</a>';
+
 	}
 
-	return '<a href="'.$url.'" class="ig-embed-link" target="_blank">
-	    <article class="ig-embed">
 
-	    	<header>
-	    		<span class="ig-embed-user--handle">@'.$user_name.'</span>
-	    		<span class="ig-embed-post--date"></span>
-	    		<button class="ig-embed-user--follow">+ Follow</button>
-	    	</header>
 
-	    	'.$media.'
-	    	
-	    	<footer>
-	    		<div class="ig-embed-meta cf">
-	    			<span> <i class="fa fa-heart"></i> '.$likes.'</span>
-	    		</div>
-	    		<img class="ig-logo" src="http://zikoko.com/wp-content/uploads/2016/02/instagram-logo.png" alt="Instagram Logo">
-	    	</footer>
 
-		</article>
-		</a>';
+
+
+
+	
+
+
 
 }
 
