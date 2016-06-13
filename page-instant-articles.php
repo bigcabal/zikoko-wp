@@ -39,7 +39,7 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 		)
 	);
 	while ( $instant_articles->have_posts() ) : $instant_articles->the_post();
-		if ( get_field('instant_article_choice') != 'no' ) && !has_category( 'Quizzes') : ?> : ?>
+		if ( get_field('instant_article_choice') != 'no' ) : ?> : ?>
 			<item>
 				<title><?php esc_html( the_title_rss() ); ?></title>
 				<link><?php the_permalink_rss(); ?></link>
