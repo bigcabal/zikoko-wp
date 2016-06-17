@@ -75,7 +75,7 @@ $author = get_the_author();
 </ul>
 
 <!-- The Vortex -->
-<?php get_template_part('inc/modal', 'post'); ?>
+<?php //get_template_part('inc/modal', 'post'); ?>
 
 
 </main><!--

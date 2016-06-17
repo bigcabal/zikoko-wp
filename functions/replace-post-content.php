@@ -191,8 +191,8 @@ function change_content_frontend($post_id) {
 
         switch ($embed_choice) {
           case 'instagram':
-            $raw_embed = get_post_meta($post_id,$this_content_block.'_embed_code_instagram',true);
-            $raw_embed = do_shortcode( '[instagram_embed url="'.$raw_embed.'"]' );
+            $embed_url = get_post_meta($post_id,$this_content_block.'_embed_code_instagram',true);
+            $raw_embed = '[instagram_embed url="'.$embed_url.'"]';
             break;
           
           default:

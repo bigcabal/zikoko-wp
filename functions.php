@@ -188,6 +188,8 @@ include_once( 'admin/acf/post.php' );
 include_once( 'admin/acf/sponsor.php' );
 include_once( 'admin/acf/belike.php' );
 
+include_once('admin/ogp/Parser.php');
+
 /* Register JS Scripts and CSS Styles */
 include_once( 'functions/register-scripts.php' );
 include_once( 'functions/google-analytics.php' );

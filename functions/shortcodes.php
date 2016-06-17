@@ -121,59 +121,58 @@ function instagram_embed_handler($atts) {
 	),$atts);
 
 	$raw_url = $values['url'];
-	$raw_url_1 = explode("instagram.com/p/", $raw_url)[1];
-	$imageID = explode("/", $raw_url_1)[0];
+	$parsed = \ogp\Parser::parse( file_get_contents($raw_url) );
+	$url = $parsed['og:url'];
+	$description = $parsed['og:description'];
 
 
-	//$zikoko_instagram_access_token = '22156862.2284ca5.17bbd4e1aa77479381184b8ad4047efe';
+	if ( strpos($description, 'video') !== false ) {
 
-	//$zikoko_instagram_access_token = '2025378743.96f901d.ef0d0f539127400f8d3b925b64e09744';
+		return wp_oembed_get($url);
 
-	$response = file_get_contents('https://api.instagram.com/v1/media/shortcode/'.$imageID.'?access_token=22156862.1fb234f.2bdfa1f73084463cbf628b55878198f0&callback=?');
-	$response = json_decode($response);
-
-	$data = $response->data;
-
-
-
-
-	if ( $data->videos ) {
-
-		$media = '<video class="ig-embed--main" controls>
-				  <source src="'.$data->videos->low_bandwidth->url.'" type="video/mp4">
-
-				  <!-- Fallback image -->
-				  <img class="ig-embed--main" src="'.$data->images->standard_resolution->url.'" alt="'.$data->caption->text.'">
-				</video>';
 	} else {
-		$media = '<img class="ig-embed--main" src="'.$data->images->standard_resolution->url.'" alt="'.$data->user->username.' Instagram Post">';
+
+		$image = $parsed['og:image'];
+		$caption = $description;
+
+		$user_name = explode('@', $description)[1];
+		$user_name = explode(' ', $user_name)[0];
+
+		$likes = explode('• ', $description)[1];
+		$likes = explode(' ', $likes)[0];
+
+		return '<a href="'.$url.'" class="ig-embed-link" target="_blank">
+		    <article class="ig-embed">
+
+		    	<header>
+		    		<span class="ig-embed-user--handle">@'.$user_name.'</span>
+		    		<span class="ig-embed-post--date"></span>
+		    		<button class="ig-embed-user--follow">+ Follow</button>
+		    	</header>
+
+		    	<img class="ig-embed--main" src="'.$image.'" alt="'.$caption.' Instagram Post">
+		    	
+		    	<footer>
+		    		<div class="ig-embed-meta cf">
+		    			<span> <i class="fa fa-heart"></i> '.$likes.'</span>
+		    		</div>
+		    		<img class="ig-logo" src="http://zikoko.com/wp-content/uploads/2016/02/instagram-logo.png" alt="Instagram Logo">
+		    	</footer>
+
+			</article>
+			</a>';
 
 	}
 
 
-	return '<a href="'.$data->link.'" class="ig-embed-link" target="_blank">
-	    <article class="ig-embed">
 
-	    	<header>
-	    		<img class="ig-embed-user--image" src="'.$data->user->profile_picture.'" alt="'.$data->user->username.'">
 
-	    		<span class="ig-embed-user--handle">'.$data->user->username.'</span>
-	    		<span class="ig-embed-post--date"></span>
-	    		<button class="ig-embed-user--follow">+ Follow</button>
-	    	</header>
 
-	    	'.$media.'
-	    	
-	    	<footer>
-	    		<div class="ig-embed-meta cf">
-	    			<span> <i class="fa fa-heart"></i> '.$data->likes->count.'</span>
-	    			<span> <i class="fa fa-comment"></i> '.$data->comments->count.'</span>
-	    		</div>
-	    		<img class="ig-logo" src="http://zikoko.com/wp-content/uploads/2016/02/instagram-logo.png" alt="Instagram Logo">
-	    	</footer>
 
-		</article>
-		</a>';
+
+	
+
+
 
 }
 

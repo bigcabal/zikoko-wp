@@ -529,9 +529,11 @@ body {
 .entry-full-content .ig-embed header {
   position: relative;
   text-align: left;
-  height: 80px;
-  line-height: 80px;
+  height: 55px;
+  line-height: 55px;
   padding: 0 10px;
+  display: flex;
+  align-items: center;
 }
 
 .entry-full-content .ig-embed header span {
