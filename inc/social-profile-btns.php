@@ -17,10 +17,10 @@
 	<a href="http://twitter.com/zikokomag" target="_blank">
 		<div class="icon"><?php include('icons/twitter.php'); ?></div> <span>Follow Zikoko on Twitter</span>
 	</a>
-</li><!--
-
-
---><li class="wechat">
+</li>
+<?php
+/*
+<li class="wechat">
 	<a href="#">
 		<div class="icon"><i class="fa fa-weixin"></i></div> <span>Follow Zikoko on WeChat</span>
 	</a>
@@ -29,3 +29,6 @@
 	<p>Scan the QR Code Below</p>
 	<img src="<?php echo get_template_directory_uri(); ?>/inc/img/we-qrcode.jpg" alt="WeChat QR Code">
 </div>
+
+*/
+?>
