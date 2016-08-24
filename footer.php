@@ -6,7 +6,6 @@
 **/
 ?>
 
-
 <footer class="site-footer">
 <div class="container">
 
@@ -18,8 +17,6 @@
 	
 </div>
 </footer>
-
-<script src="<?php echo get_template_directory_uri(); ?>/js/whatsapp.js"></script>
 
 <?php wp_footer(); ?>
 </body>

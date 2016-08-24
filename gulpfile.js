@@ -54,7 +54,7 @@ gulp.task('css', function() {
         )
         // SASS to CSS
         .pipe(
-            sass({ outputStyle: 'expanded' }) // compressed
+            sass({ outputStyle: 'compressed' }) // compressed
             .on('error', gutil.log)
         )
         .pipe(gulp.dest(''));
@@ -65,7 +65,7 @@ gulp.task('css', function() {
            postcss(postcssProcessors, {syntax: scss})
         )
         .pipe(
-            sass({ outputStyle: 'expanded' })
+            sass({ outputStyle: 'compressed' })
             .on('error', gutil.log)
         )
         .pipe(gulp.dest('inc/css'));
@@ -74,7 +74,7 @@ gulp.task('css', function() {
            postcss(postcssProcessors, {syntax: scss})
         )
         .pipe(
-            sass({ outputStyle: 'expanded' })
+            sass({ outputStyle: 'compressed' })
             .on('error', gutil.log)
         )
         .pipe(gulp.dest('inc/css'));
@@ -83,7 +83,7 @@ gulp.task('css', function() {
            postcss(postcssProcessors, {syntax: scss})
         )
         .pipe(
-            sass({ outputStyle: 'expanded' })
+            sass({ outputStyle: 'compressed' })
             .on('error', gutil.log)
         )
         .pipe(gulp.dest('inc/css'));
@@ -114,12 +114,41 @@ var jsFiles = 'development/scripts/**/*.js';
 
 gulp.task('js', function() {
 
-
-    gulp.src(jsFiles)
-        //.pipe(concat('script.js'))
+    gulp.src('development/scripts/main/lib/*.js')
+        .pipe(concat('main-lib.js'))
         .pipe(uglify())
             .on('error', gutil.log)
         .pipe(gulp.dest('js'));
+    gulp.src('development/scripts/main/*.js')
+        .pipe(concat('main.js'))
+        .pipe(uglify())
+            .on('error', gutil.log)
+        .pipe(gulp.dest('js'));
+
+    gulp.src('development/scripts/post/*.js')
+        .pipe(concat('post.js'))
+        .pipe(uglify())
+            .on('error', gutil.log)
+        .pipe(gulp.dest('js'));
+
+    gulp.src('development/scripts/belike/*.js')
+        .pipe(concat('belike.js'))
+        .pipe(uglify())
+            .on('error', gutil.log)
+        .pipe(gulp.dest('js'));
+
+    gulp.src('development/scripts/admin/*.js')
+        .pipe(concat('admin.js'))
+        .pipe(uglify())
+            .on('error', gutil.log)
+        .pipe(gulp.dest('js'));
+
+
+    // gulp.src(jsFiles)
+    //     // .pipe(concat('script.js'))
+    //     .pipe(uglify())
+    //         .on('error', gutil.log)
+    //     .pipe(gulp.dest('js'));
 });
 
 

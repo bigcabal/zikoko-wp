@@ -64,11 +64,7 @@ endif;
 
 </main><!--
 	Keep Zero Space Between
---><aside class="site-sidebar">
-
-<?php get_sidebar(); ?>
-	
-</aside>
+--><aside class="site-sidebar"><!-- Loaded via AJAX --></aside>
 
 
 </div> <!-- end .container -->

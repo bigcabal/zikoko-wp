@@ -89,16 +89,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 </div>
 
 <!-- The Vortex -->
-<?php //get_template_part('inc/modal', 'post'); ?>
-
 
 </main><!--
 	Keep Zero Space Between
---><aside class="site-sidebar">
-
-<?php get_sidebar(); ?>
-	
-</aside>
+--><aside class="site-sidebar"><!-- Loaded via AJAX --></aside>
 
 
 <!-- Mega Related Posts -->
