@@ -42,7 +42,6 @@ googletag.cmd = googletag.cmd || [];
   });
 </script>
 
-
 <!-- Square Mobile -->
 <script type='text/javascript'>
   googletag.cmd.push(function() {
