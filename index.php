@@ -90,11 +90,7 @@ get_header();
 
 </main><!--
 	Keep Zero Space Between
---><aside class="site-sidebar">
-
-<?php get_sidebar(); ?>
-	
-</aside>
+--><aside class="site-sidebar"><!-- Loaded via AJAX --></aside>
 
 </div> <!-- end .container -->
 </div> <!-- end .main-body-area -->

@@ -54,4 +54,32 @@ function load_related_posts() {
 add_action( 'wp_ajax_nopriv_load_related_posts', 'load_related_posts' );
 add_action( 'wp_ajax_load_related_posts', 'load_related_posts' );
 
+
+
+
+function load_sidebar() {
+
+	$sidebar = $_POST['sidebar'];
+
+	global $content;
+	ob_start();
+	$output = include ( TEMPLATEPATH . '/'. $sidebar .'.php' );
+	return $output;
+
+}
+add_action( 'wp_ajax_nopriv_load_sidebar', 'load_sidebar' );
+add_action( 'wp_ajax_load_sidebar', 'load_sidebar' );
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

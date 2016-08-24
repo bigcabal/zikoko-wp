@@ -79,11 +79,7 @@ wp_reset_postdata();
 
 </main><!--
 	Keep Zero Space Between
---><aside class="site-sidebar">
-
-<?php get_sidebar('sponsor'); ?>
-	
-</aside>
+--><aside class="site-sidebar"><!-- Loaded via AJAX --></aside>
 
 
 
