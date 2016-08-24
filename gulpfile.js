@@ -54,7 +54,7 @@ gulp.task('css', function() {
         )
         // SASS to CSS
         .pipe(
-            sass({ outputStyle: 'compressed' }) // compressed
+            sass({ outputStyle: 'compressed' })
             .on('error', gutil.log)
         )
         .pipe(gulp.dest(''));

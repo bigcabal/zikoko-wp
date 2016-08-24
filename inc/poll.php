@@ -151,25 +151,28 @@ $answer = str_replace('"','', $answer);
 
 	
 <script>
-var thisPollCookieTitle = '<?php echo $poll_key; ?>-<?php echo $post_id; ?>';
-var thisPollKey = '<?php echo $poll_key; ?>';
+docReady(function() {
+	
+	var thisPollCookieTitle = '<?php echo $poll_key; ?>-<?php echo $post_id; ?>';
+	var thisPollKey = '<?php echo $poll_key; ?>';
 
-if ( $.cookie(thisPollCookieTitle) ) {
+	if ( $.cookie(thisPollCookieTitle) ) {
 
-	// Show Sharing Box
-	showSharing('<?php echo $poll_question; ?>', $.cookie(thisPollCookieTitle), thisPollKey );
+		// Show Sharing Box
+		showSharing('<?php echo $poll_question; ?>', $.cookie(thisPollCookieTitle), thisPollKey );
 
-	// 
-	var answeredPoll = $('.pollBlock[data-pollkey='+thisPollKey+']');
+		// 
+		var answeredPoll = $('.pollBlock[data-pollkey='+thisPollKey+']');
 
-    var answeredAnswer = answeredPoll.find('.pcblock__poll__answer[data-pollanswer="'+$.cookie(thisPollCookieTitle)+'"]');
+	    var answeredAnswer = answeredPoll.find('.pcblock__poll__answer[data-pollanswer="'+$.cookie(thisPollCookieTitle)+'"]');
 
-    answeredPoll.find('.pollResults').addClass("pollResults-showing");
-	answeredAnswer.addClass("poll-answer--picked");
+	    answeredPoll.find('.pollResults').addClass("pollResults-showing");
+		answeredAnswer.addClass("poll-answer--picked");
 
-	answeredPoll.find('.pollResults__placeholder').hide();
-	answeredPoll.find('.pollResults__real').show();
+		answeredPoll.find('.pollResults__placeholder').hide();
+		answeredPoll.find('.pollResults__real').show();
 
-} 
+	} 
+})
 </script>
 <?php endif; ?>
