@@ -10,7 +10,7 @@ cloudinary.config({
 
 
 /* -----------------------------
-    Tasks
+        Tasks
  -----------------------------*/
 
 function cssTask() {
