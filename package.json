@@ -5,15 +5,18 @@
   "main": "gulpfile.js",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
+    "cloudinary": "^1.4.1",
+    "commander": "^2.9.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
     "gulp-minify-html": "^1.0.5",
     "gulp-postcss": "^6.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-uglifyjs": "^0.6.2",
     "gulp-util": "^3.0.7",
-    "postcss-scss": "^0.1.5"
+    "postcss-scss": "^0.1.5",
+    "replace": "^0.3.0"
   },
   "scripts": {
     "start": "gulp"
