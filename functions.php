@@ -193,14 +193,12 @@ function cl_image( $thumbnail, $location ) {
       break;
   }
 
-
   $thumbnail = str_replace(
     $base . 'http://res.cloudinary.com/big-cabal/image/upload/', 
     'https://res.cloudinary.com/big-cabal/image/upload/' . $sizing, 
     $thumbnail);
 
   return $thumbnail;
-
 }
 
 
