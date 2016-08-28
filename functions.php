@@ -171,6 +171,38 @@ function first_post_image() {
 
 
 
+function cl_image( $thumbnail, $location ) {
+
+  $base = 'http://localhost/zikoko/wp-content/uploads/';
+  if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
+    $base = 'http://zikoko.com/wp-content/uploads/';
+  }
+
+  switch ($location) {
+    case 'excerpt-1':
+      $sizing = 'w_700/';
+      break;
+    case 'excerpt-2':
+      $sizing = 'w_700/';
+      break;
+    case 'excerpt-3':
+      $sizing = 'w_400/';
+      break;
+    default:
+      $sizing = '';
+      break;
+  }
+
+
+  $thumbnail = str_replace(
+    $base . 'http://res.cloudinary.com/big-cabal/image/upload/', 
+    'https://res.cloudinary.com/big-cabal/image/upload/' . $sizing, 
+    $thumbnail);
+
+  return $thumbnail;
+
+}
+
 
 
 
