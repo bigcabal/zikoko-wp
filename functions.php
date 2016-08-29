@@ -202,6 +202,15 @@ function cl_image( $thumbnail, $location ) {
 }
 
 
+/* Cloudinary stuffs */
+// Remove the default WordPress featured image metabox from the post and page screen
+function zkk_remove_featured_image_meta_box() {
+  remove_meta_box( 'postimagediv', 'post', 'side' );
+  remove_meta_box( 'postimagediv', 'page', 'side' );
+}
+add_action( 'do_meta_boxes', 'zkk_remove_featured_image_meta_box' );
+
+
 
 
 /* *******************
