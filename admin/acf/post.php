@@ -174,6 +174,8 @@ acf_add_local_field_group(array (
 					'default_value' => 'none',
 					'layout' => 'horizontal',
 				),
+
+				//
 				array (
 					'key' => 'field_561e2ce0d2521',
 					'label' => 'Image Upload',
@@ -206,6 +208,7 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
+
 				array (
 					'key' => 'field_561e2cfad2522',
 					'label' => 'Image Credit',

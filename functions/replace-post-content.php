@@ -141,6 +141,10 @@ function change_content_frontend($post_id) {
 
         $raw_image = wp_get_attachment_image( $raw_image_id, $image_size, false, $image_attrs );
 
+        if ( !$raw_image && $raw_image_id ) {
+          $raw_image = '<img src="'.$raw_image_id.'">';
+        }
+
         $raw_image_credit = get_post_meta($post_id, $this_content_block.'_image_credit',true);
         $raw_image_via = get_post_meta($post_id, $this_content_block.'_via',true);
 

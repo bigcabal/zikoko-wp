@@ -69,11 +69,6 @@ function my_media_lib_uploader_enqueue() {
 add_action('admin_enqueue_scripts', 'my_media_lib_uploader_enqueue');
 
 
-function my_admin_enqueue_scripts() {
-	wp_enqueue_script( 'cloudinary-acf', get_template_directory_uri() . '/js/cloudinary-acf.js', array(), '1.0.0', true );
-}
-add_action('admin_enqueue_scripts', 'my_admin_enqueue_scripts');
-
 
 
 

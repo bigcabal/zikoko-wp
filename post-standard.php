@@ -48,7 +48,6 @@ $author = get_the_author();
 
 	<div class="entry-full-content">
 		<?php get_template_part('content', 'standard'); ?>
-
 	</div>
 
 	</article>

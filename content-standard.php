@@ -38,6 +38,11 @@
 
 ************************* -->
 <div class="pcblock__image">
+	Hello
+
+	<?php the_sub_field('image_upload'); ?>
+
+
 	<img class="pcblock__image--img" src="<?php the_sub_field('image_upload'); ?>" alt="<?php the_sub_field('headline'); ?>">
 
 	<small class="pcblock__image--credit">
