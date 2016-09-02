@@ -35,7 +35,7 @@ echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) )
 	$instant_articles = new WP_Query(
 		array(
 			'post_type'      => 'post',
-			'posts_per_page' => 15,
+			'posts_per_page' => 20,
 		)
 	);
 	while ( $instant_articles->have_posts() ) : $instant_articles->the_post();

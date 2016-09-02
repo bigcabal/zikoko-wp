@@ -3,7 +3,7 @@
 	<figure>
 		<?php 
 		if ( get_the_post_thumbnail( $next_post->ID ) != '' ) {
-			echo get_the_post_thumbnail();
+			echo cl_image( get_the_post_thumbnail(), 'instant_articles' );
 		} elseif( first_post_image( $next_post->ID ) ) { 
 			echo '<img src="' . first_post_image( $next_post->ID ) . '" />';
 		} ?>
