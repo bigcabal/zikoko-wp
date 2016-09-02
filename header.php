@@ -24,7 +24,11 @@
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/inc/img/favicon-16x16.png?v=1" sizes="16x16" />
 
 <!-- Stylesheet -->
+<?php if ( site_url() === 'http://localhost/zikoko' ) : ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+<?php else: ?>
 <link rel="stylesheet" href="https://res.cloudinary.com/big-cabal/raw/upload/v1472137345/zikoko-static-assets/zikoko-stylesheet-v1.css">
+<?php endif; ?>
 
 <meta property="fb:pages" content="1587103198245131" />
 

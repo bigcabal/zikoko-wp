@@ -188,6 +188,9 @@ function cl_image( $thumbnail, $location ) {
     case 'excerpt-3':
       $sizing = 'w_400/';
       break;
+    case 'instant_articles':
+      $sizing = '';
+      break;
     default:
       $sizing = '';
       break;

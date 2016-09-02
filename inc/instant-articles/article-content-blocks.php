@@ -20,7 +20,11 @@
 
 ************************* */ ?>
 <figure data-feedback="fb:likes, fb:comments">
-	<img src="<?php the_sub_field('image_upload'); ?>">
+	<?php 
+		$raw_image = get_sub_field('image_upload');
+		$image_url = cl_image( get_the_post_thumbnail(), 'instant_articles' );
+	?>
+	<img src="<?php echo $image_url; ?>">
 
 	<?php if ( get_sub_field('image_credit') != '' && get_sub_field('via') != '' ) : ?>
 		<figcaption class="op-vertical-below">
@@ -50,7 +54,7 @@
 		Media - Embed
 
 ************************* */ ?>
-<figure class="op-social">
+<figure class="op-interactive">
 	
 	<?php if ( get_sub_field('choose_embed') === 'instagram' ) :
 
