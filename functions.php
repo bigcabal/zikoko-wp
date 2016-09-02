@@ -238,9 +238,7 @@ function create_video_from_gif($match) {
 function filter_post_content($content)
 {
 
-  if ( is_mobile_safari() | is_opera_mini() ) {
-    return $content;
-  }
+  if ( is_mobile_safari() | is_opera_mini() ) { return $content; }
 
   $regex = '/<img src="(.*)\.gif">/i';
   preg_match_all($regex, $content, $matches);
