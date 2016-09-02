@@ -23,8 +23,8 @@
 	<?php 
 		$raw_image = get_sub_field('image_upload');
 		$image_url = cl_image( get_the_post_thumbnail(), 'instant_articles' );
+		echo $image_url;
 	?>
-	<img src="<?php echo $image_url; ?>">
 
 	<?php if ( get_sub_field('image_credit') != '' && get_sub_field('via') != '' ) : ?>
 		<figcaption class="op-vertical-below">
