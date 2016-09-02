@@ -82,7 +82,12 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
     HELPER FUNCTIONS
   
 ******************* */
-
+function is_mobile_safari() {
+  return strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') && strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile');
+}
+function is_opera_mini() {
+  return strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini');
+}
 
 function post_meta_data(){
 	
@@ -213,6 +218,38 @@ function zkk_remove_featured_image_meta_box() {
 }
 add_action( 'do_meta_boxes', 'zkk_remove_featured_image_meta_box' );
 
+
+
+/* FILTER POST CONTENT ----------- */
+function create_video_from_gif($match) {
+  $base_url = explode('src="', $match)[1];
+  $base_url = explode('.gif', $base_url)[0];
+  $video = '
+       <video width="600" style="width: 100%;" autoplay loop muted="muted" poster="' . $base_url . '.jpg">
+            <source type="video/mp4" src="' . $base_url . '.mp4">
+             <source type="video/webm" src="' . $base_url . '.webm">
+             Your browser does not support HTML5 video tag. 
+             <a href="' . $base_url . '.gif">Click here to view original GIF</a> 
+       </video>
+   ';
+  return $video;
+}
+
+function filter_post_content($content)
+{
+
+  if ( is_mobile_safari() | is_opera_mini() ) {
+    return $content;
+  }
+
+  $regex = '/<img src="(.*)\.gif">/i';
+  preg_match_all($regex, $content, $matches);
+  foreach ($matches[0] as $match) {
+    $video = create_video_from_gif($match);
+    $content = str_replace($match, $video, $content);
+  }
+  return $content;
+}
 
 
 
