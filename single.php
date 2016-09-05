@@ -59,7 +59,12 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 	</header>
 
 	<div class="entry-full-content">
-		<?php echo filter_post_content( get_the_content() ); ?>
+		<!-- get_the_content(): -->
+		<?php if ( has_category('quizzes') ) : ?>
+			<!--Quiz here -->
+		<?php endif; ?>
+		<?php the_content(); ?>
+		<!-- end get_the_content(); -->
 	</div>
 
 	</article>

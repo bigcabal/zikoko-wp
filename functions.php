@@ -235,7 +235,7 @@ function create_video_from_gif($match) {
   return $video;
 }
 
-function filter_post_content($content)
+function my_the_content_filter($content)
 {
 
   if ( is_mobile_safari() | is_opera_mini() ) { return $content; }
@@ -248,6 +248,9 @@ function filter_post_content($content)
   }
   return $content;
 }
+
+
+add_filter( 'the_content', 'my_the_content_filter' );
 
 
 

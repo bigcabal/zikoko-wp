@@ -169,7 +169,9 @@ function change_content_frontend($post_id)
           </div>
         ';
                 $media_block = $image;
-            } /* ************************
+            } 
+
+      /* ************************
        *
        *  MEDIA - EMBED
        *
@@ -196,7 +198,9 @@ function change_content_frontend($post_id)
           </div>
         ';
                 $media_block = $embed;
-            } /* ************************
+            } 
+
+        /* ************************
        *
        *  MEDIA - QUOTE
        *
@@ -222,7 +226,9 @@ function change_content_frontend($post_id)
         ';
 
                 $media_block = $quote;
-            } /* ************************
+            } 
+
+        /* ************************
        *
        *  MEDIA - QUIZ
        *
@@ -233,7 +239,9 @@ function change_content_frontend($post_id)
                 $quiz = $raw_quiz;
 
                 $media_block = $quiz;
-            } /* ************************
+            } 
+
+        /* ************************
        *
        *  MEDIA - POLL
        *

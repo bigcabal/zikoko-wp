@@ -61,21 +61,21 @@ $author = get_the_author();
 <?php endif; ?>
 
 
-<!-- The Vortex -->
-<?php //get_template_part('inc/reaction', 'buttons'); ?>
+<div class="advert-mobilesquare">
+<?php //if ( site_url() === 'http://zikoko.com' | site_url() === 'http://staging.zikoko.com' ) {
+    get_template_part('inc/ad-mobile', 'square'); 
+  //} ?>
+</div>
 
+<ul class="site-box social-profile-buttons social-profile-btns--mobileonly">
+	<?php get_template_part('inc/social-profile', 'btns'); ?>
+</ul>
 
 <div class="site-box padd-all">
 	<?php comments_template(); ?>
 </div>
 
-<ul class="site-box no-bg social-profile-buttons social-profile-btns--mobileonly">
-	<?php get_template_part('inc/social-profile', 'btns'); ?>
-</ul>
-
 <!-- The Vortex -->
-<?php //get_template_part('inc/modal', 'post'); ?>
-
 
 </main><!--
 	Keep Zero Space Between
@@ -83,26 +83,7 @@ $author = get_the_author();
 
 
 <!-- Mega Related Posts -->
-<div class="mega-related-posts cf">
-<?php
-
-	global $post;
-	$ti_featured_posts = new WP_Query(
-		array(
-			'post_type' => 'post',
-			'posts_per_page' => 36
-		)
-	);
-	?>
-	<?php while ( $ti_featured_posts->have_posts() ) : $ti_featured_posts->the_post(); ?>
-
-		<?php get_template_part( 'excerpt', '2' ); ?>
-
-<?php 
-	endwhile; 
-	wp_reset_postdata();
-?>
-</div>
+<div class="mega-related-posts cf"></div>
 
 
 </div> <!-- end .container -->
