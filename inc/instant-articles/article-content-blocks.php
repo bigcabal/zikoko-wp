@@ -23,9 +23,8 @@
 	<?php 
 		$raw_image = get_sub_field('image_upload', false, false);
 		$image_url = cl_image( $raw_image, 'instant_articles' );
-        echo 'raw_image-' . $raw_image;
 	?>
-	<img src="<?php echo $image_url; ?>" alt="">
+	<img src="<?php echo $image_url; ?>">
 
 	<?php if ( get_sub_field('image_credit') != '' && get_sub_field('via') != '' ) : ?>
 		<figcaption class="op-vertical-below">
