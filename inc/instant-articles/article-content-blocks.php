@@ -23,6 +23,7 @@
 	<?php 
 		$raw_image = get_sub_field('image_upload');
 		$image_url = cl_image( $raw_image, 'instant_articles' );
+        echo $raw_image;
 	?>
 	<img src="<?php echo $image_url; ?>">
 
