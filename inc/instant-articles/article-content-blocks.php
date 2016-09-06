@@ -21,7 +21,7 @@
 ************************* */ ?>
 <figure data-feedback="fb:likes, fb:comments">
 	<?php 
-		$raw_image = get_sub_field('image_upload');
+		$raw_image = get_sub_field('image_upload', false, false);
 		$image_url = cl_image( $raw_image, 'instant_articles' );
         echo 'raw_image-' . $raw_image;
 	?>
