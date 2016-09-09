@@ -38,12 +38,9 @@
 
 ************************* -->
 <div class="pcblock__image">
-	Hello
-
-	<?php the_sub_field('image_upload'); ?>
 
 
-	<img class="pcblock__image--img" src="<?php the_sub_field('image_upload'); ?>" alt="<?php the_sub_field('headline'); ?>">
+	<img class="pcblock__image--img" src="<?php echo cl_image( get_sub_field('image_upload'), 'in_post' ); ?>" alt="<?php the_sub_field('headline'); ?>">
 
 	<small class="pcblock__image--credit">
 	<?php if ( get_sub_field('image_credit') != '' && get_sub_field('via') != '' ) : ?>
