@@ -90,19 +90,25 @@ function create_video_from_gif($match) {
     return $video;
 }
 
+function replace_cl_images_with_optimized_versions($content) {
+    $pattern = 'res.cloudinary.com/big-cabal/image/upload/v';
+    $replacement = 'res.cloudinary.com/big-cabal/image/upload/w_800,f_auto,fl_lossy,q_auto/v';
+    $content = str_replace($pattern, $replacement, $content);
+    return $content;
+}
+
 
 /* FILTER POST CONTENT ----------- */
-
 function my_the_content_filter($content)
 {
     if ( is_mobile_safari() | is_opera_mini() ) { return $content; }
-
     $regex = '/<img src="(.*)\.gif">/i';
     preg_match_all($regex, $content, $matches);
     foreach ($matches[0] as $match) {
         $video = create_video_from_gif($match);
         $content = str_replace($match, $video, $content);
     }
+    $content = replace_cl_images_with_optimized_versions($content);
     return $content;
 }
 add_filter( 'the_content', 'my_the_content_filter' );

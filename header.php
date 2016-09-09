@@ -111,8 +111,7 @@
                 ?>
             </nav><!--
 
-      -->
-            <nav class="secondary-menu-container" role="navigation" aria-label="Secondary">
+          --><nav class="secondary-menu-container" role="navigation" aria-label="Secondary">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'secondary_menu',
