@@ -53,6 +53,7 @@ function cl_image( $thumbnail, $location ) {
             $transformations = 'w_800,f_auto,fl_lossy,q_auto/';
             break;
         case 'instant_articles':
+            $thumbnail = str_replace('.webp', '.jpg', $thumbnail);
             $transformations = 'w_600,f_auto,fl_lossy,q_auto/';
             break;
         default:
