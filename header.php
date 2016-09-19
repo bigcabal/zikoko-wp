@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
     <?php else: ?>
         <link rel="stylesheet"
-              href="https://res.cloudinary.com/big-cabal/raw/upload/v1472819936/zikoko-static-assets/zikoko-stylesheet-v1.css">
+              href="https://res.cloudinary.com/big-cabal/raw/upload/v1474295035/zikoko-static-assets/zikoko-stylesheet-v1.css">
     <?php endif; ?>
 
     <meta property="fb:pages" content="1587103198245131"/>
