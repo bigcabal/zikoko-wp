@@ -13,9 +13,9 @@
             <?php
             $featured_image = get_post_meta(get_the_ID(), 'fifu_image_url', true);
             if ($featured_image) {
-                echo '<img src="' . cl_image($featured_image, 'excerpt-1') . '" class="wp-post-image" />';
+                echo cl_image($featured_image, 'excerpt-1', true);
             } elseif (first_post_image()) { // Set the first image from the editor
-                echo '<img src="' . first_post_image() . '" class="wp-post-image" />';
+                echo first_post_image();
             }
             ?>
             <div class="image-cover"></div>
