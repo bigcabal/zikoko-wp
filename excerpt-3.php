@@ -4,37 +4,39 @@
  * Format PWC Feed Page
  *
  * @package ZikokoTheme
-**/
+ **/
 ?>
 <article <?php post_class("site-box entry-excerpt entry-excerpt--3 targetInfiniteScroll"); ?>>
 
-	<div class="entry-excerpt--image">
-		<a href="<?php the_permalink() ?>">
-		<?php 
-		if ( get_the_post_thumbnail( $next_post->ID ) != '' ) {
-			echo cl_image( get_the_post_thumbnail(), 'excerpt-3' );
-		} elseif( first_post_image( $next_post->ID ) ) { // Set the first image from the editor
-			echo '<img src="' . first_post_image( $next_post->ID ) . '" class="wp-post-image" />';
-		} ?>
-		<div class="image-cover"></div>
-		</a>
-	</div>
+    <div class="entry-excerpt--image">
+        <a href="<?php the_permalink() ?>">
+            <?php
+            $featured_image = get_post_meta(get_the_ID(), 'fifu_image_url', true);
+            if ($featured_image) {
+                echo '<img src="' . cl_image($featured_image, 'excerpt-1') . '" class="wp-post-image" />';
+            } elseif (first_post_image()) { // Set the first image from the editor
+                echo '<img src="' . first_post_image() . '" class="wp-post-image" />';
+            }
+            ?>
+            <div class="image-cover"></div>
+        </a>
+    </div>
 
-	<div class="entry-excerpt--entry padd-all">
+    <div class="entry-excerpt--entry padd-all">
 
-		<header>
+        <header>
 
-			<h3 class="entry-excerpt--title">
-				<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-			</h3>
-			
-		</header>
+            <h3 class="entry-excerpt--title">
+                <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+            </h3>
+
+        </header>
 
 
-		<div class="entry-excerpt--summary">
-			<?php the_excerpt(); ?>
-		</div>
-		
-	</div>
+        <div class="entry-excerpt--summary">
+            <?php the_excerpt(); ?>
+        </div>
+
+    </div>
 
 </article>
