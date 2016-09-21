@@ -70,6 +70,9 @@ function cl_image( $thumbnail, $location, $return_img_el ) {
         case 'in_post':
             $transformations = 'w_800,f_auto,fl_lossy,q_auto/';
             break;
+        case 'post_sponsor':
+            $transformations = 'w_100,f_auto,fl_lossy,q_auto/';
+            break;
         case 'instant_articles':
             $thumbnail = str_replace('.webp', '.jpg', $thumbnail);
             $transformations = 'w_600,f_auto,fl_lossy,q_auto/';
@@ -81,7 +84,7 @@ function cl_image( $thumbnail, $location, $return_img_el ) {
 
     $image = str_replace('upload/', 'upload/' . $transformations, $thumbnail);
 
-    if ( $return_img_el ) { return '<img src="' . $image . '" class="wp-post-image" />'; }
+    if ( $return_img_el ) { return '<img src="' . $image . '" alt="" class="wp-post-image" />'; }
     return $image;
 }
 

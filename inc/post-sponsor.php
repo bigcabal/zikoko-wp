@@ -13,7 +13,10 @@
     
     <div class="pa__image">
         <a href="<?php the_permalink(); ?>">
-        <img src="<?php the_field('logo_small'); ?>" alt="<?php the_title(); ?>" alt="<?php the_title(); ?>">
+            <?php
+            $logo_small = get_field('logo_small', false, true);
+            echo cl_image( $logo_small, 'post_sponsor', true );
+            ?>
         </a>
     </div>
     <div class="pa__text">
