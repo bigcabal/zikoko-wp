@@ -32,8 +32,8 @@ function load_related_posts()
 {
     $response = "";
 
-    $orig_post = $post;
     global $post;
+    $orig_post = $post;
 
     $categories = get_the_category($post->ID);
     $category_ids = array();
@@ -50,18 +50,18 @@ function load_related_posts()
         'posts_per_page' => 36,
         'caller_get_posts' => 1
     );
-    $mega_related_posts = new wp_query($args);
+    $related_posts_query = new wp_query($args);
 
-    $posts = array();
+    $related_posts = array();
 
-    while ($mega_related_posts->have_posts()) : $mega_related_posts->the_post();
+    while ($related_posts_query->have_posts()) : $related_posts_query->the_post();
         $post = get_template_part('excerpt', '2');
-        array_push($posts, $post);
+        array_push($related_posts, $post);
     endwhile;
 
-    shuffle($posts);
+    shuffle($related_posts);
 
-    foreach ( $posts as $post ) { $response = $response + $post; }
+    foreach ( $related_posts as $post ) { $response = $response + $post; }
 
     $post = $orig_post;
     wp_reset_query();
