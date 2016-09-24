@@ -30,7 +30,6 @@ add_action('wp_ajax_ajax_upload', 'my_ajax_upload');
 /* AJAX LOADING OF RELATED POSTS */
 function load_related_posts()
 {
-
     $orig_post = $post;
     global $post;
     $categories = get_the_category($post->ID);
@@ -53,9 +52,7 @@ function load_related_posts()
 
     echo $response;
     die();
-
 }
-
 add_action('wp_ajax_nopriv_load_related_posts', 'load_related_posts');
 add_action('wp_ajax_load_related_posts', 'load_related_posts');
 
