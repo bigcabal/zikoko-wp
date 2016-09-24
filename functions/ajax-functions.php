@@ -30,15 +30,28 @@ add_action( 'wp_ajax_ajax_upload', 'my_ajax_upload' );
 /* AJAX LOADING OF RELATED POSTS */
 function load_related_posts() {
 
+    $orig_post = $post;
 	global $post;
     $categories = get_the_category($post->ID);
-	$mega_related_posts = new WP_Query(
-		array(
-			'post_type' => 'post',
-			'posts_per_page' => 36,
-			'post_status' => 'publish'
-		)
-	);
+
+        $category_ids = array();
+        foreach ($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+        $args = array(
+            'category__in' => $category_ids,
+            'post__not_in' => array($post->ID),
+            'posts_per_page' => 2, // Number of related posts that will be shown.
+            'caller_get_posts' => 1
+        );
+
+    $mega_related_posts = new wp_query( $args );
+
+//	$mega_related_posts = new WP_Query(
+//		array(
+//			'post_type' => 'post',
+//			'posts_per_page' => 36,
+//			'post_status' => 'publish'
+//		)
+//	);
 
 	$response = "";
 
@@ -46,7 +59,9 @@ function load_related_posts() {
 		$post = get_template_part( 'excerpt', '2' );
 		$response = $response + $post;
 	endwhile;
-	wp_reset_postdata();
+
+    $post = $orig_post;
+    wp_reset_query();
 
 	echo $response;
     die();
