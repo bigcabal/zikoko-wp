@@ -31,6 +31,7 @@ add_action( 'wp_ajax_ajax_upload', 'my_ajax_upload' );
 function load_related_posts() {
 
 	global $post;
+    $categories = get_the_category($post->ID);
 	$mega_related_posts = new WP_Query(
 		array(
 			'post_type' => 'post',
