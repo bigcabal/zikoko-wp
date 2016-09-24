@@ -43,14 +43,11 @@ function load_related_posts()
         'caller_get_posts' => 1
     );
     $mega_related_posts = new wp_query($args);
-
     $response = "";
-
     while ($mega_related_posts->have_posts()) : $mega_related_posts->the_post();
         $post = get_template_part('excerpt', '2');
         $response = $response + $post;
     endwhile;
-
     $post = $orig_post;
     wp_reset_query();
 
