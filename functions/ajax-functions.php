@@ -44,7 +44,7 @@ function load_related_posts() {
 	while ( $mega_related_posts->have_posts() ) : $mega_related_posts->the_post();
 		$post = get_template_part( 'excerpt', '2' );
 		$response = $response + $post;
-	endwhile; 
+	endwhile;
 	wp_reset_postdata();
 
 	echo $response;
