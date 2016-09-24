@@ -32,11 +32,18 @@ function load_related_posts()
 {
     $orig_post = $post;
     global $post;
+
     $categories = get_the_category($post->ID);
     $category_ids = array();
     foreach ($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+
+    $tags = wp_get_post_tags($post->ID);
+    $tag_ids = array();
+    foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+
     $args = array(
         'category__in' => $category_ids,
+        'tag__in' => $tag_ids,
         'post__not_in' => array($post->ID),
         'posts_per_page' => 36,
         'caller_get_posts' => 1
