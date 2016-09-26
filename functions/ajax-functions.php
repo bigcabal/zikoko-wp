@@ -48,7 +48,8 @@ function load_related_posts()
         'tag__in' => $tag_ids,
         'post__not_in' => array($orig_post->ID),
         'posts_per_page' => 36,
-        'caller_get_posts' => 1
+        'caller_get_posts' => 1,
+        'post_status' => 'publish'
     );
     $related_posts_query = new wp_query($args);
 
