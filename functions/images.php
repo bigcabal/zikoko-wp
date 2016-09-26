@@ -86,7 +86,7 @@ function cl_image( $thumbnail, $location, $return_img_el ) {
 
     $image = str_replace('upload/', 'upload/' . $transformations, $thumbnail);
 
-    if ( $return_img_el ) { return '<img src="' . $image . '" alt="" class="wp-post-image" />'; }
+    if ( $return_img_el === true ) { return '<img src="' . $image . '" alt="" class="wp-post-image" />'; }
     return $image;
 }
 
