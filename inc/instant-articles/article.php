@@ -20,6 +20,8 @@
 
 		<?php include('analytics.php'); ?>
 
+		<?php include('ad.php'); ?>
+
 		<footer>
 			<aside>Zikoko, Enjoy &amp; Share</aside>
 			<small>© Big Cabal Media</small>

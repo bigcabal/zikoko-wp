@@ -37,11 +37,13 @@ function remove_base($thumbnail) {
     return $thumbnail;
 }
 
+
+
 function should_replace_gif_thumbnail($location) {
     if (
         !is_mobile_safari()
         && !is_opera_mini()
-        && ( $location === 'excerpt-1' | $location === 'excerpt-2' | $location === 'excerpt-1' )
+        && ( $location === 'excerpt-1' | $location === 'excerpt-2' | $location === 'excerpt-1' | $location === 'in_post' )
         ) {
         return true;
     }
