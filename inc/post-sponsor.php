@@ -14,8 +14,13 @@
     <div class="pa__image">
         <a href="<?php the_permalink(); ?>">
             <?php
-            $logo_small = get_field('logo_small', false, false);
-            echo cl_image( $logo_small, 'post_sponsor', true );
+            $logo_small = get_field('logo_small');
+            if ( $logo_small ) {
+                echo cl_image( $logo_small, 'post_sponsor', true );
+            } else {
+                $logo_small = get_field('logo_small', false, false);
+                echo cl_image( $logo_small, 'post_sponsor', true );
+            }
             ?>
         </a>
     </div>
