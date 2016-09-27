@@ -28,7 +28,7 @@ get_header();
 		<div class="sponsor-logo">
             <a href="<?php the_field( 'sponsor_website' ); ?>">
 				<?php
-				$logo_small = get_field('logo_small', false, false);
+				$logo_small = get_field('logo_small');
 				echo '<!-- logo_small - ' . $logo_small . ' -->';
 				echo cl_image( $logo_small, 'post_sponsor', true );
 				?>
