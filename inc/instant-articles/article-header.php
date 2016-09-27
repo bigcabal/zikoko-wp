@@ -1,12 +1,14 @@
 <header>
 
 	<figure>
-		<?php 
-		if ( get_the_post_thumbnail( $next_post->ID ) != '' ) {
-			echo '<img src="'. cl_image( get_the_post_thumbnail(), 'instant_articles', false ) .'">';
-		} elseif( first_post_image( $next_post->ID ) ) { 
-			echo '<img src="' . first_post_image( $next_post->ID ) . '" />';
-		} ?>
+		<?php
+		$featured_image = get_post_meta(get_the_ID(), 'fifu_image_url', true);
+		if ($featured_image) {
+			echo cl_image($featured_image, 'instant_articles', true);
+		} elseif (first_post_image()) {
+			echo first_post_image();
+		}
+		?>
 	</figure>
 
 	<h1><?php esc_html( the_title_rss() ); ?></h1>
