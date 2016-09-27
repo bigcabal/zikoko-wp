@@ -29,7 +29,11 @@ get_header();
             <a href="<?php the_field( 'sponsor_website' ); ?>">
 				<?php
 				$logo_small = get_field('logo_small', false, false);
-				echo cl_image( $logo_small, 'post_sponsor', true );
+				if ( strpos( $logo_small, 'cloudinary') ) {
+					echo cl_image( $logo_small, 'post_sponsor', true );
+				} else {
+					the_field('logo_small');
+				}
 				?>
             </a>
         </div>
