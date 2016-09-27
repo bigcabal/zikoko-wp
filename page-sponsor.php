@@ -30,8 +30,10 @@ get_header();
 				<?php
 				$logo_small = get_field('logo_small', false, false);
 				if ( strpos( $logo_small, 'cloudinary') ) {
+					echo '<!-- cli_image -->';
 					echo cl_image( $logo_small, 'post_sponsor', true );
 				} else {
+					echo '<!-- nothing -->';
 					the_field('logo_small');
 				}
 				?>
