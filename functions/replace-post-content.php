@@ -134,8 +134,7 @@ function change_content_frontend($post_id)
 
                 // Cloudinary image
                 if (!$raw_image && $raw_image_id) {
-                    $cloudinary_optimised_image = cl_image( $raw_image_id, 'in_post' );
-                    $raw_image = '<img src="' . $cloudinary_optimised_image . '">';
+                    $raw_image = cl_image( $raw_image_id, 'in_post', true );
                 }
 
                 $raw_image_credit = get_post_meta($post_id, $this_content_block . '_image_credit', true);
