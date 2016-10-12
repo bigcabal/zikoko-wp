@@ -64,7 +64,7 @@ function cl_image( $thumbnail, $location, $return_img_el ) {
             $transformations = 'w_700,f_auto,fl_lossy,q_auto/';
             break;
         case 'excerpt-2':
-            $transformations = 'w_700,f_auto,fl_lossy,q_auto/';
+            $transformations = 'w_700,f_auto,fl_lossy,q_auto:eco/';
             break;
         case 'excerpt-3':
             $transformations = 'w_400,f_auto,fl_lossy,q_auto/';
@@ -118,7 +118,11 @@ function create_video_from_gif($match, $url_only) {
 
 function replace_cl_images_with_optimized_versions($content) {
     $pattern = 'res.cloudinary.com/big-cabal/image/upload/v';
-    $replacement = 'res.cloudinary.com/big-cabal/image/upload/w_800,f_auto,fl_lossy,q_auto/v';
+    if ( is_opera_mini() ) {
+        $replacement = 'res.cloudinary.com/big-cabal/image/upload/w_800,f_auto,fl_lossy,q_auto:low/v';
+    } else {
+        $replacement = 'res.cloudinary.com/big-cabal/image/upload/w_800,f_auto,fl_lossy,q_auto/v';
+    }
     $content = str_replace($pattern, $replacement, $content);
     return $content;
 }
