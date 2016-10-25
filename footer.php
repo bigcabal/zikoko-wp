@@ -19,5 +19,14 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+<!-- Adform publisher tag -->
+<!-- Tag for Zikoko - zikoko - mobile - 480x320 placement -->
+<script data-adfscript="adx.adform.net/adx/?mid=276405"></script>
+<script src="//s1.adform.net/banners/scripts/adx.js" async defer></script>
+<!-- Adform publisher tag -->
+<!-- Tag for Zikoko - zikoko - mobile - 320x480 placement -->
+<script data-adfscript="adx.adform.net/adx/?mid=276406"></script>
+<script src="//s1.adform.net/banners/scripts/adx.js" async defer></script>
 </body>
 </html>
