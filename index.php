@@ -70,6 +70,10 @@ get_header();
 <div class="main-body-area">
 <div class="container">
 
+	<div class="advert-extreme">
+		<?php get_template_part('inc/ad', 'extreme'); ?>
+	</div>
+
 <main class="site-main">
 
 	<ul class="site-box social-profile-buttons social-profile-btns--mobileonly">
