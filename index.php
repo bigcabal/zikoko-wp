@@ -70,9 +70,7 @@ get_header();
 <div class="main-body-area">
 <div class="container">
 
-	<div class="advert-extreme">
-		<?php get_template_part('inc/ad', 'extreme'); ?>
-	</div>
+<!--	<div class="advert-extreme"></div>-->
 
 <main class="site-main">
 

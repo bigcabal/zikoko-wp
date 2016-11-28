@@ -9,7 +9,6 @@
         googletag.defineSlot('/24669334/zkk_leaderboard_1', [728, 90], 'div-gpt-ad-1480058978064-0').addService(googletag.pubads());
         googletag.defineSlot('/24669334/zkk_mobile_top', [300, 250], 'div-gpt-ad-1480058978064-1').addService(googletag.pubads());
         googletag.defineSlot('/24669334/zkk_rectangle_1', [[300, 600], [300, 250]], 'div-gpt-ad-1480058978064-2').addService(googletag.pubads());
-        googletag.defineSlot('/24669334/zkk_extreme', [970, 250], 'div-gpt-ad-1480058978064-3').addService(googletag.pubads());
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
     });
